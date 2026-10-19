@@ -24,7 +24,7 @@
   }
 
   // Feature phones straighten as they reach the middle of the screen.
-  const phones = [...document.querySelectorAll(".feature .phone")];
+  const phones = [...document.querySelectorAll(".feature .phone, .feature .poster")];
   let ticking = false;
   const update = () => {
     ticking = false;

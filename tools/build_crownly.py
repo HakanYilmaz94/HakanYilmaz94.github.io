@@ -160,6 +160,15 @@ def phone(src, alt, cls=""):
             f'width="500" height="1086" loading="lazy" decoding="async"></div></div>')
 
 
+def lang_switch(t):
+    """EN | TR pill; the current language is highlighted."""
+    en = "./" if t["lang"] == "en" else "../"
+    tr = "tr/" if t["lang"] == "en" else "./"
+    on = lambda l: ' class="on" aria-current="page"' if t["lang"] == l else ""
+    return (f'<span class="lang"><a href="{en}" hreflang="en" lang="en"{on("en")}>EN</a>'
+            f'<a href="{tr}" hreflang="tr" lang="tr"{on("tr")}>TR</a></span>')
+
+
 def page(t):
     i = t["img"]
     a = t["alts"]
@@ -201,7 +210,7 @@ def page(t):
   <meta property="og:url" content="{canonical}">
   <link rel="icon" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="/crownly/crownly.css">
+  <link rel="stylesheet" href="/assets/app.css">
   <script type="application/ld+json">
   {{"@context":"https://schema.org","@type":"MobileApplication","name":"Crownly","operatingSystem":"iOS 17 or later",
    "applicationCategory":"GameApplication","url":"{canonical}","installUrl":"{t["store"]}","inLanguage":"{t["lang"]}",
@@ -217,7 +226,7 @@ def page(t):
   <nav>
     <a href="#features">{t["nav_features"]}</a>
     <a href="#support">{t["nav_support"]}</a>
-    <a href="{t["other_href"]}" hreflang="{t["other_lang"]}" lang="{t["other_lang"]}">{t["other_label"]}</a>
+    {lang_switch(t)}
   </nav>
 </header>
 
@@ -280,7 +289,7 @@ def page(t):
   <a href="{t["other_href"]}" lang="{t["other_lang"]}">{t["other_label"]}</a><a href="mailto:hyapps@outlook.com">hyapps@outlook.com</a>
   <p>{html.escape(t["made"])} © 2026 HY Apps</p>
 </footer>
-<script src="/crownly/crownly.js" defer></script>
+<script src="/assets/app.js" defer></script>
 </body>
 </html>
 '''

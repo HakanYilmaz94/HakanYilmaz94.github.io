@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://hyapps.app/</loc></url>
+  <url><loc>https://hyapps.app/tr/</loc></url>
   <url><loc>https://hyapps.app/crownly/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/"/></url>

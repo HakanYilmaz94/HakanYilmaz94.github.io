@@ -1,0 +1,33 @@
+/* Besmele theme on top of /assets/app.css: deep green and soft gold. */
+:root {
+  --bg: #fbf6e8;
+  --card: #fffdf6;
+  --ink: #1e2420;
+  --muted: #5f6157;
+  --line: #e3d8c1;
+  --gold: #a9822f;
+  --gold-hi: #e9cb8a;
+  --night: #0f3324;
+  --night-2: #1f4d3a;
+  --on-night: #fbf6e8;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0f1a22; --card: #16232d; --ink: #efe8d6; --muted: #b3b8b2; --line: #26384a; --gold: #d9b26a; }
+}
+.bar { background: rgba(15, 51, 36, .6); }
+.hero { background: radial-gradient(120% 80% at 50% 0%, var(--night-2) 0%, var(--night) 60%, #082116 100%); }
+.blobs i:nth-child(1) { background: #d9b26a; }
+.blobs i:nth-child(2) { background: #6fae8c; }
+.blobs i:nth-child(3) { background: #e9cb8a; }
+.blobs i:nth-child(4) { background: #2f7a5a; }
+.blobs i:nth-child(5) { background: #f4e3b5; }
+.hero h1 em, .stats strong { background: linear-gradient(180deg, #f6e2ad, #c99a3e); -webkit-background-clip: text; background-clip: text; }
+.hero-icon, .final img { box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 18px 50px rgba(217, 178, 106, .35); }
+.feature-media::before,
+.feature:nth-of-type(3n) .feature-media::before,
+.feature:nth-of-type(3n+1) .feature-media::before { background: radial-gradient(circle, rgba(217, 178, 106, .45), rgba(111, 174, 140, .25) 50%, transparent 70%); }
+.final { background: radial-gradient(100% 120% at 50% 100%, var(--night-2), var(--night) 70%); }
+.foot { background: #082116; }
+.crescent { position: absolute; right: 8%; top: 96px; width: 54px; height: 54px; border-radius: 50%;
+            box-shadow: -12px 8px 0 0 #e9cb8a; transform: rotate(-20deg); opacity: .9; }
+@media (max-width: 560px) { .crescent { right: 4%; top: 76px; width: 36px; height: 36px; box-shadow: -8px 5px 0 0 #e9cb8a; } }

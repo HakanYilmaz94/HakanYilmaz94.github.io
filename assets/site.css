@@ -95,3 +95,8 @@ details p { margin: 8px 0 0; }
 .studio-foot { text-align: center; padding: 30px 16px 50px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); }
 .studio-foot a { margin: 0 10px; }
 @media (prefers-reduced-motion: reduce) { .studio-hero .blobs i { animation: none; } .app-tile { transition: none; } }
+.studio-hero .lang { position: absolute; top: 18px; right: 16px; display: inline-flex; padding: 3px; border-radius: 999px;
+                     background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); z-index: 2; }
+.studio-hero .lang a { font-size: 13px; font-weight: 700; letter-spacing: .04em; padding: 4px 11px; border-radius: 999px;
+                       color: rgba(251,244,230,.8); text-decoration: none; }
+.studio-hero .lang a.on { background: #fbf4e6; color: #24163a; }
