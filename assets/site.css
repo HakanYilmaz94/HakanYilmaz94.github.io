@@ -1,0 +1,97 @@
+:root {
+  --bg: #f4eee3;
+  --card: #fffdf8;
+  --ink: #3b2a57;
+  --muted: #7a6f8f;
+  --gold: #b8860b;
+  --gold-soft: #f3e3b3;
+  --plum: #4a2d6e;
+  --on-plum: #fff8e8;
+  --border: #e4dccd;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1d1528; --card: #281e37; --ink: #efe8f8; --muted: #b3a8c6; --gold: #e8c45c;
+          --gold-soft: #4a3c22; --plum: #3a2556; --on-plum: #fff8e8; --border: #3a2e4c; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+main, .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+main { padding-top: 24px; padding-bottom: 64px; }
+h1, h2, h3 { font-family: "New York", ui-serif, Georgia, "Times New Roman", serif; line-height: 1.2; }
+h1 { font-size: clamp(30px, 6vw, 44px); margin: 0 0 8px; }
+h2 { font-size: 26px; margin: 48px 0 12px; }
+h3 { font-size: 19px; margin: 0 0 4px; }
+p { margin: 0 0 12px; }
+a { color: var(--gold); }
+.muted { color: var(--muted); }
+.small { font-size: 15px; }
+
+header.site { padding: 16px 0; }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { font-family: "New York", ui-serif, Georgia, serif; font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+header.site nav a { margin-left: 16px; font-size: 15px; text-decoration: none; }
+
+footer.site { border-top: 1px solid var(--border); padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
+footer.site a { margin-right: 14px; }
+
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 20px; }
+.apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
+.app { display: flex; gap: 16px; align-items: flex-start; text-decoration: none; color: inherit; }
+.app img { width: 72px; height: 72px; border-radius: 16px; flex: none; }
+.app p { margin: 0; font-size: 15px; color: var(--muted); }
+
+.hero { display: flex; gap: 24px; align-items: center; margin: 16px 0 8px; }
+.hero img.icon { width: 112px; height: 112px; border-radius: 26px; flex: none; box-shadow: 0 8px 24px rgba(59,42,87,.18); }
+.hero p.lead { font-size: 20px; color: var(--muted); margin: 0; }
+@media (max-width: 560px) { .hero { flex-direction: column; align-items: flex-start; } }
+
+.button { display: inline-block; background: var(--plum); color: var(--on-plum); text-decoration: none;
+          font-weight: 600; padding: 12px 22px; border-radius: 999px; margin: 16px 12px 0 0; }
+.button.ghost { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); }
+
+.shots { display: flex; gap: 14px; overflow-x: auto; padding: 8px 2px 16px; scroll-snap-type: x mandatory; }
+.shots img { width: 220px; height: auto; border-radius: 18px; flex: none; scroll-snap-align: start;
+             border: 1px solid var(--border); }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.features .card p { margin: 0; font-size: 15px; color: var(--muted); }
+
+details { border-bottom: 1px solid var(--border); padding: 12px 0; }
+summary { cursor: pointer; font-weight: 600; }
+details p { margin: 8px 0 0; }
+
+/* Studio home */
+.studio-hero { position: relative; overflow: hidden; color: #fbf4e6; text-align: center; padding: 110px 16px 120px;
+               background: radial-gradient(120% 90% at 50% 0%, #3d2660 0%, #24163a 60%, #170d27 100%); }
+.studio-hero .blobs { position: absolute; inset: 0; filter: blur(70px); opacity: .45; pointer-events: none; }
+.studio-hero .blobs i { position: absolute; width: 36vmax; height: 36vmax; border-radius: 50%; animation: drift 20s ease-in-out infinite alternate; }
+.studio-hero .blobs i:nth-child(1) { background: #cdbeeb; left: -10vmax; top: -8vmax; }
+.studio-hero .blobs i:nth-child(2) { background: #f6cfa8; right: -12vmax; top: 6vmax; animation-delay: -6s; }
+.studio-hero .blobs i:nth-child(3) { background: #b2e0d6; left: 30%; bottom: -26vmax; animation-delay: -10s; }
+@keyframes drift { to { transform: translate(5vmax, 4vmax) scale(1.1); } }
+.studio-hero > * { position: relative; }
+.studio-hero p.mark { max-width: none; font-family: "New York", ui-serif, Georgia, serif; font-size: 18px; letter-spacing: .3em; text-transform: uppercase; color: #f4d06f; margin: 0 0 18px; }
+.studio-hero h1 { font-size: clamp(40px, 7vw, 76px); max-width: 860px; margin: 0 auto; }
+.studio-hero h1 em { font-style: italic; background: linear-gradient(180deg, #ffe7a3, #e2a92a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.studio-hero p { font-size: clamp(18px, 2.2vw, 21px); color: rgba(251, 244, 230, .75); max-width: 600px; margin: 22px auto 0; }
+.studio-apps { max-width: 980px; margin: -70px auto 0; padding: 0 16px 40px; position: relative; display: grid;
+               grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.app-tile { display: block; text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--border);
+            border-radius: 28px; padding: 28px; box-shadow: 0 24px 60px rgba(36, 22, 58, .18); transition: transform .25s, box-shadow .25s; }
+.app-tile:hover { transform: translateY(-4px); box-shadow: 0 30px 70px rgba(36, 22, 58, .26); }
+.app-tile img { width: 88px; height: 88px; border-radius: 20px; margin-bottom: 18px; box-shadow: 0 10px 24px rgba(36, 22, 58, .2); }
+.app-tile h3 { font-size: 26px; margin-bottom: 6px; }
+.app-tile p { color: var(--muted); margin: 0 0 14px; font-size: 16px; }
+.app-tile .go { color: var(--gold); font-weight: 600; font-size: 15px; }
+.principles { max-width: 980px; margin: 0 auto; padding: 50px 16px 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
+.principles h3 { font-size: 22px; margin-bottom: 6px; }
+.principles p { color: var(--muted); font-size: 16px; margin: 0; }
+.studio-foot { text-align: center; padding: 30px 16px 50px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); }
+.studio-foot a { margin: 0 10px; }
+@media (prefers-reduced-motion: reduce) { .studio-hero .blobs i { animation: none; } .app-tile { transition: none; } }

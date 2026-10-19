@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hyapps.app/sitemap.xml
