@@ -57,7 +57,7 @@ T = {
         ],
         more="Tüm destek sayfası", support_href="destek.html", privacy_href="gizlilik.html", footer_privacy="Gizlilik politikası",
         final_h="Bugünün ayeti seni bekliyor.",
-        made="Bağımsız bir geliştirici tarafından özenle yapıldı.",
+        made="Bağımsız bir geliştirici tarafından yapıldı.",
         alt="Besmele ekran görüntüsü",
     ),
     "en": dict(
@@ -113,6 +113,25 @@ T = {
 def poster(src, alt, cls=""):
     return (f'<div class="poster {cls}"><img src="{src}" alt="{html.escape(alt)}" width="500" height="1086" '
             f'loading="lazy" decoding="async"></div>')
+
+
+MORE = {
+    "en": ("More from HY Apps", "/crownly/", "/crownly/img/icon.png", "Crownly",
+           "A calm daily logic puzzle with hints that explain the logic.", "All apps", "/"),
+    "tr": ("HY Apps'in diğer uygulamaları", "/crownly/tr/", "/crownly/img/icon.png", "Crownly",
+           "Mantığı anlatan ipuçlarıyla sakin bir günlük bulmaca.", "Tüm uygulamalar", "/tr/"),
+}
+
+
+def more(t):
+    """Cross-promotion card for the studio's other app, plus a link to the studio home."""
+    h, href, icon, name, desc, all_label, all_href = MORE[t["lang"]]
+    return f'''  <section class="more reveal">
+    <p class="kicker">{html.escape(h)}</p>
+    <a class="more-app" href="{href}"><img src="{icon}" alt="" width="64" height="64">
+      <span><strong>{html.escape(name)}</strong><span>{html.escape(desc)}</span></span><b aria-hidden="true">→</b></a>
+    <a class="more-all" href="{all_href}">{html.escape(all_label)} →</a>
+  </section>'''
 
 
 def lang_switch(t):
@@ -171,9 +190,9 @@ def page(t):
    "publisher":{{"@type":"Organization","name":"HY Apps","url":"https://hyapps.app/"}}}}
   </script>
 </head>
-<body>
+<body id="top">
 <header class="bar">
-  <a class="brand" href="/"><img src="{i}icon.png" alt="" width="28" height="28">{t["name"]}</a>
+  <a class="brand" href="./#top"><img src="{i}icon.png" alt="" width="28" height="28">{t["name"]}</a>
   <nav>
     <a href="#features">{t["nav_features"]}</a>
     <a href="#support">{t["nav_support"]}</a>
@@ -217,6 +236,7 @@ def page(t):
     {faq}
     <p style="margin-top:18px"><a href="{t["support_href"]}">{html.escape(t["more"])} →</a></p>
   </section>
+{more(t)}
 </main>
 
 <section class="final">

@@ -119,7 +119,7 @@ T = {
              "Ayarlar → Oyun'dan Renk körü modunu aç. Her bölgeye kendi sembolü eklenir ve sınırlar kalınlaşır; renkleri ayırt etmen gerekmez. Yüksek kontrast tahta paletini de deneyebilirsin."),
         ],
         final_h="Bugünün bulmacası seni bekliyor.",
-        footer_privacy="Gizlilik politikası", made="Bağımsız bir geliştirici tarafından özenle yapıldı.",
+        footer_privacy="Gizlilik politikası", made="Bağımsız bir geliştirici tarafından yapıldı.",
         alts=dict(home="Günün bulmacası ile Crownly ana sayfası", hard="10×10 Günlük Zor bulmaca",
                   hint="Sıradaki mantıklı adımı anlatan ipucu", levels="Yıldızlı seviye listesi",
                   school="Mantık okulu dersleri", dark="Renk körü sembolleriyle koyu tema",
@@ -158,6 +158,25 @@ def board_html():
 def phone(src, alt, cls=""):
     return (f'<div class="phone {cls}"><div class="screen"><img src="{src}" alt="{html.escape(alt)}" '
             f'width="500" height="1086" loading="lazy" decoding="async"></div></div>')
+
+
+MORE = {
+    "en": ("More from HY Apps", "/besmele/en/", "/besmele/img/icon.png", "Bismillah",
+           "Prayer times, the Qur'an with audio, the Qibla and a daily verse. No ads.", "All apps", "/"),
+    "tr": ("HY Apps'in diğer uygulamaları", "/besmele/", "/besmele/img/icon.png", "Besmele",
+           "Namaz vakitleri, sesli Kur'an, kıble ve her gün bir ayet. Reklamsız.", "Tüm uygulamalar", "/tr/"),
+}
+
+
+def more(t):
+    """Cross-promotion card for the studio's other app, plus a link to the studio home."""
+    h, href, icon, name, desc, all_label, all_href = MORE[t["lang"]]
+    return f'''  <section class="more reveal">
+    <p class="kicker">{html.escape(h)}</p>
+    <a class="more-app" href="{href}"><img src="{icon}" alt="" width="64" height="64">
+      <span><strong>{html.escape(name)}</strong><span>{html.escape(desc)}</span></span><b aria-hidden="true">→</b></a>
+    <a class="more-all" href="{all_href}">{html.escape(all_label)} →</a>
+  </section>'''
 
 
 def lang_switch(t):
@@ -218,11 +237,11 @@ def page(t):
    "publisher":{{"@type":"Organization","name":"HY Apps","url":"https://hyapps.app/"}}}}
   </script>
 </head>
-<body>
+<body id="top">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4D06F"/><stop offset="1" stop-color="#C08A12"/></linearGradient></defs></svg>
 
 <header class="bar">
-  <a class="brand" href="/"><img src="{i}icon.png" alt="" width="28" height="28">Crownly</a>
+  <a class="brand" href="./#top"><img src="{i}icon.png" alt="" width="28" height="28">Crownly</a>
   <nav>
     <a href="#features">{t["nav_features"]}</a>
     <a href="#support">{t["nav_support"]}</a>
@@ -275,6 +294,7 @@ def page(t):
     <div class="card"><p>{t["contact"].format(mail=mail)}</p></div>
     {faq}
   </section>
+{more(t)}
 </main>
 
 <section class="final">
