@@ -189,6 +189,7 @@ def page(t):
    "offers":{{"@type":"Offer","price":"0","priceCurrency":"USD"}},
    "publisher":{{"@type":"Organization","name":"HY Apps","url":"https://hyapps.app/"}}}}
   </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "89e9ceae59114244a972f60af4a20851"}}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body id="top">
 <header class="bar">
