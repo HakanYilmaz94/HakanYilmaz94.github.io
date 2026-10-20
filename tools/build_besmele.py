@@ -14,7 +14,7 @@ APP_ID = "6821501310"
 
 T = {
     "tr": dict(
-        lang="tr", name="Besmele", path="/besmele/", img="img/", store=f"https://apps.apple.com/tr/app/id{APP_ID}",
+        lang="tr", name="Besmele", path="/besmele/", img="img/", store=f"https://apps.apple.com/tr/app/apple-store/id{APP_ID}?pt=129592179&ct=web&mt=8",
         title="Besmele · Namaz Vakitleri, Sesli Kur'an ve Kıble (iPhone)",
         desc="Besmele; namaz vakitleri ve ezan, sesli Kur'an ve meal, kıble pusulası, kaza takibi, zikirmatik ve her gün bir ayet, "
              "hadis ve dua. Reklamsız, sade ve büyük yazılı iPhone uygulaması.",
@@ -61,7 +61,7 @@ T = {
         alt="Besmele ekran görüntüsü",
     ),
     "en": dict(
-        lang="en", name="Bismillah", path="/besmele/en/", img="../img/", store=f"https://apps.apple.com/app/id{APP_ID}",
+        lang="en", name="Bismillah", path="/besmele/en/", img="../img/", store=f"https://apps.apple.com/app/apple-store/id{APP_ID}?pt=129592179&ct=web&mt=8",
         title="Bismillah · Prayer Times, Quran Audio and Qibla for iPhone",
         desc="Bismillah is a calm, ad-free companion for prayer times with adhan, the Qur'an with audio and translation, "
              "a Qibla compass, a missed prayer tracker, a dhikr counter and a daily verse, hadith and dua.",
@@ -177,7 +177,12 @@ def page(t):
   <meta property="og:type" content="website">
   <meta property="og:title" content="{html.escape(t["title"])}">
   <meta property="og:description" content="{html.escape(t["og_desc"])}">
-  <meta property="og:image" content="https://hyapps.app/besmele/img/icon.png">
+  <meta property="og:image" content="https://hyapps.app/assets/og/besmele-{t["lang"]}.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(t["title"])}">
+  <meta name="twitter:description" content="{html.escape(t["og_desc"])}">
   <meta property="og:url" content="{canonical}">
   <link rel="icon" href="{i}icon.png">
   <link rel="apple-touch-icon" href="{i}icon.png">
@@ -209,7 +214,7 @@ def page(t):
     <p class="eyebrow">{html.escape(t["eyebrow"])}</p>
     <h1>{t["h1"]}</h1>
     <p class="lead">{html.escape(t["lead"])}</p>
-    <a class="store" href="{t["store"]}">{html.escape(t["cta"])}</a>
+    <a class="store" href="{html.escape(t["store"])}">{html.escape(t["cta"])}</a>
     <p class="cta-note">{html.escape(t["cta_note"])}</p>
   </div>
   <div class="stage" id="stage">
@@ -244,7 +249,7 @@ def page(t):
   <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
   <img src="{i}icon.png" alt="" width="88" height="88">
   <h2>{html.escape(t["final_h"])}</h2>
-  <a class="store" href="{t["store"]}">{html.escape(t["cta"])}</a>
+  <a class="store" href="{html.escape(t["store"])}">{html.escape(t["cta"])}</a>
 </section>
 
 <footer class="foot">

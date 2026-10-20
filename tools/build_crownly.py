@@ -13,7 +13,7 @@ APP_ID = "6822852151"
 T = {
     "en": dict(
         lang="en", path="/crownly/", img="img/", other_lang="tr", other_href="tr/", other_label="Türkçe",
-        store=f"https://apps.apple.com/app/id{APP_ID}",
+        store=f"https://apps.apple.com/app/apple-store/id{APP_ID}?pt=129592179&ct=web&mt=8",
         title="Crownly · Daily Queens Logic Puzzle for iPhone",
         desc="Crownly is a calm daily logic puzzle for iPhone. Place one crown in every row, column and region. "
              "A new puzzle every day, 2,000 levels, hints that explain the logic, color-blind mode. No ads, works offline.",
@@ -70,7 +70,7 @@ T = {
     ),
     "tr": dict(
         lang="tr", path="/crownly/tr/", img="../img/", other_lang="en", other_href="../", other_label="English",
-        store=f"https://apps.apple.com/tr/app/id{APP_ID}",
+        store=f"https://apps.apple.com/tr/app/apple-store/id{APP_ID}?pt=129592179&ct=web&mt=8",
         title="Crownly · Günlük Queens Mantık Bulmacası (iPhone)",
         desc="Crownly, iPhone için sakin bir günlük mantık bulmacası. Her satıra, sütuna ve renkli bölgeye bir taç koy. "
              "Her gün yeni bulmaca, 2.000 seviye, mantığı açıklayan ipuçları, renk körü modu. Reklam yok, internetsiz oynanır.",
@@ -225,7 +225,12 @@ def page(t):
   <meta property="og:type" content="website">
   <meta property="og:title" content="{html.escape(t["title"])}">
   <meta property="og:description" content="{html.escape(t["og_desc"])}">
-  <meta property="og:image" content="https://hyapps.app/crownly/img/icon.png">
+  <meta property="og:image" content="https://hyapps.app/assets/og/crownly-{t["lang"]}.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(t["title"])}">
+  <meta name="twitter:description" content="{html.escape(t["og_desc"])}">
   <meta property="og:url" content="{canonical}">
   <link rel="icon" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -257,7 +262,7 @@ def page(t):
     <p class="eyebrow">{html.escape(t["eyebrow"])}</p>
     <h1>{t["h1"]}</h1>
     <p class="lead">{html.escape(t["lead"])}</p>
-    <a class="store" href="{t["store"]}">{html.escape(t["cta"])}</a>
+    <a class="store" href="{html.escape(t["store"])}">{html.escape(t["cta"])}</a>
     <p class="cta-note">{html.escape(t["cta_note"])}</p>
   </div>
   <div class="stage" id="stage" aria-hidden="false">
@@ -302,7 +307,7 @@ def page(t):
   <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
   <img src="{i}icon.png" alt="" width="88" height="88">
   <h2>{html.escape(t["final_h"])}</h2>
-  <a class="store" href="{t["store"]}">{html.escape(t["cta"])}</a>
+  <a class="store" href="{html.escape(t["store"])}">{html.escape(t["cta"])}</a>
 </section>
 
 <footer class="foot">
