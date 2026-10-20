@@ -5,6 +5,7 @@ Usage: python3 -I tools/build_crownly.py   (run from the site repo root)
 Writes crownly/index.html and crownly/tr/index.html.
 """
 import html
+import json
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -168,6 +169,30 @@ MORE = {
 }
 
 
+GUIDES = {
+    "en": ("Guides", [("How to play Queens", "/crownly/queens-puzzle-rules/"), ("6 techniques to solve any board", "/crownly/queens-strategy/"),
+                      ("LinkedIn Queens alternative", "/crownly/linkedin-queens-alternative/")]),
+    "tr": ("Rehberler", [("Queens nasıl oynanır?", "/crownly/tr/queens-nasil-oynanir/"), ("Her tahtayı çözen 6 teknik", "/crownly/tr/queens-stratejileri/"),
+                         ("LinkedIn Queens alternatifi", "/crownly/tr/linkedin-queens-alternatifi/")]),
+}
+
+
+def guides(t):
+    h, links = GUIDES[t["lang"]]
+    items = "".join(f'<a href="{href}">{html.escape(label)} →</a>' for label, href in links)
+    return f'''  <section class="support reveal">
+    <h2>{html.escape(h)}</h2>
+    <div class="guides-links">{items}</div>
+  </section>'''
+
+
+def faq_ld(t):
+    """FAQPage structured data so Google can show the questions as rich results."""
+    data = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}
+    return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>'
+
+
 def more(t):
     """Cross-promotion card for the studio's other app, plus a link to the studio home."""
     h, href, icon, name, desc, all_label, all_href = MORE[t["lang"]]
@@ -241,7 +266,8 @@ def page(t):
    "offers":{{"@type":"Offer","price":"0","priceCurrency":"USD"}},
    "publisher":{{"@type":"Organization","name":"HY Apps","url":"https://hyapps.app/"}}}}
   </script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "89e9ceae59114244a972f60af4a20851"}}'></script><!-- End Cloudflare Web Analytics -->
+{faq_ld(t)}
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "89e9ceae59114244a972f60af4a20851"}}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body id="top">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4D06F"/><stop offset="1" stop-color="#C08A12"/></linearGradient></defs></svg>
@@ -294,6 +320,8 @@ def page(t):
     <h2>{html.escape(t["fair_h"])}</h2>
     <p>{html.escape(t["fair"])}</p>
   </section>
+
+{guides(t)}
 
   <section class="support reveal" id="support">
     <h2>{html.escape(t["support_h"])}</h2>
