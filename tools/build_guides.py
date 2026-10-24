@@ -434,6 +434,8 @@ def build_crownly_guides():
 STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
           ("/crownly/", {"en": "/crownly/", "tr": "/crownly/tr/"}), ("/crownly/tr/", {"en": "/crownly/", "tr": "/crownly/tr/"}),
           ("/crownly/privacy.html", {}),
+          ("/quickwits/", {"en": "/quickwits/", "tr": "/quickwits/tr/"}), ("/quickwits/tr/", {"en": "/quickwits/", "tr": "/quickwits/tr/"}),
+          ("/quickwits/privacy.html", {}),
           ("/besmele/", {"tr": "/besmele/", "en": "/besmele/en/"}), ("/besmele/en/", {"tr": "/besmele/", "en": "/besmele/en/"}),
           ("/besmele/destek.html", {}), ("/besmele/en/destek.html", {}), ("/besmele/gizlilik.html", {}), ("/besmele/en/gizlilik.html", {})]
 

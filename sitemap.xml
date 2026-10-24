@@ -13,6 +13,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/"/></url>
   <url><loc>https://hyapps.app/crownly/privacy.html</loc></url>
+  <url><loc>https://hyapps.app/quickwits/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/"/></url>
+  <url><loc>https://hyapps.app/quickwits/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/"/></url>
+  <url><loc>https://hyapps.app/quickwits/privacy.html</loc></url>
   <url><loc>https://hyapps.app/besmele/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/"/></url>
