@@ -293,9 +293,76 @@ def page(t):
 '''
 
 
+def join_page():
+    """Where a room invite link lands when the app does not open it: the code, an open button, the store."""
+    en, tr = T["en"], T["tr"]
+    store = lambda t: (f'<a class="store" href="{html.escape(t["store"])}">{html.escape(t["cta"])}</a>' if LIVE
+                       else f'<span class="store off">{html.escape(t["soon"])}</span>')
+    itunes = f'\n  <meta name="apple-itunes-app" content="app-id={APP_ID}">' if LIVE else ""
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Join a Quick Wits room</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#17123a">{itunes}
+  <link rel="icon" href="/quickwits/img/icon.png">
+  <style>
+    body {{ margin: 0; min-height: 100vh; display: grid; place-items: center; background: #17123a; color: #fff;
+      font: 17px/1.45 ui-rounded, -apple-system, system-ui, sans-serif; text-align: center; }}
+    main {{ padding: 32px 20px; max-width: 420px; }}
+    img {{ border-radius: 22px; }}
+    h1 {{ font-size: 26px; margin: 18px 0 6px; }}
+    p {{ color: #b9b3d9; margin: 0 0 14px; }}
+    .code {{ font-size: 56px; font-weight: 900; letter-spacing: 10px; color: #ffc93c; margin: 8px 0 18px; }}
+    a.open, .store {{ display: block; padding: 16px; border-radius: 18px; font-weight: 800; text-decoration: none; margin: 10px 0; }}
+    a.open {{ background: #ffc93c; color: #17123a; }}
+    .store {{ background: rgba(255,255,255,.1); color: #fff; }}
+    .off {{ opacity: .6; }}
+    [data-lang] {{ display: none; }}
+    html[lang=en] [data-lang=en], html[lang=tr] [data-lang=tr] {{ display: block; }}
+  </style>
+</head>
+<body>
+<main>
+  <img src="/quickwits/img/icon.png" alt="" width="88" height="88">
+  <div data-lang="en"><h1>You're invited to a Quick Wits room</h1><p>Room code</p></div>
+  <div data-lang="tr"><h1>Kıvrak Zeka odasına davetlisin</h1><p>Oda kodu</p></div>
+  <div class="code" id="code">····</div>
+  <div data-lang="en">
+    <a class="open" id="open-en" href="quickwits://join">Open in Quick Wits</a>
+    {store(en)}
+    <p>No app yet? Install it, open it, tap Online room and enter the code.</p>
+  </div>
+  <div data-lang="tr">
+    <a class="open" id="open-tr" href="quickwits://join">Kıvrak Zeka'da aç</a>
+    {store(tr)}
+    <p>Uygulama yok mu? Yükle, aç, Online oda'ya dokun ve kodu gir.</p>
+  </div>
+</main>
+<script>
+  const code = (new URLSearchParams(location.search).get("code") || "").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 4);
+  if ((navigator.language || "").toLowerCase().startsWith("tr")) document.documentElement.lang = "tr";
+  if (code.length === 4) {{
+    document.getElementById("code").textContent = code;
+    for (const id of ["open-en", "open-tr"]) document.getElementById(id).href = "quickwits://join?code=" + code;
+  }}
+</script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "89e9ceae59114244a972f60af4a20851"}}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
+'''
+
+
 for key, out in (("en", "quickwits/index.html"), ("tr", "quickwits/tr/index.html")):
     path = os.path.join(ROOT, out)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w") as f:
         f.write(page(T[key]))
     print("wrote", out)
+
+os.makedirs(os.path.join(ROOT, "quickwits/join"), exist_ok=True)
+with open(os.path.join(ROOT, "quickwits/join/index.html"), "w") as f:
+    f.write(join_page())
+print("wrote quickwits/join/index.html")

@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["25BD3YA96V.com.hakanyilmaz94.quickwits"],
+        "components": [
+          { "/": "/quickwits/join/*", "comment": "Quick Wits room invites: /quickwits/join/?code=ABCD" },
+          { "/": "/quickwits/join", "comment": "Same, without the trailing slash" }
+        ]
+      }
+    ]
+  }
+}
