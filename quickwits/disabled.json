@@ -1,0 +1,5 @@
+{
+  "_help": "Quick Wits reads this at most once a day. To switch a question off until a fix ships, add its English text exactly as in the app's content files (estimate/timeline/crowd questions, place names, higher-lower questions or items, Wavelength clues, Minority Wins/Dilemma first options, What Happens scenes, Cause Chain first steps, Pixel Reveal names). Up to 150. To switch a whole game off, add its id (e.g. pixelReveal). Take an entry out once the update with the fix is out.",
+  "questions": [],
+  "games": []
+}
