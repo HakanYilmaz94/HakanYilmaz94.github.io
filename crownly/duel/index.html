@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Join a Crownly duel</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#3B2A57">
+  <link rel="icon" href="/crownly/img/icon.png">
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #3B2A57; color: #fff;
+      font: 17px/1.45 -apple-system, system-ui, sans-serif; text-align: center; }
+    main { padding: 32px 20px; max-width: 420px; }
+    img { border-radius: 22px; }
+    h1 { font: 600 27px/1.25 "New York", ui-serif, Georgia, serif; margin: 18px 0 6px; }
+    p { color: #CFC3E6; margin: 0 0 14px; }
+    .code { font-size: 56px; font-weight: 800; letter-spacing: 10px; color: #F2C94C; margin: 8px 0 18px; }
+    a.open, a.store { display: block; padding: 16px; border-radius: 18px; font-weight: 700; text-decoration: none; margin: 10px 0; }
+    a.open { background: linear-gradient(#F4D06F, #C9972A); color: #2E2144; }
+    a.store { background: rgba(255,255,255,.12); color: #fff; }
+    [data-lang] { display: none; }
+    html[lang=en] [data-lang=en], html[lang=tr] [data-lang=tr] { display: block; }
+  </style>
+</head>
+<body>
+<main>
+  <img src="/crownly/img/icon.png" alt="" width="88" height="88">
+  <div data-lang="en"><h1>You're invited to a Crownly duel</h1><p>Room code</p></div>
+  <div data-lang="tr"><h1>Crownly düellosuna davetlisin</h1><p>Oda kodu</p></div>
+  <div class="code" id="code">····</div>
+  <div data-lang="en">
+    <a class="open" id="open-en" href="crownly://duel">Open in Crownly</a>
+    <a class="store" href="https://apps.apple.com/app/apple-store/id6822852151?pt=129592179&amp;ct=duel&amp;mt=8">Get Crownly on the App Store</a>
+    <p>Then open Duel → Join with a code and enter the code above.</p>
+  </div>
+  <div data-lang="tr">
+    <a class="open" id="open-tr" href="crownly://duel">Crownly'de aç</a>
+    <a class="store" href="https://apps.apple.com/app/apple-store/id6822852151?pt=129592179&amp;ct=duel&amp;mt=8">Crownly'yi App Store'dan indir</a>
+    <p>Sonra Düello → Koda katıl'a dokun ve yukarıdaki kodu gir.</p>
+  </div>
+</main>
+<script>
+  const code = (new URLSearchParams(location.search).get("code") || "").replace(/[^0-9]/g, "").slice(0, 4);
+  if ((navigator.language || "").toLowerCase().startsWith("tr")) document.documentElement.lang = "tr";
+  if (code.length === 4) {
+    document.getElementById("code").textContent = code;
+    for (const id of ["open-en", "open-tr"]) document.getElementById(id).href = "crownly://duel?code=" + code;
+  }
+</script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "89e9ceae59114244a972f60af4a20851"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

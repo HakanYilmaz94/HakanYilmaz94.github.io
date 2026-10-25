@@ -2,10 +2,34 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["25BD3YA96V.com.hakanyilmaz94.quickwits"],
+        "appIDs": [
+          "25BD3YA96V.com.hakanyilmaz94.quickwits"
+        ],
         "components": [
-          { "/": "/quickwits/join/*", "comment": "Quick Wits room invites: /quickwits/join/?code=ABCD" },
-          { "/": "/quickwits/join", "comment": "Same, without the trailing slash" }
+          {
+            "/": "/quickwits/join/*",
+            "comment": "Quick Wits room invites: /quickwits/join/?code=ABCD"
+          },
+          {
+            "/": "/quickwits/join",
+            "comment": "Same, without the trailing slash"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "25BD3YA96V.com.hakanyilmaz94.crownly",
+          "25BD3YA96V.com.hakanyilmaz94.crownly.dev"
+        ],
+        "components": [
+          {
+            "/": "/crownly/duel/*",
+            "comment": "Crownly duel room invites: /crownly/duel/?code=4729"
+          },
+          {
+            "/": "/crownly/duel",
+            "comment": "Same, without the trailing slash"
+          }
         ]
       }
     ]
