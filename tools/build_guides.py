@@ -436,6 +436,8 @@ STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
           ("/crownly/privacy.html", {}),
           ("/quickwits/", {"en": "/quickwits/", "tr": "/quickwits/tr/"}), ("/quickwits/tr/", {"en": "/quickwits/", "tr": "/quickwits/tr/"}),
           ("/quickwits/privacy.html", {}),
+          ("/brickhaven/", {"en": "/brickhaven/", "tr": "/brickhaven/tr/"}), ("/brickhaven/tr/", {"en": "/brickhaven/", "tr": "/brickhaven/tr/"}),
+          ("/brickhaven/privacy.html", {}),
           ("/besmele/", {"tr": "/besmele/", "en": "/besmele/en/"}), ("/besmele/en/", {"tr": "/besmele/", "en": "/besmele/en/"}),
           ("/besmele/destek.html", {}), ("/besmele/en/destek.html", {}), ("/besmele/gizlilik.html", {}), ("/besmele/en/gizlilik.html", {})]
 

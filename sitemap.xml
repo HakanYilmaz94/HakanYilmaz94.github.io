@@ -20,6 +20,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/"/></url>
   <url><loc>https://hyapps.app/quickwits/privacy.html</loc></url>
+  <url><loc>https://hyapps.app/brickhaven/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/privacy.html</loc></url>
   <url><loc>https://hyapps.app/besmele/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/"/></url>
