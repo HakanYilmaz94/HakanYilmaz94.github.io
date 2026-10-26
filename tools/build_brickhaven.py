@@ -200,10 +200,10 @@ def page(t):
 
 PRIVACY = {
     "en": dict(
-        h="Privacy Policy", date="Brickhaven: Cozy Brick Builder · Effective October 26, 2026",
+        h="Privacy Policy", date="Brickhaven: Cozy Brick Builder · Effective October 27, 2026",
         sections=[
-            (None, "Brickhaven is a building game. It collects no personal data, has no ads and no analytics tools, and does "
-                   "not track you across other apps or websites."),
+            (None, "Brickhaven is a building game. It collects no personal data, has no ads, and does not track you across other "
+                   "apps or websites. It sends only anonymous play statistics and crash reports."),
             ("No account", "You do not need an account to play. We do not ask for your name, e-mail address, contacts or location."),
             ("Stored on your device and in your iCloud", "Your saved towns, designs and settings are stored on your device. If "
              "iCloud is on, the game also keeps a copy of your saves in your own iCloud (iCloud key-value storage) so they "
@@ -215,19 +215,24 @@ PRIVACY = {
              "game asks for permission to add them to your Photos. It never reads your photo library."),
             ("Purchases", "In-app purchases are made through the App Store. Payment is handled entirely by Apple; we never see "
              "your payment details or Apple Account."),
-            ("Crash reports", "If you agreed to share analytics with app developers in your device settings, Apple may send us "
-             "anonymous crash reports. We use them only to fix bugs."),
+            ("Anonymous statistics and crash reports", "To learn which parts of the game are too hard or too long and to fix bugs, "
+             "the App Store version sends anonymous events through Google Firebase Analytics and Firebase Crashlytics: for "
+             "example which building or tutorial step was finished, how long it took, whether the purchase screen was opened and a purchase was made (without any payment details), "
+             "and crash details with the device model and iOS version. They contain no name, e-mail address, location, "
+             "advertising identifier or saved game, are not linked to your identity and are not used for ads or tracking. "
+             "Google processes this data under the <a href=\"https://firebase.google.com/support/privacy\">Firebase privacy terms</a>. "
+             "Apple may also send us anonymous crash reports if you share analytics with app developers in your device settings."),
             ("This website", "hyapps.app uses Cloudflare Web Analytics, which counts visits without cookies and without "
              "identifying you."),
-            ("Children", "Brickhaven is suitable for all ages and collects no data from anyone, including children."),
+            ("Children", "Brickhaven is suitable for all ages. It collects no personal data from anyone, including children."),
             ("Changes and contact", "If this policy changes, the new version will be posted on this page with a new date. "
              "Questions: <a href=\"mailto:hyapps@outlook.com?subject=Brickhaven\">hyapps@outlook.com</a>."),
         ]),
     "tr": dict(
-        h="Gizlilik Politikası", date="Brickhaven: Tuğla Yapı Ustası · Yürürlük: 26 Ekim 2026",
+        h="Gizlilik Politikası", date="Brickhaven: Tuğla Yapı Ustası · Yürürlük: 27 Ekim 2026",
         sections=[
-            (None, "Brickhaven bir inşa oyunudur. Kişisel veri toplamaz, reklam ve analiz aracı içermez, seni başka uygulama "
-                   "ve sitelerde izlemez."),
+            (None, "Brickhaven bir inşa oyunudur. Kişisel veri toplamaz, reklam içermez, seni başka uygulama ve sitelerde "
+                   "izlemez. Yalnız anonim oyun istatistikleri ve çökme raporları gönderir."),
             ("Hesap yok", "Oynamak için hesap gerekmez. Adını, e-posta adresini, kişilerini ya da konumunu istemeyiz."),
             ("Cihazında ve iCloud'unda saklananlar", "Kayıtlı kasabaların, tasarımların ve ayarların cihazında saklanır. iCloud "
              "açıksa oyun, diğer cihazlarına ulaşsın diye kayıtlarının bir kopyasını kendi iCloud'unda (iCloud anahtar-değer "
@@ -240,10 +245,16 @@ PRIVACY = {
              "seçersen oyun, Fotoğraflar'a ekleme izni ister. Fotoğraf arşivini hiçbir zaman okumaz."),
             ("Satın almalar", "Uygulama içi satın almalar App Store üzerinden yapılır. Ödemeyi tamamen Apple yürütür; ödeme "
              "bilgilerini ya da Apple Hesabını görmeyiz."),
-            ("Çökme raporları", "Cihaz ayarlarında uygulama geliştiricileriyle analiz paylaşmayı kabul ettiysen Apple bize anonim "
-             "çökme raporları gönderebilir. Bunları yalnız hataları düzeltmek için kullanırız."),
+            ("Anonim istatistikler ve çökme raporları", "Oyunun hangi kısmının fazla zor ya da uzun olduğunu anlamak ve hataları "
+             "düzeltmek için App Store sürümü Google Firebase Analytics ve Firebase Crashlytics ile anonim olaylar gönderir: "
+             "örneğin hangi binanın ya da eğitim adımının bittiği, ne kadar sürdüğü, satın alma ekranının açılıp açılmadığı ve satın alma yapılıp yapılmadığı (ödeme bilgisi olmadan); "
+             "çökmelerde cihaz modeli ve iOS sürümüyle birlikte hata ayrıntıları. Bunlar ad, e-posta, konum, reklam kimliği "
+             "ya da oyun kaydı içermez, kimliğine bağlanmaz, reklam ya da izleme için kullanılmaz. Google bu verileri "
+             "<a href=\"https://firebase.google.com/support/privacy\">Firebase gizlilik koşulları</a> kapsamında işler. "
+             "Cihaz ayarlarında uygulama geliştiricileriyle analiz paylaşmayı kabul ettiysen Apple da bize anonim çökme "
+             "raporları gönderebilir."),
             ("Bu web sitesi", "hyapps.app, ziyaretleri çerezsiz ve seni tanımadan sayan Cloudflare Web Analytics kullanır."),
-            ("Çocuklar", "Brickhaven her yaşa uygundur ve çocuklar dahil kimseden veri toplamaz."),
+            ("Çocuklar", "Brickhaven her yaşa uygundur. Çocuklar dahil kimseden kişisel veri toplamaz."),
             ("Değişiklikler ve iletişim", "Bu politika değişirse yeni hâli yeni tarihle bu sayfada yayınlanır. Sorular için: "
              "<a href=\"mailto:hyapps@outlook.com?subject=Brickhaven\">hyapps@outlook.com</a>."),
         ]),
@@ -267,7 +278,7 @@ def privacy():
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Brickhaven Privacy Policy · Gizlilik Politikası</title>
-  <meta name="description" content="Brickhaven privacy policy: no account, no ads, no tracking, no personal data collected.">
+  <meta name="description" content="Brickhaven privacy policy: no account, no ads, no tracking, no personal data; anonymous statistics only.">
   <link rel="canonical" href="https://hyapps.app/brickhaven/privacy.html">
   <link rel="icon" href="/brickhaven/img/icon.png">
   <link rel="stylesheet" href="/brickhaven/brickhaven.css">
