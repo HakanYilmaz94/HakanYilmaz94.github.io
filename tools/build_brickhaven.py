@@ -22,11 +22,11 @@ T = {
         lang="en", path="/brickhaven/", img="img/", other_href="tr/", other_label="Türkçe", privacy_href="privacy.html",
         name="Brickhaven",
         store=f"https://apps.apple.com/app/apple-store/id{APP_ID}?pt=129592179&ct=web&mt=8",
-        title="Brickhaven: Cozy Brick Builder · Build a seaside town brick by brick (iPhone & iPad)",
+        title="Brickhaven: Cozy Brick Builder · Build a seaside town one brick at a time (iPhone & iPad)",
         desc="Brickhaven is a cozy first-person building game for iPhone and iPad. Find the right brick, carry it, lay it, "
              "and rebuild Grandma Rose's seaside town one building at a time. Offline, no timers, no ads.",
         eyebrow="A cozy building game for iPhone & iPad",
-        h1="Rebuild a seaside town, <em>brick by brick.</em>",
+        h1="Rebuild a seaside town, <em>one brick at a time.</em>",
         lead="Grandma Rose left you Brickhaven, a little town by the sea that has fallen to ruin. Pick the right brick from "
              "the pile, carry it to the wall and lay it in place, until the bakery smells of bread again.",
         soon="Coming soon to the App Store", cta="Download on the App Store",
@@ -36,7 +36,7 @@ T = {
         captions={"firin": "Bakery", "ahir": "Red Barn", "ev": "Flower Shop", "kafe": "Seaside Café",
                   "dondurmaci": "Ice Cream Parlor", "kitapci": "Bookshop", "itfaiye": "Fire Station", "istasyon": "Train Station"},
         features=[
-            ("🧱", "Brick by brick", "Find the right shape and colour in the pile, carry up to twenty at a time, and lay every one yourself."),
+            ("🧱", "Every brick by hand", "Find the right shape and colour in the pile, carry up to twenty at a time, and lay every one yourself."),
             ("🏡", "A story to finish", "Each building brings its owner back: Martha's bakery, Joe's barn, Daisy's flowers, all the way to the station."),
             ("📐", "Your own design", "At the Architect's Table you draw your own house, café or shop, then build it on your lot."),
             ("🌷", "Decorate the town", "Benches, lamps, flower beds, trees, cats and chickens: make the streets your own."),
