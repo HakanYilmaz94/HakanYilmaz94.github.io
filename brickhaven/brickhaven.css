@@ -58,6 +58,8 @@ h2 { font-size: clamp(26px, 4vw, 36px); line-height: 1.15; margin: 0 0 18px; }
 
 .town { padding: 24px 0 48px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+/* Nine buildings: three by three on wide screens (four across left the last one alone). */
+@media (min-width: 760px) { .cards { grid-template-columns: repeat(3, 1fr); } }
 .cards figure { margin: 0; background: #fff; padding: 8px 8px 4px; border-radius: 6px; box-shadow: 0 6px 16px rgba(0,0,0,.12); }
 .cards figure:nth-child(odd) { transform: rotate(-1.2deg); }
 .cards figure:nth-child(even) { transform: rotate(1deg); }

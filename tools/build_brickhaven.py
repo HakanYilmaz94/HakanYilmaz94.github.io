@@ -13,7 +13,7 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_ID = "6826958666"
 LIVE = False
-BUILDINGS = ["firin", "ahir", "ev", "kafe", "dondurmaci", "kitapci", "itfaiye", "istasyon"]
+BUILDINGS = ["firin", "ahir", "ev", "kafe", "dondurmaci", "kitapci", "saat", "itfaiye", "istasyon"]
 ANALYTICS = ("<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
              "data-cf-beacon='{\"token\": \"89e9ceae59114244a972f60af4a20851\"}'></script><!-- End Cloudflare Web Analytics -->")
 
@@ -32,15 +32,15 @@ T = {
         soon="Coming soon to the App Store", cta="Download on the App Store",
         note="iPhone & iPad · Offline · No ads",
         nav_town="The town", nav_support="Support",
-        town_kicker="Eight buildings, eight stories", town_h="Every building has its owner waiting.",
+        town_kicker="Nine buildings, nine stories", town_h="Every building has its owner waiting.",
         captions={"firin": "Bakery", "ahir": "Red Barn", "ev": "Flower Shop", "kafe": "Seaside Café",
-                  "dondurmaci": "Ice Cream Parlor", "kitapci": "Bookshop", "itfaiye": "Fire Station", "istasyon": "Train Station"},
+                  "dondurmaci": "Ice Cream Parlor", "kitapci": "Bookshop", "saat": "Clock Tower", "itfaiye": "Fire Station", "istasyon": "Train Station"},
         features=[
-            ("🧱", "Every brick by hand", "Find the right shape and colour in the pile, carry up to twenty at a time, and lay every one yourself."),
+            ("🧱", "Every brick by hand", "Find the right shape and color in the pile, carry up to twenty at a time, and lay every one yourself."),
             ("🏡", "A story to finish", "Each building brings its owner back: Martha's bakery, Joe's barn, Daisy's flowers, all the way to the station."),
             ("📐", "Your own design", "At the Architect's Table you draw your own house, café or shop, then build it on your lot."),
             ("🌷", "Decorate the town", "Benches, lamps, flower beds, trees, cats and chickens: make the streets your own."),
-            ("🛠️", "Skills that grow", "Stronger arms, faster hands, a lift that climbs higher and a magnet that pulls bricks to you."),
+            ("🛠️", "Skills that grow", "Stronger arms, faster hands, a quicker lift, a higher jump and a magnet that pulls bricks to you."),
             ("☕", "Calm by design", "Play offline at your own pace. No timers, no energy, no ads. The first two buildings are free; the rest of the town is a one-time purchase."),
         ],
         support_h="Support",
@@ -54,8 +54,8 @@ T = {
              "Yes. Your saves are kept in your own iCloud, so signing in with the same Apple Account brings them along."),
             ("I bought it on another device. How do I get it back?",
              "Open the purchase screen and tap Restore. Purchases are also shared with your Family Sharing group."),
-            ("Is there a mode for colour blindness?",
-             "Yes: Settings → Colour-blind mode prints a small symbol on every brick colour, so shapes, not colours alone, tell them apart."),
+            ("Is there a mode for color blindness?",
+             "Yes: Settings → Color-blind mode prints a small symbol on every brick color, so shapes, not colors alone, tell them apart."),
         ],
         made="Made with care by an independent developer.", footer_privacy="Privacy policy",
     ),
@@ -73,15 +73,15 @@ T = {
         soon="Yakında App Store'da", cta="App Store'dan indir",
         note="iPhone ve iPad · İnternetsiz · Reklamsız",
         nav_town="Kasaba", nav_support="Destek",
-        town_kicker="Sekiz bina, sekiz hikâye", town_h="Her binanın sahibi geri dönmeyi bekliyor.",
+        town_kicker="Dokuz bina, dokuz hikâye", town_h="Her binanın sahibi geri dönmeyi bekliyor.",
         captions={"firin": "Fırın", "ahir": "Kırmızı Ahır", "ev": "Çiçekçi", "kafe": "Sahil Kafesi",
-                  "dondurmaci": "Dondurmacı", "kitapci": "Kitapçı", "itfaiye": "İtfaiye", "istasyon": "Tren İstasyonu"},
+                  "dondurmaci": "Dondurmacı", "kitapci": "Kitapçı", "saat": "Saat Kulesi", "itfaiye": "İtfaiye", "istasyon": "Tren İstasyonu"},
         features=[
             ("🧱", "Tuğla tuğla", "Yığında doğru şekli ve rengi bul, bir seferde yirmiye kadar taşı, her birini kendin yerine koy."),
             ("🏡", "Bitirilecek bir hikâye", "Her bina sahibini geri getirir: Martha'nın fırını, Joe'nun ahırı, Daisy'nin çiçekleri, istasyona kadar."),
             ("📐", "Kendi tasarımın", "Mimar Masası'nda kendi evini, kafeni ya da dükkânını çiz, sonra arsana kur."),
             ("🌷", "Kasabayı süsle", "Bank, fener, çiçek tarhı, ağaç, kedi ve tavuk: sokakları kendine göre donat."),
-            ("🛠️", "Gelişen ustalık", "Daha güçlü kollar, daha hızlı eller, daha yükseğe çıkan asansör ve tuğlaları çeken mıknatıs."),
+            ("🛠️", "Gelişen ustalık", "Daha güçlü kollar, daha hızlı eller, daha hızlı asansör, daha yüksek zıplama ve tuğlaları çeken mıknatıs."),
             ("☕", "Sakin oyun", "İnternetsiz, kendi hızında oyna. Zamanlayıcı yok, enerji yok, reklam yok. İlk iki bina ücretsiz; kasabanın geri kalanı tek seferlik satın alma."),
         ],
         support_h="Destek",
