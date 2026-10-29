@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Reaction Time Test: How Fast Are Your Reflexes?</title>
+  <meta name="description" content="Test your reaction time right here: tap when the box turns green. What is a normal reaction time, why it changes and how to get faster.">
+  <meta name="theme-color" content="#17123a">
+  <link rel="canonical" href="https://hyapps.app/quickwits/reaction-time-test/">
+  <link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/reaction-time-test/">
+  <link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/refleks-testi/">
+  <link rel="alternate" hreflang="x-default" href="https://hyapps.app/quickwits/reaction-time-test/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Reaction Time Test: How Fast Are Your Reflexes?">
+  <meta property="og:description" content="Test your reaction time right here: tap when the box turns green. What is a normal reaction time, why it changes and how to get faster.">
+  <meta property="og:url" content="https://hyapps.app/quickwits/reaction-time-test/">
+  <meta property="og:image" content="https://hyapps.app/assets/og/quickwits-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/quickwits/img/icon.png">
+  <link rel="apple-touch-icon" href="/quickwits/img/icon.png">
+  <link rel="stylesheet" href="/assets/app.css">
+  <style>
+    .rt { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; width: 100%; min-height: 240px;
+          margin: 8px 0 28px; padding: 24px 16px; border: 0; border-radius: 24px; cursor: pointer; font: inherit; color: #fff;
+          background: #3d2660; touch-action: manipulation; user-select: none; -webkit-user-select: none; transition: background .08s; }
+    .rt strong { font-family: var(--serif); font-size: clamp(34px, 7vw, 54px); line-height: 1.1; }
+    .rt span { font-size: 17px; opacity: .9; min-height: 1.6em; }
+    .rt.wait { background: #b8402f; } .rt.go { background: #23935a; } .rt.early { background: #8a5a00; }
+    .rt:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Quick Wits", "item": "https://hyapps.app/quickwits/"}, {"@type": "ListItem", "position": 2, "name": "Reaction Time Test: How Fast Are Your Reflexes?", "item": "https://hyapps.app/quickwits/reaction-time-test/"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Reaction Time Test: How Fast Are Your Reflexes?", "description": "Test your reaction time right here: tap when the box turns green. What is a normal reaction time, why it changes and how to get faster.", "inLanguage": "en", "mainEntityOfPage": "https://hyapps.app/quickwits/reaction-time-test/", "publisher": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"}}</script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "89e9ceae59114244a972f60af4a20851"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="/quickwits/"><img src="/quickwits/img/icon.png" alt="" width="28" height="28">Quick Wits</a>
+  <nav><span class="lang"><a href="/quickwits/reaction-time-test/" hreflang="en" lang="en" class="on" aria-current="page">EN</a><a href="/quickwits/tr/refleks-testi/" hreflang="tr" lang="tr">TR</a></span></nav>
+</header>
+<article class="article">
+  <p class="crumbs"><a href="/quickwits/">Quick Wits</a></p>
+  <h1>Reaction Time Test: How Fast Are Your Reflexes?</h1>
+  <p class="intro">Test your reaction time right here: tap when the box turns green. What is a normal reaction time, why it changes and how to get faster.</p>
+  <button type="button" class="rt" id="rt" aria-label="Reaction time test" aria-live="polite"><strong>Tap to start</strong><span>Wait for green, then tap as fast as you can.</span></button>
+
+  <script>
+  (function () {
+    var T = {"start": "Tap to start", "start_sub": "Wait for green, then tap as fast as you can.", "wait": "Wait for green…", "wait_sub": "", "go": "Tap!", "early": "Too soon!", "again": "Tap to try again.", "next": "Try {n} of 5. Tap for the next one.", "avg": "Your average: {ms} ms. Tap to start over.", "label": "Reaction time test"}, b = document.getElementById("rt"), big = b.querySelector("strong"), small = b.querySelector("span");
+    var state = "idle", start = 0, timer = 0, results = [];
+    function show(cls, a, c) { b.className = "rt " + cls; big.textContent = a; small.textContent = c; }
+    function press(e) {
+      if (e) e.preventDefault();
+      if (state === "wait") { clearTimeout(timer); state = "early"; show("early", T.early, T.again); return; }
+      if (state === "go") {
+        var ms = Math.round(performance.now() - start);
+        results.push(ms); state = "done";
+        if (results.length < 5) { show("", ms + " ms", T.next.replace("{n}", results.length)); }
+        else {
+          var avg = Math.round(results.reduce(function (s, x) { return s + x; }, 0) / results.length);
+          show("", ms + " ms", T.avg.replace("{ms}", avg)); results = [];
+        }
+        return;
+      }
+      state = "wait"; show("wait", T.wait, T.wait_sub);
+      timer = setTimeout(function () { state = "go"; start = performance.now(); show("go", T.go, ""); }, 1500 + Math.random() * 2500);
+    }
+    b.addEventListener("pointerdown", press);
+    b.addEventListener("keydown", function (e) { if ((e.key === " " || e.key === "Enter") && !e.repeat) press(e); });
+  })();
+  </script>
+  <h2>What is a normal reaction time?</h2>
+  <p>For a simple test like this one, where you react to one signal you are already waiting for, most adults land somewhere between 200 and 300 milliseconds. Around 250 ms is typical; under 200 ms is very quick.</p>
+  <p>A screen adds its own delay: the display, the touch sensor and the browser all take a few milliseconds, so the same person can score differently on different devices. Compare yourself on the same phone, not with a friend&#x27;s laptop.</p>
+  <h2>What changes your reaction time</h2>
+  <ul><li>Sleep and tiredness: a short night slows you down more than almost anything else.</li><li>Warming up: the first few tries are usually the slowest.</li><li>Attention: looking straight at the spot where the signal comes is faster than looking around it.</li><li>Choices: when you must decide what to do (tap the green, not the yellow), reaction time grows.</li></ul>
+  <h2>How to get faster</h2>
+  <ol><li>Rest your finger just above the screen instead of lifting it from far away.</li><li>Don&#x27;t guess the moment: anticipating leads to false starts, which cost more than a slow tap.</li><li>Practise little and often; short daily sessions beat one long one.</li><li>Play against friends: a little rivalry makes almost everyone faster.</li></ol>
+  <p>Quick Wits turns this into a party game: in Quick Draw two or more players wait for green and the first to tap wins, with a yellow bait to catch the jumpy ones. Balloon Pop, Star or Bomb and Colour Trap test reflexes with a decision on top. Timing is measured on each player&#x27;s own phone, so a slow connection never costs points.</p>
+  <div class="related"><p class="kicker">More guides</p><a href="/quickwits/games-to-play-with-friends-on-one-phone/">Games to Play with Friends on One Phone →</a><a href="/quickwits/group-games-for-game-night/">Group Games for Game Night →</a></div>
+  <div class="cta-card">
+    <img src="/quickwits/img/icon.png" alt="" width="72" height="72">
+    <h2>87 quick games for your next game night</h2>
+    <p>Quick Wits: reflex duels, guessing, memory and group games. Pass one phone or open an online room. Free on iPhone.</p>
+    <span class="store" aria-disabled="true">Coming soon to the App Store</span>
+  </div>
+</article>
+<footer class="foot">
+  <a href="/">HY Apps</a><a href="/quickwits/">Quick Wits</a>
+  <a href="/quickwits/privacy.html">Privacy policy</a><a href="mailto:hyapps@outlook.com">hyapps@outlook.com</a>
+  <p>Made with care by an independent developer. © 2026 HY Apps</p>
+</footer>
+</body>
+</html>

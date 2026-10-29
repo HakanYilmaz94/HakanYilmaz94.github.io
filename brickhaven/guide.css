@@ -1,0 +1,19 @@
+/* Brickhaven theme for the guide pages, on top of /assets/app.css: warm cream, teal and brick. */
+:root {
+  --bg: #fbf6ea;
+  --card: #fffdf8;
+  --ink: #3b3330;
+  --muted: #7a6c64;
+  --line: #eadfcd;
+  --gold: #c8603e;
+  --gold-hi: #f0a283;
+  --night: #1f6f76;
+  --night-2: #2f9fa8;
+  --on-night: #fbf6ea;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #18201f; --card: #222c2b; --ink: #f1ebe2; --muted: #b4aaa0; --line: #33403e; --gold: #e07a55; }
+}
+.bar { background: rgba(31, 111, 118, .7); }
+.foot { background: #143f43; }
+.article .shot { width: 100%; height: auto; border-radius: 18px; margin: 8px 0 24px; }

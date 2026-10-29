@@ -667,4 +667,34 @@
   <url><loc>https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-queens-alternative/"/></url>
+  <url><loc>https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/tek-telefonla-oynanan-oyunlar/"/></url>
+  <url><loc>https://hyapps.app/quickwits/reaction-time-test/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/reaction-time-test/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/refleks-testi/"/></url>
+  <url><loc>https://hyapps.app/quickwits/group-games-for-game-night/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/group-games-for-game-night/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/oyun-gecesi-grup-oyunlari/"/></url>
+  <url><loc>https://hyapps.app/quickwits/tr/tek-telefonla-oynanan-oyunlar/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/tek-telefonla-oynanan-oyunlar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/"/></url>
+  <url><loc>https://hyapps.app/quickwits/tr/refleks-testi/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/refleks-testi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/reaction-time-test/"/></url>
+  <url><loc>https://hyapps.app/quickwits/tr/oyun-gecesi-grup-oyunlari/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/oyun-gecesi-grup-oyunlari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/group-games-for-game-night/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/cozy-offline-building-game/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/cozy-offline-building-game/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/beginners-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/beginners-guide/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/baslangic-rehberi/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/cozy-offline-building-game/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/tr/baslangic-rehberi/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/baslangic-rehberi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/beginners-guide/"/></url>
 </urlset>

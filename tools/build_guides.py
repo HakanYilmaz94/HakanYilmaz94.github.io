@@ -6,12 +6,16 @@ Usage: python3 -I tools/build_guides.py   (run from the site repo root)
 - Besmele: Esmaül Hüsna hub + 99 name pages (TR /besmele/esma/, EN /besmele/en/names/) from the app's own data
   (Hikmet/Ortak/icerik.json, icerik_en.json), plus two how-to guides per language.
 - Crownly: Queens rules, strategy and "LinkedIn Queens alternative" guides (EN + TR).
+- Quick Wits: one-phone party games, a reaction time test (with a live test on the page) and group games for game night.
+- Brickhaven: a cozy offline building game page and a beginner's guide.
+Apps whose builder still has LIVE = False get a "coming soon" badge instead of the store button and no Smart App Banner.
 - sitemap.xml for the whole site.
 Shared look: /assets/app.css (+ /besmele/besmele.css). Analytics snippet and share tags on every page.
 """
 import html
 import json
 import os
+import re
 import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,11 +40,39 @@ APPS = {
                     cta_h={"en": "Learn one Beautiful Name every day", "tr": "Her gün bir güzel isim öğren"},
                     cta_p={"en": "Bismillah: prayer times, the Qur'an with audio, the Qibla and a daily verse. Free and ad-free on iPhone.",
                            "tr": "Besmele: namaz vakitleri, sesli Kur'an, kıble ve her gün bir ayet. iPhone'da ücretsiz ve reklamsız."}),
+    "quickwits": dict(id="6826451513", css=[], theme="#17123a", icon="/quickwits/img/icon.png",
+                      name={"en": "Quick Wits", "tr": "Kıvrak Zeka"}, home={"en": "/quickwits/", "tr": "/quickwits/tr/"},
+                      og={"en": "/assets/og/quickwits-en.jpg", "tr": "/assets/og/quickwits-tr.jpg"},
+                      cta_h={"en": "87 quick games for your next game night", "tr": "Bir sonraki oyun gecen için 87 kısa oyun"},
+                      cta_p={"en": "Quick Wits: reflex duels, guessing, memory and group games. Pass one phone or open an online room. Free on iPhone.",
+                             "tr": "Kıvrak Zeka: refleks düelloları, tahmin, hafıza ve grup oyunları. Tek telefonu dolaştır ya da online oda aç. iPhone'da ücretsiz."}),
+    "brickhaven": dict(id="6826958666", css=["/brickhaven/guide.css"], theme="#2f9fa8", icon="/brickhaven/img/icon.png",
+                       name={"en": "Brickhaven", "tr": "Brickhaven"}, home={"en": "/brickhaven/", "tr": "/brickhaven/tr/"},
+                       og={"en": "/assets/og/brickhaven-en.jpg", "tr": "/assets/og/brickhaven-tr.jpg"},
+                       cta_h={"en": "Rebuild a seaside town, one brick at a time", "tr": "Bir sahil kasabasını tuğla tuğla yeniden kur"},
+                       cta_p={"en": "Brickhaven: a cozy building game for iPhone and iPad. Offline, no timers, no ads. The first two buildings are free.",
+                              "tr": "Brickhaven: iPhone ve iPad için rahat bir inşa oyunu. İnternetsiz, zamanlayıcısız, reklamsız. İlk iki bina ücretsiz."}),
 }
+
+
+def is_live(app):
+    """Reads LIVE from the app's landing-page builder, so the store button flips with one change there."""
+    builder = os.path.join(ROOT, "tools", f"build_{app}.py")
+    with open(builder) as f:
+        m = re.search(r"^LIVE = (True|False)", f.read(), re.M)
+    return m is None or m.group(1) == "True"
+
+
+for _app in APPS:
+    APPS[_app]["live"] = is_live(_app)
+
 STORE_LABEL = {"en": "Download on the App Store", "tr": "App Store'dan indir"}
+SOON_LABEL = {"en": "Coming soon to the App Store", "tr": "Yakında App Store'da"}
 MADE = {"en": "Made with care by an independent developer.", "tr": "Bağımsız bir geliştirici tarafından yapıldı."}
 PRIVACY = {"crownly": {"en": "/crownly/privacy.html", "tr": "/crownly/privacy.html#tr"},
-           "besmele": {"en": "/besmele/en/gizlilik.html", "tr": "/besmele/gizlilik.html"}}
+           "besmele": {"en": "/besmele/en/gizlilik.html", "tr": "/besmele/gizlilik.html"},
+           "quickwits": {"en": "/quickwits/privacy.html", "tr": "/quickwits/privacy.html#tr"},
+           "brickhaven": {"en": "/brickhaven/privacy.html", "tr": "/brickhaven/privacy.html#tr"}}
 PRIVACY_LABEL = {"en": "Privacy policy", "tr": "Gizlilik politikası"}
 
 
@@ -77,9 +109,12 @@ def lang_pill(lang, alts):
     return f'<span class="lang">{links}</span>'
 
 
-def page(app, lang, path, alts, title, desc, body, crumbs, schema=None):
-    """Renders one guide page. alts = {lang: path} for hreflang; crumbs = [(label, href)]."""
+def page(app, lang, path, alts, title, desc, body, crumbs, schema=None, head=""):
+    """Renders one guide page. alts = {lang: path} for hreflang; crumbs = [(label, href)]; head = extra <head> markup."""
     a = APPS[app]
+    itunes = f'\n  <meta name="apple-itunes-app" content="app-id={a["id"]}">' if a["live"] else ""
+    store = (f'<a class="store" href="{ESC(store_url(app, lang))}">{ESC(STORE_LABEL[lang])}</a>' if a["live"]
+             else f'<span class="store" aria-disabled="true">{ESC(SOON_LABEL[lang])}</span>')
     PAGES.append((path, alts))
     hreflang = "".join(f'\n  <link rel="alternate" hreflang="{l}" href="{SITE}{p}">' for l, p in alts.items())
     if "en" in alts:
@@ -101,8 +136,7 @@ def page(app, lang, path, alts, title, desc, body, crumbs, schema=None):
   <title>{ESC(title)}</title>
   <meta name="description" content="{ESC(desc)}">
   <meta name="theme-color" content="{a["theme"]}">
-  <link rel="canonical" href="{SITE}{path}">{hreflang}
-  <meta name="apple-itunes-app" content="app-id={a["id"]}">
+  <link rel="canonical" href="{SITE}{path}">{hreflang}{itunes}
   <meta property="og:type" content="article">
   <meta property="og:title" content="{ESC(title)}">
   <meta property="og:description" content="{ESC(desc)}">
@@ -113,7 +147,7 @@ def page(app, lang, path, alts, title, desc, body, crumbs, schema=None):
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="{a["icon"]}">
   <link rel="apple-touch-icon" href="{a["icon"]}">
-  <link rel="stylesheet" href="/assets/app.css">{css}
+  <link rel="stylesheet" href="/assets/app.css">{css}{head}
   {ld}
   {ANALYTICS}
 </head>
@@ -129,7 +163,7 @@ def page(app, lang, path, alts, title, desc, body, crumbs, schema=None):
     <img src="{a["icon"]}" alt="" width="72" height="72">
     <h2>{ESC(a["cta_h"][lang])}</h2>
     <p>{ESC(a["cta_p"][lang])}</p>
-    <a class="store" href="{ESC(store_url(app, lang))}">{ESC(STORE_LABEL[lang])}</a>
+    {store}
   </div>
 </article>
 <footer class="foot">
@@ -429,6 +463,306 @@ def build_crownly_guides():
         write(path, page("crownly", lang, path, alts("alt"), title, desc, body, [g["home"], (title, path)]))
 
 
+# ---------------------------------------------------------------- Quick Wits: party game guides
+
+def steps(h, items, ordered=True):
+    tag = "ol" if ordered else "ul"
+    return f'  <h2>{ESC(h)}</h2>\n  <{tag}>' + "".join(f"<li>{ESC(i)}</li>" for i in items) + f"</{tag}>\n"
+
+
+def defs(h, items):
+    """A heading followed by named items: [(name, text)]."""
+    return f'  <h2>{ESC(h)}</h2>\n' + "".join(f"  <h3>{ESC(n)}</h3>\n  <p>{ESC(t)}</p>\n" for n, t in items)
+
+
+QG = {
+    "en": dict(
+        home=("Quick Wits", "/quickwits/"), related="More guides",
+        phone=("/quickwits/games-to-play-with-friends-on-one-phone/", "Games to Play with Friends on One Phone",
+               "How pass-and-play party games work on one iPhone, which kinds of games suit them best, and how to run a great game night with up to 8 players."),
+        reaction=("/quickwits/reaction-time-test/", "Reaction Time Test: How Fast Are Your Reflexes?",
+                  "Test your reaction time right here: tap when the box turns green. What is a normal reaction time, why it changes and how to get faster."),
+        group=("/quickwits/group-games-for-game-night/", "Group Games for Game Night: 7 Mind Games for 3 to 12 Players",
+               "Seven group games where your score depends on what everyone else picks: majority, minority, two thirds of the average and more. Rules and tactics."),
+    ),
+    "tr": dict(
+        home=("Kıvrak Zeka", "/quickwits/tr/"), related="Diğer rehberler",
+        phone=("/quickwits/tr/tek-telefonla-oynanan-oyunlar/", "Tek Telefonla Arkadaşlarla Oynanacak Oyunlar",
+               "Tek iPhone'u elden ele dolaştırarak oynanan parti oyunları nasıl işler, hangi oyunlar buna uygun ve 8 kişilik keyifli bir oyun gecesi nasıl kurulur."),
+        reaction=("/quickwits/tr/refleks-testi/", "Refleks Testi: Tepki Süren Kaç Milisaniye?",
+                  "Tepki süreni hemen burada ölç: kutu yeşile dönünce dokun. Normal tepki süresi kaç ms, neden değişir ve nasıl hızlanırsın?"),
+        group=("/quickwits/tr/oyun-gecesi-grup-oyunlari/", "Oyun Gecesi İçin Grup Oyunları: 3–12 Kişilik 7 Akıl Oyunu",
+               "Puanının herkesin seçimine bağlı olduğu yedi grup oyunu: çoğunluk, azınlık, ortalamanın üçte ikisi ve daha fazlası. Kurallar ve taktikler."),
+    ),
+}
+
+RT_TEXT = {
+    "en": dict(start="Tap to start", start_sub="Wait for green, then tap as fast as you can.", wait="Wait for green…", wait_sub="",
+               go="Tap!", early="Too soon!", again="Tap to try again.", next="Try {n} of 5. Tap for the next one.",
+               avg="Your average: {ms} ms. Tap to start over.", label="Reaction time test"),
+    "tr": dict(start="Başlamak için dokun", start_sub="Yeşili bekle, sonra olabildiğince hızlı dokun.", wait="Yeşili bekle…", wait_sub="",
+               go="Dokun!", early="Çok erken!", again="Tekrar denemek için dokun.", next="5 denemeden {n}. Sıradaki için dokun.",
+               avg="Ortalaman: {ms} ms. Baştan başlamak için dokun.", label="Refleks testi"),
+}
+
+RT_STYLE = """
+  <style>
+    .rt { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; width: 100%; min-height: 240px;
+          margin: 8px 0 28px; padding: 24px 16px; border: 0; border-radius: 24px; cursor: pointer; font: inherit; color: #fff;
+          background: #3d2660; touch-action: manipulation; user-select: none; -webkit-user-select: none; transition: background .08s; }
+    .rt strong { font-family: var(--serif); font-size: clamp(34px, 7vw, 54px); line-height: 1.1; }
+    .rt span { font-size: 17px; opacity: .9; min-height: 1.6em; }
+    .rt.wait { background: #b8402f; } .rt.go { background: #23935a; } .rt.early { background: #8a5a00; }
+    .rt:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  </style>"""
+
+
+def reaction_widget(lang):
+    t = RT_TEXT[lang]
+    js = """
+  <script>
+  (function () {
+    var T = %s, b = document.getElementById("rt"), big = b.querySelector("strong"), small = b.querySelector("span");
+    var state = "idle", start = 0, timer = 0, results = [];
+    function show(cls, a, c) { b.className = "rt " + cls; big.textContent = a; small.textContent = c; }
+    function press(e) {
+      if (e) e.preventDefault();
+      if (state === "wait") { clearTimeout(timer); state = "early"; show("early", T.early, T.again); return; }
+      if (state === "go") {
+        var ms = Math.round(performance.now() - start);
+        results.push(ms); state = "done";
+        if (results.length < 5) { show("", ms + " ms", T.next.replace("{n}", results.length)); }
+        else {
+          var avg = Math.round(results.reduce(function (s, x) { return s + x; }, 0) / results.length);
+          show("", ms + " ms", T.avg.replace("{ms}", avg)); results = [];
+        }
+        return;
+      }
+      state = "wait"; show("wait", T.wait, T.wait_sub);
+      timer = setTimeout(function () { state = "go"; start = performance.now(); show("go", T.go, ""); }, 1500 + Math.random() * 2500);
+    }
+    b.addEventListener("pointerdown", press);
+    b.addEventListener("keydown", function (e) { if ((e.key === " " || e.key === "Enter") && !e.repeat) press(e); });
+  })();
+  </script>
+""" % json.dumps(t, ensure_ascii=False)
+    return (f'  <button type="button" class="rt" id="rt" aria-label="{ESC(t["label"])}" aria-live="polite">'
+            f'<strong>{ESC(t["start"])}</strong><span>{ESC(t["start_sub"])}</span></button>\n' + js)
+
+
+def build_quickwits_guides():
+    for lang in ("en", "tr"):
+        g = QG[lang]
+        other = QG["tr" if lang == "en" else "en"]
+        alts = lambda key: {lang: g[key][0], ("tr" if lang == "en" else "en"): other[key][0]}
+        rel = lambda skip: related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("phone", "reaction", "group") if k != skip])
+        en = lang == "en"
+
+        # One phone, pass and play
+        path, title, desc = g["phone"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        body += paras(ESC("You don't need a deck of cards or a board game box for a good game night. One phone on the table is enough: "
+                          "everyone plays the same round in turn, the phone goes to the next person, and the scores come out together at the end."
+                          if en else
+                          "İyi bir oyun gecesi için deste ya da kutu oyunu gerekmez. Masada tek telefon yeter: herkes aynı turu sırayla oynar, "
+                          "telefon sıradakine geçer ve puanlar sonunda birlikte açıklanır.")) + "\n"
+        body += steps("How pass-the-phone works" if en else "Telefonu pasla nasıl oynanır",
+                      ["Write everyone's name once; up to 4 players are free, up to 8 with the Party Pack.",
+                       "Pick a few games and how many rounds each.",
+                       "The first player plays a short round, a few seconds long, then hands the phone on.",
+                       "Each player gets exactly the same round, so nobody gets an easier question.",
+                       "When everyone has played, the results of the round are revealed together."] if en else
+                      ["Herkesin adını bir kez yaz; 4 kişiye kadar ücretsiz, Parti Paketi ile 8 kişi.",
+                       "Birkaç oyun ve her biri için tur sayısını seç.",
+                       "İlk oyuncu birkaç saniyelik kısa turunu oynar, telefonu sıradakine verir.",
+                       "Her oyuncuya birebir aynı tur gelir; kimseye daha kolay soru düşmez.",
+                       "Herkes oynayınca turun sonuçları birlikte açıklanır."])
+        body += defs("Games that work best on one phone" if en else "Tek telefonda en iyi giden oyunlar",
+                     [("Reflex", "Quick Draw, Balloon Pop, Star or Bomb and Colour Trap: the whole table watches while one person taps."),
+                      ("Visual and memory", "Dot Flash, Odd Shade, Chimp Test and Where Was It?: short, quiet rounds that everybody understands at a glance."),
+                      ("Prediction", "Will It Fall?, Billiards, Ballpark, What Year? and Map Pin: guesses spark the most arguments when the answer comes out."),
+                      ("The phone itself", "Tilt it, blow into the microphone or count the buzzes: games that only a phone can do.")] if en else
+                     [("Refleks", "Silahşor, Balon Patlat, Bombaya Basma ve Renk Tuzağı: biri dokunurken bütün masa izler."),
+                      ("Görsel ve hafıza", "Nokta Şimşeği, Farklı Ton, Şempanze Testi ve Neredeydi?: herkesin bir bakışta anladığı kısa, sessiz turlar."),
+                      ("Tahmin", "Devrilir mi?, Bilardo, Tahmin Et, Hangi Yıl? ve Haritada Bul: cevap açıklanınca en çok tartışma bunlarda çıkar."),
+                      ("Telefonun kendisi", "Eğ, mikrofona üfle ya da titreşimleri say: yalnız bir telefonla oynanabilecek oyunlar.")])
+        body += steps("Tips for a great game night" if en else "Keyifli bir oyun gecesi için ipuçları",
+                      ["Start with 5 games and 3 rounds each: about 15 minutes for 4 players.",
+                       "Mix kinds: a reflex game, a guessing game, a memory game, then a group game.",
+                       "With 3 or more players, add a group game; scores depend on what the others pick, which starts the best debates.",
+                       "If everyone has their phone, open an online room instead: everyone plays at the same moment, up to 12 players.",
+                       "Pass-the-phone works offline, so it's handy on a trip, in a cabin or at a family dinner."] if en else
+                      ["5 oyun ve her birinde 3 turla başla: 4 kişi için yaklaşık 15 dakika.",
+                       "Türleri karıştır: bir refleks, bir tahmin, bir hafıza, ardından bir grup oyunu.",
+                       "3 ve daha fazla kişiyseniz bir grup oyunu ekle; puan diğerlerinin seçimine bağlı olduğu için en güzel tartışmalar orada çıkar.",
+                       "Herkesin telefonu yanındaysa online oda aç: herkes aynı anda oynar, 12 kişiye kadar.",
+                       "Telefonu pasla internetsiz çalışır; yolculukta, yazlıkta ya da aile yemeğinde işe yarar."], ordered=False)
+        body += rel("phone")
+        write(path, page("quickwits", lang, path, alts("phone"), title, desc, body, [g["home"], (title, path)]))
+
+        # Reaction time test
+        path, title, desc = g["reaction"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        body += reaction_widget(lang)
+        body += f'  <h2>{"What is a normal reaction time?" if en else "Normal tepki süresi kaç ms?"}</h2>\n'
+        body += paras(*([ESC("For a simple test like this one, where you react to one signal you are already waiting for, most adults land "
+                             "somewhere between 200 and 300 milliseconds. Around 250 ms is typical; under 200 ms is very quick."),
+                         ESC("A screen adds its own delay: the display, the touch sensor and the browser all take a few milliseconds, so "
+                             "the same person can score differently on different devices. Compare yourself on the same phone, not with a friend's laptop.")] if en else
+                        [ESC("Bunun gibi basit bir testte, yani beklediğin tek bir işarete tepki verdiğinde yetişkinlerin çoğu 200 ile 300 "
+                             "milisaniye arasında kalır. 250 ms civarı olağandır; 200 ms'nin altı çok hızlıdır."),
+                         ESC("Ekranın da kendi gecikmesi var: ekran, dokunmatik algılayıcı ve tarayıcı birkaç milisaniye ekler; aynı kişi farklı "
+                             "cihazlarda farklı sonuç alabilir. Kendini arkadaşının bilgisayarıyla değil, aynı telefonla karşılaştır.")])) + "\n"
+        body += steps("What changes your reaction time" if en else "Tepki süreni neler değiştirir", (
+            ["Sleep and tiredness: a short night slows you down more than almost anything else.",
+             "Warming up: the first few tries are usually the slowest.",
+             "Attention: looking straight at the spot where the signal comes is faster than looking around it.",
+             "Choices: when you must decide what to do (tap the green, not the yellow), reaction time grows."] if en else
+            ["Uyku ve yorgunluk: kısa bir gece seni neredeyse her şeyden çok yavaşlatır.",
+             "Isınma: ilk birkaç deneme genelde en yavaşıdır.",
+             "Dikkat: işaretin geleceği noktaya doğrudan bakmak, çevresine bakmaktan hızlıdır.",
+             "Seçim: ne yapacağına karar vermen gerekince (sarıya değil yeşile dokun) tepki süresi uzar."]), ordered=False)
+        body += steps("How to get faster" if en else "Nasıl hızlanırsın", (
+            ["Rest your finger just above the screen instead of lifting it from far away.",
+             "Don't guess the moment: anticipating leads to false starts, which cost more than a slow tap.",
+             "Practise little and often; short daily sessions beat one long one.",
+             "Play against friends: a little rivalry makes almost everyone faster."] if en else
+            ["Parmağını uzaktan kaldırmak yerine ekranın hemen üstünde beklet.",
+             "Anı tahmin etmeye çalışma: önceden basmak erken başlamaya yol açar, bu da yavaş dokunuştan pahalıya patlar.",
+             "Az ama sık çalış; her gün kısa denemeler tek bir uzun denemeden iyidir.",
+             "Arkadaşlarınla yarış: biraz rekabet neredeyse herkesi hızlandırır."]))
+        body += paras(ESC("Quick Wits turns this into a party game: in Quick Draw two or more players wait for green and the first to tap wins, "
+                          "with a yellow bait to catch the jumpy ones. Balloon Pop, Star or Bomb and Colour Trap test reflexes with a decision on top. "
+                          "Timing is measured on each player's own phone, so a slow connection never costs points."
+                          if en else
+                          "Kıvrak Zeka bunu bir parti oyununa çevirir: Silahşor'da iki ya da daha fazla oyuncu yeşili bekler, ilk dokunan kazanır; "
+                          "aceleci olanları yakalamak için bir de sarı tuzak var. Balon Patlat, Bombaya Basma ve Renk Tuzağı refleksin üstüne bir karar ekler. "
+                          "Süre her oyuncunun kendi telefonunda ölçülür; yavaş bağlantı puan kaybettirmez.")) + "\n"
+        body += rel("reaction")
+        write(path, page("quickwits", lang, path, alts("reaction"), title, desc, body, [g["home"], (title, path)], head=RT_STYLE))
+
+        # Group games
+        path, title, desc = g["group"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        body += paras(ESC("In most quiz games there is one right answer. In these there isn't: the answer that scores is the one that fits "
+                          "the group. You have to guess how your friends think, which is why they work best with 3 to 12 people who know each other."
+                          if en else
+                          "Çoğu bilgi yarışmasında tek bir doğru cevap vardır. Bunlarda yok: puan getiren cevap, gruba uyan cevaptır. "
+                          "Arkadaşlarının nasıl düşündüğünü tahmin etmen gerekir; bu yüzden birbirini tanıyan 3 ila 12 kişiyle en iyi gider.")) + "\n"
+        games = ([("Crowd Mind", "There is no right answer, only the majority. Everyone answers the same question in secret; the most popular answer scores best. Tactic: pick the obvious answer, not your favourite."),
+                  ("Minority Wins", "Two options, one secret pick. Everyone on the side fewer people chose wins. Tactic: if the table looks predictable, go against it, but so will the others."),
+                  ("Two Thirds", "Everyone picks a number from 0 to 100. The target is two thirds of the average of all picks. A classic of game theory: in theory everyone should say 0, in real groups the winning number is usually much higher."),
+                  ("Lowest Unique", "Pick a number from 1 to 20. The smallest number that only one person picked wins. Tactic: 1 and 2 are crowded; the sweet spot is often a little higher."),
+                  ("Same Wavelength", "A clue sits between two extremes, like 'cold' and 'hot'. Place the marker where you think it belongs; the closer to the group's middle, the more points."),
+                  ("Dilemma", "A would-you-rather question. Make your own pick, then guess what share of the table picked the first option."),
+                  ("Place Your Bets", "An estimation question. Type your guess, then bet on who will be closest, which can be you.")] if en else
+                 [("Çoğunluk", "Doğru cevap yok, yalnız çoğunluk var. Herkes aynı soruyu gizlice cevaplar; en çok seçilen cevap en çok puanı alır. Taktik: en sevdiğini değil, en akla geleni seç."),
+                  ("Azınlık Kazanır", "İki seçenek, gizli bir seçim. Daha az kişinin seçtiği taraftaki herkes kazanır. Taktik: masa tahmin edilebilir görünüyorsa tersine git; ama diğerleri de öyle düşünebilir."),
+                  ("Üçte İki", "Herkes 0 ile 100 arasında bir sayı seçer. Hedef, tüm seçimlerin ortalamasının üçte ikisidir. Oyun kuramının bir klasiği: kâğıt üstünde herkes 0 demeli, gerçek gruplarda kazanan sayı çoğu zaman çok daha yüksektir."),
+                  ("En Küçük Tek", "1 ile 20 arasında bir sayı seç. Yalnız bir kişinin seçtiği en küçük sayı kazanır. Taktik: 1 ve 2 kalabalıktır; doğru yer çoğu zaman biraz daha yukarıdadır."),
+                  ("Aynı Frekans", "Bir ipucu iki uç arasında durur, örneğin 'soğuk' ve 'sıcak'. İşareti ait olduğunu düşündüğün yere koy; grubun ortasına ne kadar yakınsan o kadar puan."),
+                  ("İkilem", "Bir 'hangisini seçerdin' sorusu. Kendi seçimini yap, sonra masanın yüzde kaçının ilk seçeneği seçtiğini tahmin et."),
+                  ("Bahisler Açıldı", "Bir tahmin sorusu. Tahminini yaz, sonra en yakın kimin olacağına bahis koy; bu sen de olabilirsin.")])
+        body += defs("The games" if en else "Oyunlar", games)
+        body += paras(ESC("In Quick Wits these games run in a pass-the-phone match or in an online room where everyone answers at the same "
+                          "moment on their own phone; results appear together so nobody can copy. Mix them with a few reflex rounds for a full evening."
+                          if en else
+                          "Kıvrak Zeka'da bu oyunlar telefonu pasla maçında ya da herkesin aynı anda kendi telefonundan cevap verdiği online odada "
+                          "oynanır; sonuçlar birlikte açıklanır, kimse kopya çekemez. Dolu bir akşam için araya birkaç refleks turu ekle.")) + "\n"
+        body += rel("group")
+        write(path, page("quickwits", lang, path, alts("group"), title, desc, body, [g["home"], (title, path)]))
+
+
+# ---------------------------------------------------------------- Brickhaven: cozy building guides
+
+BG = {
+    "en": dict(
+        home=("Brickhaven", "/brickhaven/"), related="More guides",
+        cozy=("/brickhaven/cozy-offline-building-game/", "A Cozy Offline Building Game for iPhone and iPad",
+              "Looking for a relaxing game with no timers, no ads and no internet needed? Brickhaven lets you rebuild a seaside town one brick at a time."),
+        tips=("/brickhaven/beginners-guide/", "Brickhaven Beginner's Guide: 8 Tips to Build Faster",
+              "Eight tips for new builders: reading the blueprint, carrying more bricks, which skills to pick first and designing your own house."),
+    ),
+    "tr": dict(
+        home=("Brickhaven", "/brickhaven/tr/"), related="Diğer rehberler",
+        cozy=("/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/", "İnternetsiz, Rahatlatıcı Bir İnşa Oyunu: iPhone ve iPad",
+              "Zamanlayıcısız, reklamsız, internet gerektirmeyen sakin bir oyun mu arıyorsun? Brickhaven'da bir sahil kasabasını tuğla tuğla yeniden kurarsın."),
+        tips=("/brickhaven/tr/baslangic-rehberi/", "Brickhaven Başlangıç Rehberi: Daha Hızlı İnşa İçin 8 İpucu",
+              "Yeni ustalar için sekiz ipucu: planı okumak, daha çok tuğla taşımak, önce hangi yetenekleri almak ve kendi evini tasarlamak."),
+    ),
+}
+
+
+def build_brickhaven_guides():
+    for lang in ("en", "tr"):
+        g = BG[lang]
+        other = BG["tr" if lang == "en" else "en"]
+        alts = lambda key: {lang: g[key][0], ("tr" if lang == "en" else "en"): other[key][0]}
+        rel = lambda skip: related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("cozy", "tips") if k != skip])
+        en = lang == "en"
+        shot = lambda b, alt: f'  <img class="shot" src="/brickhaven/img/{lang}-{b}.jpg" alt="{ESC(alt)}" width="720" height="480" loading="lazy">\n'
+
+        # Cozy offline building game
+        path, title, desc = g["cozy"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        body += shot("kafe", "The Seaside Café in Brickhaven" if en else "Brickhaven'da Sahil Kafesi")
+        body += paras(ESC("A cozy game is one you can open after a long day without any pressure: nothing chases you, nothing runs out, and "
+                          "every minute you play leaves something nice behind. Brickhaven is built around that idea."
+                          if en else
+                          "Rahat (cozy) oyun, uzun bir günün sonunda hiçbir baskı hissetmeden açabileceğin oyundur: seni kovalayan bir şey yoktur, "
+                          "hiçbir şey tükenmez ve oynadığın her dakika geride güzel bir şey bırakır. Brickhaven bu fikir üzerine kuruldu.")) + "\n"
+        body += defs("What you do in Brickhaven" if en else "Brickhaven'da ne yaparsın", (
+            [("Build with your own hands", "Walk to the brick pile, find the right shape and color, carry it to the wall and lay it. Row by row, a bakery, a barn or a clock tower rises in front of you."),
+             ("Bring the town back to life", "Grandma Rose left you a seaside town that has fallen to ruin. Each finished building brings its owner home, from Martha's bakery to the train station."),
+             ("Design and decorate", "Draw your own house, café or shop at the Architect's Table, build it on your lot, then add benches, lamps, flower beds, trees, cats and chickens.")] if en else
+            [("Kendi ellerinle inşa et", "Tuğla yığınına yürü, doğru şekli ve rengi bul, duvara taşı ve yerine koy. Sıra sıra bir fırın, bir ahır ya da bir saat kulesi gözünün önünde yükselir."),
+             ("Kasabayı yeniden canlandır", "Büyükannen Rose sana yıkılıp gitmiş bir sahil kasabası bıraktı. Biten her bina sahibini eve getirir: Martha'nın fırınından tren istasyonuna kadar."),
+             ("Tasarla ve süsle", "Mimar Masası'nda kendi evini, kafeni ya da dükkânını çiz, arsana kur; sonra bank, fener, çiçek tarhı, ağaç, kedi ve tavuk ekle.")]))
+        body += steps("Why it stays calm" if en else "Neden sakin kalır", (
+            ["Fully offline: play on a plane, on the train or anywhere without Wi-Fi.",
+             "No timers, no energy bars, no lives: play five minutes or an hour, at your own pace.",
+             "No ads, no subscription: the first two buildings are free, the rest of the town is one purchase.",
+             "Your town lives in your own iCloud, so it follows you from iPhone to iPad.",
+             "A color-blind mode prints a symbol on every brick color."] if en else
+            ["Tamamen internetsiz: uçakta, trende ya da Wi-Fi olmayan her yerde oyna.",
+             "Zamanlayıcı, enerji çubuğu ya da can yok: beş dakika ya da bir saat, kendi hızında oyna.",
+             "Reklam ve abonelik yok: ilk iki bina ücretsiz, kasabanın geri kalanı tek bir satın alma.",
+             "Kasaban kendi iCloud'unda durur; iPhone'dan iPad'e seninle gelir.",
+             "Renk körü modu her tuğla rengine bir simge basar."]), ordered=False)
+        body += paras(ESC("It suits all ages: there is no violence, no chat with strangers and nothing to buy by accident."
+                          if en else "Her yaşa uygundur: şiddet yok, yabancılarla sohbet yok ve yanlışlıkla satın alınacak bir şey yok.")) + "\n"
+        body += rel("cozy")
+        write(path, page("brickhaven", lang, path, alts("cozy"), title, desc, body, [g["home"], (title, path)]))
+
+        # Beginner's guide
+        path, title, desc = g["tips"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        tips = ([("Read the blueprint first", "Open the blueprint at the easel next to each building. It shows the finished building and how many bricks of each shape and color the next section needs."),
+                 ("Pick shape and color together", "Two bricks can share a shape but not a color. If a brick doesn't match the plan, the game tells you before you lay it."),
+                 ("Carry a full load", "Fill your arms before you walk to the wall. Every trip to the pile costs time; a full load saves many of them."),
+                 ("Build section by section", "Each building is split into sections, like a wall or a roof. Finishing a section gives you skill points."),
+                 ("Spend skill points on Strong Arms early", "Strong Arms lets you carry more bricks at once, up to twenty. It pays back on every single trip."),
+                 ("Then get the Brick Magnet", "The magnet pulls matching bricks of the type you have selected straight to you. Searching the pile is the slowest part on a phone, and this skips it."),
+                 ("Use the lift and jump for high rows", "Upper walls and roofs are reached with the lift; skills make it faster and let you jump higher."),
+                 ("Make it yours", "Once the town is open, draw your own building at the Architect's Table and decorate the streets. There is no wrong answer.")] if en else
+                [("Önce planı oku", "Her binanın yanındaki şövaledeki planı aç. Binanın bitmiş hâlini ve sıradaki bölüm için her şekil ve renkten kaç tuğla gerektiğini gösterir."),
+                 ("Şekli ve rengi birlikte seç", "İki tuğlanın şekli aynı, rengi farklı olabilir. Tuğla plana uymuyorsa oyun koymadan önce söyler."),
+                 ("Kucağını doldur", "Duvara yürümeden önce kucağını doldur. Yığına her gidiş zaman alır; dolu bir yük birçok gidişi kurtarır."),
+                 ("Bölüm bölüm ilerle", "Her bina duvar, çatı gibi bölümlere ayrılır. Bir bölümü bitirmek yetenek puanı kazandırır."),
+                 ("Puanları önce Güçlü Kollar'a ver", "Güçlü Kollar bir seferde daha çok, yirmiye kadar tuğla taşımanı sağlar. Her gidişte kendini geri öder."),
+                 ("Sonra Tuğla Mıknatısı'nı al", "Mıknatıs seçtiğin türden eşleşen tuğlaları doğrudan sana çeker. Telefonda en yavaş iş yığında aramaktır; mıknatıs bunu atlar."),
+                 ("Yüksek sıralar için asansör ve zıplama", "Üst duvarlara ve çatıya asansörle çıkılır; yetenekler asansörü hızlandırır ve daha yükseğe zıplatır."),
+                 ("Kendine göre yap", "Kasaba açılınca Mimar Masası'nda kendi binanı çiz ve sokakları süsle. Yanlış cevap yok.")])
+        for i, (h, p) in enumerate(tips):
+            body += f"  <h2>{i + 1}. {ESC(h)}</h2>\n  <p>{ESC(p)}</p>\n"
+            if i == 3:
+                body += shot("firin", "The Bakery in Brickhaven" if en else "Brickhaven'da Fırın")
+        body += paras(ESC("Stuck or found a bug? Write to hyapps@outlook.com; every message is read."
+                          if en else "Takıldın ya da bir hata mı buldun? hyapps@outlook.com adresine yaz; her mesaj okunur.")) + "\n"
+        body += rel("tips")
+        write(path, page("brickhaven", lang, path, alts("tips"), title, desc, body, [g["home"], (title, path)]))
+
+
 # ---------------------------------------------------------------- sitemap
 
 STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
@@ -456,5 +790,7 @@ def build_sitemap():
 build_esma()
 build_besmele_guides()
 build_crownly_guides()
+build_quickwits_guides()
+build_brickhaven_guides()
 build_sitemap()
 print(f"guide pages: {len(PAGES)}")

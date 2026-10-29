@@ -147,6 +147,25 @@ def faq_ld(t):
     return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>'
 
 
+GUIDES = {
+    "en": ("Guides", [("Games to play with friends on one phone", "/quickwits/games-to-play-with-friends-on-one-phone/"),
+                      ("Reaction time test", "/quickwits/reaction-time-test/"),
+                      ("Group games for game night", "/quickwits/group-games-for-game-night/")]),
+    "tr": ("Rehberler", [("Tek telefonla arkadaşlarla oynanacak oyunlar", "/quickwits/tr/tek-telefonla-oynanan-oyunlar/"),
+                         ("Refleks testi", "/quickwits/tr/refleks-testi/"),
+                         ("Oyun gecesi için grup oyunları", "/quickwits/tr/oyun-gecesi-grup-oyunlari/")]),
+}
+
+
+def guides(t):
+    h, links = GUIDES[t["lang"]]
+    items = "".join(f'<a href="{href}">{html.escape(label)} →</a>' for label, href in links)
+    return f'''  <section class="support reveal">
+    <h2>{html.escape(h)}</h2>
+    <div class="guides-links">{items}</div>
+  </section>'''
+
+
 def more(t):
     h, href, icon, name, desc, all_label, all_href = MORE[t["lang"]]
     return f'''  <section class="more reveal">
@@ -276,6 +295,7 @@ def page(t):
     <div class="card"><p>{t["contact"].format(mail=mail)}</p></div>
     {faq}
   </section>
+{guides(t)}
 {more(t)}
 </main>
 

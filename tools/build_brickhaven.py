@@ -103,6 +103,23 @@ T = {
 }
 
 
+GUIDES = {
+    "en": ("Guides", [("A cozy offline building game", "/brickhaven/cozy-offline-building-game/"),
+                      ("Beginner's guide: 8 tips", "/brickhaven/beginners-guide/")]),
+    "tr": ("Rehberler", [("İnternetsiz, rahatlatıcı bir inşa oyunu", "/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/"),
+                         ("Başlangıç rehberi: 8 ipucu", "/brickhaven/tr/baslangic-rehberi/")]),
+}
+
+
+def guides(t):
+    h, links = GUIDES[t["lang"]]
+    items = "".join(f'<a href="{href}">{html.escape(label)} →</a>' for label, href in links)
+    return f'''  <section class="support">
+    <h2>{html.escape(h)}</h2>
+    <div class="guides-links">{items}</div>
+  </section>'''
+
+
 def store_button(t):
     if LIVE:
         return f'<a class="store" href="{html.escape(t["store"])}">{html.escape(t["cta"])}</a>'
@@ -188,6 +205,7 @@ def page(t):
     <p class="card">{t["contact"].format(mail=mail)}</p>
     {faq}
   </section>
+{guides(t)}
 </main>
 
 <footer class="foot">
