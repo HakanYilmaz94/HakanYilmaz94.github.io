@@ -3,6 +3,7 @@
 
 Usage: python3 -I tools/build_crownly.py   (run from the site repo root)
 Writes crownly/index.html and crownly/tr/index.html.
+Until the app is on the App Store, LIVE is False: the store button is a "coming soon" badge.
 """
 import html
 import json
@@ -10,6 +11,7 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_ID = "6822852151"
+LIVE = False
 
 T = {
     "en": dict(
@@ -23,7 +25,7 @@ T = {
         eyebrow="A little logic game for iPhone",
         h1="One crown.<br>Every row, every column, <em>every region.</em>",
         lead="Crownly is a calm daily logic puzzle with hints that explain the logic, not the answer.",
-        cta="Download on the App Store", cta_note="Free · iPhone · iOS 17+",
+        cta="Download on the App Store", soon="Coming soon to the App Store", cta_note="Free · iPhone · iOS 17+",
         marquee=["New puzzle every day", "2,000 levels", "Hints that teach", "Color-blind friendly", "No ads",
                  "Works offline", "Lo-fi music", "12 languages"],
         rules_kicker="How to play", rules_h="Three rules. Pure logic.",
@@ -80,7 +82,7 @@ T = {
         eyebrow="iPhone için küçük bir mantık oyunu",
         h1="Tek taç.<br>Her satır, her sütun, <em>her bölge.</em>",
         lead="Crownly, cevabı değil mantığı anlatan ipuçlarıyla sakin bir günlük bulmaca.",
-        cta="App Store'dan indir", cta_note="Ücretsiz · iPhone · iOS 17+",
+        cta="App Store'dan indir", soon="Yakında App Store'da", cta_note="Ücretsiz · iPhone · iOS 17+",
         marquee=["Her gün yeni bulmaca", "2.000 seviye", "Öğreten ipuçları", "Renk körü dostu", "Reklam yok",
                  "İnternetsiz oynanır", "Lo-fi müzik", "12 dil"],
         rules_kicker="Nasıl oynanır", rules_h="Üç kural. Saf mantık.",
@@ -177,6 +179,12 @@ GUIDES = {
 }
 
 
+def store_button(t):
+    if LIVE:
+        return f'<a class="store" href="{html.escape(t["store"])}">{html.escape(t["cta"])}</a>'
+    return f'<span class="store" aria-disabled="true">{html.escape(t["soon"])}</span>'
+
+
 def guides(t):
     h, links = GUIDES[t["lang"]]
     items = "".join(f'<a href="{href}">{html.escape(label)} →</a>' for label, href in links)
@@ -234,6 +242,8 @@ def page(t):
     stats = "".join(f'<div><strong>{s}</strong><span>{html.escape(l)}</span></div>' for s, l in t["stats"])
     faq = "".join(f"<details><summary>{html.escape(q)}</summary><p>{html.escape(ans)}</p></details>" for q, ans in t["faq"])
     canonical = f"https://hyapps.app{t['path']}"
+    itunes = f'  <meta name="apple-itunes-app" content="app-id={APP_ID}">\n' if LIVE else ""
+    install = f'"installUrl":"{t["store"]}",' if LIVE else ""
     return f'''<!doctype html>
 <html lang="{t["lang"]}">
 <head>
@@ -246,8 +256,7 @@ def page(t):
   <link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/">
   <link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/">
   <link rel="alternate" hreflang="x-default" href="https://hyapps.app/crownly/">
-  <meta name="apple-itunes-app" content="app-id={APP_ID}">
-  <meta property="og:type" content="website">
+{itunes}  <meta property="og:type" content="website">
   <meta property="og:title" content="{html.escape(t["title"])}">
   <meta property="og:description" content="{html.escape(t["og_desc"])}">
   <meta property="og:image" content="https://hyapps.app/assets/og/crownly-{t["lang"]}.jpg">
@@ -262,7 +271,7 @@ def page(t):
   <link rel="stylesheet" href="/assets/app.css">
   <script type="application/ld+json">
   {{"@context":"https://schema.org","@type":"MobileApplication","name":"Crownly","operatingSystem":"iOS 17 or later",
-   "applicationCategory":"GameApplication","url":"{canonical}","installUrl":"{t["store"]}","inLanguage":"{t["lang"]}",
+   "applicationCategory":"GameApplication","url":"{canonical}",{install}"inLanguage":"{t["lang"]}",
    "offers":{{"@type":"Offer","price":"0","priceCurrency":"USD"}},
    "publisher":{{"@type":"Organization","name":"HY Apps","url":"https://hyapps.app/"}}}}
   </script>
@@ -288,7 +297,7 @@ def page(t):
     <p class="eyebrow">{html.escape(t["eyebrow"])}</p>
     <h1>{t["h1"]}</h1>
     <p class="lead">{html.escape(t["lead"])}</p>
-    <a class="store" href="{html.escape(t["store"])}">{html.escape(t["cta"])}</a>
+    {store_button(t)}
     <p class="cta-note">{html.escape(t["cta_note"])}</p>
   </div>
   <div class="stage" id="stage" aria-hidden="false">
@@ -335,7 +344,7 @@ def page(t):
   <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
   <img src="{i}icon.png" alt="" width="88" height="88">
   <h2>{html.escape(t["final_h"])}</h2>
-  <a class="store" href="{html.escape(t["store"])}">{html.escape(t["cta"])}</a>
+  {store_button(t)}
 </section>
 
 <footer class="foot">
