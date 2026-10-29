@@ -140,7 +140,9 @@ def page(t):
   <meta property="og:type" content="website">
   <meta property="og:title" content="{html.escape(t["title"])}">
   <meta property="og:description" content="{html.escape(t["desc"])}">
-  <meta property="og:image" content="https://hyapps.app/brickhaven/img/{lang}-firin.jpg">
+  <meta property="og:image" content="https://hyapps.app/assets/og/brickhaven-{lang}.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="{canonical}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/brickhaven/img/icon.png">
