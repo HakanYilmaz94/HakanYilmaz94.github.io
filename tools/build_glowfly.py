@@ -22,7 +22,7 @@ T = {
     "en": dict(
         lang="en", path="/glowfly/", img="img/", other_href="tr/", other_label="Türkçe", privacy_href="privacy.html",
         store=f"https://apps.apple.com/app/apple-store/id{APP_ID}?pt=129592179&ct=web&mt=8",
-        title="Glowfly: Idle Light Merge · A relaxing idle game of fireflies, light and night skies (iPhone & iPad)",
+        title="Glowfly: Idle Brick Breaker · A relaxing idle game of fireflies, light and night skies (iPhone & iPad)",
         desc="Glowfly is a relaxing idle merge game for iPhone and iPad. Fireflies of light bounce through the dark, break "
              "glass walls and reveal a hand-drawn night landscape. Merge ten lights into a brighter one, find the fallen "
              "stars across 10 chapters and 1,000 nights. It keeps playing while you're away.",
@@ -143,7 +143,7 @@ def page(t):
     guides = "".join(f'<a href="{h}">{html.escape(label)} →</a>' for label, h in t["guides"])
     canonical = f"https://hyapps.app{t['path']}"
     app_ld = {
-        "@context": "https://schema.org", "@type": ["VideoGame", "MobileApplication"], "name": "Glowfly: Idle Light Merge",
+        "@context": "https://schema.org", "@type": ["VideoGame", "MobileApplication"], "name": "Glowfly: Idle Brick Breaker",
         "alternateName": "Glowfly", "operatingSystem": "iOS 18 or later", "applicationCategory": "GameApplication",
         "applicationSubCategory": "Idle game, merge game, casual game", "genre": ["Idle", "Merge", "Casual"],
         "description": t["desc"], "url": canonical, "inLanguage": lang, "image": "https://hyapps.app/glowfly/img/icon.png",
@@ -249,7 +249,7 @@ def page(t):
 
 PRIVACY = {
     "en": dict(
-        h="Privacy Policy", date="Glowfly: Idle Light Merge · Effective November 7, 2026",
+        h="Privacy Policy", date="Glowfly: Idle Brick Breaker · Effective November 7, 2026",
         sections=[
             (None, "Glowfly is an idle game. It needs no account, asks for no personal information and does not track you "
                    "across other apps or websites. This page explains, in plain words, what data the game uses and why."),

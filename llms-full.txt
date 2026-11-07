@@ -7,7 +7,7 @@
 
 - Page: https://hyapps.app/glowfly/
 - Privacy policy: https://hyapps.app/glowfly/privacy.html
-- Title: Glowfly: Idle Light Merge · A relaxing idle game of fireflies, light and night skies (iPhone & iPad)
+- Title: Glowfly: Idle Brick Breaker · A relaxing idle game of fireflies, light and night skies (iPhone & iPad)
 - Platform: iOS 18 or later
 
 Glowfly is a relaxing idle merge game for iPhone and iPad. Fireflies of light bounce through the dark, break glass walls and reveal a hand-drawn night landscape. Merge ten lights into a brighter one, find the fallen stars across 10 chapters and 1,000 nights. It keeps playing while you're away.
