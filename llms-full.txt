@@ -1,0 +1,149 @@
+# HY Apps: full app descriptions
+
+> HY Apps is an independent studio (one developer) making calm apps and games for iPhone and iPad: no ads in the
+> middle of things, no tracking, no accounts. Contact: hyapps@outlook.com. Short index: https://hyapps.app/llms.txt
+
+## Glowfly
+
+- Page: https://hyapps.app/glowfly/
+- Privacy policy: https://hyapps.app/glowfly/privacy.html
+- Title: Glowfly: Idle Light Merge · A relaxing idle game of fireflies, light and night skies (iPhone & iPad)
+- Platform: iOS 18 or later
+
+Glowfly is a relaxing idle merge game for iPhone and iPad. Fireflies of light bounce through the dark, break glass walls and reveal a hand-drawn night landscape. Merge ten lights into a brighter one, find the fallen stars across 10 chapters and 1,000 nights. It keeps playing while you're away.
+
+Features:
+- Merge into brighter light: Ten lights merge into one stronger light. Twelve kinds of light, each brighter and more beautiful than the last.
+- A story told in postcards: Every ten nights Lumi finds a fallen star and a postcard joins your story: a cabin in the woods, a lighthouse, a sleeping town, the Milky Way.
+- Plays while you're away: Your lights keep working for hours after you close the game. Come back to nights cleared and light to collect.
+- Glass, rock and hard stone: Thin glass shatters at a touch, big rocks take a beating. Tap the walls yourself or hold to speed everything up.
+- Skills and upgrades: Level up each light, pick a skill at levels 5, 20 and 40, and strengthen all your lights at once.
+- Calm by design: Soft lo-fi music, gentle glass sounds and no timers chasing you. Ads only ever play when you choose to watch one for a reward.
+
+Questions and answers:
+
+Q: Is Glowfly free?
+A: Yes, Glowfly is free to play from the first night to the last. Glowfly Plus (an optional subscription), an ad-free option and gem packs are available as in-app purchases; prices are always shown on the button before you buy.
+
+Q: Does the game keep going when it's closed?
+A: Yes. Your lights keep breaking walls for 4 hours after you leave (longer with Deep Sleep or Glowfly Plus). When you come back, the game shows how many nights were cleared and the light you earned.
+
+Q: Are there ads?
+A: Only if you want them. Some rewards, like a boost, can be earned by watching a short video ad. No ad ever plays on its own, and with Plus or the ad-free option you get those rewards without ads.
+
+Q: What is in a Star Box?
+A: Boxes drop from the sky now and then and at every chapter end. The game lists exactly what a box can contain and the chance of each prize before you open one.
+
+Q: Will my progress move to my new phone?
+A: Yes. The game keeps a backup in your own iCloud. Purchases come back with Restore Purchases on the Glowfly Plus screen.
+
+Q: Is it suitable for children?
+A: Glowfly has no violence, no chat and no account. In-app purchases are protected by your Apple Account and Screen Time settings.
+
+
+## Brickhaven
+
+- Page: https://hyapps.app/brickhaven/
+- Privacy policy: https://hyapps.app/brickhaven/privacy.html
+- Title: Brickhaven: Cozy Brick Builder · Build a seaside town one brick at a time (iPhone & iPad)
+- Platform: iOS 18 or later
+
+Brickhaven is a cozy first-person building game for iPhone and iPad. Find the right brick, carry it, lay it, and rebuild Grandma Rose's seaside town one building at a time. Offline, no timers, no ads.
+
+Questions and answers:
+
+Q: Is Brickhaven free?
+A: The first two buildings, the Bakery and the Red Barn, are free. The Whole Town is a one-time purchase that opens every other building, the Architect's Table and Decorate. There is no subscription and there are no ads.
+
+Q: Does it need an internet connection?
+A: No. Brickhaven plays fully offline. Purchases, iCloud sync and Game Center use the internet when it is there.
+
+Q: Will my town move to my new phone or iPad?
+A: Yes. Your saves are kept in your own iCloud, so signing in with the same Apple Account brings them along.
+
+Q: I bought it on another device. How do I get it back?
+A: Open the purchase screen and tap Restore. Purchases are also shared with your Family Sharing group.
+
+Q: Is there a mode for color blindness?
+A: Yes: Settings → Color-blind mode prints a small symbol on every brick color, so shapes, not colors alone, tell them apart.
+
+
+## Crownly
+
+- Page: https://hyapps.app/crownly/
+- Privacy policy: https://hyapps.app/crownly/privacy.html
+- Title: Crownly · Daily Queens Logic Puzzle for iPhone
+- Platform: iOS 17 or later
+
+Crownly is a calm daily logic puzzle for iPhone. Place one crown in every row, column and region. A new puzzle every day, 2,000 levels, hints that explain the logic, color-blind mode. No ads, works offline.
+
+Questions and answers:
+
+Q: When does the daily puzzle change?
+A: A new daily puzzle appears every day at 07:00 UTC, at the same moment for everyone in the world.
+
+Q: Will I lose my progress if I change phones?
+A: With iCloud sync turned on (Settings → General), your solved puzzles, stars and streak sync to your other devices through your private iCloud account. Without iCloud, progress is stored only on this device and deleting the app deletes it.
+
+Q: How do I restore Crownly Pro?
+A: Open Settings → Crownly Pro → Restore purchases while signed in with the Apple Account you used to buy it. Pro is shared with your Family Sharing group.
+
+Q: I missed a day. Is my streak gone?
+A: Not always. A streak freeze is used automatically when you miss a day (one per month, three with Pro).
+
+Q: Some colors look alike to me.
+A: Turn on Color-blind mode in Settings → Game. Every region gets its own symbol and the borders get bolder, so you never need to tell colors apart. You can also try the High contrast board palette.
+
+
+## Quick Wits
+
+- Page: https://hyapps.app/quickwits/
+- Privacy policy: https://hyapps.app/quickwits/privacy.html
+- Title: Quick Wits · Party Games & Reaction Games with Friends (iPhone)
+- Platform: iOS 17 or later
+
+Quick Wits is a party game of quick skill rounds for iPhone: reflex duels, guessing, memory and group games. Play solo, pass one phone around, or open an online room where everyone plays on their own phone.
+
+Questions and answers:
+
+Q: How many players can play?
+A: Solo, or up to 4 players for free, passing one phone or in an online room. With the Party Pack: up to 8 on one phone and up to 12 in an online room. Group games (Crowd Mind, Lowest Unique, Two Thirds, Same Wavelength) need at least 3 players.
+
+Q: Is it free?
+A: Solo play is free with all 87 games, and so are the daily challenge and statistics. With friends, 25 games are free each week (12 favourites plus 13 that change every Monday), for up to 4 players and as many matches as you like. No ads, no subscription. The Party Pack is a one-time purchase that opens all 87 games to groups, up to 8 players on one phone and 12 in an online room. In a room the host's pack is enough. Family Sharing is on.
+
+Q: Does everyone need the app?
+A: For pass-the-phone, only one phone needs it. For an online room, everyone plays on their own phone, so everyone needs Quick Wits.
+
+Q: Do I need an internet connection?
+A: Solo, pass-the-phone and the daily challenge work offline, except Map Pin, which needs the internet to load the map. Online rooms need a connection.
+
+Q: What if my phone drops out of an online room?
+A: Open the app and join with the same code: you get your seat back and continue from the current round. The host can also choose not to wait.
+
+Q: When does the daily challenge change?
+A: Every day at 07:00 UTC, the same moment everywhere, so everyone plays the same five games and rounds and shares one leaderboard.
+
+
+## Bismillah (Besmele)
+
+- Page: https://hyapps.app/besmele/en/
+- Privacy policy: https://hyapps.app/besmele/en/gizlilik.html
+- Title: Bismillah · Prayer Times, Quran Audio and Qibla for iPhone
+- Platform: iOS
+
+Bismillah is a calm, ad-free companion for prayer times with adhan, the Qur'an with audio and translation, a Qibla compass, a missed prayer tracker, a dhikr counter and a daily verse, hadith and dua.
+
+Questions and answers:
+
+Q: Prayer times differ from my mosque's calendar.
+A: The calculation method is chosen automatically for your country. You can change it in Settings → Calculation method.
+
+Q: I don't get notifications.
+A: Make sure notifications are on in the app's Settings and allowed in your phone's Settings → Notifications → Bismillah. Notifications are prepared for the next 7 days each time you open the app, so open it now and then.
+
+Q: The Qibla compass looks wrong.
+A: Hold your phone flat, away from metal objects and magnetic cases. Moving the phone in a figure 8 a few times recalibrates the compass.
+
+Q: I missed a day. Is my progress lost?
+A: No. Your learned names and streak are kept; just continue where you left off.

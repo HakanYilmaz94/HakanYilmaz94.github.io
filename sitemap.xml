@@ -27,6 +27,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/"/></url>
   <url><loc>https://hyapps.app/brickhaven/privacy.html</loc></url>
+  <url><loc>https://hyapps.app/glowfly/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/"/></url>
+  <url><loc>https://hyapps.app/glowfly/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/"/></url>
+  <url><loc>https://hyapps.app/glowfly/privacy.html</loc></url>
   <url><loc>https://hyapps.app/besmele/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/"/></url>
@@ -697,4 +704,22 @@
   <url><loc>https://hyapps.app/brickhaven/tr/baslangic-rehberi/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/baslangic-rehberi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/beginners-guide/"/></url>
+  <url><loc>https://hyapps.app/glowfly/relaxing-idle-merge-game/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/relaxing-idle-merge-game/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/rahatlatici-idle-birlestirme-oyunu/"/></url>
+  <url><loc>https://hyapps.app/glowfly/idle-games-offline-progress/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-games-offline-progress/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/"/></url>
+  <url><loc>https://hyapps.app/glowfly/beginners-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/beginners-guide/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/baslangic-rehberi/"/></url>
+  <url><loc>https://hyapps.app/glowfly/tr/rahatlatici-idle-birlestirme-oyunu/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/rahatlatici-idle-birlestirme-oyunu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/relaxing-idle-merge-game/"/></url>
+  <url><loc>https://hyapps.app/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-games-offline-progress/"/></url>
+  <url><loc>https://hyapps.app/glowfly/tr/baslangic-rehberi/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/baslangic-rehberi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/beginners-guide/"/></url>
 </urlset>

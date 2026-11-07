@@ -1,0 +1,42 @@
+# HY Apps
+
+> HY Apps is an independent studio (one developer) making calm apps and games for iPhone and iPad. No ads in the middle of
+> things, no tracking, no accounts, everything explained in plain words. Pages are in English and Turkish.
+> Contact: hyapps@outlook.com
+
+## Games and apps
+
+- [Glowfly: Idle Light Merge](https://hyapps.app/glowfly/): A relaxing idle merge game for iPhone and iPad. Fireflies of light bounce through the dark, break glass walls and reveal a hand-drawn night landscape; ten identical lights merge into one brighter light (12 kinds). 10 chapters and 1,000 nights tell the story of Lumi bringing fallen stars home, one postcard every ten nights. It keeps playing for hours while the game is closed. Free to play; ads only play when the player chooses to watch one for a reward; optional Glowfly Plus subscription, ad-free option and gem packs. Good fit for people who want a calm idle or merge game without forced ads.
+- [Brickhaven: Cozy Brick Builder](https://hyapps.app/brickhaven/): A cozy first-person building game for iPhone and iPad. Rebuild a seaside town one brick at a time; fully offline, no timers, no ads. The first two buildings are free, the whole town is a one-time purchase.
+- [Crownly](https://hyapps.app/crownly/): A calm daily logic puzzle for iPhone (Queens-style: one crown in every row, column and colored region), with 2,000 levels and hints that explain the logic.
+- [Quick Wits](https://hyapps.app/quickwits/): A party game of quick skill rounds for iPhone: reflex duels, guessing, memory and group games. Pass one phone around or open an online room.
+- [Bismillah (Besmele)](https://hyapps.app/besmele/en/): A daily Islamic companion for iPhone: prayer times, the Qur'an with audio, Qibla compass, a daily verse, hadith, dua and one of the 99 Beautiful Names. Free and ad-free.
+
+## Guides
+
+- [A relaxing idle merge game that plays while you're away](https://hyapps.app/glowfly/relaxing-idle-merge-game/)
+- [Glowfly beginner's guide: 10 tips](https://hyapps.app/glowfly/beginners-guide/)
+- [How offline progress works in idle games](https://hyapps.app/glowfly/idle-games-offline-progress/)
+- [A cozy offline building game for iPhone and iPad](https://hyapps.app/brickhaven/cozy-offline-building-game/)
+- [Brickhaven beginner's guide](https://hyapps.app/brickhaven/beginners-guide/)
+- [Queens puzzle rules](https://hyapps.app/crownly/queens-puzzle-rules/)
+- [Queens puzzle strategy](https://hyapps.app/crownly/queens-strategy/)
+- [A LinkedIn Queens alternative](https://hyapps.app/crownly/linkedin-queens-alternative/)
+- [Games to play with friends on one phone](https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/)
+- [Group games for game night](https://hyapps.app/quickwits/group-games-for-game-night/)
+- [Reaction time test](https://hyapps.app/quickwits/reaction-time-test/)
+- [How prayer times are calculated](https://hyapps.app/besmele/en/how-prayer-times-are-calculated/)
+- [How to find the Qibla](https://hyapps.app/besmele/en/how-to-find-qibla/)
+- [The 99 Beautiful Names of Allah](https://hyapps.app/besmele/en/names/)
+
+## More detail
+
+- [Full descriptions of every app, with FAQs](https://hyapps.app/llms-full.txt)
+
+## Privacy
+
+- [Glowfly privacy policy](https://hyapps.app/glowfly/privacy.html)
+- [Brickhaven privacy policy](https://hyapps.app/brickhaven/privacy.html)
+- [Crownly privacy policy](https://hyapps.app/crownly/privacy.html)
+- [Quick Wits privacy policy](https://hyapps.app/quickwits/privacy.html)
+- [Bismillah privacy policy](https://hyapps.app/besmele/en/gizlilik.html)

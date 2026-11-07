@@ -8,6 +8,7 @@ Usage: python3 -I tools/build_guides.py   (run from the site repo root)
 - Crownly: Queens rules, strategy and "LinkedIn Queens alternative" guides (EN + TR).
 - Quick Wits: one-phone party games, a reaction time test (with a live test on the page) and group games for game night.
 - Brickhaven: a cozy offline building game page and a beginner's guide.
+- Glowfly: a relaxing idle merge game page and a beginner's guide (EN + TR).
 Apps whose builder still has LIVE = False get a "coming soon" badge instead of the store button and no Smart App Banner.
 - sitemap.xml for the whole site.
 Shared look: /assets/app.css (+ /besmele/besmele.css). Analytics snippet and share tags on every page.
@@ -52,6 +53,12 @@ APPS = {
                        cta_h={"en": "Rebuild a seaside town, one brick at a time", "tr": "Bir sahil kasabasını tuğla tuğla yeniden kur"},
                        cta_p={"en": "Brickhaven: a cozy building game for iPhone and iPad. Offline, no timers, no ads. The first two buildings are free.",
                               "tr": "Brickhaven: iPhone ve iPad için rahat bir inşa oyunu. İnternetsiz, zamanlayıcısız, reklamsız. İlk iki bina ücretsiz."}),
+    "glowfly": dict(id="6830895618", css=["/glowfly/guide.css"], theme="#0b1023", icon="/glowfly/img/icon.png",
+                    name={"en": "Glowfly", "tr": "Glowfly"}, home={"en": "/glowfly/", "tr": "/glowfly/tr/"},
+                    og={"en": "/assets/og/glowfly-en.jpg", "tr": "/assets/og/glowfly-tr.jpg"},
+                    cta_h={"en": "Light up the night, one firefly at a time", "tr": "Geceyi ateşböcekleriyle aydınlat"},
+                    cta_p={"en": "Glowfly: a relaxing idle merge game for iPhone and iPad. 10 chapters, 1,000 nights, and it plays while you're away. Free to play.",
+                           "tr": "Glowfly: iPhone ve iPad için rahatlatıcı bir idle birleştirme oyunu. 10 bölüm, 1.000 gece; sen yokken de oynar. Ücretsiz."}),
 }
 
 
@@ -72,7 +79,8 @@ MADE = {"en": "Made with care by an independent developer.", "tr": "Bağımsız 
 PRIVACY = {"crownly": {"en": "/crownly/privacy.html", "tr": "/crownly/privacy.html#tr"},
            "besmele": {"en": "/besmele/en/gizlilik.html", "tr": "/besmele/gizlilik.html"},
            "quickwits": {"en": "/quickwits/privacy.html", "tr": "/quickwits/privacy.html#tr"},
-           "brickhaven": {"en": "/brickhaven/privacy.html", "tr": "/brickhaven/privacy.html#tr"}}
+           "brickhaven": {"en": "/brickhaven/privacy.html", "tr": "/brickhaven/privacy.html#tr"},
+           "glowfly": {"en": "/glowfly/privacy.html", "tr": "/glowfly/privacy.html#tr"}}
 PRIVACY_LABEL = {"en": "Privacy policy", "tr": "Gizlilik politikası"}
 
 
@@ -124,6 +132,7 @@ def page(app, lang, path, alts, title, desc, body, crumbs, schema=None, head="")
         {"@type": "ListItem", "position": i + 1, "name": n, "item": SITE + h} for i, (n, h) in enumerate(crumbs)]}
     art = {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": desc,
            "inLanguage": lang, "mainEntityOfPage": SITE + path,
+           "author": {"@type": "Organization", "name": "HY Apps", "url": SITE + "/"},
            "publisher": {"@type": "Organization", "name": "HY Apps", "url": SITE + "/"}}
     schemas = [bc, art] + ([schema] if schema else [])
     ld = "\n  ".join(f'<script type="application/ld+json">{json.dumps(s, ensure_ascii=False)}</script>' for s in schemas)
@@ -763,6 +772,168 @@ def build_brickhaven_guides():
         write(path, page("brickhaven", lang, path, alts("tips"), title, desc, body, [g["home"], (title, path)]))
 
 
+# ---------------------------------------------------------------- Glowfly: idle merge guides
+
+GG = {
+    "en": dict(
+        home=("Glowfly", "/glowfly/"), related="More guides",
+        idle=("/glowfly/relaxing-idle-merge-game/", "A Relaxing Idle Merge Game for iPhone That Plays While You're Away",
+              "Looking for a calm idle game with no forced ads? In Glowfly, lights bounce through the dark, merge into brighter "
+              "ones and reveal a hand-drawn night sky, even while the game is closed."),
+        offline=("/glowfly/idle-games-offline-progress/", "How Offline Progress Works in Idle Games (and How to Get the Most From It)",
+                 "Idle games keep earning while they're closed. Here is how offline progress is usually calculated, why it has a "
+                 "time limit, and simple habits that make every return worth it, with Glowfly as the example."),
+        tips=("/glowfly/beginners-guide/", "Glowfly Beginner's Guide: 10 Tips to Light Up More Nights",
+              "Ten tips for new players: when to add lights and when to level them, how merging works, which boosts to use "
+              "before bed and how to break the big rocks faster."),
+    ),
+    "tr": dict(
+        home=("Glowfly", "/glowfly/tr/"), related="Diğer rehberler",
+        idle=("/glowfly/tr/rahatlatici-idle-birlestirme-oyunu/", "Sen Yokken de Oynayan Rahatlatıcı Bir Idle Birleştirme Oyunu: iPhone",
+              "Zorla reklam izletmeyen sakin bir idle oyun mu arıyorsun? Glowfly'da ışıklar karanlıkta seker, birleşip daha "
+              "parlak olur ve oyun kapalıyken bile elle çizilmiş bir gece gökyüzünü ortaya çıkarır."),
+        offline=("/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/", "Idle Oyunlarda Kapalıyken İlerleme Nasıl Çalışır (ve En İyi Nasıl Kullanılır)",
+                 "Idle oyunlar kapalıyken de kazanmaya devam eder. Kapalıyken ilerlemenin genelde nasıl hesaplandığını, neden bir "
+                 "süre sınırı olduğunu ve her dönüşü değerli kılan basit alışkanlıkları Glowfly örneğiyle anlatıyoruz."),
+        tips=("/glowfly/tr/baslangic-rehberi/", "Glowfly Başlangıç Rehberi: Daha Çok Gece Aydınlatmak İçin 10 İpucu",
+              "Yeni oyuncular için on ipucu: ne zaman ışık ekleyip ne zaman seviye yükseltmeli, birleştirme nasıl işler, "
+              "yatmadan önce hangi takviyeler kullanılır ve büyük kayalar nasıl daha hızlı kırılır."),
+    ),
+}
+
+
+def build_glowfly_guides():
+    for lang in ("en", "tr"):
+        g = GG[lang]
+        other = GG["tr" if lang == "en" else "en"]
+        alts = lambda key: {lang: g[key][0], ("tr" if lang == "en" else "en"): other[key][0]}
+        rel = lambda skip: related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("idle", "tips", "offline") if k != skip])
+        en = lang == "en"
+        shot = lambda n, alt: f'  <img class="shot" src="/glowfly/img/ch{n}.jpg" alt="{ESC(alt)}" width="600" height="900" loading="lazy">\n'
+
+        # Relaxing idle merge game
+        path, title, desc = g["idle"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        body += paras(ESC("An idle game is one that keeps making progress on its own: you make a few good choices, and the game does the "
+                          "rest, even while your phone is in your pocket. A merge game adds one simple rule: combine identical things "
+                          "into one better thing. Glowfly puts both ideas under a quiet night sky."
+                          if en else
+                          "Idle oyun, kendi kendine ilerlemeye devam eden oyundur: birkaç iyi seçim yaparsın, gerisini oyun yapar; telefon "
+                          "cebindeyken bile. Birleştirme oyunu buna basit bir kural ekler: aynı şeyleri birleştirip daha iyi tek bir şey "
+                          "yap. Glowfly bu iki fikri sakin bir gece gökyüzünün altında buluşturur.")) + "\n"
+        body += shot(1, "Forest Night, the first chapter of Glowfly" if en else "Glowfly'ın ilk bölümü Orman Gecesi")
+        body += defs("How Glowfly plays" if en else "Glowfly nasıl oynanır", (
+            [("Lights that bounce", "Each light flies in a straight line, bounces off the walls and breaks the glass and rock it hits. Every broken piece reveals a little more of the night landscape underneath."),
+             ("Ten become one", "Collect ten lights of the same kind and merge them into one brighter, stronger light. There are twelve kinds of light, from a soft spark to the brightest star."),
+             ("A night at a time", "When every wall is broken, the whole landscape lights up and the next night begins. Every ten nights a fallen star is found and a postcard joins your story."),
+             ("A story to the end", "Ten chapters, from a forest cabin to a lighthouse, a desert, a sleeping town, the deep sea, the planets and the Milky Way. Night 1,000 completes the sky.")] if en else
+            [("Seken ışıklar", "Her ışık düz bir çizgide uçar, duvarlardan seker ve çarptığı camı ve kayayı kırar. Kırılan her parça alttaki gece manzarasından biraz daha gösterir."),
+             ("On ışık, bir ışık", "Aynı türden on ışık topla ve onları daha parlak, daha güçlü tek bir ışıkta birleştir. Yumuşak bir kıvılcımdan en parlak yıldıza kadar on iki ayrı ışık var."),
+             ("Gece gece", "Bütün duvarlar kırılınca manzaranın tamamı aydınlanır ve sıradaki gece başlar. Her on gecede düşmüş bir yıldız bulunur ve hikâyene bir kartpostal eklenir."),
+             ("Sonuna kadar bir hikâye", "Ormandaki bir kulübeden deniz fenerine, çöle, uyuyan bir kasabaya, derin denize, gezegenlere ve Samanyolu'na on bölüm. 1.000. gece gökyüzünü tamamlar.")]))
+        body += steps("Why it stays relaxing" if en else "Neden rahatlatıcı kalır", (
+            ["It plays while you're away: your lights keep working for hours after you close the game, and you come back to nights already cleared.",
+             "No ad ever plays on its own. Some rewards can be earned by choosing to watch a short video, and that's all.",
+             "No timers chasing you, no energy bars and no lives. Open it for a minute or an hour.",
+             "Soft lo-fi music and gentle glass sounds, with options for fewer effects and no flashing.",
+             "Your progress is backed up in your own iCloud and follows you to a new iPhone or iPad."] if en else
+            ["Sen yokken de oynar: oyunu kapattıktan sonra ışıkların saatlerce çalışır, döndüğünde geceler çoktan aydınlanmış olur.",
+             "Hiçbir reklam kendiliğinden oynamaz. Bazı ödüller kısa bir video izlemeyi seçerek kazanılır, o kadar.",
+             "Seni kovalayan zamanlayıcı, enerji çubuğu ya da can yok. Bir dakika ya da bir saat aç.",
+             "Yumuşak lo-fi müzik ve hafif cam sesleri; daha az efekt ve yanıp sönmesiz arayüz seçenekleri.",
+             "İlerlemen kendi iCloud'unda yedeklenir, yeni iPhone ya da iPad'ine seninle gelir."]), ordered=False)
+        body += shot(5, "The Lighthouse chapter in Glowfly" if en else "Glowfly'da Deniz Feneri bölümü")
+        body += defs("Who it is for" if en else "Kimler için", (
+            [("Players who like to check in", "If you enjoy opening a game for a few minutes, collecting what built up and making one or two choices, Glowfly is made for that rhythm."),
+             ("Players who like to watch", "Hold the speed button and watch a wall of glass shatter under dozens of lights, or tap the rocks yourself. It is satisfying without asking for skill."),
+             ("Anyone who wants a calm screen", "Dark, quiet colors, a slow story and no pressure: it is a pleasant thing to leave running.")] if en else
+            [("Arada bir uğramayı sevenler", "Bir oyunu birkaç dakikalığına açıp biriken kazancı toplamayı ve bir iki seçim yapmayı seviyorsan Glowfly tam bu ritim için yapıldı."),
+             ("İzlemeyi sevenler", "Hızlandır düğmesine basılı tut ve onlarca ışığın altında bir cam duvarın parçalanışını izle ya da kayalara kendin dokun. Beceri istemeden tatmin edici."),
+             ("Sakin bir ekran isteyen herkes", "Koyu, sessiz renkler, yavaş akan bir hikâye ve baskı yok: açık bırakmak bile hoş.")]))
+        body += paras(ESC("Glowfly is free to play from the first night to the last. Glowfly Plus, an optional subscription, makes the "
+                          "lights work longer while you're away and gives ad-free rewards; there is also a one-time ad-free option."
+                          if en else
+                          "Glowfly ilk geceden son geceye kadar ücretsiz oynanır. İsteğe bağlı abonelik Glowfly Plus, sen yokken "
+                          "ışıkların daha uzun çalışmasını ve ödülleri reklamsız almanı sağlar; tek seferlik bir reklamsız seçenek de var.")) + "\n"
+        body += rel("idle")
+        faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in (
+                [("Is Glowfly an idle game?", "Yes. Glowfly is an idle merge game: your lights keep breaking walls and earning light for hours after you close it."),
+                 ("Does Glowfly force you to watch ads?", "No. Ads only play when you choose to watch one for a reward, and Glowfly Plus or the ad-free option gives those rewards without ads."),
+                 ("Is Glowfly free?", "Yes, it is free to play. Glowfly Plus, an ad-free option and gem packs are optional in-app purchases.")] if en else
+                [("Glowfly bir idle oyun mu?", "Evet. Glowfly bir idle birleştirme oyunudur: oyunu kapattıktan sonra ışıkların saatlerce duvar kırmaya ve ışıltı kazanmaya devam eder."),
+                 ("Glowfly zorla reklam izletiyor mu?", "Hayır. Reklam yalnız bir ödül için izlemeyi seçtiğinde oynar; Glowfly Plus ya da reklamsız seçenek bu ödülleri reklamsız verir."),
+                 ("Glowfly ücretsiz mi?", "Evet, ücretsiz oynanır. Glowfly Plus, reklamsız seçenek ve elmas paketleri isteğe bağlı uygulama içi satın almalardır.")])]}
+        write(path, page("glowfly", lang, path, alts("idle"), title, desc, body, [g["home"], (title, path)], schema=faq))
+
+
+        # Offline progress explainer
+        path, title, desc = g["offline"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        body += defs("How it is usually calculated" if en else "Genelde nasıl hesaplanır", (
+            [("Measured, not guessed", "While you play, the game measures how much damage or income you make per second. When you come back, it multiplies that rate by the time you were away. Glowfly measures your lights' real damage per second while the game is open."),
+             ("Usually at a reduced rate", "Most idle games pay offline time at a share of the live rate, so playing actively still matters. In Glowfly, walls keep breaking at a share of your measured power and nights are cleared one by one."),
+             ("Capped in time", "Offline progress stops after a few hours. The cap keeps the game fair and gives a reason to check in: in Glowfly the lights work for 4 hours after you leave, longer with Deep Sleep or Glowfly Plus."),
+             ("Shown when you return", "A welcome-back screen sums up what happened: how long you were away, how many nights were cleared and what you earned, with the postcards you found on the way.")] if en else
+            [("Tahmin değil, ölçüm", "Sen oynarken oyun saniyede ne kadar hasar ya da gelir ürettiğini ölçer. Döndüğünde bu hızı uzak kaldığın süreyle çarpar. Glowfly, oyun açıkken ışıklarının gerçek saniyelik hasarını ölçer."),
+             ("Genelde düşük oranla", "Çoğu idle oyun kapalı süreyi canlı hızın bir payıyla öder; böylece aktif oynamak yine önemlidir. Glowfly'da duvarlar ölçülen gücünün bir payıyla kırılmaya devam eder, geceler tek tek aydınlanır."),
+             ("Süre sınırlı", "Kapalıyken ilerleme birkaç saat sonra durur. Sınır oyunu adil tutar ve uğramak için bir sebep verir: Glowfly'da ışıklar ayrıldıktan sonra 4 saat çalışır; Derin uyku ya da Glowfly Plus ile daha uzun."),
+             ("Döndüğünde gösterilir", "Tekrar hoş geldin ekranı olanları özetler: ne kadar uzak kaldığın, kaç gecenin aydınlandığı, ne kazandığın ve yolda bulunan kartpostallar.")]))
+        body += shot(7, "The Sleeping Town chapter in Glowfly" if en else "Glowfly'da Uyuyan Kasaba bölümü")
+        body += steps("Habits that make every return worth it" if en else "Her dönüşü değerli kılan alışkanlıklar", (
+            ["Spend before you leave: upgrades bought now work for the whole time you're away.",
+             "Start a boost that lasts through your break, like Deep Sleep before bed.",
+             "Come back about when the cap runs out; after that, nothing more is earned.",
+             "Collect first when you return, then merge and level up with what you earned.",
+             "Don't worry about missing a day: an idle game is meant to wait for you."] if en else
+            ["Ayrılmadan önce harca: şimdi aldığın güçlendirmeler uzak kaldığın sürenin tamamında çalışır.",
+             "Arana yetecek bir takviye başlat; örneğin yatmadan önce Derin uyku.",
+             "Sınır dolmaya yakın dön; sonrasında artık bir şey kazanılmaz.",
+             "Döndüğünde önce topla, sonra kazancınla birleştir ve seviye yükselt.",
+             "Bir gün kaçırmayı dert etme: idle oyun seni beklemek için yapılmıştır."]), ordered=False)
+        body += paras(ESC("Good offline progress is generous but honest: it never asks you to set alarms, and it never punishes you for living your life."
+                          if en else "İyi bir kapalıyken ilerleme cömert ama dürüsttür: sana alarm kurdurmaz ve hayatını yaşadığın için seni cezalandırmaz.")) + "\n"
+        body += rel("offline")
+        faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in (
+                [("Do idle games keep progressing when closed?", "Most do. They measure your rate while you play and pay out the time you were away, usually at a reduced rate and up to a time limit."),
+                 ("How long does Glowfly keep playing while closed?", "4 hours after you leave, longer with the Deep Sleep boost or Glowfly Plus.")] if en else
+                [("Idle oyunlar kapalıyken ilerler mi?", "Çoğu ilerler. Oynarken hızını ölçer ve uzak kaldığın süreyi genelde düşük bir oranla ve bir süre sınırına kadar öder."),
+                 ("Glowfly kapalıyken ne kadar oynar?", "Ayrıldıktan sonra 4 saat; Derin uyku takviyesi ya da Glowfly Plus ile daha uzun.")])]}
+        write(path, page("glowfly", lang, path, alts("offline"), title, desc, body, [g["home"], (title, path)], schema=faq))
+        # Beginner's guide
+        path, title, desc = g["tips"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        tips = ([("Collect often", "Light you earn waits on the Collect button at the top. Nothing is lost, but light you haven't collected can't be spent, so collect before you shop."),
+                 ("Add lights to the lowest card", "The + is always on your lowest light. Once three kinds of light are open, each press adds five at once."),
+                 ("Merge at ten", "When a card shows 10/10, merge: ten lights become one of the next kind, which is far stronger. Three kinds of light are in play at a time."),
+                 ("Level up, too", "The ▲ button raises a light's level and every copy of it gets stronger. When adding lights gets expensive, levels are often the better deal."),
+                 ("Pick skills at levels 5, 20 and 40", "Each light has three skill slots. A glowing slot is waiting for you to choose: more power, more light earned, faster flight or stronger hits on hard rock."),
+                 ("Nothing is wasted", "When a fourth kind of light opens, the lowest one fades away, but a quarter of its levels passes on to the light above it."),
+                 ("Tap and hold", "Tap a wall to hit it yourself, or hold the speed button to make everything faster. Glass breaks in one hit; big rocks take many."),
+                 ("Use Power boosts for big walls", "A Power boost makes every light hit harder (and their trails flicker with flames). Light boosts double what you earn."),
+                 ("Before bed, Deep Sleep", "The lights keep working for 4 hours after you leave. Deep Sleep adds more, so start it before a long break."),
+                 ("Open boxes and daily gifts", "Star Boxes drop now and then and at every chapter end; the game shows exactly what each can contain. Claim the daily gift every day for boosts and gems.")] if en else
+                [("Sık sık topla", "Kazandığın ışıltı üstteki Topla düğmesinde bekler. Hiçbir şey kaybolmaz ama toplanmamış ışıltı harcanamaz; alışverişten önce topla."),
+                 ("Işığı en alttaki karta ekle", "+ her zaman en alttaki ışığındadır. Üç ışık açıldıktan sonra her basış beş ışığı birden ekler."),
+                 ("10'da birleştir", "Bir kart 10/10 olunca birleştir: on ışık, çok daha güçlü bir sonraki ışık olur. Aynı anda üç ışık oyundadır."),
+                 ("Seviye de yükselt", "▲ düğmesi ışığın seviyesini yükseltir, o ışığın bütün kopyaları güçlenir. Işık eklemek pahalılaşınca seviye çoğu zaman daha kârlıdır."),
+                 ("5, 20 ve 40. seviyede beceri seç", "Her ışığın üç beceri yuvası var. Parlayan yuva seçim bekliyor: daha çok güç, daha çok ışıltı, daha hızlı uçuş ya da sert kayaya daha güçlü vuruş."),
+                 ("Hiçbir şey boşa gitmez", "Dördüncü ışık açılınca en alttaki ışık solar, ama seviyelerinin dörtte biri bir üstteki ışığa geçer."),
+                 ("Dokun ve basılı tut", "Bir duvara dokunarak kendin vur ya da her şeyi hızlandırmak için Hızlandır'a basılı tut. Cam tek vuruşta kırılır, iri kayalar çok vuruş ister."),
+                 ("Büyük duvarlara Güç takviyesi", "Güç takviyesi bütün ışıkların daha sert vurmasını sağlar (izlerinden alevler yükselir). Işıltı takviyeleri kazancını ikiye katlar."),
+                 ("Yatmadan önce Derin uyku", "Ayrıldıktan sonra ışıklar 4 saat çalışır. Derin uyku bu süreyi uzatır; uzun bir aradan önce başlat."),
+                 ("Kutuları ve günlük hediyeyi aç", "Yıldız kutuları ara sıra ve her bölüm sonunda düşer; oyun her birinden neler çıkabileceğini açıkça gösterir. Takviye ve elmas için günlük hediyeyi her gün al.")])
+        for i, (h, p) in enumerate(tips):
+            body += f"  <h2>{i + 1}. {ESC(h)}</h2>\n  <p>{ESC(p)}</p>\n"
+            if i == 4:
+                body += shot(8, "The Deep Sea chapter in Glowfly" if en else "Glowfly'da Derin Deniz bölümü")
+        body += paras(ESC("Stuck or found a bug? Write to hyapps@outlook.com; every message is read."
+                          if en else "Takıldın ya da bir hata mı buldun? hyapps@outlook.com adresine yaz; her mesaj okunur.")) + "\n"
+        body += rel("tips")
+        write(path, page("glowfly", lang, path, alts("tips"), title, desc, body, [g["home"], (title, path)]))
+
+
 # ---------------------------------------------------------------- sitemap
 
 STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
@@ -772,6 +943,8 @@ STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
           ("/quickwits/privacy.html", {}),
           ("/brickhaven/", {"en": "/brickhaven/", "tr": "/brickhaven/tr/"}), ("/brickhaven/tr/", {"en": "/brickhaven/", "tr": "/brickhaven/tr/"}),
           ("/brickhaven/privacy.html", {}),
+          ("/glowfly/", {"en": "/glowfly/", "tr": "/glowfly/tr/"}), ("/glowfly/tr/", {"en": "/glowfly/", "tr": "/glowfly/tr/"}),
+          ("/glowfly/privacy.html", {}),
           ("/besmele/", {"tr": "/besmele/", "en": "/besmele/en/"}), ("/besmele/en/", {"tr": "/besmele/", "en": "/besmele/en/"}),
           ("/besmele/destek.html", {}), ("/besmele/en/destek.html", {}), ("/besmele/gizlilik.html", {}), ("/besmele/en/gizlilik.html", {})]
 
@@ -792,5 +965,6 @@ build_besmele_guides()
 build_crownly_guides()
 build_quickwits_guides()
 build_brickhaven_guides()
+build_glowfly_guides()
 build_sitemap()
 print(f"guide pages: {len(PAGES)}")

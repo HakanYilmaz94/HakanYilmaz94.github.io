@@ -1,5 +1,5 @@
 // Renders a 1200×630 share image (Open Graph / Twitter card).
-// Usage: swift tools/og.swift <out.jpg> <plum|green> <title> <subtitle> <icon.png> [shot1 shot2 ...]
+// Usage: swift tools/og.swift <out.jpg> <plum|green|night> <title> <subtitle> <icon.png> [shot1 shot2 ...]
 import AppKit
 
 let a = CommandLine.arguments
@@ -10,10 +10,12 @@ let W: CGFloat = 1200, H: CGFloat = 630
 func color(_ h: UInt32, _ alpha: CGFloat = 1) -> NSColor {
     NSColor(srgbRed: CGFloat(h >> 16 & 255) / 255, green: CGFloat(h >> 8 & 255) / 255, blue: CGFloat(h & 255) / 255, alpha: alpha)
 }
-let green = theme == "green"
-let top = green ? color(0x1F4D3A) : color(0x3D2660)
-let bottom = green ? color(0x0A2618) : color(0x170D27)
-let glows: [(UInt32, CGFloat, CGFloat, CGFloat)] = green
+let green = theme == "green", night = theme == "night"
+let top = night ? color(0x1C2560) : green ? color(0x1F4D3A) : color(0x3D2660)
+let bottom = night ? color(0x070B1C) : green ? color(0x0A2618) : color(0x170D27)
+let glows: [(UInt32, CGFloat, CGFloat, CGFloat)] = night
+    ? [(0xFFD46B, 170, 110, 300), (0x7FF0C3, 1060, 560, 340), (0x8FD3FF, 880, 50, 240)]
+    : green
     ? [(0xD9B26A, 180, 120, 300), (0x6FAE8C, 1050, 560, 360), (0xE9CB8A, 900, 60, 220)]
     : [(0xCDBEEB, 160, 100, 320), (0xF6CFA8, 1080, 560, 360), (0xB9D3F2, 860, 40, 240), (0xF2B8C6, 520, 640, 260)]
 let gold = color(0xF4D06F), cream = color(0xFBF4E6)
@@ -41,8 +43,10 @@ func drawFlipped(_ image: NSImage, in r: NSRect) {
 }
 
 // Screenshots on the right, tilted and overlapping.
-let shotW: CGFloat = 250, shotH = shotW * 2868 / 1320
+let shotW: CGFloat = 250
 for (i, img) in shots.prefix(2).enumerated().reversed() {
+    // The picture's own shape (store screenshots are 1320×2868, Glowfly's postcards 2:3).
+    let shotH = shotW * (img.size.width > 0 ? img.size.height / img.size.width : 2868 / 1320)
     cg.saveGState()
     let cx: CGFloat = i == 0 ? 860 : 1040, cy: CGFloat = i == 0 ? 360 : 400
     cg.translateBy(x: cx, y: cy); cg.rotate(by: (i == 0 ? -6 : 7) * .pi / 180)

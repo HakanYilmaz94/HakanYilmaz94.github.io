@@ -1,0 +1,20 @@
+/* Glowfly theme for the guide pages, on top of /assets/app.css: the game's night sky, gold light. Dark in both modes. */
+:root, :root:where(*) {
+  --bg: #0b1023;
+  --card: #151d3b;
+  --ink: #eef0ff;
+  --muted: #a9b0d4;
+  --line: #262f57;
+  --gold: #ffd46b;
+  --gold-hi: #ffe7a6;
+  --night: #070b1c;
+  --night-2: #1c2560;
+  --on-night: #eef0ff;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0b1023; --card: #151d3b; --ink: #eef0ff; --muted: #a9b0d4; --line: #262f57; --gold: #ffd46b; }
+}
+html { color-scheme: dark; }
+.bar { background: rgba(11, 16, 35, .78); }
+.foot { background: #070b1c; }
+.article .shot { display: block; width: min(360px, 100%); height: auto; border-radius: 18px; margin: 8px auto 24px; border: 1px solid var(--line); }
