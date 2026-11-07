@@ -73,6 +73,16 @@ def is_live(app):
 for _app in APPS:
     APPS[_app]["live"] = is_live(_app)
 
+
+def glowfly_store():
+    """Reads STORE from build_glowfly.py: 1.0 has no purchases or ads, so the guides leave Plus and ads out."""
+    with open(os.path.join(ROOT, "tools", "build_glowfly.py")) as f:
+        m = re.search(r"^STORE = (True|False)", f.read(), re.M)
+    return m is None or m.group(1) == "True"
+
+
+GLOWFLY_STORE = glowfly_store()
+
 STORE_LABEL = {"en": "Download on the App Store", "tr": "App Store'dan indir"}
 SOON_LABEL = {"en": "Coming soon to the App Store", "tr": "Yakında App Store'da"}
 MADE = {"en": "Made with care by an independent developer.", "tr": "Bağımsız bir geliştirici tarafından yapıldı."}
@@ -850,20 +860,25 @@ def build_glowfly_guides():
             [("Arada bir uğramayı sevenler", "Bir oyunu birkaç dakikalığına açıp biriken kazancı toplamayı ve bir iki seçim yapmayı seviyorsan Glowfly tam bu ritim için yapıldı."),
              ("İzlemeyi sevenler", "Hızlandır düğmesine basılı tut ve onlarca ışığın altında bir cam duvarın parçalanışını izle ya da kayalara kendin dokun. Beceri istemeden tatmin edici."),
              ("Sakin bir ekran isteyen herkes", "Koyu, sessiz renkler, yavaş akan bir hikâye ve baskı yok: açık bırakmak bile hoş.")]))
-        body += paras(ESC("Glowfly is free to play from the first night to the last. Glowfly Plus, an optional subscription, makes the "
-                          "lights work longer while you're away and gives ad-free rewards; there is also a one-time ad-free option."
-                          if en else
-                          "Glowfly ilk geceden son geceye kadar ücretsiz oynanır. İsteğe bağlı abonelik Glowfly Plus, sen yokken "
-                          "ışıkların daha uzun çalışmasını ve ödülleri reklamsız almanı sağlar; tek seferlik bir reklamsız seçenek de var.")) + "\n"
+        if GLOWFLY_STORE:
+            free = ("Glowfly is free to play from the first night to the last. Glowfly Plus, an optional subscription, makes the "
+                    "lights work longer while you're away and gives ad-free rewards; there is also a one-time ad-free option."
+                    if en else
+                    "Glowfly ilk geceden son geceye kadar ücretsiz oynanır. İsteğe bağlı abonelik Glowfly Plus, sen yokken "
+                    "ışıkların daha uzun çalışmasını ve ödülleri reklamsız almanı sağlar; tek seferlik bir reklamsız seçenek de var.")
+        else:
+            free = ("Glowfly is free to play from the first night to the last, with no ads and no in-app purchases." if en else
+                    "Glowfly ilk geceden son geceye kadar ücretsiz oynanır; reklam ve uygulama içi satın alma yoktur.")
+        body += paras(ESC(free)) + "\n"
         body += rel("idle")
         faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in (
                 [("Is Glowfly an idle game?", "Yes. Glowfly is an idle merge game: your lights keep breaking walls and earning light for hours after you close it."),
-                 ("Does Glowfly force you to watch ads?", "No. Ads only play when you choose to watch one for a reward, and Glowfly Plus or the ad-free option gives those rewards without ads."),
-                 ("Is Glowfly free?", "Yes, it is free to play. Glowfly Plus, an ad-free option and gem packs are optional in-app purchases.")] if en else
+                 ("Does Glowfly force you to watch ads?", "No. Ads only play when you choose to watch one for a reward, and Glowfly Plus or the ad-free option gives those rewards without ads." if GLOWFLY_STORE else "No. Glowfly has no ads."),
+                 ("Is Glowfly free?", "Yes, it is free to play. Glowfly Plus, an ad-free option and gem packs are optional in-app purchases." if GLOWFLY_STORE else "Yes, it is free to play, with no in-app purchases.")] if en else
                 [("Glowfly bir idle oyun mu?", "Evet. Glowfly bir idle birleştirme oyunudur: oyunu kapattıktan sonra ışıkların saatlerce duvar kırmaya ve ışıltı kazanmaya devam eder."),
-                 ("Glowfly zorla reklam izletiyor mu?", "Hayır. Reklam yalnız bir ödül için izlemeyi seçtiğinde oynar; Glowfly Plus ya da reklamsız seçenek bu ödülleri reklamsız verir."),
-                 ("Glowfly ücretsiz mi?", "Evet, ücretsiz oynanır. Glowfly Plus, reklamsız seçenek ve elmas paketleri isteğe bağlı uygulama içi satın almalardır.")])]}
+                 ("Glowfly zorla reklam izletiyor mu?", "Hayır. Reklam yalnız bir ödül için izlemeyi seçtiğinde oynar; Glowfly Plus ya da reklamsız seçenek bu ödülleri reklamsız verir." if GLOWFLY_STORE else "Hayır. Glowfly'da reklam yok."),
+                 ("Glowfly ücretsiz mi?", "Evet, ücretsiz oynanır. Glowfly Plus, reklamsız seçenek ve elmas paketleri isteğe bağlı uygulama içi satın almalardır." if GLOWFLY_STORE else "Evet, ücretsiz oynanır; uygulama içi satın alma yoktur.")])]}
         write(path, page("glowfly", lang, path, alts("idle"), title, desc, body, [g["home"], (title, path)], schema=faq))
 
 
@@ -873,11 +888,11 @@ def build_glowfly_guides():
         body += defs("How it is usually calculated" if en else "Genelde nasıl hesaplanır", (
             [("Measured, not guessed", "While you play, the game measures how much damage or income you make per second. When you come back, it multiplies that rate by the time you were away. Glowfly measures your lights' real damage per second while the game is open."),
              ("Usually at a reduced rate", "Most idle games pay offline time at a share of the live rate, so playing actively still matters. In Glowfly, walls keep breaking at a share of your measured power and nights are cleared one by one."),
-             ("Capped in time", "Offline progress stops after a few hours. The cap keeps the game fair and gives a reason to check in: in Glowfly the lights work for 4 hours after you leave, longer with Deep Sleep or Glowfly Plus."),
+             ("Capped in time", "Offline progress stops after a few hours. The cap keeps the game fair and gives a reason to check in: in Glowfly the lights work for 4 hours after you leave, longer with Deep Sleep" + (" or Glowfly Plus" if GLOWFLY_STORE else "") + "."),
              ("Shown when you return", "A welcome-back screen sums up what happened: how long you were away, how many nights were cleared and what you earned, with the postcards you found on the way.")] if en else
             [("Tahmin değil, ölçüm", "Sen oynarken oyun saniyede ne kadar hasar ya da gelir ürettiğini ölçer. Döndüğünde bu hızı uzak kaldığın süreyle çarpar. Glowfly, oyun açıkken ışıklarının gerçek saniyelik hasarını ölçer."),
              ("Genelde düşük oranla", "Çoğu idle oyun kapalı süreyi canlı hızın bir payıyla öder; böylece aktif oynamak yine önemlidir. Glowfly'da duvarlar ölçülen gücünün bir payıyla kırılmaya devam eder, geceler tek tek aydınlanır."),
-             ("Süre sınırlı", "Kapalıyken ilerleme birkaç saat sonra durur. Sınır oyunu adil tutar ve uğramak için bir sebep verir: Glowfly'da ışıklar ayrıldıktan sonra 4 saat çalışır; Derin uyku ya da Glowfly Plus ile daha uzun."),
+             ("Süre sınırlı", "Kapalıyken ilerleme birkaç saat sonra durur. Sınır oyunu adil tutar ve uğramak için bir sebep verir: Glowfly'da ışıklar ayrıldıktan sonra 4 saat çalışır; Derin uyku" + (" ya da Glowfly Plus" if GLOWFLY_STORE else "") + " ile daha uzun."),
              ("Döndüğünde gösterilir", "Tekrar hoş geldin ekranı olanları özetler: ne kadar uzak kaldığın, kaç gecenin aydınlandığı, ne kazandığın ve yolda bulunan kartpostallar.")]))
         body += shot(7, "The Sleeping Town chapter in Glowfly" if en else "Glowfly'da Uyuyan Kasaba bölümü")
         body += steps("Habits that make every return worth it" if en else "Her dönüşü değerli kılan alışkanlıklar", (
@@ -897,9 +912,9 @@ def build_glowfly_guides():
         faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in (
                 [("Do idle games keep progressing when closed?", "Most do. They measure your rate while you play and pay out the time you were away, usually at a reduced rate and up to a time limit."),
-                 ("How long does Glowfly keep playing while closed?", "4 hours after you leave, longer with the Deep Sleep boost or Glowfly Plus.")] if en else
+                 ("How long does Glowfly keep playing while closed?", "4 hours after you leave, longer with the Deep Sleep boost" + (" or Glowfly Plus" if GLOWFLY_STORE else "") + ".")] if en else
                 [("Idle oyunlar kapalıyken ilerler mi?", "Çoğu ilerler. Oynarken hızını ölçer ve uzak kaldığın süreyi genelde düşük bir oranla ve bir süre sınırına kadar öder."),
-                 ("Glowfly kapalıyken ne kadar oynar?", "Ayrıldıktan sonra 4 saat; Derin uyku takviyesi ya da Glowfly Plus ile daha uzun.")])]}
+                 ("Glowfly kapalıyken ne kadar oynar?", "Ayrıldıktan sonra 4 saat; Derin uyku takviyesi" + (" ya da Glowfly Plus" if GLOWFLY_STORE else "") + " ile daha uzun.")])]}
         write(path, page("glowfly", lang, path, alts("offline"), title, desc, body, [g["home"], (title, path)], schema=faq))
         # Beginner's guide
         path, title, desc = g["tips"]

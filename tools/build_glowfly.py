@@ -15,6 +15,10 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_ID = "6830895618"
 LIVE = False
+# STORE mirrors the app's STORE compile flag: 1.0 has no purchases and no ads (Guideline 2.5.19), 1.1 brings Glowfly Plus,
+# gems, the ad-free option and reward videos back. With STORE = False the FAQ and privacy policy leave them out.
+# build_guides.py reads it from here too. 1.1: set True and run this and build_guides.py.
+STORE = False
 ANALYTICS = ("<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
              "data-cf-beacon='{\"token\": \"89e9ceae59114244a972f60af4a20851\"}'></script><!-- End Cloudflare Web Analytics -->")
 
@@ -43,27 +47,28 @@ T = {
             ("💤", "Plays while you're away", "Your lights keep working for hours after you close the game. Come back to nights cleared and light to collect."),
             ("🪨", "Glass, rock and hard stone", "Thin glass shatters at a touch, big rocks take a beating. Tap the walls yourself or hold to speed everything up."),
             ("⭐", "Skills and upgrades", "Level up each light, pick a skill at levels 5, 20 and 40, and strengthen all your lights at once."),
-            ("🎧", "Calm by design", "Soft lo-fi music, gentle glass sounds and no timers chasing you. Ads only ever play when you choose to watch one for a reward."),
+            ("🎧", "Calm by design", "Soft lo-fi music, gentle glass sounds and no timers chasing you." + (" Ads only ever play when you choose to watch one for a reward." if STORE else "")),
         ],
         support_h="Support",
         contact="A bug, an idea or a question? Write to us at {mail}. We read every message.",
         faq=[
             ("Is Glowfly free?",
-             "Yes, Glowfly is free to play from the first night to the last. Glowfly Plus (an optional subscription), an "
-             "ad-free option and gem packs are available as in-app purchases; prices are always shown on the button before you buy."),
+             "Yes, Glowfly is free to play from the first night to the last." + (" Glowfly Plus (an optional subscription), an "
+             "ad-free option and gem packs are available as in-app purchases; prices are always shown on the button before you buy." if STORE else "")),
             ("Does the game keep going when it's closed?",
-             "Yes. Your lights keep breaking walls for 4 hours after you leave (longer with Deep Sleep or Glowfly Plus). "
+             "Yes. Your lights keep breaking walls for 4 hours after you leave (longer with Deep Sleep" + (" or Glowfly Plus" if STORE else "") + "). "
              "When you come back, the game shows how many nights were cleared and the light you earned."),
             ("Are there ads?",
-             "Only if you want them. Some rewards, like a boost, can be earned by watching a short video ad. No ad ever "
-             "plays on its own, and with Plus or the ad-free option you get those rewards without ads."),
+             ("Only if you want them. Some rewards, like a boost, can be earned by watching a short video ad. No ad ever "
+              "plays on its own, and with Plus or the ad-free option you get those rewards without ads." if STORE else
+              "No. Glowfly has no ads.")),
             ("What is in a Star Box?",
              "Boxes drop from the sky now and then and at every chapter end. The game lists exactly what a box can "
              "contain and the chance of each prize before you open one."),
             ("Will my progress move to my new phone?",
-             "Yes. The game keeps a backup in your own iCloud. Purchases come back with Restore Purchases on the Glowfly Plus screen."),
+             "Yes. The game keeps a backup in your own iCloud." + (" Purchases come back with Restore Purchases on the Glowfly Plus screen." if STORE else "")),
             ("Is it suitable for children?",
-             "Glowfly has no violence, no chat and no account. In-app purchases are protected by your Apple Account and Screen Time settings."),
+             ("Glowfly has no violence, no chat and no account. In-app purchases are protected by your Apple Account and Screen Time settings." if STORE else "Glowfly has no violence, no chat, no account, no ads and no in-app purchases.")),
         ],
         made="Made with care by an independent developer.", footer_privacy="Privacy policy",
         guides_h="Guides",
@@ -95,27 +100,28 @@ T = {
             ("💤", "Sen yokken de oynar", "Oyunu kapattıktan sonra ışıkların saatlerce çalışmaya devam eder. Döndüğünde aydınlanmış geceler ve toplanacak ışıltı seni bekler."),
             ("🪨", "Cam, kaya ve sert taş", "İnce cam bir dokunuşta kırılır, iri kayalar dayanır. Duvarlara kendin dokun ya da basılı tutup her şeyi hızlandır."),
             ("⭐", "Beceriler ve güçlendirmeler", "Her ışığın seviyesini yükselt, 5, 20 ve 40. seviyede bir beceri seç, bütün ışıklarını birden güçlendir."),
-            ("🎧", "Sakin oyun", "Yumuşak lo-fi müzik, hafif cam sesleri, seni kovalayan zamanlayıcı yok. Reklam yalnız bir ödül için izlemeyi seçtiğinde oynar."),
+            ("🎧", "Sakin oyun", "Yumuşak lo-fi müzik, hafif cam sesleri, seni kovalayan zamanlayıcı yok." + (" Reklam yalnız bir ödül için izlemeyi seçtiğinde oynar." if STORE else "")),
         ],
         support_h="Destek",
         contact="Bir hata, bir fikir ya da bir soru mu var? {mail} adresine yaz. Her mesajı okuyoruz.",
         faq=[
             ("Glowfly ücretsiz mi?",
-             "Evet, Glowfly ilk geceden son geceye kadar ücretsiz oynanır. Glowfly Plus (isteğe bağlı abonelik), reklamsız "
-             "seçenek ve elmas paketleri uygulama içi satın alma olarak sunulur; fiyat satın almadan önce düğmede yazar."),
+             "Evet, Glowfly ilk geceden son geceye kadar ücretsiz oynanır." + (" Glowfly Plus (isteğe bağlı abonelik), reklamsız "
+             "seçenek ve elmas paketleri uygulama içi satın alma olarak sunulur; fiyat satın almadan önce düğmede yazar." if STORE else "")),
             ("Oyun kapalıyken de ilerler mi?",
-             "Evet. Ayrıldıktan sonra ışıkların 4 saat boyunca duvar kırmaya devam eder (Derin uyku ya da Glowfly Plus ile "
+             "Evet. Ayrıldıktan sonra ışıkların 4 saat boyunca duvar kırmaya devam eder (Derin uyku" + (" ya da Glowfly Plus" if STORE else "") + " ile "
              "daha uzun). Döndüğünde oyun kaç gecenin aydınlandığını ve kazandığın ışıltıyı gösterir."),
             ("Reklam var mı?",
-             "Yalnız sen istersen. Takviye gibi bazı ödüller kısa bir video reklam izleyerek kazanılabilir. Hiçbir reklam "
-             "kendiliğinden oynamaz; Plus ya da reklamsız seçenekle bu ödülleri reklamsız alırsın."),
+             ("Yalnız sen istersen. Takviye gibi bazı ödüller kısa bir video reklam izleyerek kazanılabilir. Hiçbir reklam "
+              "kendiliğinden oynamaz; Plus ya da reklamsız seçenekle bu ödülleri reklamsız alırsın." if STORE else
+              "Hayır. Glowfly'da reklam yok.")),
             ("Yıldız kutusunda neler var?",
              "Kutular ara sıra gökten ve her bölüm sonunda düşer. Oyun, bir kutudan neler çıkabileceğini ve her ödülün "
              "olasılığını kutuyu açmadan önce açıkça listeler."),
             ("İlerlemem yeni telefonuma geçer mi?",
-             "Evet. Oyun kendi iCloud'unda bir yedek tutar. Satın almalar Glowfly Plus ekranındaki Satın alımları geri yükle ile geri gelir."),
+             "Evet. Oyun kendi iCloud'unda bir yedek tutar." + (" Satın almalar Glowfly Plus ekranındaki Satın alımları geri yükle ile geri gelir." if STORE else "")),
             ("Çocuklar için uygun mu?",
-             "Glowfly'da şiddet, sohbet ve hesap yoktur. Uygulama içi satın almalar Apple Hesabın ve Ekran Süresi ayarlarınla korunur."),
+             ("Glowfly'da şiddet, sohbet ve hesap yoktur. Uygulama içi satın almalar Apple Hesabın ve Ekran Süresi ayarlarınla korunur." if STORE else "Glowfly'da şiddet, sohbet, hesap, reklam ve uygulama içi satın alma yoktur.")),
         ],
         made="Bağımsız bir geliştirici tarafından özenle yapıldı.", footer_privacy="Gizlilik politikası",
         guides_h="Rehberler",
@@ -267,8 +273,8 @@ PRIVACY = {
              "which product was bought so it can unlock it."),
             ("Anonymous statistics", "To learn which parts of the game are too slow or too hard, the App Store version "
              "sends anonymous events through Google Firebase Analytics: for example which night or chapter was reached, "
-             "when a new light was made, which skills and boosts were chosen, which screens were opened, whether a reward "
-             "video was watched and which product was bought (without any payment details). Firebase also uses a random "
+             "when a new light was made, which skills and boosts were chosen, which screens were opened" + (", whether a reward " if STORE else ". ")
+             + ("video was watched and which product was bought (without any payment details). " if STORE else "") + "Firebase also uses a random "
              "app-instance identifier and an approximate (country/region level) location derived from the network. "
              "This data contains no name, e-mail address or advertising identifier, is not linked to your identity and is "
              "not used for tracking. Google processes it under the "
@@ -284,10 +290,10 @@ PRIVACY = {
              "<a href=\"https://policies.google.com/technologies/partner-sites\">How Google uses information from sites or apps that use its services</a>."),
             ("This website", "hyapps.app uses Cloudflare Web Analytics, which counts visits without cookies and without "
              "identifying you."),
-            ("Children", "Glowfly is not directed at children under 13 and collects no personal data from anyone. Purchases "
-             "are protected by your Apple Account and Screen Time settings."),
-            ("Your choices", "You can turn off notifications and iCloud at any time in the Settings app, play without "
-             "ever watching an ad, and delete all your data by deleting the app (and its iCloud backup in Settings → "
+            ("Children", "Glowfly is not directed at children under 13 and collects no personal data from anyone." + (" Purchases "
+             "are protected by your Apple Account and Screen Time settings." if STORE else "")),
+            ("Your choices", "You can turn off notifications and iCloud at any time in the Settings app, " + ("play without "
+             "ever watching an ad, and " if STORE else "and ") + "delete all your data by deleting the app (and its iCloud backup in Settings → "
              "your name → iCloud)."),
             ("Changes and contact", "If this policy changes, the new version will be posted on this page with a new date. "
              "Questions: <a href=\"mailto:hyapps@outlook.com?subject=Glowfly\">hyapps@outlook.com</a>."),
@@ -311,8 +317,8 @@ PRIVACY = {
              "öğrenir ki onu açabilsin."),
             ("Anonim istatistikler", "Oyunun hangi kısmının fazla yavaş ya da zor olduğunu anlamak için App Store sürümü "
              "Google Firebase Analytics ile anonim olaylar gönderir: örneğin hangi geceye ya da bölüme ulaşıldığı, ne zaman "
-             "yeni bir ışık yapıldığı, hangi becerilerin ve takviyelerin seçildiği, hangi ekranların açıldığı, ödüllü bir "
-             "videonun izlenip izlenmediği ve hangi ürünün alındığı (ödeme bilgisi olmadan). Firebase ayrıca rastgele bir "
+             "yeni bir ışık yapıldığı, hangi becerilerin ve takviyelerin seçildiği" + (", hangi ekranların açıldığı, ödüllü bir "
+             "videonun izlenip izlenmediği ve hangi ürünün alındığı (ödeme bilgisi olmadan). " if STORE else " ve hangi ekranların açıldığı. ") + "Firebase ayrıca rastgele bir "
              "uygulama kimliği ve ağdan çıkarılan yaklaşık (ülke/bölge düzeyinde) konum kullanır. Bu veriler ad, e-posta ya "
              "da reklam kimliği içermez, kimliğine bağlanmaz ve izleme için kullanılmaz. Google bunları "
              "<a href=\"https://firebase.google.com/support/privacy\">Firebase gizlilik koşulları</a> kapsamında işler. "
@@ -326,14 +332,18 @@ PRIVACY = {
              "uygulamaları: <a href=\"https://policies.google.com/technologies/partner-sites?hl=tr\">Google, hizmetlerini "
              "kullanan site veya uygulamalardaki bilgileri nasıl kullanır</a>."),
             ("Bu web sitesi", "hyapps.app, ziyaretleri çerezsiz ve seni tanımadan sayan Cloudflare Web Analytics kullanır."),
-            ("Çocuklar", "Glowfly 13 yaşından küçük çocuklara yönelik değildir ve kimseden kişisel veri toplamaz. Satın "
-             "almalar Apple Hesabın ve Ekran Süresi ayarlarınla korunur."),
-            ("Seçimlerin", "Bildirimleri ve iCloud'u istediğin zaman Ayarlar uygulamasından kapatabilir, hiç reklam izlemeden "
-             "oynayabilir ve uygulamayı (ve Ayarlar → adın → iCloud'daki yedeğini) silerek bütün verilerini silebilirsin."),
+            ("Çocuklar", "Glowfly 13 yaşından küçük çocuklara yönelik değildir ve kimseden kişisel veri toplamaz." + (" Satın "
+             "almalar Apple Hesabın ve Ekran Süresi ayarlarınla korunur." if STORE else "")),
+            ("Seçimlerin", "Bildirimleri ve iCloud'u istediğin zaman Ayarlar uygulamasından kapatabilir" + (", hiç reklam izlemeden "
+             "oynayabilir" if STORE else "") + " ve uygulamayı (ve Ayarlar → adın → iCloud'daki yedeğini) silerek bütün verilerini silebilirsin."),
             ("Değişiklikler ve iletişim", "Bu politika değişirse yeni hâli yeni tarihle bu sayfada yayınlanır. Sorular için: "
              "<a href=\"mailto:hyapps@outlook.com?subject=Glowfly\">hyapps@outlook.com</a>."),
         ]),
 }
+
+
+# Sections that only exist in store builds (purchases, AdMob reward videos).
+STORE_ONLY = {"Purchases", "Reward videos (ads)", "Satın almalar", "Ödüllü videolar (reklam)"}
 
 
 def privacy():
@@ -343,6 +353,8 @@ def privacy():
         anchor = ' id="tr"' if lang == "tr" else ""
         body.append(f'<section lang="{lang}"{anchor}><h1>{p["h"]}</h1><p class="muted">{html.escape(p["date"])}</p>')
         for h, text in p["sections"]:
+            if not STORE and h in STORE_ONLY:
+                continue
             if h:
                 body.append(f"<h2>{html.escape(h)}</h2>")
             body.append(f"<p>{text}</p>")
@@ -353,7 +365,7 @@ def privacy():
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Glowfly Privacy Policy · Gizlilik Politikası</title>
-  <meta name="description" content="Glowfly privacy policy: no account, no tracking, no personal data; anonymous statistics and optional reward videos.">
+  <meta name="description" content="Glowfly privacy policy: no account, no tracking, no personal data; anonymous statistics{" and optional reward videos" if STORE else ""}.">
   <link rel="canonical" href="https://hyapps.app/glowfly/privacy.html">
   <link rel="icon" href="/glowfly/img/icon.png">
   <link rel="stylesheet" href="/glowfly/glowfly.css">
