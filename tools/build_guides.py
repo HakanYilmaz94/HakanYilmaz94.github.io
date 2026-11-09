@@ -20,6 +20,17 @@ import re
 import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def crownly_store():
+    """Reads STORE from build_crownly.py: 1.0.1 has no purchases and 50 levels per difficulty (200 in all)."""
+    with open(os.path.join(ROOT, "tools", "build_crownly.py")) as f:
+        m = re.search(r"^STORE = (True|False)", f.read(), re.M)
+    return m is None or m.group(1) == "True"
+
+
+CROWNLY_STORE = crownly_store()
+CROWNLY_LEVELS = {"en": "2,000" if CROWNLY_STORE else "200", "tr": "2.000" if CROWNLY_STORE else "200"}
 HIKMET = os.path.join(os.path.dirname(ROOT), "Hikmet", "Ortak")
 SITE = "https://hyapps.app"
 PT = "?pt=129592179&ct=web&mt=8"
@@ -33,8 +44,8 @@ APPS = {
                     name={"en": "Crownly", "tr": "Crownly"}, home={"en": "/crownly/", "tr": "/crownly/tr/"},
                     og={"en": "/assets/og/crownly-en.jpg", "tr": "/assets/og/crownly-tr.jpg"},
                     cta_h={"en": "Play a new Queens puzzle every day", "tr": "Her gün yeni bir Queens bulmacası çöz"},
-                    cta_p={"en": "Crownly: a daily puzzle, 2,000 levels and hints that explain the logic. Free on iPhone.",
-                           "tr": "Crownly: günlük bulmaca, 2.000 seviye ve mantığı anlatan ipuçları. iPhone'da ücretsiz."}),
+                    cta_p={"en": f"Crownly: a daily puzzle, {CROWNLY_LEVELS['en']} levels and hints that explain the logic. Free on iPhone.",
+                           "tr": f"Crownly: günlük bulmaca, {CROWNLY_LEVELS['tr']} seviye ve mantığı anlatan ipuçları. iPhone'da ücretsiz."}),
     "besmele": dict(id="6821501310", css=["/besmele/besmele.css"], theme="#0f3324", icon="/besmele/img/icon.png",
                     name={"en": "Bismillah", "tr": "Besmele"}, home={"en": "/besmele/en/", "tr": "/besmele/"},
                     og={"en": "/assets/og/besmele-en.jpg", "tr": "/assets/og/besmele-tr.jpg"},
@@ -390,7 +401,7 @@ CG = {
         strategy=("/crownly/queens-strategy/", "Queens Puzzle Strategy: 6 Techniques to Solve Any Board",
                   "Six logical techniques that solve every Queens puzzle without guessing, from crown's reach to group squeezes."),
         alt=("/crownly/linkedin-queens-alternative/", "LinkedIn Queens Alternative: Play Queens Every Day on iPhone",
-             "Love the LinkedIn Queens game? Crownly is a free iPhone app with a new Queens puzzle every day, 2,000 levels and hints that explain the logic."),
+             f"Love the LinkedIn Queens game? Crownly is a free iPhone app with a new Queens puzzle every day, {CROWNLY_LEVELS['en']} levels and hints that explain the logic."),
         board_label="A solved 5×5 Queens puzzle", related="More guides"),
     "tr": dict(
         home=("Crownly", "/crownly/tr/"),
@@ -399,7 +410,7 @@ CG = {
         strategy=("/crownly/tr/queens-stratejileri/", "Queens Bulmacası Taktikleri: Her Tahtayı Çözen 6 Teknik",
                   "Her Queens bulmacasını tahmin etmeden çözen altı mantık tekniği: tacın etki alanından grup sıkışmasına."),
         alt=("/crownly/tr/linkedin-queens-alternatifi/", "LinkedIn Queens Alternatifi: iPhone'da Her Gün Queens Oyna",
-             "LinkedIn'deki Queens oyununu seviyor musun? Crownly her gün yeni bir Queens bulmacası, 2.000 seviye ve mantığı anlatan ipuçları sunan ücretsiz bir iPhone uygulaması."),
+             f"LinkedIn'deki Queens oyununu seviyor musun? Crownly her gün yeni bir Queens bulmacası, {CROWNLY_LEVELS['tr']} seviye ve mantığı anlatan ipuçları sunan ücretsiz bir iPhone uygulaması."),
         board_label="Çözülmüş 5×5 Queens bulmacası", related="Diğer rehberler"),
 }
 
@@ -464,13 +475,13 @@ def build_crownly_guides():
         whats_in = "What you get in Crownly" if en else "Crownly'de neler var"
         body += f'\n  <h2>{whats_in}</h2>\n  <ul>' +"".join(f"<li>{ESC(x)}</li>" for x in (
             ["A new daily puzzle at the same time for everyone, plus a 10×10 Daily Hard.",
-             "2,000 levels from Easy to Expert, with up to three stars each.",
+             f"{CROWNLY_LEVELS['en']} levels from Easy to Expert, with up to three stars each.",
              "Hints that explain the next logical step instead of revealing the answer.",
              "A Logic School with six interactive lessons.",
              "Streaks, streak freezes, Game Center leaderboards and widgets.",
              "Color-blind mode, dark mode, no ads, works offline."] if en else
             ["Herkese aynı anda gelen yeni bir günlük bulmaca ve 10×10 Günlük Zor.",
-             "Kolaydan Uzmana 2.000 seviye, her birinde üç yıldıza kadar.",
+             f"Kolaydan Uzmana {CROWNLY_LEVELS['tr']} seviye, her birinde üç yıldıza kadar.",
              "Cevabı vermek yerine sıradaki mantıklı adımı anlatan ipuçları.",
              "Altı etkileşimli dersten oluşan Mantık okulu.",
              "Seri, seri dondurma, Game Center sıralamaları ve widget'lar.",

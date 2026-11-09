@@ -12,6 +12,9 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_ID = "6822852151"
 LIVE = False
+# STORE mirrors the app: 1.0.1 (2026-11-09) has no purchases and 50 levels per difficulty (200 in all); 1.2 brings
+# Crownly Pro and all 2,000 levels back. With STORE = False the pages leave Pro out; True restores them unchanged.
+STORE = False
 
 T = {
     "en": dict(
@@ -139,6 +142,34 @@ CROWN_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18l-1.6
              'fill="url(#g)" stroke="#8a5a00" stroke-width=".8" stroke-linejoin="round"/><circle cx="12" cy="5" r="1.4" fill="#f4d06f"/>'
              '<circle cx="4.4" cy="8.4" r="1.2" fill="#f4d06f"/><circle cx="19.6" cy="8.4" r="1.2" fill="#f4d06f"/></svg>')
 
+
+
+def _without_pro(value):
+    """1.0.1 texts: 200 levels instead of 2,000 (strings in lists and tuples too)."""
+    if isinstance(value, str):
+        return value.replace("2,000", "200").replace("2.000", "200")
+    if isinstance(value, list):
+        return [_without_pro(v) for v in value]
+    if isinstance(value, tuple):
+        return tuple(_without_pro(v) for v in value)
+    return value
+
+
+if not STORE:
+    for _lang, _pro_q, _fair, _freeze in (
+            ("en", "How do I restore Crownly Pro?",
+             "Crownly is free. No ads in the middle of a game, no tracking, works offline, and no in-app purchases.",
+             ("I missed a day. Is my streak gone?",
+              "Not always. A streak freeze is used automatically when you miss a day (one per month).")),
+            ("tr", "Crownly Pro'yu nasıl geri yüklerim?",
+             "Crownly ücretsiz. Oyunun ortasında reklam yok, takip yok, internetsiz oynanır ve uygulama içi satın alma yok.",
+             ("Bir günü kaçırdım. Serim gitti mi?",
+              "Her zaman değil. Bir günü kaçırınca seri dondurma otomatik kullanılır (ayda bir)."))):
+        _t = T[_lang]
+        for _key in list(_t):
+            _t[_key] = _without_pro(_t[_key])
+        _t["fair"] = _fair
+        _t["faq"] = [_freeze if q == _freeze[0] else (q, a) for q, a in _t["faq"] if q != _pro_q]
 
 def board_html():
     cells = []

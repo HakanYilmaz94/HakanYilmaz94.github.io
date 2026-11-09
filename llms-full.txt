@@ -75,7 +75,7 @@ A: Yes: Settings → Color-blind mode prints a small symbol on every brick color
 - Title: Crownly · Daily Queens Logic Puzzle for iPhone
 - Platform: iOS 17 or later
 
-Crownly is a calm daily logic puzzle for iPhone. Place one crown in every row, column and region. A new puzzle every day, 2,000 levels, hints that explain the logic, color-blind mode. No ads, works offline.
+Crownly is a calm daily logic puzzle for iPhone. Place one crown in every row, column and region. A new puzzle every day, 200 levels, hints that explain the logic, color-blind mode. No ads, works offline.
 
 Questions and answers:
 
@@ -85,11 +85,8 @@ A: A new daily puzzle appears every day at 07:00 UTC, at the same moment for eve
 Q: Will I lose my progress if I change phones?
 A: With iCloud sync turned on (Settings → General), your solved puzzles, stars and streak sync to your other devices through your private iCloud account. Without iCloud, progress is stored only on this device and deleting the app deletes it.
 
-Q: How do I restore Crownly Pro?
-A: Open Settings → Crownly Pro → Restore purchases while signed in with the Apple Account you used to buy it. Pro is shared with your Family Sharing group.
-
 Q: I missed a day. Is my streak gone?
-A: Not always. A streak freeze is used automatically when you miss a day (one per month, three with Pro).
+A: Not always. A streak freeze is used automatically when you miss a day (one per month).
 
 Q: Some colors look alike to me.
 A: Turn on Color-blind mode in Settings → Game. Every region gets its own symbol and the borders get bolder, so you never need to tell colors apart. You can also try the High contrast board palette.
