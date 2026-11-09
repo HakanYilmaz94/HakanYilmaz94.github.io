@@ -19,6 +19,9 @@ LIVE = True
 # gems, the ad-free option and reward videos back. With STORE = False the FAQ and privacy policy leave them out.
 # build_guides.py reads it from here too. 1.1: set True and run this and build_guides.py.
 STORE = False
+# The privacy policy may run ahead of the pages: it describes 1.1 (purchases, AdMob) from the day 1.1 went to review
+# (2026-11-09), because App Review compares it with the App Privacy answers. Landing page and FAQ follow STORE.
+PRIVACY_STORE = True
 ANALYTICS = ("<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
              "data-cf-beacon='{\"token\": \"89e9ceae59114244a972f60af4a20851\"}'></script><!-- End Cloudflare Web Analytics -->")
 
@@ -253,93 +256,95 @@ def page(t):
 '''
 
 
-PRIVACY = {
-    "en": dict(
-        h="Privacy Policy", date="Glowfly: Idle Brick Breaker · Effective November 7, 2026",
-        sections=[
-            (None, "Glowfly is an idle game. It needs no account, asks for no personal information and does not track you "
-                   "across other apps or websites. This page explains, in plain words, what data the game uses and why."),
-            ("No account", "You do not need an account to play. We never ask for your name, e-mail address, contacts or location."),
-            ("Stored on your device and in your iCloud", "Your progress and settings are stored on your device. If iCloud is "
-             "on, the game also keeps a backup of your progress in your own iCloud (iCloud key-value storage) so it can be "
-             "restored on a new device. We cannot see or read this data; it is handled by Apple under "
-             "<a href=\"https://www.apple.com/legal/privacy/\">Apple's privacy policy</a>."),
-            ("Game Center", "Game Center is optional. If you are signed in, the game sends your furthest night and your "
-             "achievements to Game Center, which Apple runs. You can manage what others see in the Settings app."),
-            ("Notifications", "If you allow notifications, the game schedules reminders on your device (for example when "
-             "the daily gift is ready). They are created on the device itself; nothing is sent to a server."),
-            ("Purchases", "Glowfly Plus, the ad-free option and gem packs are bought through the App Store. Payment is "
-             "handled entirely by Apple; we never see your payment details or your Apple Account. The game only learns "
-             "which product was bought so it can unlock it."),
-            ("Anonymous statistics", "To learn which parts of the game are too slow or too hard, the App Store version "
-             "sends anonymous events through Google Firebase Analytics: for example which night or chapter was reached, "
-             "when a new light was made, which skills and boosts were chosen, which screens were opened" + (", whether a reward " if STORE else ". ")
-             + ("video was watched and which product was bought (without any payment details). " if STORE else "") + "Firebase also uses a random "
-             "app-instance identifier and an approximate (country/region level) location derived from the network. "
-             "This data contains no name, e-mail address or advertising identifier, is not linked to your identity and is "
-             "not used for tracking. Google processes it under the "
-             "<a href=\"https://firebase.google.com/support/privacy\">Firebase privacy terms</a>. Test and TestFlight "
-             "builds send nothing."),
-            ("Reward videos (ads)", "Glowfly never shows ads on its own. Some rewards can be earned by choosing to watch a "
-             "short video ad, served by Google AdMob. When an ad is requested, Google receives information such as your "
-             "device type, iOS version, IP address (used for an approximate location), and how you interact with the ad, "
-             "in order to deliver the ad, measure it and prevent fraud. The game does not ask for permission to track you "
-             "and does not use the advertising identifier (IDFA). In the EU, the UK and Switzerland the game asks for your "
-             "consent through Google's consent form first, and you can change your choice later. With Glowfly Plus or "
-             "the ad-free option you get these rewards without ads. Google's practices are described at "
-             "<a href=\"https://policies.google.com/technologies/partner-sites\">How Google uses information from sites or apps that use its services</a>."),
-            ("This website", "hyapps.app uses Cloudflare Web Analytics, which counts visits without cookies and without "
-             "identifying you."),
-            ("Children", "Glowfly is not directed at children under 13 and collects no personal data from anyone." + (" Purchases "
-             "are protected by your Apple Account and Screen Time settings." if STORE else "")),
-            ("Your choices", "You can turn off notifications and iCloud at any time in the Settings app, " + ("play without "
-             "ever watching an ad, and " if STORE else "and ") + "delete all your data by deleting the app (and its iCloud backup in Settings → "
-             "your name → iCloud)."),
-            ("Changes and contact", "If this policy changes, the new version will be posted on this page with a new date. "
-             "Questions: <a href=\"mailto:hyapps@outlook.com?subject=Glowfly\">hyapps@outlook.com</a>."),
-        ]),
-    "tr": dict(
-        h="Gizlilik Politikası", date="Glowfly: Idle Işık Birleştirme · Yürürlük: 7 Kasım 2026",
-        sections=[
-            (None, "Glowfly bir idle oyundur. Hesap gerektirmez, kişisel bilgi istemez, seni başka uygulama ve sitelerde "
-                   "izlemez. Bu sayfa oyunun hangi verileri neden kullandığını sade bir dille anlatır."),
-            ("Hesap yok", "Oynamak için hesap gerekmez. Adını, e-posta adresini, kişilerini ya da konumunu hiçbir zaman istemeyiz."),
-            ("Cihazında ve iCloud'unda saklananlar", "İlerlemen ve ayarların cihazında saklanır. iCloud açıksa oyun, yeni bir "
-             "cihazda geri yüklenebilsin diye ilerlemenin bir yedeğini kendi iCloud'unda (iCloud anahtar-değer deposu) tutar. "
-             "Bu verileri göremeyiz ve okuyamayız; Apple tarafından "
-             "<a href=\"https://www.apple.com/tr/legal/privacy/\">Apple'ın gizlilik politikası</a> kapsamında işlenir."),
-            ("Game Center", "Game Center isteğe bağlıdır. Giriş yaptıysan oyun en ileri geceni ve başarımlarını Apple'ın "
-             "işlettiği Game Center'a gönderir. Başkalarının ne göreceğini Ayarlar uygulamasından yönetebilirsin."),
-            ("Bildirimler", "Bildirimlere izin verirsen oyun cihazında hatırlatmalar kurar (örneğin günlük hediye hazır "
-             "olduğunda). Bunlar cihazın kendisinde oluşturulur; hiçbir sunucuya bir şey gönderilmez."),
-            ("Satın almalar", "Glowfly Plus, reklamsız seçenek ve elmas paketleri App Store üzerinden satın alınır. Ödemeyi "
-             "tamamen Apple yürütür; ödeme bilgilerini ya da Apple Hesabını görmeyiz. Oyun yalnız hangi ürünün alındığını "
-             "öğrenir ki onu açabilsin."),
-            ("Anonim istatistikler", "Oyunun hangi kısmının fazla yavaş ya da zor olduğunu anlamak için App Store sürümü "
-             "Google Firebase Analytics ile anonim olaylar gönderir: örneğin hangi geceye ya da bölüme ulaşıldığı, ne zaman "
-             "yeni bir ışık yapıldığı, hangi becerilerin ve takviyelerin seçildiği" + (", hangi ekranların açıldığı, ödüllü bir "
-             "videonun izlenip izlenmediği ve hangi ürünün alındığı (ödeme bilgisi olmadan). " if STORE else " ve hangi ekranların açıldığı. ") + "Firebase ayrıca rastgele bir "
-             "uygulama kimliği ve ağdan çıkarılan yaklaşık (ülke/bölge düzeyinde) konum kullanır. Bu veriler ad, e-posta ya "
-             "da reklam kimliği içermez, kimliğine bağlanmaz ve izleme için kullanılmaz. Google bunları "
-             "<a href=\"https://firebase.google.com/support/privacy\">Firebase gizlilik koşulları</a> kapsamında işler. "
-             "Test ve TestFlight sürümleri hiçbir şey göndermez."),
-            ("Ödüllü videolar (reklam)", "Glowfly kendiliğinden hiçbir reklam göstermez. Bazı ödüller, Google AdMob'un "
-             "sunduğu kısa bir video reklamı izlemeyi seçerek kazanılabilir. Reklam istendiğinde Google, reklamı göstermek, "
-             "ölçmek ve sahtekârlığı önlemek için cihaz türü, iOS sürümü, IP adresi (yaklaşık konum için) ve reklamla nasıl "
-             "etkileşime girdiğin gibi bilgileri alır. Oyun seni izlemek için izin istemez ve reklam kimliğini (IDFA) "
-             "kullanmaz. AB, Birleşik Krallık ve İsviçre'de oyun önce Google'ın onay formuyla iznini ister; seçimini sonra "
-             "değiştirebilirsin. Glowfly Plus ya da reklamsız seçenekle bu ödülleri reklamsız alırsın. Google'ın "
-             "uygulamaları: <a href=\"https://policies.google.com/technologies/partner-sites?hl=tr\">Google, hizmetlerini "
-             "kullanan site veya uygulamalardaki bilgileri nasıl kullanır</a>."),
-            ("Bu web sitesi", "hyapps.app, ziyaretleri çerezsiz ve seni tanımadan sayan Cloudflare Web Analytics kullanır."),
-            ("Çocuklar", "Glowfly 13 yaşından küçük çocuklara yönelik değildir ve kimseden kişisel veri toplamaz." + (" Satın "
-             "almalar Apple Hesabın ve Ekran Süresi ayarlarınla korunur." if STORE else "")),
-            ("Seçimlerin", "Bildirimleri ve iCloud'u istediğin zaman Ayarlar uygulamasından kapatabilir" + (", hiç reklam izlemeden "
-             "oynayabilir" if STORE else "") + " ve uygulamayı (ve Ayarlar → adın → iCloud'daki yedeğini) silerek bütün verilerini silebilirsin."),
-            ("Değişiklikler ve iletişim", "Bu politika değişirse yeni hâli yeni tarihle bu sayfada yayınlanır. Sorular için: "
-             "<a href=\"mailto:hyapps@outlook.com?subject=Glowfly\">hyapps@outlook.com</a>."),
-        ]),
-}
+def privacy_texts(STORE):
+    """Policy texts; STORE adds purchases and AdMob reward videos."""
+    return {
+        "en": dict(
+            h="Privacy Policy", date="Glowfly: Idle Brick Breaker · Effective November 9, 2026",
+            sections=[
+                (None, "Glowfly is an idle game. It needs no account, asks for no personal information and does not track you "
+                       "across other apps or websites. This page explains, in plain words, what data the game uses and why."),
+                ("No account", "You do not need an account to play. We never ask for your name, e-mail address, contacts or location."),
+                ("Stored on your device and in your iCloud", "Your progress and settings are stored on your device. If iCloud is "
+                 "on, the game also keeps a backup of your progress in your own iCloud (iCloud key-value storage) so it can be "
+                 "restored on a new device. We cannot see or read this data; it is handled by Apple under "
+                 "<a href=\"https://www.apple.com/legal/privacy/\">Apple's privacy policy</a>."),
+                ("Game Center", "Game Center is optional. If you are signed in, the game sends your furthest night and your "
+                 "achievements to Game Center, which Apple runs. You can manage what others see in the Settings app."),
+                ("Notifications", "If you allow notifications, the game schedules reminders on your device (for example when "
+                 "the daily gift is ready). They are created on the device itself; nothing is sent to a server."),
+                ("Purchases", "Glowfly Plus, the ad-free option and gem packs are bought through the App Store. Payment is "
+                 "handled entirely by Apple; we never see your payment details or your Apple Account. The game only learns "
+                 "which product was bought so it can unlock it."),
+                ("Anonymous statistics", "To learn which parts of the game are too slow or too hard, the App Store version "
+                 "sends anonymous events through Google Firebase Analytics: for example which night or chapter was reached, "
+                 "when a new light was made, which skills and boosts were chosen, which screens were opened" + (", whether a reward " if STORE else ". ")
+                 + ("video was watched and which product was bought (without any payment details). " if STORE else "") + "Firebase also uses a random "
+                 "app-instance identifier and an approximate (country/region level) location derived from the network. "
+                 "This data contains no name, e-mail address or advertising identifier, is not linked to your identity and is "
+                 "not used for tracking. Google processes it under the "
+                 "<a href=\"https://firebase.google.com/support/privacy\">Firebase privacy terms</a>. Test and TestFlight "
+                 "builds send nothing."),
+                ("Reward videos (ads)", "Glowfly never shows ads on its own. Some rewards can be earned by choosing to watch a "
+                 "short video ad, served by Google AdMob. When an ad is requested, Google receives information such as your "
+                 "device type, iOS version, IP address (used for an approximate location), and how you interact with the ad, "
+                 "in order to deliver the ad, measure it and prevent fraud. The game does not ask for permission to track you "
+                 "and does not use the advertising identifier (IDFA). In the EU, the UK and Switzerland the game asks for your "
+                 "consent through Google's consent form first, and you can change your choice later. With Glowfly Plus or "
+                 "the ad-free option you get these rewards without ads. Google's practices are described at "
+                 "<a href=\"https://policies.google.com/technologies/partner-sites\">How Google uses information from sites or apps that use its services</a>."),
+                ("This website", "hyapps.app uses Cloudflare Web Analytics, which counts visits without cookies and without "
+                 "identifying you."),
+                ("Children", "Glowfly is not directed at children under 13 and collects no personal data from anyone." + (" Purchases "
+                 "are protected by your Apple Account and Screen Time settings." if STORE else "")),
+                ("Your choices", "You can turn off notifications and iCloud at any time in the Settings app, " + ("play without "
+                 "ever watching an ad, and " if STORE else "and ") + "delete all your data by deleting the app (and its iCloud backup in Settings → "
+                 "your name → iCloud)."),
+                ("Changes and contact", "If this policy changes, the new version will be posted on this page with a new date. "
+                 "Questions: <a href=\"mailto:hyapps@outlook.com?subject=Glowfly\">hyapps@outlook.com</a>."),
+            ]),
+        "tr": dict(
+            h="Gizlilik Politikası", date="Glowfly: Idle Işık Birleştirme · Yürürlük: 9 Kasım 2026",
+            sections=[
+                (None, "Glowfly bir idle oyundur. Hesap gerektirmez, kişisel bilgi istemez, seni başka uygulama ve sitelerde "
+                       "izlemez. Bu sayfa oyunun hangi verileri neden kullandığını sade bir dille anlatır."),
+                ("Hesap yok", "Oynamak için hesap gerekmez. Adını, e-posta adresini, kişilerini ya da konumunu hiçbir zaman istemeyiz."),
+                ("Cihazında ve iCloud'unda saklananlar", "İlerlemen ve ayarların cihazında saklanır. iCloud açıksa oyun, yeni bir "
+                 "cihazda geri yüklenebilsin diye ilerlemenin bir yedeğini kendi iCloud'unda (iCloud anahtar-değer deposu) tutar. "
+                 "Bu verileri göremeyiz ve okuyamayız; Apple tarafından "
+                 "<a href=\"https://www.apple.com/tr/legal/privacy/\">Apple'ın gizlilik politikası</a> kapsamında işlenir."),
+                ("Game Center", "Game Center isteğe bağlıdır. Giriş yaptıysan oyun en ileri geceni ve başarımlarını Apple'ın "
+                 "işlettiği Game Center'a gönderir. Başkalarının ne göreceğini Ayarlar uygulamasından yönetebilirsin."),
+                ("Bildirimler", "Bildirimlere izin verirsen oyun cihazında hatırlatmalar kurar (örneğin günlük hediye hazır "
+                 "olduğunda). Bunlar cihazın kendisinde oluşturulur; hiçbir sunucuya bir şey gönderilmez."),
+                ("Satın almalar", "Glowfly Plus, reklamsız seçenek ve elmas paketleri App Store üzerinden satın alınır. Ödemeyi "
+                 "tamamen Apple yürütür; ödeme bilgilerini ya da Apple Hesabını görmeyiz. Oyun yalnız hangi ürünün alındığını "
+                 "öğrenir ki onu açabilsin."),
+                ("Anonim istatistikler", "Oyunun hangi kısmının fazla yavaş ya da zor olduğunu anlamak için App Store sürümü "
+                 "Google Firebase Analytics ile anonim olaylar gönderir: örneğin hangi geceye ya da bölüme ulaşıldığı, ne zaman "
+                 "yeni bir ışık yapıldığı, hangi becerilerin ve takviyelerin seçildiği" + (", hangi ekranların açıldığı, ödüllü bir "
+                 "videonun izlenip izlenmediği ve hangi ürünün alındığı (ödeme bilgisi olmadan). " if STORE else " ve hangi ekranların açıldığı. ") + "Firebase ayrıca rastgele bir "
+                 "uygulama kimliği ve ağdan çıkarılan yaklaşık (ülke/bölge düzeyinde) konum kullanır. Bu veriler ad, e-posta ya "
+                 "da reklam kimliği içermez, kimliğine bağlanmaz ve izleme için kullanılmaz. Google bunları "
+                 "<a href=\"https://firebase.google.com/support/privacy\">Firebase gizlilik koşulları</a> kapsamında işler. "
+                 "Test ve TestFlight sürümleri hiçbir şey göndermez."),
+                ("Ödüllü videolar (reklam)", "Glowfly kendiliğinden hiçbir reklam göstermez. Bazı ödüller, Google AdMob'un "
+                 "sunduğu kısa bir video reklamı izlemeyi seçerek kazanılabilir. Reklam istendiğinde Google, reklamı göstermek, "
+                 "ölçmek ve sahtekârlığı önlemek için cihaz türü, iOS sürümü, IP adresi (yaklaşık konum için) ve reklamla nasıl "
+                 "etkileşime girdiğin gibi bilgileri alır. Oyun seni izlemek için izin istemez ve reklam kimliğini (IDFA) "
+                 "kullanmaz. AB, Birleşik Krallık ve İsviçre'de oyun önce Google'ın onay formuyla iznini ister; seçimini sonra "
+                 "değiştirebilirsin. Glowfly Plus ya da reklamsız seçenekle bu ödülleri reklamsız alırsın. Google'ın "
+                 "uygulamaları: <a href=\"https://policies.google.com/technologies/partner-sites?hl=tr\">Google, hizmetlerini "
+                 "kullanan site veya uygulamalardaki bilgileri nasıl kullanır</a>."),
+                ("Bu web sitesi", "hyapps.app, ziyaretleri çerezsiz ve seni tanımadan sayan Cloudflare Web Analytics kullanır."),
+                ("Çocuklar", "Glowfly 13 yaşından küçük çocuklara yönelik değildir ve kimseden kişisel veri toplamaz." + (" Satın "
+                 "almalar Apple Hesabın ve Ekran Süresi ayarlarınla korunur." if STORE else "")),
+                ("Seçimlerin", "Bildirimleri ve iCloud'u istediğin zaman Ayarlar uygulamasından kapatabilir" + (", hiç reklam izlemeden "
+                 "oynayabilir" if STORE else "") + " ve uygulamayı (ve Ayarlar → adın → iCloud'daki yedeğini) silerek bütün verilerini silebilirsin."),
+                ("Değişiklikler ve iletişim", "Bu politika değişirse yeni hâli yeni tarihle bu sayfada yayınlanır. Sorular için: "
+                 "<a href=\"mailto:hyapps@outlook.com?subject=Glowfly\">hyapps@outlook.com</a>."),
+            ]),
+    }
 
 
 # Sections that only exist in store builds (purchases, AdMob reward videos).
@@ -347,9 +352,11 @@ STORE_ONLY = {"Purchases", "Reward videos (ads)", "Satın almalar", "Ödüllü v
 
 
 def privacy():
+    STORE = PRIVACY_STORE
+    texts = privacy_texts(STORE)
     body = []
     for lang in ("en", "tr"):
-        p = PRIVACY[lang]
+        p = texts[lang]
         anchor = ' id="tr"' if lang == "tr" else ""
         body.append(f'<section lang="{lang}"{anchor}><h1>{p["h"]}</h1><p class="muted">{html.escape(p["date"])}</p>')
         for h, text in p["sections"]:
