@@ -14,7 +14,7 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_ID = "6830895618"
-LIVE = False
+LIVE = True
 # STORE mirrors the app's STORE compile flag: 1.0 has no purchases and no ads (Guideline 2.5.19), 1.1 brings Glowfly Plus,
 # gems, the ad-free option and reward videos back. With STORE = False the FAQ and privacy policy leave them out.
 # build_guides.py reads it from here too. 1.1: set True and run this and build_guides.py.
