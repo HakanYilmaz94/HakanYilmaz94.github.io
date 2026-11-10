@@ -420,7 +420,8 @@ def build_crownly_guides():
         g = CG[lang]
         other = CG["tr" if lang == "en" else "en"]
         alts = lambda key: {lang: g[key][0], ("tr" if lang == "en" else "en"): other[key][0]}
-        rel = lambda skip: related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("rules", "strategy", "alt") if k != skip])
+        rel = lambda skip: related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("rules", "strategy", "alt") if k != skip]
+                                            + [(CG_LIKE[lang][1].split(":")[0], CG_LIKE[lang][0])])
         en = lang == "en"
 
         # Rules
@@ -1100,6 +1101,105 @@ def build_glowfly_guides():
         write(path, page("glowfly", lang, path, alts("tips"), title, desc, body, [g["home"], (title, path)]))
 
 
+# ---------------------------------------------------------------- Besmele: verses, hadiths and duas from the app
+
+def load_kind(file, kind):
+    with open(os.path.join(HIKMET, file)) as f:
+        return [s for day in json.load(f) for s in day["sozler"] if s["kategori"] == kind]
+
+
+COLLECTIONS = {
+    "dua": {"tr": ("/besmele/kisa-dualar/", "Kısa Dualar: Arapçası ve Türkçe Anlamıyla 99 Dua",
+                   "Kur'an'dan ve sünnetten 99 kısa dua: Arapça yazılışı, Türkçe anlamı ve kaynağıyla. Ezberlemesi kolay, günlük okunabilecek dualar.",
+                   "Aşağıda Arapça yazılışı, Türkçe anlamı ve kaynağıyla 99 kısa dua bulacaksın. Hepsi Besmele uygulamasında her gün bir tane olmak üzere gösterilen dualardır."),
+            "en": ("/besmele/en/short-duas/", "99 Short Duas in Arabic with English Meaning",
+                   "99 short duas (supplications) from the Qur'an and the Sunnah, each with its Arabic text, English meaning and source. Easy to memorize and read every day.",
+                   "Below are 99 short duas, each with its Arabic text, English meaning and source. They are the duas the Bismillah app shows one day at a time.")},
+    "hadis": {"tr": ("/besmele/kisa-hadisler/", "Kısa Hadisler: Anlamı ve Kaynağıyla 99 Hadis-i Şerif",
+                     "Anlamı ve kaynağıyla 99 kısa hadis-i şerif: güzel ahlak, niyet, merhamet, sabır ve iyilik üzerine; ezberlemesi ve paylaşması kolay.",
+                     "Aşağıda Türkçe anlamı ve kaynağıyla 99 kısa hadis bulacaksın; bir kısmının Arapça metni de var. Hepsi Besmele uygulamasında her gün bir tane olmak üzere gösterilen hadislerdir."),
+              "en": ("/besmele/en/short-hadiths/", "99 Short Hadiths with English Meaning and Source",
+                     "99 short hadiths with their English meaning and source, on good character, intention, mercy, patience and kindness. Easy to memorize and share.",
+                     "Below are 99 short hadiths with their English meaning and source; some include the Arabic text. They are the hadiths the Bismillah app shows one day at a time.")},
+    "ayet": {"tr": ("/besmele/kisa-ayetler/", "Kısa Ayetler: Arapçası ve Mealiyle 99 Kur'an Ayeti",
+                    "Arapça yazılışı, Türkçe meali ve sûre adıyla 99 kısa Kur'an ayeti: sabır, şükür, umut ve huzur veren ayetler.",
+                    "Aşağıda Arapça yazılışı, Türkçe meali ve sûresiyle 99 kısa ayet bulacaksın. Hepsi Besmele uygulamasında her gün bir tane olmak üzere gösterilen ayetlerdir."),
+             "en": ("/besmele/en/short-quran-verses/", "99 Short Qur'an Verses in Arabic with English Meaning",
+                    "99 short verses of the Qur'an with their Arabic text, English meaning and surah reference: verses on patience, gratitude, hope and peace of heart.",
+                    "Below are 99 short verses with their Arabic text, English meaning and surah reference. They are the verses the Bismillah app shows one day at a time.")},
+}
+COLLECTION_SHORT = {"dua": {"tr": "Kısa dualar", "en": "Short duas"}, "hadis": {"tr": "Kısa hadisler", "en": "Short hadiths"},
+                    "ayet": {"tr": "Kısa ayetler", "en": "Short Qur'an verses"}}
+
+
+def build_besmele_collections():
+    files = {"tr": "icerik.json", "en": "icerik_en.json"}
+    for kind, langs in COLLECTIONS.items():
+        for lang in ("tr", "en"):
+            path, title, desc, intro = langs[lang]
+            other = "en" if lang == "tr" else "tr"
+            items = load_kind(files[lang], kind)
+            assert len(items) == 99
+            rows = ""
+            for s in items:
+                ar = f'<p class="ar" lang="ar">{ESC(s["arapca"])}</p>' if s.get("arapca") else ""
+                text = ESC(s["metin"]).replace("\n", "<br>")
+                rows += f'<li>{ar}<p class="t">{text}</p><p class="src">{ESC(s.get("kaynak", ""))}</p></li>'
+            body = (f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(intro)}</p>\n  <ol class="quotes">{rows}</ol>\n'
+                    f'  <p class="note">{ESC(T_ESMA[lang]["note"])}</p>\n')
+            links = [(COLLECTION_SHORT[k][lang], COLLECTIONS[k][lang][0]) for k in COLLECTIONS if k != kind]
+            links.append((T_ESMA[lang]["hub_title"], NAME_BASE[lang]))
+            body += related(T_ESMA[lang]["related"], links)
+            crumbs = [(T_ESMA[lang]["crumbs_home"], APPS["besmele"]["home"][lang]), (title, path)]
+            write(path, page("besmele", lang, path, {lang: path, other: langs[other][0]}, title, desc, body, crumbs))
+
+
+# ---------------------------------------------------------------- Crownly: logic puzzles like sudoku
+
+CG_LIKE = {
+    "en": ("/crownly/games-like-sudoku/", "Games Like Sudoku: Queens and 5 Other Logic Puzzles Worth Trying",
+           "Finished your sudoku? Six logic puzzles with the same pure-deduction feel: Queens, nonograms, kakuro, killer sudoku, futoshiki and tents, with the rules of each."),
+    "tr": ("/crownly/tr/sudoku-benzeri-oyunlar/", "Sudoku Benzeri Oyunlar: Queens ve Denemeye Değer 5 Mantık Bulmacası",
+           "Sudoku'yu bitirdin mi? Aynı saf mantık tadını veren altı bulmaca: Queens, nonogram, kakuro, killer sudoku, futoshiki ve çadırlar; her birinin kurallarıyla."),
+}
+
+
+def build_crownly_like():
+    for lang in ("en", "tr"):
+        en = lang == "en"
+        g = CG[lang]
+        path, title, desc = CG_LIKE[lang]
+        other = CG_LIKE["tr" if en else "en"][0]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        body += paras(ESC("What makes sudoku satisfying is not the numbers. It is that every puzzle has exactly one solution and you can "
+                          "reach it by reasoning alone, never by guessing. These six puzzles share that quality." if en else
+                          "Sudoku'yu keyifli yapan sayılar değildir. Her bulmacanın tek bir çözümü olması ve o çözüme tahminle değil, "
+                          "yalnızca akıl yürüterek ulaşılmasıdır. Bu altı bulmaca da aynı özelliği taşır.")) + "\n"
+        items = ([("1. Queens", "The board is split into colored regions. Place one crown in every row, every column and every region, and no two crowns may touch, not even diagonally. There are no numbers at all, so a board reads at a glance, and a small one takes a minute or two. It is the same family as Star Battle."),
+                  ("2. Nonogram", "Numbers beside each row and above each column give the lengths of the filled blocks in that line, in order. Fill the right cells and a small picture appears."),
+                  ("3. Kakuro", "A crossword made of sums. Each run of white cells must add up to the clue next to it, using the digits 1 to 9 without repeating a digit inside a run."),
+                  ("4. Killer sudoku", "Ordinary sudoku rules, but instead of given digits the grid is divided into cages. The digits in a cage add up to its small number, and a digit cannot repeat inside a cage."),
+                  ("5. Futoshiki", "Fill the grid so every row and column holds each number once, like a small sudoku without boxes, while obeying the greater-than and less-than signs between cells."),
+                  ("6. Tents", "Every tree on the grid needs one tent in a cell next to it. Tents may not touch each other, not even diagonally, and the numbers at the edges say how many tents each row and column holds.")] if en else
+                 [("1. Queens", "Tahta renkli bölgelere ayrılmıştır. Her satıra, her sütuna ve her bölgeye bir taç koyarsın; iki taç birbirine çaprazdan bile dokunamaz. Hiç sayı yoktur, tahta bir bakışta okunur; küçük bir tahta bir iki dakika sürer. Star Battle ile aynı ailedendir."),
+                  ("2. Nonogram", "Her satırın yanındaki ve her sütunun üstündeki sayılar, o çizgideki dolu blokların uzunluklarını sırasıyla verir. Doğru kareleri doldurunca küçük bir resim ortaya çıkar."),
+                  ("3. Kakuro", "Toplamlardan oluşan bir çapraz bulmaca. Her beyaz kare dizisi, yanındaki ipucu sayısını vermelidir; 1'den 9'a rakamlar kullanılır ve bir dizide aynı rakam tekrarlanmaz."),
+                  ("4. Killer sudoku", "Kurallar bildiğin sudoku, ama verilmiş rakamlar yerine ızgara kafeslere bölünmüştür. Bir kafesteki rakamların toplamı köşedeki küçük sayıyı verir ve kafes içinde rakam tekrarlanmaz."),
+                  ("5. Futoshiki", "Her satır ve sütunda her sayı bir kez bulunacak şekilde ızgarayı doldurursun (kutusuz küçük bir sudoku gibi); kareler arasındaki büyüktür ve küçüktür işaretlerine de uyarsın."),
+                  ("6. Çadırlar (Tents)", "Izgaradaki her ağacın yanındaki bir kareye bir çadır gerekir. Çadırlar birbirine çaprazdan bile dokunamaz; kenardaki sayılar her satır ve sütunda kaç çadır olduğunu söyler.")])
+        for h, p in items:
+            body += f"  <h2>{ESC(h)}</h2>\n  <p>{ESC(p)}</p>\n"
+        body += f"  <h2>{ESC('Where to start' if en else 'Nereden başlamalı')}</h2>\n"
+        body += paras(ESC(f"If you want something quicker than sudoku, start with Queens: the rules fit in one sentence and the first boards "
+                          f"are solved in a minute. Crownly has a new Queens puzzle every day and {CROWNLY_LEVELS['en']} levels, and when you are "
+                          f"stuck its hints explain the reasoning instead of just showing the answer." if en else
+                          f"Sudoku'dan daha kısa süren bir şey istiyorsan Queens ile başla: kuralları tek cümleye sığar, ilk tahtalar bir dakikada "
+                          f"çözülür. Crownly'de her gün yeni bir Queens bulmacası ve {CROWNLY_LEVELS['tr']} seviye var; takıldığında ipuçları "
+                          f"yalnızca cevabı göstermez, mantığını anlatır.")) + "\n"
+        body += related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("rules", "strategy", "alt")])
+        write(path, page("crownly", lang, path, {lang: path, ("tr" if en else "en"): other}, title, desc, body, [g["home"], (title, path)]))
+
+
 # ---------------------------------------------------------------- sitemap
 
 STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
@@ -1128,7 +1228,9 @@ def build_sitemap():
 
 build_esma()
 build_besmele_guides()
+build_besmele_collections()
 build_crownly_guides()
+build_crownly_like()
 build_quickwits_guides()
 build_brickhaven_guides()
 build_glowfly_guides()

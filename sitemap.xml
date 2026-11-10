@@ -656,6 +656,24 @@
   <url><loc>https://hyapps.app/besmele/en/how-prayer-times-are-calculated/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/namaz-vakitleri-nasil-hesaplanir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/how-prayer-times-are-calculated/"/></url>
+  <url><loc>https://hyapps.app/besmele/kisa-dualar/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-dualar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-duas/"/></url>
+  <url><loc>https://hyapps.app/besmele/en/short-duas/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-duas/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-dualar/"/></url>
+  <url><loc>https://hyapps.app/besmele/kisa-hadisler/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-hadisler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-hadiths/"/></url>
+  <url><loc>https://hyapps.app/besmele/en/short-hadiths/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-hadiths/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-hadisler/"/></url>
+  <url><loc>https://hyapps.app/besmele/kisa-ayetler/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-ayetler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-quran-verses/"/></url>
+  <url><loc>https://hyapps.app/besmele/en/short-quran-verses/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-quran-verses/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-ayetler/"/></url>
   <url><loc>https://hyapps.app/crownly/queens-puzzle-rules/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/queens-puzzle-rules/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/queens-nasil-oynanir/"/></url>
@@ -674,6 +692,12 @@
   <url><loc>https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-queens-alternative/"/></url>
+  <url><loc>https://hyapps.app/crownly/games-like-sudoku/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/games-like-sudoku/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/"/></url>
+  <url><loc>https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/games-like-sudoku/"/></url>
   <url><loc>https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/tek-telefonla-oynanan-oyunlar/"/></url>

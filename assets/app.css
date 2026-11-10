@@ -227,6 +227,12 @@ details p { color: var(--muted); margin: 10px 0 0; }
 .names .ar { float: right; font-size: 22px; color: var(--gold); line-height: 1.2; }
 .names strong { display: block; font-size: 16px; }
 .names span.m { display: block; font-size: 14px; color: var(--muted); line-height: 1.4; margin-top: 2px; }
+.quotes { padding: 0 !important; list-style: none; counter-reset: q; }
+.quotes li { counter-increment: q; margin: 0 0 12px; padding: 16px 18px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); }
+.quotes .ar { font-size: 24px; line-height: 1.8; color: var(--gold); margin: 0 0 8px; }
+.quotes .t { margin: 0; font-size: 17px; }
+.quotes .src { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+.quotes .src::before { content: counter(q) ". "; }
 .pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 28px; }
 .pager a { font-weight: 600; text-decoration: none; }
 .guides-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 14px 0 0; }

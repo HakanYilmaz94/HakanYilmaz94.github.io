@@ -126,9 +126,13 @@ MORE = {
 
 GUIDES = {
     "tr": ("Rehberler", [("Esmaül Hüsna: Allah'ın 99 ismi ve anlamları", "/besmele/esma/"), ("Kıble yönü nasıl bulunur?", "/besmele/kible-nasil-bulunur/"),
-                         ("Namaz vakitleri nasıl hesaplanır?", "/besmele/namaz-vakitleri-nasil-hesaplanir/")]),
+                         ("Namaz vakitleri nasıl hesaplanır?", "/besmele/namaz-vakitleri-nasil-hesaplanir/"),
+                         ("Kısa dualar: Arapçası ve anlamı", "/besmele/kisa-dualar/"), ("Kısa hadisler", "/besmele/kisa-hadisler/"),
+                         ("Kısa ayetler: Arapçası ve meali", "/besmele/kisa-ayetler/")]),
     "en": ("Guides", [("The 99 Names of Allah with meanings", "/besmele/en/names/"), ("How to find the Qibla direction", "/besmele/en/how-to-find-qibla/"),
-                      ("How prayer times are calculated", "/besmele/en/how-prayer-times-are-calculated/")]),
+                      ("How prayer times are calculated", "/besmele/en/how-prayer-times-are-calculated/"),
+                      ("Short duas in Arabic with meaning", "/besmele/en/short-duas/"), ("Short hadiths", "/besmele/en/short-hadiths/"),
+                      ("Short Qur'an verses", "/besmele/en/short-quran-verses/")]),
 }
 
 
@@ -213,12 +217,14 @@ def page(t):
   <link rel="apple-touch-icon" href="{i}icon.png">
   <link rel="stylesheet" href="/assets/app.css">
   <link rel="stylesheet" href="/besmele/besmele.css">
-  <script type="application/ld+json">
-  {{"@context":"https://schema.org","@type":"MobileApplication","name":"{t["name"]}","operatingSystem":"iOS",
-   "applicationCategory":"LifestyleApplication","url":"{canonical}","installUrl":"{t["store"]}","inLanguage":"{L}",
-   "offers":{{"@type":"Offer","price":"0","priceCurrency":"USD"}},
-   "publisher":{{"@type":"Organization","name":"HY Apps","url":"https://hyapps.app/"}}}}
-  </script>
+  <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "MobileApplication",
+      "name": t["name"], "description": t["desc"], "url": canonical, "installUrl": t["store"], "downloadUrl": t["store"], "inLanguage": L,
+      "operatingSystem": "iOS", "applicationCategory": "LifestyleApplication", "isFamilyFriendly": True,
+      "image": "https://hyapps.app/besmele/img/icon.png",
+      "screenshot": [f"https://hyapps.app/besmele/img/{L}_{n}.jpg" for n in range(1, 8)],
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "author": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"},
+      "publisher": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"}}, ensure_ascii=False)}</script>
 {faq_ld(t)}
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "89e9ceae59114244a972f60af4a20851"}}'></script><!-- End Cloudflare Web Analytics -->
 </head>

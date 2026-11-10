@@ -232,12 +232,14 @@ def page(t):
   <link rel="icon" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/app.css">
-  <script type="application/ld+json">
-  {{"@context":"https://schema.org","@type":"MobileApplication","name":"{t["name"]}","operatingSystem":"iOS 17 or later",
-   "applicationCategory":"GameApplication","url":"{canonical}","inLanguage":"{t["lang"]}",
-   "offers":{{"@type":"Offer","price":"0","priceCurrency":"USD"}},
-   "publisher":{{"@type":"Organization","name":"HY Apps","url":"https://hyapps.app/"}}}}
-  </script>
+  <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": ["VideoGame", "MobileApplication"],
+      "name": t["name"], "description": t["desc"], "url": canonical, "inLanguage": t["lang"], "operatingSystem": "iOS 17 or later",
+      "applicationCategory": "GameApplication", "gamePlatform": ["iPhone"], "genre": ["Party", "Casual"], "playMode": "MultiPlayer",
+      "image": "https://hyapps.app/quickwits/img/icon.png",
+      "screenshot": [f"https://hyapps.app/quickwits/img/{t['lang']}-{s}.jpg" for s in ("home", "game", "turn", "scores")],
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "author": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"},
+      "publisher": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"}}, ensure_ascii=False)}</script>
 {faq_ld(t)}
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "89e9ceae59114244a972f60af4a20851"}}'></script><!-- End Cloudflare Web Analytics -->
 </head>

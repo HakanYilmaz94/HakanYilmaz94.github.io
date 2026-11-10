@@ -204,9 +204,11 @@ MORE = {
 
 GUIDES = {
     "en": ("Guides", [("How to play Queens", "/crownly/queens-puzzle-rules/"), ("6 techniques to solve any board", "/crownly/queens-strategy/"),
-                      ("LinkedIn Queens alternative", "/crownly/linkedin-queens-alternative/")]),
+                      ("LinkedIn Queens alternative", "/crownly/linkedin-queens-alternative/"),
+                      ("Games like sudoku", "/crownly/games-like-sudoku/")]),
     "tr": ("Rehberler", [("Queens nasıl oynanır?", "/crownly/tr/queens-nasil-oynanir/"), ("Her tahtayı çözen 6 teknik", "/crownly/tr/queens-stratejileri/"),
-                         ("LinkedIn Queens alternatifi", "/crownly/tr/linkedin-queens-alternatifi/")]),
+                         ("LinkedIn Queens alternatifi", "/crownly/tr/linkedin-queens-alternatifi/"),
+                         ("Sudoku benzeri oyunlar", "/crownly/tr/sudoku-benzeri-oyunlar/")]),
 }
 
 
@@ -274,7 +276,18 @@ def page(t):
     faq = "".join(f"<details><summary>{html.escape(q)}</summary><p>{html.escape(ans)}</p></details>" for q, ans in t["faq"])
     canonical = f"https://hyapps.app{t['path']}"
     itunes = f'  <meta name="apple-itunes-app" content="app-id={APP_ID}">\n' if LIVE else ""
-    install = f'"installUrl":"{t["store"]}",' if LIVE else ""
+    app = {"@context": "https://schema.org", "@type": ["VideoGame", "MobileApplication"], "name": "Crownly: Daily Queens Puzzle",
+           "alternateName": "Crownly", "description": t["desc"], "url": canonical, "inLanguage": t["lang"],
+           "operatingSystem": "iOS 17 or later", "applicationCategory": "GameApplication", "gamePlatform": ["iPhone"],
+           "genre": ["Puzzle", "Logic"], "playMode": "SinglePlayer", "isFamilyFriendly": True,
+           "image": "https://hyapps.app/crownly/img/icon.png",
+           "screenshot": [f"https://hyapps.app/crownly/img/{t['lang']}-{s}.jpg" for s in ("home", "hint", "levels", "solved")],
+           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+           "author": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"},
+           "publisher": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"}}
+    if LIVE:
+        app["installUrl"] = app["downloadUrl"] = t["store"]
+    app_ld = json.dumps(app, ensure_ascii=False)
     return f'''<!doctype html>
 <html lang="{t["lang"]}">
 <head>
@@ -300,12 +313,7 @@ def page(t):
   <link rel="icon" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/app.css">
-  <script type="application/ld+json">
-  {{"@context":"https://schema.org","@type":"MobileApplication","name":"Crownly","operatingSystem":"iOS 17 or later",
-   "applicationCategory":"GameApplication","url":"{canonical}",{install}"inLanguage":"{t["lang"]}",
-   "offers":{{"@type":"Offer","price":"0","priceCurrency":"USD"}},
-   "publisher":{{"@type":"Organization","name":"HY Apps","url":"https://hyapps.app/"}}}}
-  </script>
+  <script type="application/ld+json">{app_ld}</script>
 {faq_ld(t)}
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "89e9ceae59114244a972f60af4a20851"}}'></script><!-- End Cloudflare Web Analytics -->
 </head>

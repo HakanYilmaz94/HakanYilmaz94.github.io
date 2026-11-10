@@ -25,12 +25,16 @@
 - [Queens puzzle rules](https://hyapps.app/crownly/queens-puzzle-rules/)
 - [Queens puzzle strategy](https://hyapps.app/crownly/queens-strategy/)
 - [A LinkedIn Queens alternative](https://hyapps.app/crownly/linkedin-queens-alternative/)
+- [Games like sudoku: Queens and five other logic puzzles](https://hyapps.app/crownly/games-like-sudoku/)
 - [Games to play with friends on one phone](https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/)
 - [Group games for game night](https://hyapps.app/quickwits/group-games-for-game-night/)
 - [Reaction time test](https://hyapps.app/quickwits/reaction-time-test/)
 - [How prayer times are calculated](https://hyapps.app/besmele/en/how-prayer-times-are-calculated/)
 - [How to find the Qibla](https://hyapps.app/besmele/en/how-to-find-qibla/)
 - [The 99 Beautiful Names of Allah](https://hyapps.app/besmele/en/names/)
+- [99 short duas in Arabic with English meaning](https://hyapps.app/besmele/en/short-duas/)
+- [99 short hadiths with source](https://hyapps.app/besmele/en/short-hadiths/)
+- [99 short Qur'an verses in Arabic with English meaning](https://hyapps.app/besmele/en/short-quran-verses/)
 
 ## More detail
 
