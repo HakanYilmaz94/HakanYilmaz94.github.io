@@ -105,9 +105,15 @@ T = {
 
 GUIDES = {
     "en": ("Guides", [("A cozy offline building game", "/brickhaven/cozy-offline-building-game/"),
-                      ("Beginner's guide: 8 tips", "/brickhaven/beginners-guide/")]),
+                      ("Beginner's guide: 8 tips", "/brickhaven/beginners-guide/"),
+                      ("All 9 buildings", "/brickhaven/buildings/"),
+                      ("Skill tree: what to unlock first", "/brickhaven/skill-tree/"),
+                      ("Design your own house", "/brickhaven/design-your-own-house/")]),
     "tr": ("Rehberler", [("İnternetsiz, rahatlatıcı bir inşa oyunu", "/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/"),
-                         ("Başlangıç rehberi: 8 ipucu", "/brickhaven/tr/baslangic-rehberi/")]),
+                         ("Başlangıç rehberi: 8 ipucu", "/brickhaven/tr/baslangic-rehberi/"),
+                         ("9 bina ve sahipleri", "/brickhaven/tr/binalar/"),
+                         ("Ustalık ağacı: önce hangi beceri?", "/brickhaven/tr/ustalik-agaci/"),
+                         ("Ev tasarlama: kendi evini çiz", "/brickhaven/tr/ev-tasarlama-oyunu/")]),
 }
 
 
@@ -138,6 +144,18 @@ def page(t):
     faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}, ensure_ascii=False)
     canonical = f"https://hyapps.app{t['path']}"
+    app = {"@context": "https://schema.org", "@type": ["VideoGame", "MobileApplication"], "name": t["title"].split(" · ")[0],
+           "alternateName": "Brickhaven", "description": t["desc"], "url": canonical, "inLanguage": lang,
+           "operatingSystem": "iOS 18 or later", "applicationCategory": "GameApplication", "gamePlatform": ["iPhone", "iPad"],
+           "genre": ["Simulation", "Casual", "Building"], "playMode": "SinglePlayer",
+           "image": "https://hyapps.app/brickhaven/img/icon.png",
+           "screenshot": [f"https://hyapps.app/brickhaven/img/{lang}-{b}.jpg" for b in BUILDINGS],
+           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+           "author": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"},
+           "publisher": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"}}
+    if LIVE:
+        app["downloadUrl"] = app["installUrl"] = f"https://apps.apple.com/{'tr/' if lang == 'tr' else ''}app/id{APP_ID}"
+    app_ld = json.dumps(app, ensure_ascii=False)
     itunes = f'\n  <meta name="apple-itunes-app" content="app-id={APP_ID}">' if LIVE else ""
     en_on = ' class="on" aria-current="page"' if lang == "en" else ""
     tr_on = ' class="on" aria-current="page"' if lang == "tr" else ""
@@ -165,12 +183,7 @@ def page(t):
   <link rel="icon" href="/brickhaven/img/icon.png">
   <link rel="apple-touch-icon" href="/brickhaven/img/icon.png">
   <link rel="stylesheet" href="/brickhaven/brickhaven.css">
-  <script type="application/ld+json">
-  {{"@context":"https://schema.org","@type":"MobileApplication","name":"Brickhaven","operatingSystem":"iOS 18 or later",
-   "applicationCategory":"GameApplication","url":"{canonical}","inLanguage":"{lang}",
-   "offers":{{"@type":"Offer","price":"0","priceCurrency":"USD"}},
-   "publisher":{{"@type":"Organization","name":"HY Apps","url":"https://hyapps.app/"}}}}
-  </script>
+  <script type="application/ld+json">{app_ld}</script>
   <script type="application/ld+json">{faq_ld}</script>
   {ANALYTICS}
 </head>

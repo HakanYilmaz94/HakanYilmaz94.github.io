@@ -692,12 +692,30 @@
   <url><loc>https://hyapps.app/quickwits/tr/oyun-gecesi-grup-oyunlari/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/oyun-gecesi-grup-oyunlari/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/group-games-for-game-night/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/buildings/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/buildings/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/binalar/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/skill-tree/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/skill-tree/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/ustalik-agaci/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/design-your-own-house/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/design-your-own-house/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/ev-tasarlama-oyunu/"/></url>
   <url><loc>https://hyapps.app/brickhaven/cozy-offline-building-game/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/cozy-offline-building-game/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/"/></url>
   <url><loc>https://hyapps.app/brickhaven/beginners-guide/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/beginners-guide/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/baslangic-rehberi/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/tr/binalar/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/binalar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/buildings/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/tr/ustalik-agaci/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/ustalik-agaci/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/skill-tree/"/></url>
+  <url><loc>https://hyapps.app/brickhaven/tr/ev-tasarlama-oyunu/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/ev-tasarlama-oyunu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/design-your-own-house/"/></url>
   <url><loc>https://hyapps.app/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/cozy-offline-building-game/"/></url>

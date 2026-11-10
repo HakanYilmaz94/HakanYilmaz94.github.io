@@ -11,7 +11,7 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_ID = "6822852151"
-LIVE = False
+LIVE = True
 # STORE mirrors the app: 1.0.1 (2026-11-09) has no purchases and 50 levels per difficulty (200 in all); 1.2 brings
 # Crownly Pro and all 2,000 levels back. With STORE = False the pages leave Pro out; True restores them unchanged.
 STORE = False

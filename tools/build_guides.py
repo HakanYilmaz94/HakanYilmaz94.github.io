@@ -712,6 +712,12 @@ BG = {
               "Looking for a relaxing game with no timers, no ads and no internet needed? Brickhaven lets you rebuild a seaside town one brick at a time."),
         tips=("/brickhaven/beginners-guide/", "Brickhaven Beginner's Guide: 8 Tips to Build Faster",
               "Eight tips for new builders: reading the blueprint, carrying more bricks, which skills to pick first and designing your own house."),
+        buildings=("/brickhaven/buildings/", "All 9 Buildings in Brickhaven: Owners, Order and What Makes Each One Special",
+                   "The nine story buildings of Brickhaven in order, from Martha's Bakery to the Train Station: who lives there, what is new in each and which ones are free."),
+        skills=("/brickhaven/skill-tree/", "Brickhaven Skill Tree: Which Skills to Unlock First",
+                "Every skill in Brickhaven explained: Strong Arms, Skilled Hands, the Brick Magnet, the lift and the rest, with a sensible order to spend your points."),
+        design=("/brickhaven/design-your-own-house/", "Design Your Own House: The Architect's Table in Brickhaven",
+                "Draw your own house, shop, café or farm on iPhone and iPad, pick the colors and windows, then build it by hand on your own lot."),
     ),
     "tr": dict(
         home=("Brickhaven", "/brickhaven/tr/"), related="Diğer rehberler",
@@ -719,8 +725,141 @@ BG = {
               "Zamanlayıcısız, reklamsız, internet gerektirmeyen sakin bir oyun mu arıyorsun? Brickhaven'da bir sahil kasabasını tuğla tuğla yeniden kurarsın."),
         tips=("/brickhaven/tr/baslangic-rehberi/", "Brickhaven Başlangıç Rehberi: Daha Hızlı İnşa İçin 8 İpucu",
               "Yeni ustalar için sekiz ipucu: planı okumak, daha çok tuğla taşımak, önce hangi yetenekleri almak ve kendi evini tasarlamak."),
+        buildings=("/brickhaven/tr/binalar/", "Brickhaven'daki 9 Bina: Sahipleri, Sırası ve Özellikleri",
+                   "Brickhaven'ın dokuz hikâye binası sırasıyla, Martha'nın Fırını'ndan Tren İstasyonu'na: kim yaşıyor, her binada ne yeni ve hangileri ücretsiz."),
+        skills=("/brickhaven/tr/ustalik-agaci/", "Brickhaven Ustalık Ağacı: Önce Hangi Beceriler Alınmalı?",
+                "Brickhaven'daki bütün beceriler: Güçlü Kollar, Usta Eller, Tuğla Mıknatısı, asansör ve diğerleri; puanları harcamak için mantıklı bir sıra."),
+        design=("/brickhaven/tr/ev-tasarlama-oyunu/", "Ev Tasarlama Oyunu: Kendi Evini Çiz, Tuğla Tuğla Kur",
+                "iPhone ve iPad'de kendi evini, dükkânını, kafeni ya da çiftliğini çiz; renkleri ve pencereleri seç, sonra kendi arsana tuğla tuğla kur."),
     ),
 }
+
+
+def brickhaven_more(lang, g, alts, rel, shot):
+    """Buildings list, skill tree and Architect's Table guides."""
+    en = lang == "en"
+    crumbs = lambda title, path: [g["home"], (title, path)]
+
+    # All nine buildings
+    path, title, desc = g["buildings"]
+    body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+    body += paras(ESC("Brickhaven's story has nine buildings. You build them in order, every brick by hand, and each one is bigger "
+                      "or taller than the last: the Bakery takes about 500 bricks, the Fire Station about 1,400. The first two are "
+                      "free; the Whole Town, a one-time purchase, opens the other seven."
+                      if en else
+                      "Brickhaven'ın hikâyesinde dokuz bina var. Sırayla, her tuğlayı kendi elinle koyarak kurarsın; her biri bir "
+                      "öncekinden daha büyük ya da daha yüksektir: Fırın yaklaşık 500, İtfaiye yaklaşık 1.400 tuğla tutar. İlk ikisi "
+                      "ücretsiz; tek seferlik satın alma olan Tüm Kasaba diğer yedisini açar.")) + "\n"
+    rows = ([("firin", "Bakery", "Martha the baker", "The first building and the tutorial: pink walls, a tiled roof and a chimney. You learn to read the blueprint, carry bricks and ride the lift. Free."),
+             ("ahir", "Red Barn", "Farmer Joe", "Almost twice the bricks, with double doors and barn windows. When it is done the cows, chickens and hay bales come back. Free."),
+             ("ev", "Flower Shop", "Daisy", "A two-tone shop with a fenced front garden, where Grandma Rose's roses used to come from."),
+             ("kafe", "Seaside Café", "Lucy", "A mint-green shop floor, a glass conservatory and a terrace you pave yourself, stone by stone."),
+             ("dondurmaci", "Ice Cream Parlor", "Mia", "A flat-roofed parlor in pink and mint with a giant cone on the roof and tables outside."),
+             ("kitapci", "Bookshop", "Mr. Oliver", "Three floors, a corner tower and a covered porch. The first building where the lift really matters."),
+             ("saat", "Clock Tower", "Arthur the clockmaker", "An eleven-meter tower on the town square with a clock face on all four sides and a pointed spire. When it is finished the clock shows the real time and the bell rings."),
+             ("itfaiye", "Fire Station", "Sam and his crew", "The biggest build: two garage doors, a flat roof and a tall lookout tower, with the red truck waiting outside."),
+             ("istasyon", "Train Station", "Henry the station master", "A long hall with a clock tower and a platform canopy. Finish it and the train calls at Brickhaven again.")] if en else
+            [("firin", "Fırın", "Fırıncı Martha", "İlk bina ve öğretici: pembe duvarlar, kiremit çatı ve baca. Planı okumayı, tuğla taşımayı ve asansöre binmeyi burada öğrenirsin. Ücretsiz."),
+             ("ahir", "Kırmızı Ahır", "Çiftçi Joe", "Neredeyse iki katı tuğla, çift kanatlı kapı ve ahır pencereleri. Bitince inekler, tavuklar ve saman balyaları geri gelir. Ücretsiz."),
+             ("ev", "Çiçekçi", "Daisy", "Çitli ön bahçesi olan iki renkli bir dükkân; Büyükanne Rose'un gülleri hep buradan gelirdi."),
+             ("kafe", "Sahil Kafesi", "Lucy", "Nane yeşili dükkân katı, cam kış bahçesi ve taş taş kendin döşediğin bir teras."),
+             ("dondurmaci", "Dondurmacı", "Mia", "Pembe ve nane renkli, düz çatılı bir dükkân; çatıda dev bir külah, önünde masalar."),
+             ("kitapci", "Kitapçı", "Bay Oliver", "Üç kat, köşe kulesi ve kapalı veranda. Asansörün gerçekten işe yaradığı ilk bina."),
+             ("saat", "Saat Kulesi", "Saatçi Arthur", "Kasaba meydanında on bir metrelik bir kule: dört yüzünde saat kadranı, tepesinde sivri külah. Bitince saat gerçek zamanı gösterir, çan çalar."),
+             ("itfaiye", "İtfaiye", "Sam ve ekibi", "En büyük yapı: iki garaj kapısı, düz çatı ve yüksek bir gözetleme kulesi; kırmızı araç kapıda bekler."),
+             ("istasyon", "Tren İstasyonu", "İstasyon şefi Henry", "Saat kuleli, peron saçaklı uzun bir salon. Bitirince tren yeniden Brickhaven'a uğrar.")])
+    for i, (b, name, owner, text) in enumerate(rows):
+        body += f"  <h2>{i + 1}. {ESC(name)}</h2>\n"
+        body += shot(b, f"{name} in Brickhaven" if en else f"Brickhaven'da {name}")
+        body += f"  <p><strong>{ESC(owner)}.</strong> {ESC(text)}</p>\n"
+    body += f"  <h2>{ESC('After the ninth building' if en else 'Dokuzuncu binadan sonra')}</h2>\n"
+    body += paras(ESC("When the station is finished the whole town gathers on the square to celebrate. After that Brickhaven is yours "
+                      "to walk around, decorate, and add to with buildings you design yourself at the Architect's Table."
+                      if en else
+                      "İstasyon bitince bütün kasaba kutlama için meydanda toplanır. Sonrasında Brickhaven senindir: gezersin, "
+                      "süslersin ve Mimar Masası'nda kendi tasarladığın binaları eklersin.")) + "\n"
+    body += rel("buildings")
+    write(path, page("brickhaven", lang, path, alts("buildings"), title, desc, body, crumbs(title, path)))
+
+    # Skill tree
+    path, title, desc = g["skills"]
+    body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+    body += paras(ESC("You earn skill points by laying bricks correctly and by finishing sections and buildings. Open Skills from "
+                      "the top of the screen to spend them. The board has three columns, and you can reset it and spend the points again."
+                      if en else
+                      "Yetenek puanını tuğlaları doğru koyarak, bölümleri ve binaları bitirerek kazanırsın. Harcamak için ekranın "
+                      "üstündeki Ustalık'ı aç. Panoda üç sütun var; istersen sıfırlayıp puanları yeniden dağıtabilirsin.")) + "\n"
+    cols = ([("Carrying", [("Strong Arms", "Carry more bricks per trip: from 6 at the start up to 20 at the last level."),
+                           ("Brick Magnet", "A button that pulls bricks of the kind you are looking at straight into your arms: 1 brick at first, 10 at the last level, with a shorter wait each level."),
+                           ("Drop All", "Hold Drop to put your whole load down at once.")]),
+             ("Laying", [("Skilled Hands", "Each brick goes into the wall faster."),
+                         ("Nonstop Laying", "Hold the button and keep laying brick after brick."),
+                         ("Long Arms", "Reach farther: place bricks up to 3 meters away instead of 2.1.")]),
+             ("Moving", [("Sprint", "Walk faster between the pile and the wall."),
+                         ("Lift", "The lift is free and always reaches the roof; this skill makes it rise and travel faster."),
+                         ("High Jump", "Jump higher, up to almost a meter.")])] if en else
+            [("Taşıma", [("Güçlü Kollar", "Bir seferde daha çok tuğla taşırsın: başta 6, son kademede 20."),
+                         ("Tuğla Mıknatısı", "Baktığın türden tuğlaları doğrudan eline çeken bir düğme: başta 1, son kademede 10 tuğla; bekleme süresi her kademede kısalır."),
+                         ("Toplu Bırak", "Bırak'ı basılı tutunca elindekilerin hepsini birden yere koyarsın.")]),
+             ("Örme", [("Usta Eller", "Her tuğla duvara daha çabuk yerleşir."),
+                       ("Kesintisiz Örme", "Düğmeyi basılı tut, tuğlaları art arda koy."),
+                       ("Uzun Kollar", "Daha uzağa uzanırsın: tuğlayı 2,1 yerine 3 metreye kadar koyabilirsin.")]),
+             ("Hareket", [("Koşma", "Yığınla duvar arasında daha hızlı yürürsün."),
+                          ("Asansör", "Asansör ücretsizdir ve her zaman çatıya yetişir; bu beceri onu daha hızlı çıkarır ve yürütür."),
+                          ("Yüksek Zıplama", "Daha yükseğe, neredeyse bir metreye kadar zıplarsın.")])])
+    for h, items in cols:
+        body += defs(h, items)
+    body += steps("A good order" if en else "İyi bir sıra", (
+        ["Strong Arms first. Every trip to the pile carries more, on every building.",
+         "A few levels of Skilled Hands, so a full load goes into the wall quickly.",
+         "The Brick Magnet as soon as it opens. Searching the pile is the slowest part on a phone.",
+         "Sprint and Lift once the buildings get tall, from the Bookshop on.",
+         "Nonstop Laying, Long Arms, Drop All and High Jump are comforts: take them when points are left over."] if en else
+        ["Önce Güçlü Kollar. Yığına her gidişte daha çok taşırsın, her binada işe yarar.",
+         "Birkaç kademe Usta Eller; dolu bir yük duvara çabucak girer.",
+         "Açılır açılmaz Tuğla Mıknatısı. Telefonda en yavaş iş yığında tuğla aramaktır.",
+         "Binalar yükselince, Kitapçı'dan itibaren, Koşma ve Asansör.",
+         "Kesintisiz Örme, Uzun Kollar, Toplu Bırak ve Yüksek Zıplama rahatlıktır: puan artınca al."]))
+    body += paras(ESC("The story gives enough points for the whole board, so no choice is final." if en else
+                      "Hikâye bütün panoya yetecek kadar puan verir; hiçbir seçim kalıcı değildir.")) + "\n"
+    body += rel("skills")
+    write(path, page("brickhaven", lang, path, alts("skills"), title, desc, body, crumbs(title, path)))
+
+    # Architect's Table
+    path, title, desc = g["design"]
+    body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+    body += paras(ESC("Most house design games stop at the drawing. In Brickhaven the drawing is only the plan: once it is ready, the "
+                      "bricks are delivered to your lot and you build the house yourself, row by row, like every other building in town."
+                      if en else
+                      "Ev tasarlama oyunlarının çoğu çizimde biter. Brickhaven'da çizim yalnızca plandır: hazır olunca tuğlalar arsana "
+                      "gelir ve evi, kasabadaki diğer binalar gibi sıra sıra kendin kurarsın.")) + "\n"
+    body += shot("kitapci", "The Bookshop, one of the story buildings in Brickhaven" if en else "Brickhaven'ın hikâye binalarından Kitapçı")
+    body += steps("How to design a building" if en else "Bir bina nasıl tasarlanır", (
+        ["Open the Architect's Table from the menu and start a new design, or pick one of the ready-made sketches.",
+         "Body: choose the width and depth, one to three floors, and a pitched or a flat roof.",
+         "Colors: walls, upper floor, corner stones, trim, roof, door and windows each get their own color.",
+         "Facade: tap any spot on a wall to switch it between wall, window, wide window and door.",
+         "Extras: add a side wing or a corner tower.",
+         "Identity: make it a home, a shop, a café or a farm and write the name on its sign.",
+         "Tap Build and choose one of your four lots."] if en else
+        ["Menüden Mimar Masası'nı aç ve yeni bir tasarıma başla ya da hazır taslaklardan birini seç.",
+         "Gövde: genişliği ve derinliği, bir ile üç arasında kat sayısını, beşik ya da düz çatıyı seç.",
+         "Renkler: duvar, üst kat, köşe taşları, silme, çatı, kapı ve pencerelerin her birine ayrı renk ver.",
+         "Cephe: duvarda bir yere dokunarak duvar, pencere, geniş pencere ve kapı arasında değiştir.",
+         "Ekler: yan kanat ya da köşe kulesi ekle.",
+         "Kimlik: ev, dükkân, kafe ya da çiftlik yap; tabelasına adını yaz.",
+         "İnşa et'e dokun ve dört arsandan birini seç."]))
+    body += defs("Good to know" if en else "Bilmekte fayda var", (
+        [("You see it before you build it", "A 3D preview turns next to the controls and shows the brick count, so you know how long the build will take."),
+         ("The theme decides who moves in", "A finished café gets tables and a barista, a farm gets hay, a cow and chickens, a home gets a bench and flowers."),
+         ("Designing is free", "Anyone can draw and save designs. Building them on a lot is part of the Whole Town purchase."),
+         ("Then decorate", "After a building is finished you can place benches, lamps, trees, flower beds and animals around it.")] if en else
+        [("Kurmadan önce görürsün", "Ayarların yanında dönen 3B önizleme tuğla sayısını da gösterir; inşaatın ne kadar süreceğini bilirsin."),
+         ("Tema, kimin taşınacağını belirler", "Biten kafeye masalar ve barista, çiftliğe saman, inek ve tavuklar, eve bank ve çiçekler gelir."),
+         ("Tasarlamak ücretsiz", "Herkes tasarım çizip kaydedebilir. Arsaya kurmak Tüm Kasaba satın almasına dahildir."),
+         ("Sonra süsle", "Bina bitince çevresine bank, fener, ağaç, çiçek tarhı ve hayvanlar koyabilirsin.")]))
+    body += rel("design")
+    write(path, page("brickhaven", lang, path, alts("design"), title, desc, body, crumbs(title, path)))
 
 
 def build_brickhaven_guides():
@@ -728,9 +867,10 @@ def build_brickhaven_guides():
         g = BG[lang]
         other = BG["tr" if lang == "en" else "en"]
         alts = lambda key: {lang: g[key][0], ("tr" if lang == "en" else "en"): other[key][0]}
-        rel = lambda skip: related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("cozy", "tips") if k != skip])
+        rel = lambda skip: related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("cozy", "tips", "buildings", "skills", "design") if k != skip])
         en = lang == "en"
         shot = lambda b, alt: f'  <img class="shot" src="/brickhaven/img/{lang}-{b}.jpg" alt="{ESC(alt)}" width="720" height="480" loading="lazy">\n'
+        brickhaven_more(lang, g, alts, rel, shot)
 
         # Cozy offline building game
         path, title, desc = g["cozy"]
