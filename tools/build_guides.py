@@ -23,14 +23,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def crownly_store():
-    """Reads STORE from build_crownly.py: 1.0.1 has no purchases and 50 levels per difficulty (200 in all)."""
+    """Reads STORE from build_crownly.py: 1.2 has 6,500 levels in three games; 1.0.1 had 200 and no purchases."""
     with open(os.path.join(ROOT, "tools", "build_crownly.py")) as f:
         m = re.search(r"^STORE = (True|False)", f.read(), re.M)
     return m is None or m.group(1) == "True"
 
 
 CROWNLY_STORE = crownly_store()
-CROWNLY_LEVELS = {"en": "2,000" if CROWNLY_STORE else "200", "tr": "2.000" if CROWNLY_STORE else "200"}
+CROWNLY_LEVELS = {"en": "6,500" if CROWNLY_STORE else "200", "tr": "6.500" if CROWNLY_STORE else "200"}
 HIKMET = os.path.join(os.path.dirname(ROOT), "Hikmet", "Ortak")
 SITE = "https://hyapps.app"
 PT = "?pt=129592179&ct=web&mt=8"
@@ -44,8 +44,8 @@ APPS = {
                     name={"en": "Crownly", "tr": "Crownly"}, home={"en": "/crownly/", "tr": "/crownly/tr/"},
                     og={"en": "/assets/og/crownly-en.jpg", "tr": "/assets/og/crownly-tr.jpg"},
                     cta_h={"en": "Play a new Queens puzzle every day", "tr": "Her gün yeni bir Queens bulmacası çöz"},
-                    cta_p={"en": f"Crownly: a daily puzzle, {CROWNLY_LEVELS['en']} levels and hints that explain the logic. Free on iPhone.",
-                           "tr": f"Crownly: günlük bulmaca, {CROWNLY_LEVELS['tr']} seviye ve mantığı anlatan ipuçları. iPhone'da ücretsiz."}),
+                    cta_p={"en": f"Crownly: three daily logic puzzles, live duels, {CROWNLY_LEVELS['en']} levels and hints that explain the logic. Free on iPhone and iPad.",
+                           "tr": f"Crownly: her gün üç mantık bulmacası, canlı düello, {CROWNLY_LEVELS['tr']} seviye ve mantığı anlatan ipuçları. iPhone ve iPad'de ücretsiz."}),
     "besmele": dict(id="6821501310", css=["/besmele/besmele.css"], theme="#0f3324", icon="/besmele/img/icon.png",
                     name={"en": "Bismillah", "tr": "Besmele"}, home={"en": "/besmele/en/", "tr": "/besmele/"},
                     og={"en": "/assets/og/besmele-en.jpg", "tr": "/assets/og/besmele-tr.jpg"},
@@ -459,10 +459,10 @@ def build_crownly_guides():
         for i, (h, p) in enumerate(TECH[lang]):
             body += f"  <h2>{i + 1}. {ESC(h)}</h2>\n  <p>{ESC(p)}</p>\n"
         body += paras(ESC("Crownly's hints use exactly these techniques: when you are stuck, a hint names the technique, highlights the "
-                          "row, column or region it is about and explains the step. The Logic School has a short interactive lesson for each one."
+                          "row, column or region it is about and explains the step."
                           if en else
                           "Crownly'nin ipuçları tam olarak bu teknikleri kullanır: takıldığında ipucu tekniğin adını söyler, ilgili satırı, sütunu "
-                          "ya da bölgeyi vurgular ve adımı açıklar. Mantık okulunda her teknik için kısa, etkileşimli bir ders var.")) + "\n"
+                          "ya da bölgeyi vurgular ve adımı açıklar.")) + "\n"
         body += rel("strategy")
         write(path, page("crownly", lang, path, alts("strategy"), title, desc, body, [g["home"], (title, path)]))
 
@@ -476,15 +476,15 @@ def build_crownly_guides():
         whats_in = "What you get in Crownly" if en else "Crownly'de neler var"
         body += f'\n  <h2>{whats_in}</h2>\n  <ul>' +"".join(f"<li>{ESC(x)}</li>" for x in (
             ["A new daily puzzle at the same time for everyone, plus a 10×10 Daily Hard.",
-             f"{CROWNLY_LEVELS['en']} levels from Easy to Expert, with up to three stars each.",
+             f"{CROWNLY_LEVELS['en']} levels from Easy to Expert in three games, with up to three stars each.",
              "Hints that explain the next logical step instead of revealing the answer.",
-             "A Logic School with six interactive lessons.",
+             "Two more daily puzzles, Route and Mosaic, plus Double Crowns and live duels with friends.",
              "Streaks, streak freezes, Game Center leaderboards and widgets.",
              "Color-blind mode, dark mode, no ads, works offline."] if en else
             ["Herkese aynı anda gelen yeni bir günlük bulmaca ve 10×10 Günlük Zor.",
-             f"Kolaydan Uzmana {CROWNLY_LEVELS['tr']} seviye, her birinde üç yıldıza kadar.",
+             f"Üç oyunda Kolaydan Uzmana {CROWNLY_LEVELS['tr']} seviye, her birinde üç yıldıza kadar.",
              "Cevabı vermek yerine sıradaki mantıklı adımı anlatan ipuçları.",
-             "Altı etkileşimli dersten oluşan Mantık okulu.",
+             "İki günlük bulmaca daha (Rota ve Mozaik), Çift Taç ve arkadaşlarınla canlı düello.",
              "Seri, seri dondurma, Game Center sıralamaları ve widget'lar.",
              "Renk körü modu, koyu tema, reklamsız, internetsiz oynanır."])) + "</ul>\n"
         body += paras(ESC("Crownly is an independent app and is not affiliated with or endorsed by LinkedIn. Queens and Star Battle are names of a puzzle type."

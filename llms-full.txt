@@ -72,21 +72,24 @@ A: Yes: Settings → Color-blind mode prints a small symbol on every brick color
 
 - Page: https://hyapps.app/crownly/
 - Privacy policy: https://hyapps.app/crownly/privacy.html
-- Title: Crownly · Daily Queens Logic Puzzle for iPhone
+- Title: Crownly · Daily Queens, Route & Mosaic Logic Puzzles
 - Platform: iOS 17 or later
 
-Crownly is a calm daily logic puzzle for iPhone. Place one crown in every row, column and region. A new puzzle every day, 2,000 levels, hints that explain the logic, color-blind mode. No ads, works offline.
+Crownly is a calm collection of daily logic puzzles for iPhone and iPad: Crowns (Queens), Route and Mosaic. A new puzzle in every game every day, live duels with friends, 6,500 levels, hints that explain the logic. No ads, works offline.
 
 Questions and answers:
 
-Q: When does the daily puzzle change?
-A: A new daily puzzle appears every day at 07:00 UTC, at the same moment for everyone in the world.
+Q: When do the daily puzzles change?
+A: New daily puzzles appear every day at 07:00 UTC, at the same moment for everyone in the world.
+
+Q: How do duels work?
+A: Open Duel, create a room and share its code. 2 to 4 friends race live on the same Crowns board; the first to solve it wins. You can also practice against bots without an internet connection.
 
 Q: Will I lose my progress if I change phones?
 A: With iCloud sync turned on (Settings → General), your solved puzzles, stars and streak sync to your other devices through your private iCloud account. Without iCloud, progress is stored only on this device and deleting the app deletes it.
 
-Q: How do I restore Crownly Pro?
-A: Open Settings → Crownly Pro → Restore purchases while signed in with the Apple Account you used to buy it. Pro is shared with your Family Sharing group.
+Q: What does Crownly Pro add?
+A: All 6,500 levels (the first 50 of every difficulty are free), unlimited hints and duels, the archive of every past daily puzzle and 3 streak freezes a month instead of 1. It is a one-time purchase, shared with your Family Sharing group. To restore it, open Settings → Crownly Pro → Restore purchases.
 
 Q: I missed a day. Is my streak gone?
 A: Not always. A streak freeze is used automatically when you miss a day (one per month, three with Pro).
