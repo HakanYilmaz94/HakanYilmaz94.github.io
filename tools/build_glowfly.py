@@ -18,7 +18,7 @@ LIVE = True
 # STORE mirrors the app's STORE compile flag: 1.0 has no purchases and no ads (Guideline 2.5.19), 1.1 brings Glowfly Plus,
 # gems, the ad-free option and reward videos back. With STORE = False the FAQ and privacy policy leave them out.
 # build_guides.py reads it from here too. 1.1: set True and run this and build_guides.py.
-STORE = False
+STORE = True
 # The privacy policy may run ahead of the pages: it describes 1.1 (purchases, AdMob) from the day 1.1 went to review
 # (2026-11-09), because App Review compares it with the App Privacy answers. Landing page and FAQ follow STORE.
 PRIVACY_STORE = True
