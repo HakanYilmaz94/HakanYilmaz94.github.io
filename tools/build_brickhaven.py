@@ -154,7 +154,7 @@ def page(t):
            "author": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"},
            "publisher": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"}}
     if LIVE:
-        app["downloadUrl"] = app["installUrl"] = f"https://apps.apple.com/{'tr/' if lang == 'tr' else ''}app/id{APP_ID}"
+        app["downloadUrl"] = app["installUrl"] = t["store"]
     app_ld = json.dumps(app, ensure_ascii=False)
     itunes = f'\n  <meta name="apple-itunes-app" content="app-id={APP_ID}">' if LIVE else ""
     en_on = ' class="on" aria-current="page"' if lang == "en" else ""
