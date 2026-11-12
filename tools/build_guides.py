@@ -683,12 +683,12 @@ def build_quickwits_guides():
                           "İyi bir oyun gecesi için deste ya da kutu oyunu gerekmez. Masada tek telefon yeter: herkes aynı turu sırayla oynar, "
                           "telefon sıradakine geçer ve puanlar sonunda birlikte açıklanır.")) + "\n"
         body += steps("How pass-the-phone works" if en else "Telefonu pasla nasıl oynanır",
-                      ["Write everyone's name once; up to 4 players are free, up to 8 with the Party Pack.",
+                      ["Write everyone's name once, up to 8 players.",
                        "Pick a few games and how many rounds each.",
                        "The first player plays a short round, a few seconds long, then hands the phone on.",
                        "Each player gets exactly the same round, so nobody gets an easier question.",
                        "When everyone has played, the results of the round are revealed together."] if en else
-                      ["Herkesin adını bir kez yaz; 4 kişiye kadar ücretsiz, Parti Paketi ile 8 kişi.",
+                      ["Herkesin adını bir kez yaz, 8 kişiye kadar.",
                        "Birkaç oyun ve her biri için tur sayısını seç.",
                        "İlk oyuncu birkaç saniyelik kısa turunu oynar, telefonu sıradakine verir.",
                        "Her oyuncuya birebir aynı tur gelir; kimseye daha kolay soru düşmez.",
