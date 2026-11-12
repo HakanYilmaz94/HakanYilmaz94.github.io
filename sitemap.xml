@@ -698,6 +698,12 @@
   <url><loc>https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/games-like-sudoku/"/></url>
+  <url><loc>https://hyapps.app/crownly/daily-queens-puzzle/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-queens-puzzle/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/"/></url>
+  <url><loc>https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-queens-puzzle/"/></url>
   <url><loc>https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/tek-telefonla-oynanan-oyunlar/"/></url>

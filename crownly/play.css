@@ -1,0 +1,42 @@
+/* Crownly web daily: the board is a light object in both themes, like in the app. */
+.cq { display: grid; gap: 14px; justify-items: center; margin: 22px 0 30px; padding: 18px 16px 20px;
+      background: var(--card); border: 1px solid var(--line); border-radius: 22px; }
+.cq-head { width: min(100%, 460px); display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.cq-date { font: 600 20px/1.2 var(--serif); }
+.cq-time { font: 600 17px/1 var(--sans); font-variant-numeric: tabular-nums; padding: 7px 12px; border-radius: 999px;
+           border: 1.5px solid var(--gold); color: var(--ink); background: color-mix(in srgb, var(--gold-hi) 18%, transparent); }
+.cq-board { --n: 7; width: min(100%, 460px); aspect-ratio: 1; display: grid; grid-template-columns: repeat(var(--n), 1fr);
+            border: 3px solid #3b2a57; border-radius: 10px; overflow: hidden; touch-action: none; user-select: none;
+            -webkit-user-select: none; -webkit-tap-highlight-color: transparent; background: #fbf4e6; }
+.cq.loading .cq-board { background: repeating-linear-gradient(45deg, #efe6d6 0 12px, #f6efe2 12px 24px); }
+.cq-cell { position: relative; display: grid; place-items: center; border: .5px solid rgba(59, 42, 87, .2); cursor: pointer; }
+.cq-cell.et { border-top: 2.5px solid #3b2a57; } .cq-cell.eb { border-bottom: 2.5px solid #3b2a57; }
+.cq-cell.el { border-left: 2.5px solid #3b2a57; } .cq-cell.er { border-right: 2.5px solid #3b2a57; }
+.cq-cell:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; z-index: 1; }
+.cq-dot { width: 22%; aspect-ratio: 1; border-radius: 50%; background: var(--dot); }
+.cq-crown { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; animation: cq-pop .22s ease-out; pointer-events: none; }
+.cq-crown img { display: block; width: 80%; height: auto; }
+.cq-cell.bad::before { content: ""; position: absolute; inset: 12%; border-radius: 50%;
+                       background: radial-gradient(circle, rgba(243, 120, 100, .75), rgba(243, 120, 100, 0) 70%); }
+.cq-cell.bad .cq-crown { animation: cq-shake .5s ease-in-out 2; }
+.cq.solved .cq-board { border-color: #c9972a; box-shadow: 0 0 0 4px rgba(244, 208, 111, .45); }
+.cq-tools { width: min(100%, 460px); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.cq-count { margin-right: auto; color: var(--muted); font-size: 15px; }
+.cq-tools button, .cq-share { font: 600 15px var(--sans); padding: 9px 15px; border-radius: 999px; cursor: pointer;
+                              border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.cq-tools button:disabled { opacity: .45; cursor: default; }
+.cq-tools button:focus-visible, .cq-share:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.cq-help { width: min(100%, 460px); margin: 0; color: var(--muted); font-size: 14.5px; text-align: center; }
+.cq-status { margin: 0; min-height: 1em; color: var(--muted); font-size: 15px; }
+.cq-result { width: min(100%, 460px); display: grid; gap: 10px; justify-items: center; text-align: center; padding: 18px 16px;
+             border-radius: 18px; background: var(--night); color: var(--on-night); }
+.cq-result[hidden] { display: none; }
+.cq-result p { margin: 0; }
+.cq-result .big { font: 700 44px/1 var(--serif); color: var(--gold-hi); font-variant-numeric: tabular-nums; }
+.cq-result .next { opacity: .8; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+.cq-share { background: linear-gradient(#f4d06f, #c9972a); color: #2e2144; border: 0; }
+.cq-result .store { margin-top: 4px; }
+.cq-result .more { font-size: 15px; opacity: .9; max-width: 36ch; }
+@keyframes cq-pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes cq-shake { 0%, 100% { transform: none; } 25% { transform: rotate(-9deg); } 75% { transform: rotate(9deg); } }
+@media (prefers-reduced-motion: reduce) { .cq-crown, .cq-cell.bad .cq-crown { animation: none; } }

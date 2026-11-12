@@ -29,6 +29,7 @@ T = {
         h1="Three puzzles.<br>One quiet habit, <em>every day.</em>",
         lead="Crownly brings you a daily Crowns, Route and Mosaic puzzle, with hints that explain the logic, not the answer.",
         cta="Download on the App Store", soon="Coming soon to the App Store", cta_note="Free · iPhone & iPad · iOS 17+",
+        play=("Or play today's puzzle in your browser →", "/crownly/daily-queens-puzzle/"),
         marquee=["3 daily puzzles", "Crowns · Route · Mosaic", "Live duels", "6,500 levels", "Hints that teach",
                  "Color-blind friendly", "No ads", "Works offline", "12 languages"],
         rules_kicker="How to play Crowns", rules_h="Three rules. Pure logic.",
@@ -91,6 +92,7 @@ T = {
         h1="Üç bulmaca.<br>Her gün sakin <em>bir alışkanlık.</em>",
         lead="Crownly her gün bir Taçlar, bir Rota ve bir Mozaik bulmacası getirir; ipuçları cevabı değil mantığı anlatır.",
         cta="App Store'dan indir", soon="Yakında App Store'da", cta_note="Ücretsiz · iPhone ve iPad · iOS 17+",
+        play=("Ya da bugünün bulmacasını tarayıcında çöz →", "/crownly/tr/gunluk-queens-bulmacasi/"),
         marquee=["Her gün 3 bulmaca", "Taçlar · Rota · Mozaik", "Canlı düello", "6.500 seviye", "Öğreten ipuçları",
                  "Renk körü dostu", "Reklam yok", "İnternetsiz oynanır", "12 dil"],
         rules_kicker="Taçlar nasıl oynanır", rules_h="Üç kural. Saf mantık.",
@@ -348,6 +350,7 @@ def page(t):
     <p class="lead">{html.escape(t["lead"])}</p>
     {store_button(t)}
     <p class="cta-note">{html.escape(t["cta_note"])}</p>
+    <p class="cta-note"><a href="{t["play"][1]}">{html.escape(t["play"][0])}</a></p>
   </div>
   <div class="stage" id="stage" aria-hidden="false">
     {phone(i + t["lang"] + "-hard.jpg", a["hard"], "side left")}

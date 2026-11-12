@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Daily Queens Puzzle: Play Today&#x27;s Crownly Puzzle Online</title>
+  <meta name="description" content="Play today&#x27;s Queens logic puzzle free in your browser: one crown in every row, column and region, and crowns never touch. A new board every day at 07:00 UTC, the same one as in the Crownly app.">
+  <meta name="theme-color" content="#2b1a42">
+  <link rel="canonical" href="https://hyapps.app/crownly/daily-queens-puzzle/">
+  <link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-queens-puzzle/">
+  <link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/">
+  <link rel="alternate" hreflang="x-default" href="https://hyapps.app/crownly/daily-queens-puzzle/">
+  <meta name="apple-itunes-app" content="app-id=6822852151">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Daily Queens Puzzle: Play Today&#x27;s Crownly Puzzle Online">
+  <meta property="og:description" content="Play today&#x27;s Queens logic puzzle free in your browser: one crown in every row, column and region, and crowns never touch. A new board every day at 07:00 UTC, the same one as in the Crownly app.">
+  <meta property="og:url" content="https://hyapps.app/crownly/daily-queens-puzzle/">
+  <meta property="og:image" content="https://hyapps.app/assets/og/crownly-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/crownly/img/icon.png">
+  <link rel="apple-touch-icon" href="/crownly/img/icon.png">
+  <link rel="stylesheet" href="/assets/app.css">
+  <link rel="stylesheet" href="/crownly/play.css?v=73ee8141">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Crownly", "item": "https://hyapps.app/crownly/"}, {"@type": "ListItem", "position": 2, "name": "Daily Queens Puzzle: Play Today's Crownly Puzzle Online", "item": "https://hyapps.app/crownly/daily-queens-puzzle/"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Daily Queens Puzzle: Play Today's Crownly Puzzle Online", "description": "Play today's Queens logic puzzle free in your browser: one crown in every row, column and region, and crowns never touch. A new board every day at 07:00 UTC, the same one as in the Crownly app.", "inLanguage": "en", "mainEntityOfPage": "https://hyapps.app/crownly/daily-queens-puzzle/", "author": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"}, "publisher": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When does a new puzzle come out?", "acceptedAnswer": {"@type": "Answer", "text": "Every day at 07:00 UTC, at the same moment for everyone in the world."}}, {"@type": "Question", "name": "Is it the same puzzle as in the app?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The web puzzle is Crownly's normal daily Crowns puzzle (7×7). In the app you also get the 10×10 Hard Daily, Route and Mosaic dailies, a streak and Game Center leaderboards."}}, {"@type": "Question", "name": "Is it free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, today's puzzle is free here and in the app. Your progress is saved in this browser until the next puzzle."}}, {"@type": "Question", "name": "Can I play older puzzles?", "acceptedAnswer": {"@type": "Answer", "text": "Past daily puzzles are in the Crownly app's archive (Crownly Pro)."}}]}</script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "89e9ceae59114244a972f60af4a20851"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="/crownly/"><img src="/crownly/img/icon.png" alt="" width="28" height="28">Crownly</a>
+  <nav><span class="lang"><a href="/crownly/daily-queens-puzzle/" hreflang="en" lang="en" class="on" aria-current="page">EN</a><a href="/crownly/tr/gunluk-queens-bulmacasi/" hreflang="tr" lang="tr">TR</a></span></nav>
+</header>
+<article class="article">
+  <p class="crumbs"><a href="/crownly/">Crownly</a></p>
+  <h1>Today&#x27;s Queens Puzzle</h1>
+  <p class="intro">Place one crown in every row, column and colored region. Crowns never touch, not even diagonally. Tap a cell once for a dot, twice for a crown, or drag to dot many cells.</p>
+  <section class="cq loading" id="cq" aria-label="Today&#x27;s Queens Puzzle">
+    <div class="cq-head"><span class="cq-date" id="cq-date"></span><span class="cq-time" id="cq-time" aria-label="Time">0:00</span></div>
+    <div class="cq-board" id="cq-board" role="grid" aria-label="Puzzle board"></div>
+    <div class="cq-tools"><span class="cq-count" id="cq-count"></span>
+      <button type="button" id="cq-undo" disabled>Undo</button>
+      <button type="button" id="cq-clear" disabled>Clear</button></div>
+    <p class="cq-status" id="cq-status" aria-live="polite"></p>
+    <div class="cq-result" id="cq-result" hidden>
+      <p>Solved!</p>
+      <p class="big" id="cq-result-time">0:00</p>
+      <button type="button" class="cq-share" id="cq-share">Share result</button>
+      <p class="next" id="cq-next"></p>
+      <p class="more">Want more? Crownly has two more daily puzzles (Route and Mosaic), a 10×10 Hard Daily, streaks and live duels.</p>
+      <a class="store" href="https://apps.apple.com/app/apple-store/id6822852151?pt=129592179&amp;ct=webdaily&amp;mt=8">Download on the App Store</a>
+    </div>
+  </section>
+  <script>window.CROWNLY_PLAY = {"lang": "en", "url": "https://hyapps.app/crownly/daily-queens-puzzle/", "t": {"crown": "crown", "dot": "dot", "empty": "empty", "cell": "Row {r}, column {c}", "left": "Crowns left: {n}", "next": "Next puzzle in {t}", "ready": "A new puzzle is ready. Reload the page.", "solved": "Solved in {t}!", "share": "Share result", "copied": "Copied", "error": "Today's puzzle could not be loaded. Check your connection and reload."}};</script>
+  <script src="/crownly/play.js?v=081255e9" defer></script>
+  <h2>How to play Queens</h2>
+  <ol><li>Place exactly one crown in every row and every column.</li><li>Place exactly one crown in every colored region.</li><li>Crowns may not touch each other, not even diagonally.</li><li>Use dots to mark cells that can&#x27;t hold a crown. Every puzzle has exactly one solution, so you never have to guess.</li></ol>
+  <h2>Questions</h2>
+  <h3>When does a new puzzle come out?</h3>
+  <p>Every day at 07:00 UTC, at the same moment for everyone in the world.</p>
+  <h3>Is it the same puzzle as in the app?</h3>
+  <p>Yes. The web puzzle is Crownly&#x27;s normal daily Crowns puzzle (7×7). In the app you also get the 10×10 Hard Daily, Route and Mosaic dailies, a streak and Game Center leaderboards.</p>
+  <h3>Is it free?</h3>
+  <p>Yes, today&#x27;s puzzle is free here and in the app. Your progress is saved in this browser until the next puzzle.</p>
+  <h3>Can I play older puzzles?</h3>
+  <p>Past daily puzzles are in the Crownly app&#x27;s archive (Crownly Pro).</p>
+  <div class="related"><p class="kicker">More guides</p><a href="/crownly/queens-puzzle-rules/">How to Play Queens →</a><a href="/crownly/queens-strategy/">Queens Puzzle Strategy →</a><a href="/crownly/linkedin-queens-alternative/">LinkedIn Queens Alternative →</a></div>
+
+  <div class="cta-card">
+    <img src="/crownly/img/icon.png" alt="" width="72" height="72">
+    <h2>Play a new Queens puzzle every day</h2>
+    <p>Crownly: three daily logic puzzles, live duels, 6,500 levels and hints that explain the logic. Free on iPhone and iPad.</p>
+    <a class="store" href="https://apps.apple.com/app/apple-store/id6822852151?pt=129592179&amp;ct=web&amp;mt=8">Download on the App Store</a>
+  </div>
+</article>
+<footer class="foot">
+  <a href="/">HY Apps</a><a href="/crownly/">Crownly</a>
+  <a href="/crownly/privacy.html">Privacy policy</a><a href="mailto:hyapps@outlook.com">hyapps@outlook.com</a>
+  <p>Made with care by an independent developer. © 2026 HY Apps</p>
+</footer>
+</body>
+</html>

@@ -420,7 +420,8 @@ def build_crownly_guides():
         g = CG[lang]
         other = CG["tr" if lang == "en" else "en"]
         alts = lambda key: {lang: g[key][0], ("tr" if lang == "en" else "en"): other[key][0]}
-        rel = lambda skip: related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("rules", "strategy", "alt") if k != skip]
+        rel = lambda skip: related(g["related"], [(CG_PLAY[lang][1].split(":")[0], CG_PLAY[lang][0])]
+                                            + [(g[k][1].split(":")[0], g[k][0]) for k in ("rules", "strategy", "alt") if k != skip]
                                             + [(CG_LIKE[lang][1].split(":")[0], CG_LIKE[lang][0])])
         en = lang == "en"
 
@@ -492,6 +493,90 @@ def build_crownly_guides():
                           "Queens ve Star Battle bir bulmaca türünün adlarıdır.")).replace("<p>", '<p class="note">') + "\n"
         body += rel("alt")
         write(path, page("crownly", lang, path, alts("alt"), title, desc, body, [g["home"], (title, path)]))
+
+
+# ---------------------------------------------------------------- Crownly: playable web daily
+
+CG_PLAY = {
+    "en": ("/crownly/daily-queens-puzzle/", "Daily Queens Puzzle: Play Today's Crownly Puzzle Online",
+           "Play today's Queens logic puzzle free in your browser: one crown in every row, column and region, and crowns never touch. "
+           "A new board every day at 07:00 UTC, the same one as in the Crownly app."),
+    "tr": ("/crownly/tr/gunluk-queens-bulmacasi/", "Günlük Queens Bulmacası: Bugünün Crownly Bulmacasını Online Çöz",
+           "Bugünün Queens mantık bulmacasını tarayıcında ücretsiz çöz: her satıra, sütuna ve bölgeye bir taç, taçlar birbirine dokunmaz. "
+           "Her gün 07:00 UTC'de yeni tahta; Crownly uygulamasındakiyle aynı bulmaca."),
+}
+PLAY_TEXT = {
+    "en": dict(crown="crown", dot="dot", empty="empty", cell="Row {r}, column {c}", left="Crowns left: {n}",
+               next="Next puzzle in {t}", ready="A new puzzle is ready. Reload the page.", solved="Solved in {t}!",
+               share="Share result", copied="Copied", error="Today's puzzle could not be loaded. Check your connection and reload."),
+    "tr": dict(crown="taç", dot="nokta", empty="boş", cell="{r}. satır, {c}. sütun", left="Kalan taç: {n}",
+               next="Yeni bulmacaya {t}", ready="Yeni bulmaca hazır. Sayfayı yenile.", solved="{t} sürede çözdün!",
+               share="Sonucu paylaş", copied="Kopyalandı", error="Bugünün bulmacası yüklenemedi. Bağlantını kontrol edip sayfayı yenile."),
+}
+
+
+def asset_version(rel):
+    """Short content hash for cache busting (?v=…), so browsers fetch play.js/play.css again after a change."""
+    import hashlib
+    with open(os.path.join(ROOT, rel.lstrip("/")), "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
+
+
+def build_crownly_play():
+    js_v, css_v = asset_version("/crownly/play.js"), asset_version("/crownly/play.css")
+    for lang in ("en", "tr"):
+        en = lang == "en"
+        path, title, desc = CG_PLAY[lang]
+        other = CG_PLAY["tr" if en else "en"][0]
+        g = CG[lang]
+        t = dict(PLAY_TEXT[lang], **{})
+        cfg = json.dumps({"lang": lang, "url": SITE + path, "t": t}, ensure_ascii=False)
+        store = f"https://apps.apple.com/{'tr/' if lang == 'tr' else ''}app/apple-store/id6822852151?pt=129592179&ct=webdaily&mt=8"
+        h1 = "Today's Queens Puzzle" if en else "Bugünün Queens Bulmacası"
+        intro = ("Place one crown in every row, column and colored region. Crowns never touch, not even diagonally. "
+                 "Tap a cell once for a dot, twice for a crown, or drag to dot many cells." if en else
+                 "Her satıra, sütuna ve renkli bölgeye bir taç koy. Taçlar birbirine dokunmaz, çapraz da. "
+                 "Hücreye bir kez dokun nokta, iki kez taç; sürükleyerek çok hücreye nokta koy.")
+        body = f'  <h1>{ESC(h1)}</h1>\n  <p class="intro">{ESC(intro)}</p>\n'
+        body += f"""  <section class="cq loading" id="cq" aria-label="{ESC(h1)}">
+    <div class="cq-head"><span class="cq-date" id="cq-date"></span><span class="cq-time" id="cq-time" aria-label="{'Time' if en else 'Süre'}">0:00</span></div>
+    <div class="cq-board" id="cq-board" role="grid" aria-label="{'Puzzle board' if en else 'Bulmaca tahtası'}"></div>
+    <div class="cq-tools"><span class="cq-count" id="cq-count"></span>
+      <button type="button" id="cq-undo" disabled>{'Undo' if en else 'Geri al'}</button>
+      <button type="button" id="cq-clear" disabled>{'Clear' if en else 'Temizle'}</button></div>
+    <p class="cq-status" id="cq-status" aria-live="polite"></p>
+    <div class="cq-result" id="cq-result" hidden>
+      <p>{'Solved!' if en else 'Çözdün!'}</p>
+      <p class="big" id="cq-result-time">0:00</p>
+      <button type="button" class="cq-share" id="cq-share">{ESC(t['share'])}</button>
+      <p class="next" id="cq-next"></p>
+      <p class="more">{ESC('Want more? Crownly has two more daily puzzles (Route and Mosaic), a 10×10 Hard Daily, streaks and live duels.' if en else 'Daha fazlası mı? Crownly’de iki günlük bulmaca daha (Rota ve Mozaik), 10×10 Günlük Zor, seri ve canlı düello var.')}</p>
+      <a class="store" href="{ESC(store)}">{ESC(STORE_LABEL[lang])}</a>
+    </div>
+  </section>
+  <script>window.CROWNLY_PLAY = {cfg};</script>
+  <script src="/crownly/play.js?v={js_v}" defer></script>
+"""
+        body += f'  <h2>{"How to play Queens" if en else "Queens nasıl oynanır"}</h2>\n  <ol>' + "".join(f"<li>{ESC(x)}</li>" for x in (
+            ["Place exactly one crown in every row and every column.", "Place exactly one crown in every colored region.",
+             "Crowns may not touch each other, not even diagonally.",
+             "Use dots to mark cells that can't hold a crown. Every puzzle has exactly one solution, so you never have to guess."] if en else
+            ["Her satıra ve her sütuna tam bir taç koy.", "Her renkli bölgeye tam bir taç koy.", "Taçlar birbirine dokunamaz, çapraz da.",
+             "Taç gelemeyecek hücreleri noktayla işaretle. Her bulmacanın tek çözümü var; tahmin etmen gerekmez."])) + "</ol>\n"
+        faq = ([("When does a new puzzle come out?", "Every day at 07:00 UTC, at the same moment for everyone in the world."),
+                ("Is it the same puzzle as in the app?", "Yes. The web puzzle is Crownly's normal daily Crowns puzzle (7×7). In the app you also get the 10×10 Hard Daily, Route and Mosaic dailies, a streak and Game Center leaderboards."),
+                ("Is it free?", "Yes, today's puzzle is free here and in the app. Your progress is saved in this browser until the next puzzle."),
+                ("Can I play older puzzles?", "Past daily puzzles are in the Crownly app's archive (Crownly Pro).")] if en else
+               [("Yeni bulmaca ne zaman çıkıyor?", "Her gün 07:00 UTC'de (Türkiye saatiyle 10:00), dünyadaki herkes için aynı anda."),
+                ("Uygulamadakiyle aynı bulmaca mı?", "Evet. Web bulmacası Crownly'nin normal günlük Taçlar bulmacasıdır (7×7). Uygulamada ayrıca 10×10 Günlük Zor, Rota ve Mozaik günlükleri, seri ve Game Center sıralamaları var."),
+                ("Ücretsiz mi?", "Evet, bugünün bulmacası burada da uygulamada da ücretsiz. İlerlemen yeni bulmacaya kadar bu tarayıcıda saklanır."),
+                ("Eski bulmacaları çözebilir miyim?", "Geçmiş günlük bulmacalar Crownly uygulamasının arşivinde (Crownly Pro).")])
+        body += f'  <h2>{"Questions" if en else "Sorular"}</h2>\n' + "".join(f"  <h3>{ESC(q)}</h3>\n  <p>{ESC(a)}</p>\n" for q, a in faq)
+        body += related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("rules", "strategy", "alt")]) + "\n"
+        schema = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
+        write(path, page("crownly", lang, path, {lang: path, ("tr" if en else "en"): other}, title, desc, body,
+                         [g["home"], (title, path)], schema=schema, head=f'\n  <link rel="stylesheet" href="/crownly/play.css?v={css_v}">'))
 
 
 # ---------------------------------------------------------------- Quick Wits: party game guides
@@ -1231,6 +1316,7 @@ build_besmele_guides()
 build_besmele_collections()
 build_crownly_guides()
 build_crownly_like()
+build_crownly_play()
 build_quickwits_guides()
 build_brickhaven_guides()
 build_glowfly_guides()
