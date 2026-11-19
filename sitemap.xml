@@ -34,6 +34,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/"/></url>
   <url><loc>https://hyapps.app/glowfly/privacy.html</loc></url>
+  <url><loc>https://hyapps.app/pyramidcraft/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/"/></url>
+  <url><loc>https://hyapps.app/pyramidcraft/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/"/></url>
+  <url><loc>https://hyapps.app/pyramidcraft/privacy.html</loc></url>
   <url><loc>https://hyapps.app/besmele/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/"/></url>

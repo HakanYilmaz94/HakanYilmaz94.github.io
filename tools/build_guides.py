@@ -1296,6 +1296,8 @@ STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
           ("/brickhaven/privacy.html", {}),
           ("/glowfly/", {"en": "/glowfly/", "tr": "/glowfly/tr/"}), ("/glowfly/tr/", {"en": "/glowfly/", "tr": "/glowfly/tr/"}),
           ("/glowfly/privacy.html", {}),
+          ("/pyramidcraft/", {"en": "/pyramidcraft/", "tr": "/pyramidcraft/tr/"}), ("/pyramidcraft/tr/", {"en": "/pyramidcraft/", "tr": "/pyramidcraft/tr/"}),
+          ("/pyramidcraft/privacy.html", {}),
           ("/besmele/", {"tr": "/besmele/", "en": "/besmele/en/"}), ("/besmele/en/", {"tr": "/besmele/", "en": "/besmele/en/"}),
           ("/besmele/destek.html", {}), ("/besmele/en/destek.html", {}), ("/besmele/gizlilik.html", {}), ("/besmele/en/gizlilik.html", {})]
 
