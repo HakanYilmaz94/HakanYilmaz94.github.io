@@ -31,8 +31,8 @@ def meta(text, name):
 
 
 out = ["# HY Apps: full app descriptions", "",
-       "> HY Apps is an independent studio (one developer) making calm apps and games for iPhone and iPad: no ads in the",
-       "> middle of things, no tracking, no accounts. Contact: hyapps@outlook.com. Short index: https://hyapps.app/llms.txt", ""]
+       "> HY Apps is an independent studio (one developer) making calm apps and games for iPhone and iPad: any ads are rare and",
+       "> wait for a break, no tracking, no accounts. Contact: hyapps@outlook.com. Short index: https://hyapps.app/llms.txt", ""]
 for name, rel, url, privacy in APPS:
     path = os.path.join(ROOT, rel)
     if not os.path.exists(path):

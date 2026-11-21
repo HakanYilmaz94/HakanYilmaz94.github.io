@@ -291,7 +291,7 @@ PRIVACY = {
 
 # The 1.1 policy (ads, purchases, anonymous statistics). Ready since 2026-11-21; set PRIVACY_VERSION = "1.1" and rebuild
 # when 1.1 goes to review (not before: 1.0 collects nothing). Piramit/Plans/gizlilik-1.1.md has the rest of the list.
-PRIVACY_VERSION = "1.0"
+PRIVACY_VERSION = "1.0"   # also switches the page's "no ads, no purchases" lines (see V11_TEXT)
 _MAIL = "<a href=\"mailto:hyapps@outlook.com?subject=Pyramid%20Craft\">hyapps@outlook.com</a>"
 PRIVACY_V11 = {
     "en": dict(
@@ -360,6 +360,25 @@ PRIVACY_V11 = {
 }
 if PRIVACY_VERSION == "1.1":
     PRIVACY = PRIVACY_V11
+    # 1.1 has optional purchases and a rare interstitial at a break (at most about one per ten minutes).
+    V11_TEXT = {
+        "en": dict(note="iPhone · Plays offline · Free to play",
+                   faq={0: ("Is Pyramid Craft free?", "Yes. The whole Mudbrick Tomb is free. The other monuments, ad-free play and gold "
+                            "for hiring workers are optional purchases; the Pharaoh's Club subscription includes them. Without it, a short "
+                            "ad may show at a break, at most about once every ten minutes, never in the middle of an action."),
+                        6: ("Is it suitable for children?", "Pyramid Craft has no violence, no chat and no account. It has optional "
+                            "purchases and occasional ads at breaks, which Screen Time can limit.")}),
+        "tr": dict(note="iPhone · İnternetsiz oynanır · Ücretsiz",
+                   faq={0: ("Pyramid Craft ücretsiz mi?", "Evet. Kerpiç Mezar'ın tamamı ücretsiz. Diğer anıtlar, reklamsız oyun ve işçi "
+                            "tutmak için altın isteğe bağlı satın almalardır; Firavun Kulübü aboneliği bunları içerir. Onsuz, bir molada en "
+                            "fazla yaklaşık on dakikada bir kısa bir reklam çıkabilir, asla bir işin ortasında değil."),
+                        6: ("Çocuklar için uygun mu?", "Pyramid Craft'ta şiddet, sohbet ve hesap yok. İsteğe bağlı satın almalar ve "
+                            "molalarda ara sıra reklam var; Ekran Süresi ile sınırlanabilir.")}),
+    }
+    for _l, _v in V11_TEXT.items():
+        T[_l]["note"] = _v["note"]
+        for _i, _qa in _v["faq"].items():
+            T[_l]["faq"][_i] = _qa
 
 def privacy():
     body = []
