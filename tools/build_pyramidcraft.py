@@ -318,6 +318,11 @@ PRIVACY_V11 = {
              "handled entirely by Apple. We never see your payment details; the game only remembers on your device what you own."),
             ("Game Center", "Game Center is optional. If you are signed in, the game sends your total bricks laid, bricks laid this "
              "week and time played to Game Center leaderboards, and achievements you earn, which Apple runs."),
+            ("Friends' visits", "If you are signed in to Game Center and iCloud, the game keeps a copy of your world (what you have "
+             "built, your Game Center nickname and your brick count) in Apple's CloudKit, so your Game Center friends who play "
+             "can walk round it. It is stored under a code made from your Game Center player ID, not your name or Apple Account. "
+             "Your friends list is only read on your device to show who plays. Turn it off in the game's Settings "
+             "(\"Let my friends see my world\"); the copy is then deleted."),
             ("Notifications", "If you allow notifications, the game schedules a daily reminder on your device. Nothing is sent to a server."),
             ("This website", "hyapps.app uses Cloudflare Web Analytics, which counts visits without cookies and without identifying you."),
             ("Children", "Pyramid Craft is not directed at children under 13 and collects no personal data knowingly from them."),
@@ -350,6 +355,11 @@ PRIVACY_V11 = {
              "tamamen Apple işler. Ödeme bilgilerini hiçbir zaman görmeyiz; oyun yalnız neyin senin olduğunu cihazında hatırlar."),
             ("Game Center", "Game Center isteğe bağlıdır. Giriş yaptıysan oyun toplam ve bu haftaki tuğlanı, oyun süreni ve "
              "kazandığın başarımları Apple'ın işlettiği Game Center'a gönderir."),
+            ("Arkadaş ziyaretleri", "Game Center'a ve iCloud'a giriş yaptıysan oyun, bu oyunu oynayan Game Center arkadaşların "
+             "gezebilsin diye dünyanın bir kopyasını (yaptıkların, Game Center takma adın ve tuğla sayın) Apple'ın CloudKit "
+             "hizmetinde tutar. Kopya adınla ya da Apple Hesabınla değil, Game Center oyuncu kimliğinden üretilen bir kodla "
+             "saklanır. Arkadaş listen yalnız cihazında, kimin oynadığını göstermek için okunur. Oyunun Ayarlar'ından "
+             "(\"Arkadaşlarım dünyamı görsün\") kapatabilirsin; kopya o zaman silinir."),
             ("Bildirimler", "Bildirimlere izin verirsen oyun cihazında günlük bir hatırlatma kurar. Hiçbir sunucuya bir şey gönderilmez."),
             ("Bu web sitesi", "hyapps.app, ziyaretleri çerezsiz ve seni tanımadan sayan Cloudflare Web Analytics kullanır."),
             ("Çocuklar", "Pyramid Craft 13 yaşından küçük çocuklara yönelik değildir ve onlardan bilerek kişisel veri toplamaz."),
