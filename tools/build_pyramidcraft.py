@@ -6,7 +6,7 @@ Writes pyramidcraft/index.html, pyramidcraft/tr/index.html and pyramidcraft/priv
 Until the app is on the App Store, LIVE is False: a "coming soon" badge instead of the store button, no Smart App Banner.
 1.0 is the plain build: no ads, no purchases, no analytics (Piramit/CLAUDE.md "İlk sürüm sade"). 1.1 adds analytics and,
 later, purchases and ads: the policy must say so (and the App Privacy answers in App Store Connect) before that build
-goes to review. Pictures: only the icon for now; game screenshots come later (Piramit/CLAUDE.md, 1.1 list).
+goes to review. Pictures: the five App Store screenshots (pyramidcraft/img/<lang>-<name>.jpg) in a gallery; share image assets/og/pyramidcraft-<lang>.jpg.
 """
 import html
 import json
@@ -34,6 +34,12 @@ T = {
         soon="Coming soon to the App Store", cta="Download on the App Store",
         note="iPhone · Plays offline · No ads",
         nav_story="Monuments", nav_support="Support",
+        shots_kicker="In the game", shots_h="Mud, bricks, workers and the Nile.",
+        shots=[("anit", "Laying the Mudbrick Tomb"), ("isciler", "Workers with jobs"), ("otomasyon", "A water wheel and conveyor belts"),
+               ("ufo", "The monuments at sunset"), ("ustalik", "The mastery tree")],
+        guides_h="Guides", guides=[("/pyramidcraft/pyramid-building-game/", "An offline pyramid building game"),
+                                   ("/pyramidcraft/beginners-guide/", "Beginner's guide: 10 tips"),
+                                   ("/pyramidcraft/how-were-the-pyramids-built/", "How were the pyramids built?")],
         mon_kicker="Three monuments", mon_h="From a mudbrick tomb to the Great Pyramid.",
         monuments=[("Mudbrick Tomb", "1,240 bricks"), ("Sky Stairway", "5,456 bricks, stepped"), ("The Great Pyramid", "26,235 bricks")],
         features=[
@@ -74,6 +80,12 @@ T = {
         soon="Yakında App Store'da", cta="App Store'dan indir",
         note="iPhone · İnternetsiz oynanır · Reklamsız",
         nav_story="Anıtlar", nav_support="Destek",
+        shots_kicker="Oyundan", shots_h="Çamur, tuğla, işçiler ve Nil.",
+        shots=[("anit", "Kerpiç Mezar'ı örmek"), ("isciler", "Görevli işçiler"), ("otomasyon", "Su çarkı ve bantlar"),
+               ("ufo", "Gün batımında anıtlar"), ("ustalik", "Ustalık ağacı")],
+        guides_h="Rehberler", guides=[("/pyramidcraft/tr/piramit-yapma-oyunu/", "İnternetsiz piramit yapma oyunu"),
+                                      ("/pyramidcraft/tr/baslangic-rehberi/", "Başlangıç rehberi: 10 ipucu"),
+                                      ("/pyramidcraft/tr/piramitler-nasil-yapildi/", "Piramitler nasıl yapıldı?")],
         mon_kicker="Üç anıt", mon_h="Kerpiç mezardan Büyük Piramit'e.",
         monuments=[("Kerpiç Mezar", "1.240 tuğla"), ("Gök Merdiveni", "5.456 tuğla, basamaklı"), ("Büyük Piramit", "26.235 tuğla")],
         features=[
@@ -115,6 +127,9 @@ def page(t):
     feats = "".join(f'<div class="feat"><span class="em" aria-hidden="true">{e}</span><h3>{html.escape(h)}</h3><p>{html.escape(p)}</p></div>'
                     for e, h, p in t["features"])
     mons = "".join(f"<div><b>{html.escape(n)}</b><span>{html.escape(c)}</span></div>" for n, c in t["monuments"])
+    shots = "".join(f'<figure><img src="{i}{lang}-{k}.jpg" alt="{html.escape(c)}" width="1200" height="552" loading="lazy">'
+                    f'<figcaption>{html.escape(c)}</figcaption></figure>' for k, c in t["shots"])
+    guides = "".join(f'<a href="{h}">{html.escape(n)} →</a>' for h, n in t["guides"])
     faq = "".join(f"<details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>" for q, a in t["faq"])
     canonical = f"https://hyapps.app{t['path']}"
     app_ld = {
@@ -122,6 +137,7 @@ def page(t):
         "alternateName": "Pyramid Craft", "operatingSystem": "iOS 18 or later", "applicationCategory": "GameApplication",
         "applicationSubCategory": "Building game, simulation", "genre": ["Simulation", "Strategy", "Building"],
         "description": t["desc"], "url": canonical, "inLanguage": lang, "image": "https://hyapps.app/pyramidcraft/img/icon.png",
+        "screenshot": [f"https://hyapps.app/pyramidcraft/img/{lang}-{k}.jpg" for k, _ in t["shots"]],
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
         "gamePlatform": ["iPhone"], "playMode": "SinglePlayer", "numberOfPlayers": {"@type": "QuantitativeValue", "value": 1},
         "keywords": ("pyramid builder, building game, offline game, ancient egypt, simulation, automation, conveyor belts"
@@ -156,10 +172,13 @@ def page(t):
   <meta property="og:site_name" content="HY Apps">
   <meta property="og:title" content="{html.escape(t["title"])}">
   <meta property="og:description" content="{html.escape(t["desc"])}">
-  <meta property="og:image" content="https://hyapps.app/pyramidcraft/img/icon.png">
+  <meta property="og:image" content="https://hyapps.app/assets/og/pyramidcraft-{lang}.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="{canonical}">
   <meta property="og:locale" content="{"en_US" if lang == "en" else "tr_TR"}">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" type="application/rss+xml" title="HY Apps" href="{"/tr/feed.xml" if lang == "tr" else "/feed.xml"}">
   <link rel="icon" href="/pyramidcraft/img/icon.png">
   <link rel="apple-touch-icon" href="/pyramidcraft/img/icon.png">
   <link rel="stylesheet" href="/pyramidcraft/pyramidcraft.css">
@@ -184,12 +203,23 @@ def page(t):
 </section>
 
 <main>
+  <section class="shots-sec">
+    <p class="kicker">{html.escape(t["shots_kicker"])}</p>
+    <h2>{html.escape(t["shots_h"])}</h2>
+    <div class="shots">{shots}</div>
+  </section>
+
   <section class="features">{feats}</section>
 
   <section id="monuments">
     <p class="kicker">{html.escape(t["mon_kicker"])}</p>
     <h2>{html.escape(t["mon_h"])}</h2>
     <div class="monuments">{mons}</div>
+  </section>
+
+  <section class="guides-sec">
+    <h2>{html.escape(t["guides_h"])}</h2>
+    <div class="guides-links">{guides}</div>
   </section>
 
   <section class="support" id="support">

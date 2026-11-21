@@ -3,6 +3,47 @@
 > HY Apps is an independent studio (one developer) making calm apps and games for iPhone and iPad: no ads in the
 > middle of things, no tracking, no accounts. Contact: hyapps@outlook.com. Short index: https://hyapps.app/llms.txt
 
+## Pyramid Craft: Brick Builder
+
+- Page: https://hyapps.app/pyramidcraft/
+- Privacy policy: https://hyapps.app/pyramidcraft/privacy.html
+- Title: Pyramid Craft: Brick Builder · Build the pyramids of ancient Egypt brick by brick (iPhone)
+- Platform: iOS 18 or later
+
+Pyramid Craft is an offline pyramid building game for iPhone. Dig Nile mud, mould and dry bricks in the sun, carry them up and lay three monuments layer by layer, from a mudbrick tomb to the Great Pyramid. Hire workers, build ramps, water wheels and conveyor belts.
+
+Features:
+- Every brick by hand: Mud from the river, a wooden mould, the sun to dry it, and your own hands to set it in the layer.
+- Ramps and a hand cart: Climb the steps you built, lay ramps up the sides and push a cart full of bricks to the top.
+- Workers with jobs: Hire workers and make them diggers, moulders, carriers or masons. Each needs a hut of their own.
+- Water wheels and belts: Wheels on the Nile turn conveyor belts that carry mud to automatic moulds and bricks to the stores.
+- A mastery tree: Bricks earn mastery: stronger arms, faster drying, bigger loads, ramps, belts and more.
+- Calm and offline: No internet, no timers chasing you. A slow sunset over the dunes and the Nile.
+
+Questions and answers:
+
+Q: Is Pyramid Craft free?
+A: Yes. It is free to play, with no ads and no in-app purchases.
+
+Q: Does it need the internet?
+A: No. The whole game plays offline. Game Center leaderboards update when you are online.
+
+Q: How do I play?
+A: Walk with the stick on the left and look around by dragging on the right side of the screen. The big button does whatever you are looking at: dig mud, pour it into a mould, take dry bricks, lay them. Follow the tasks and the gold arrow at the start.
+
+Q: Does the game go on while it is closed?
+A: No. Nothing happens while the game is closed; you carry on exactly where you left off.
+
+Q: I got stuck somewhere. What can I do?
+A: Jump up one brick with the Jump button. If you are boxed in by your own buildings, open Build and take one down with Remove.
+
+Q: Will my progress move to my new phone?
+A: Yes. The game keeps a backup in your own iCloud. Sign in with the same Apple Account and iCloud on the new phone.
+
+Q: Is it suitable for children?
+A: Pyramid Craft has no violence, no chat, no account, no ads and no in-app purchases.
+
+
 ## Glowfly
 
 - Page: https://hyapps.app/glowfly/

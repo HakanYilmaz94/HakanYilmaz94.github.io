@@ -13,10 +13,13 @@ Apps whose builder still has LIVE = False get a "coming soon" badge instead of t
 - sitemap.xml for the whole site.
 Shared look: /assets/app.css (+ /besmele/besmele.css). Analytics snippet and share tags on every page.
 """
+import datetime
+import hashlib
 import html
 import json
 import os
 import re
+import subprocess
 import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -64,6 +67,12 @@ APPS = {
                        cta_h={"en": "Rebuild a seaside town, one brick at a time", "tr": "Bir sahil kasabasını tuğla tuğla yeniden kur"},
                        cta_p={"en": "Brickhaven: a cozy building game for iPhone and iPad. Offline, no timers, no ads. The first two buildings are free.",
                               "tr": "Brickhaven: iPhone ve iPad için rahat bir inşa oyunu. İnternetsiz, zamanlayıcısız, reklamsız. İlk iki bina ücretsiz."}),
+    "pyramidcraft": dict(id="6836529298", css=["/pyramidcraft/guide.css"], theme="#f6dfb4", icon="/pyramidcraft/img/icon.png",
+                         name={"en": "Pyramid Craft", "tr": "Pyramid Craft"}, home={"en": "/pyramidcraft/", "tr": "/pyramidcraft/tr/"},
+                         og={"en": "/assets/og/pyramidcraft-en.jpg", "tr": "/assets/og/pyramidcraft-tr.jpg"},
+                         cta_h={"en": "Raise the pyramids of Egypt, brick by brick", "tr": "Mısır piramitlerini tuğla tuğla yükselt"},
+                         cta_p={"en": "Pyramid Craft: an offline pyramid building game for iPhone. Dig Nile mud, dry bricks in the sun and raise three monuments.",
+                                "tr": "Pyramid Craft: iPhone için internetsiz bir piramit inşa oyunu. Nil'den çamur çıkar, tuğlaları güneşte kurut, üç anıt yükselt."}),
     "glowfly": dict(id="6830895618", css=["/glowfly/guide.css"], theme="#0b1023", icon="/glowfly/img/icon.png",
                     name={"en": "Glowfly", "tr": "Glowfly"}, home={"en": "/glowfly/", "tr": "/glowfly/tr/"},
                     og={"en": "/assets/og/glowfly-en.jpg", "tr": "/assets/og/glowfly-tr.jpg"},
@@ -101,7 +110,8 @@ PRIVACY = {"crownly": {"en": "/crownly/privacy.html", "tr": "/crownly/privacy.ht
            "besmele": {"en": "/besmele/en/gizlilik.html", "tr": "/besmele/gizlilik.html"},
            "quickwits": {"en": "/quickwits/privacy.html", "tr": "/quickwits/privacy.html#tr"},
            "brickhaven": {"en": "/brickhaven/privacy.html", "tr": "/brickhaven/privacy.html#tr"},
-           "glowfly": {"en": "/glowfly/privacy.html", "tr": "/glowfly/privacy.html#tr"}}
+           "glowfly": {"en": "/glowfly/privacy.html", "tr": "/glowfly/privacy.html#tr"},
+           "pyramidcraft": {"en": "/pyramidcraft/privacy.html", "tr": "/pyramidcraft/privacy.html#tr"}}
 PRIVACY_LABEL = {"en": "Privacy policy", "tr": "Gizlilik politikası"}
 
 
@@ -123,6 +133,38 @@ def slug(text):
         elif not dash:
             out.append("-"); dash = True
     return "".join(out).strip("-")
+
+
+# ---------------------------------------------------------------- dates (Article schema, sitemap lastmod, feeds)
+# tools/dates.json keeps, for every page, when it first appeared and when its content last changed (a hash of it), so
+# search engines and AI crawlers see honest dates. New pages take their dates from git when they are already committed.
+DATES_FILE = os.path.join(ROOT, "tools", "dates.json")
+DATES = json.load(open(DATES_FILE)) if os.path.exists(DATES_FILE) else {}
+TODAY = datetime.date.today().isoformat()
+FEED = []  # (lang, path, title, desc, published)
+
+
+def git_dates(path):
+    rel = path.lstrip("/")
+    rel = os.path.join(rel, "index.html") if rel.endswith("/") or rel == "" else rel
+    try:
+        out = subprocess.run(["git", "log", "--format=%as", "--", rel], cwd=ROOT, capture_output=True, text=True).stdout.split()
+    except OSError:
+        out = []
+    return (out[-1], out[0]) if out else (TODAY, TODAY)
+
+
+def stamp(path, content):
+    """{published, modified} for a page; modified moves to today when its content changes."""
+    h = hashlib.sha1(content.encode()).hexdigest()[:16]
+    d = DATES.get(path)
+    if d is None:
+        pub, mod = git_dates(path)
+        d = {"published": pub, "modified": mod, "hash": h}
+    elif d["hash"] != h:
+        d = {**d, "modified": TODAY, "hash": h}
+    DATES[path] = d
+    return d
 
 
 def write(path, text):
@@ -155,6 +197,10 @@ def page(app, lang, path, alts, title, desc, body, crumbs, schema=None, head="")
            "inLanguage": lang, "mainEntityOfPage": SITE + path,
            "author": {"@type": "Organization", "name": "HY Apps", "url": SITE + "/"},
            "publisher": {"@type": "Organization", "name": "HY Apps", "url": SITE + "/"}}
+    d = stamp(path, title + desc + body)
+    art["datePublished"] = d["published"]; art["dateModified"] = d["modified"]
+    FEED.append((lang, path, title, desc, d["published"]))
+    head += f'\n  <link rel="alternate" type="application/rss+xml" title="HY Apps" href="{"/tr/feed.xml" if lang == "tr" else "/feed.xml"}">'
     schemas = [bc, art] + ([schema] if schema else [])
     ld = "\n  ".join(f'<script type="application/ld+json">{json.dumps(s, ensure_ascii=False)}</script>' for s in schemas)
     crumb_html = " › ".join(f'<a href="{h}">{ESC(n)}</a>' for n, h in crumbs[:-1])
@@ -2192,6 +2238,137 @@ def build_extra_guides():
             write(g["path"], html_)
 
 
+
+# ---------------------------------------------------------------- Pyramid Craft guides (2026-11-21)
+
+PG = {
+    "en": dict(home=("Pyramid Craft", "/pyramidcraft/"), related="More about Pyramid Craft",
+               game=("/pyramidcraft/pyramid-building-game/", "An offline pyramid building game for iPhone",
+                     "Pyramid Craft lets you build the pyramids of ancient Egypt yourself: dig Nile mud, mould and dry bricks, carry them up and lay three monuments layer by layer. Fully offline."),
+               tips=("/pyramidcraft/beginners-guide/", "Pyramid Craft beginner's guide: 10 tips",
+                     "Ten tips for your first hour in Pyramid Craft: from the first mud brick to ramps, stores, workers and water wheels."),
+               history=("/pyramidcraft/how-were-the-pyramids-built/", "How were the pyramids built? Bricks, ramps and workers",
+                        "What we know about how the Egyptians built their pyramids: mud brick and stone, ramps, sledges, the Nile and the paid workers who did it, and how Pyramid Craft turns it into a game.")),
+    "tr": dict(home=("Pyramid Craft", "/pyramidcraft/tr/"), related="Pyramid Craft hakkında daha fazlası",
+               game=("/pyramidcraft/tr/piramit-yapma-oyunu/", "iPhone için internetsiz piramit yapma oyunu",
+                     "Pyramid Craft'ta antik Mısır piramitlerini kendin inşa edersin: Nil'den çamur çıkar, tuğlaları kalıpla ve kurut, yukarı taşı ve üç anıtı katman katman ör. Tamamen internetsiz."),
+               tips=("/pyramidcraft/tr/baslangic-rehberi/", "Pyramid Craft başlangıç rehberi: 10 ipucu",
+                     "Pyramid Craft'taki ilk saatin için on ipucu: ilk kerpiçten rampalara, depolara, işçilere ve su çarklarına."),
+               history=("/pyramidcraft/tr/piramitler-nasil-yapildi/", "Piramitler nasıl yapıldı? Tuğla, rampa ve işçiler",
+                        "Mısırlıların piramitleri nasıl yaptığına dair bildiklerimiz: kerpiç ve taş, rampalar, kızaklar, Nil ve bu işi yapan ücretli işçiler; Pyramid Craft bunu nasıl oyuna çeviriyor.")),
+}
+
+
+def build_pyramidcraft_guides():
+    for lang in ("en", "tr"):
+        g, other = PG[lang], PG["tr" if lang == "en" else "en"]
+        en = lang == "en"
+        alts = lambda key: {lang: g[key][0], ("tr" if en else "en"): other[key][0]}
+        rel = lambda skip: related(g["related"], [(g[k][1].split(":")[0].split("?")[0], g[k][0]) for k in ("game", "tips", "history") if k != skip]
+                                   + [(("Pyramid Craft home" if en else "Pyramid Craft ana sayfa"), g["home"][1])])
+        shot = lambda b, alt: f'  <img class="shot" src="/pyramidcraft/img/{lang}-{b}.jpg" alt="{ESC(alt)}" width="1200" height="552" loading="lazy">\n'
+
+        # The game
+        path, title, desc = g["game"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        body += shot("anit", "Laying the Mudbrick Tomb in Pyramid Craft" if en else "Pyramid Craft'ta Kerpiç Mezar'ı örmek")
+        body += paras(ESC("Most pyramid games let you place a finished pyramid with one tap. Pyramid Craft goes the other way: you walk the "
+                          "building site in first person and every brick passes through your hands, from the mud of the Nile to its square in the layer."
+                          if en else
+                          "Çoğu piramit oyununda bitmiş piramidi tek dokunuşla yerine koyarsın. Pyramid Craft tersini yapar: inşaat alanında birinci "
+                          "şahıs yürürsün ve her tuğla Nil'in çamurundan katmandaki karesine kadar senin elinden geçer.")) + "\n"
+        body += defs("What you do" if en else "Ne yaparsın", (
+            [("Make the bricks", "Dig mud on the river bank, pour it into a wooden mould and let the sun dry it. Dry bricks turn pale; take them off the table."),
+             ("Lay the monument", "Carry the bricks to the monument and lay them on the marked squares. Each layer sits one square inside the one below, so the monument steps up as you go."),
+             ("Grow the workshop", "Build a store, bigger mould tables, ramps and a hand cart. Later, water wheels on the Nile turn conveyor belts that carry mud and bricks for you."),
+             ("Lead a crew", "Workers join you and take jobs: digging mud, moulding, carrying and laying. Each needs a hut of their own.")] if en else
+            [("Tuğlayı yap", "Nehir kıyısında çamur kaz, tahta kalıba dök ve güneşte kurumaya bırak. Kuruyan tuğla açık renge döner; tezgâhtan al."),
+             ("Anıtı ör", "Tuğlaları anıta taşı ve işaretli karelere koy. Her katman alttakinin bir kare içinden başlar; anıt sen ördükçe basamak basamak yükselir."),
+             ("Atölyeyi büyüt", "Depo, daha büyük kalıp tezgâhları, rampalar ve el arabası kur. Sonra Nil'deki su çarkları çamuru ve tuğlaları senin yerine taşıyan bantları döndürür."),
+             ("Ekibini yönet", "İşçiler sana katılır ve görev alır: çamur kazmak, kalıplamak, taşımak ve örmek. Her birine kendi kulübesi gerekir.")]))
+        body += defs("Three monuments" if en else "Üç anıt", (
+            [("Mudbrick Tomb", "A mastaba-like tomb of 1,240 mud bricks in five layers: the place to learn every step."),
+             ("Sky Stairway", "A stepped pyramid of 5,456 bricks in sixteen layers, in pale grey limestone."),
+             ("The Great Pyramid", "26,235 bricks in twenty-seven layers, finished with a smooth white casing and a gilded capstone.")] if en else
+            [("Kerpiç Mezar", "Beş katmanda 1.240 kerpiçlik, mastaba benzeri bir mezar: her adımı öğrendiğin yer."),
+             ("Gök Merdiveni", "On altı katmanda 5.456 tuğlalık, açık gri kireçtaşından basamaklı piramit."),
+             ("Büyük Piramit", "Yirmi yedi katmanda 26.235 tuğla; sonunda pürüzsüz beyaz kaplama ve altın tepe taşı.")]))
+        body += shot("otomasyon", "Water wheel, belts and workers in Pyramid Craft" if en else "Pyramid Craft'ta su çarkı, bantlar ve işçiler")
+        body += steps("Why it stays calm" if en else "Neden sakin kalır", (
+            ["Fully offline: no account, no internet needed.",
+             "No timers or energy bars: play five minutes or an hour.",
+             "A slow sunset over the dunes and the Nile, with soft desert music.",
+             "Your site is saved in your own iCloud and follows you to a new iPhone."] if en else
+            ["Tamamen internetsiz: hesap yok, internet gerekmez.",
+             "Zamanlayıcı ya da enerji çubuğu yok: beş dakika ya da bir saat oyna.",
+             "Kumulların ve Nil'in üstünde ağır bir gün batımı, yumuşak bir çöl müziği.",
+             "İnşaat alanın kendi iCloud'unda saklanır ve yeni iPhone'una seninle gelir."]), ordered=False)
+        body += rel("game")
+        write(path, page("pyramidcraft", lang, path, alts("game"), title, desc, body, [g["home"], (title, path)]))
+
+        # Beginner's guide
+        path, title, desc = g["tips"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        tips = ([("Look around first", "Drag on the empty right side of the screen to look up, down and around; the stick on the left walks."),
+                 ("Follow the gold arrow", "At the start a gold arrow and a task line show the next step: the mud, the mould table, the dry bricks, the next white square."),
+                 ("Keep the table busy", "While bricks dry, fetch the next load of mud. A full table and full hands are the fastest rhythm."),
+                 ("Lay from the middle out", "Fill the inner squares of a layer before the edges, so you can always reach the open ones."),
+                 ("Jump up one step", "With bricks in hand you climb only low steps; the Jump button takes you up one brick."),
+                 ("Fill the store", "Bricks kept in the store pay for every building, from ramps to bigger tables, and come back in full if you take a building down."),
+                 ("Upgrade the mould table", "A bigger table dries more bricks at once: one of the best uses of your first stored bricks."),
+                 ("Spend mastery on Strong Arms", "Laying bricks earns mastery points. Strong Arms lets you carry more on every trip."),
+                 ("Ramps for the high layers", "Ramps let you walk up loaded and push the hand cart to the top of the monument."),
+                 ("Give your workers jobs", "Look at a worker and give a job. A digger, a moulder and a mason together keep bricks coming while you build.")] if en else
+                [("Önce etrafına bak", "Ekranın sağındaki boş alanı sürükleyerek yukarı, aşağı ve etrafına bak; soldaki çubuk yürütür."),
+                 ("Altın oku takip et", "Başta altın bir ok ve görev satırı sıradaki adımı gösterir: çamur, kalıp tezgâhı, kuru tuğlalar, sıradaki beyaz kare."),
+                 ("Tezgâhı boş bırakma", "Tuğlalar kururken bir sonraki çamuru getir. Dolu tezgâh ve dolu eller en hızlı ritimdir."),
+                 ("Ortadan dışa doğru ör", "Katmanın iç karelerini kenarlardan önce doldur; böylece açık karelere hep ulaşırsın."),
+                 ("Bir basamak zıpla", "Elin doluyken yalnız alçak basamaklara çıkarsın; Zıpla düğmesi seni bir tuğla yukarı taşır."),
+                 ("Depoyu doldur", "Depoda biriken tuğlalar rampadan büyük tezgâhlara kadar her binanın parasıdır; bir binayı sökersen tamamı geri gelir."),
+                 ("Kalıp tezgâhını geliştir", "Büyük tezgâh aynı anda daha çok tuğla kurutur: ilk biriktirdiğin tuğlaların en iyi kullanımlarından biri."),
+                 ("Ustalığı Güçlü Kollar'a ver", "Tuğla koymak ustalık puanı kazandırır. Güçlü Kollar her gidişte daha çok taşımanı sağlar."),
+                 ("Yüksek katmanlara rampa", "Rampalar yüklüyken yürüyerek çıkmanı ve el arabasını anıtın tepesine itmeni sağlar."),
+                 ("İşçilerine görev ver", "Bir işçiye bak ve görev ver. Bir çamurcu, bir kalıpçı ve bir duvarcı birlikte sen inşa ederken tuğlayı akıtır.")])
+        body += shot("isciler", "Workers at the Mudbrick Tomb in Pyramid Craft" if en else "Pyramid Craft'ta Kerpiç Mezar'da işçiler")
+        body += "".join(f"  <h2>{i + 1}. {ESC(h)}</h2>\n  <p>{ESC(t)}</p>\n" for i, (h, t) in enumerate(tips))
+        body += shot("ustalik", "The mastery tree in Pyramid Craft" if en else "Pyramid Craft'ta ustalık ağacı")
+        body += rel("tips")
+        howto = {"@context": "https://schema.org", "@type": "HowTo", "name": title, "description": desc, "inLanguage": lang,
+                 "step": [{"@type": "HowToStep", "position": i + 1, "name": h, "text": t} for i, (h, t) in enumerate(tips)]}
+        write(path, page("pyramidcraft", lang, path, alts("tips"), title, desc, body, [g["home"], (title, path)], schema=howto))
+
+        # How the pyramids were built
+        path, title, desc = g["history"]
+        body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
+        body += defs("Mud brick first, then stone" if en else "Önce kerpiç, sonra taş", (
+            [("Mastabas", "The first royal tombs in Egypt were mastabas: flat, rectangular buildings of sun-dried mud brick over a burial shaft. Mud from the Nile, mixed with straw or sand, was pressed into wooden moulds and dried in the sun, much as it still is in villages along the river."),
+             ("The step pyramid", "Around 2670 BC the architect Imhotep stacked ever smaller mastaba-like layers for King Djoser at Saqqara, in stone. The result, the Step Pyramid, is the oldest large stone building in Egypt, and it stood inside a long panelled enclosure wall."),
+             ("The true pyramids", "About a century later the pyramids at Dahshur and Giza got smooth sides. The Great Pyramid of Khufu was built of some 2.3 million limestone blocks and cased in fine white Tura limestone that once made it shine. Later, in the Middle Kingdom, many pyramids went back to a mud-brick core under a stone casing.")] if en else
+            [("Mastabalar", "Mısır'daki ilk kraliyet mezarları mastabalardı: bir mezar kuyusunun üstünde güneşte kurutulmuş kerpiçten düz, dikdörtgen yapılar. Nil çamuru saman ya da kumla karıştırılır, tahta kalıplara basılır ve güneşte kurutulurdu; nehir boyundaki köylerde bugün hâlâ böyle yapılır."),
+             ("Basamaklı piramit", "MÖ 2670 civarında mimar İmhotep, Saqqara'da Kral Djoser için gittikçe küçülen mastaba benzeri katmanları taştan üst üste koydu. Ortaya çıkan Basamaklı Piramit Mısır'ın en eski büyük taş yapısıdır ve uzun, panelli bir çevre duvarının içinde durur."),
+             ("Gerçek piramitler", "Yaklaşık bir yüzyıl sonra Dahşur ve Gize'deki piramitler düz yüzlere kavuştu. Khufu'nun Büyük Piramidi yaklaşık 2,3 milyon kireçtaşı bloktan yapıldı ve bir zamanlar parlamasını sağlayan ince beyaz Tura kireçtaşıyla kaplandı. Sonra, Orta Krallık'ta, birçok piramit taş kaplamanın altında yeniden kerpiç çekirdeğe döndü.")]))
+        body += defs("Ramps, sledges and the Nile" if en else "Rampalar, kızaklar ve Nil", (
+            [("Ramps", "Nobody left a manual, so how blocks went up is still argued: straight ramps, ramps zigzagging up one face, or ramps wrapping around the pyramid. In 2018 archaeologists found a steep ancient ramp with post holes and stairs at the Hatnub alabaster quarry, a hint of how heavy loads were hauled up slopes."),
+             ("Sledges and wet sand", "Blocks were dragged on wooden sledges. A wall painting in the tomb of Djehutihotep shows a man pouring water in front of a sledge, and lab tests have shown that wet sand roughly halves the pull needed."),
+             ("The river", "Stone from far quarries came by boat, and papyri found at Wadi al-Jarf (the diary of an official called Merer) describe shipping Tura limestone to Giza along canals from the Nile.")] if en else
+            [("Rampalar", "Kimse bir kullanım kılavuzu bırakmadı; blokların nasıl yukarı çıktığı hâlâ tartışılıyor: düz rampalar, bir yüzde zikzak çizen rampalar ya da piramidin çevresine sarılan rampalar. 2018'de arkeologlar Hatnub kaymaktaşı ocağında direk delikleri ve basamakları olan dik, eski bir rampa buldu; ağır yüklerin yokuştan nasıl çekildiğine dair bir ipucu."),
+             ("Kızaklar ve ıslak kum", "Bloklar tahta kızaklarla sürüklenirdi. Djehutihotep'in mezarındaki bir duvar resmi, kızağın önüne su döken bir adamı gösterir; laboratuvar deneyleri ıslak kumun gereken çekme gücünü yaklaşık yarıya indirdiğini gösterdi."),
+             ("Nehir", "Uzak ocaklardan gelen taşlar teknelerle taşındı; Wadi al-Jarf'ta bulunan papirüsler (Merer adlı bir memurun günlüğü), Tura kireçtaşının Nil'den açılan kanallarla Gize'ye taşınmasını anlatır.")]))
+        body += defs("Who built them" if en else "Onları kim yaptı", (
+            [("Paid crews, not slaves", "Excavations of the workers' town south of the Giza plateau found bakeries, breweries, barracks and the workers' own tombs, some with notes of their crew names. The builders were organised, fed and paid Egyptians, many of them farmers working during the Nile flood, when the fields were under water.")] if en else
+            [("Köleler değil, ücretli ekipler", "Gize platosunun güneyindeki işçi kasabasında yapılan kazılar fırınlar, bira imalathaneleri, koğuşlar ve işçilerin kendi mezarlarını ortaya çıkardı; bazılarında ekip adları yazılıdır. Yapımcılar örgütlü, doyurulan ve ücret alan Mısırlılardı; birçoğu tarlaların su altında kaldığı Nil taşkını döneminde çalışan çiftçilerdi.")]))
+        body += shot("ufo", "The finished monuments in Pyramid Craft" if en else "Pyramid Craft'ta biten anıtlar")
+        body += defs("How Pyramid Craft turns it into a game" if en else "Pyramid Craft bunu nasıl oyuna çeviriyor", (
+            [("Everything is brick", "To keep one simple loop, every monument in the game is laid in bricks you make yourself, even the stone ones. The Mudbrick Tomb is mud brick, the Sky Stairway pale limestone, the Great Pyramid white Tura limestone."),
+             ("The order of history", "You build in the same order Egypt did: a mastaba-like tomb, then a stepped pyramid, then a smooth-sided great pyramid with a white casing and a gilded capstone."),
+             ("Ramps, carts and crews", "Ramps, a hand cart, water wheels and workers with jobs stand in for the real ramps, sledges, boats and crews. It is a game, not a reconstruction, but every part has its root in the real story.")] if en else
+            [("Her şey tuğla", "Tek ve basit bir döngü olsun diye oyundaki her anıt, taş olanlar bile, kendi yaptığın tuğlalarla örülür. Kerpiç Mezar kerpiç, Gök Merdiveni açık renk kireçtaşı, Büyük Piramit beyaz Tura kireçtaşıdır."),
+             ("Tarihin sırası", "Mısır'ın yaptığı sırayla inşa edersin: önce mastaba benzeri bir mezar, sonra basamaklı bir piramit, sonra beyaz kaplamalı ve altın tepe taşlı, düz yüzlü büyük bir piramit."),
+             ("Rampalar, arabalar ve ekipler", "Rampalar, el arabası, su çarkları ve görevli işçiler gerçek rampaların, kızakların, teknelerin ve ekiplerin yerini tutar. Bu bir oyun, bir yeniden yapım değil; ama her parçanın kökü gerçek hikâyede.")]))
+        body += rel("history")
+        write(path, page("pyramidcraft", lang, path, alts("history"), title, desc, body, [g["home"], (title, path)]))
+
+
 # ---------------------------------------------------------------- sitemap
 
 STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
@@ -2205,6 +2382,7 @@ STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
           ("/glowfly/privacy.html", {}),
           ("/pyramidcraft/", {"en": "/pyramidcraft/", "tr": "/pyramidcraft/tr/"}), ("/pyramidcraft/tr/", {"en": "/pyramidcraft/", "tr": "/pyramidcraft/tr/"}),
           ("/pyramidcraft/privacy.html", {}),
+          ("/press/", {"en": "/press/", "tr": "/tr/press/"}), ("/tr/press/", {"en": "/press/", "tr": "/tr/press/"}),
           ("/besmele/", {"tr": "/besmele/", "en": "/besmele/en/"}), ("/besmele/en/", {"tr": "/besmele/", "en": "/besmele/en/"}),
           ("/besmele/destek.html", {}), ("/besmele/en/destek.html", {}), ("/besmele/gizlilik.html", {}), ("/besmele/en/gizlilik.html", {})]
 
@@ -2212,12 +2390,36 @@ STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
 def build_sitemap():
     rows = []
     for path, alts in STATIC + PAGES:
+        if path not in DATES or not any(path == p for p, _ in PAGES):
+            f = os.path.join(ROOT, path.lstrip("/"), "index.html") if path.endswith("/") else os.path.join(ROOT, path.lstrip("/"))
+            if os.path.exists(f):
+                stamp(path, open(f).read())
+        mod = DATES.get(path, {}).get("modified", TODAY)
         links = "".join(f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{SITE}{p}"/>' for l, p in alts.items())
-        rows.append(f"  <url><loc>{SITE}{path}</loc>{links}</url>")
+        rows.append(f"  <url><loc>{SITE}{path}</loc><lastmod>{mod}</lastmod>{links}</url>")
     with open(os.path.join(ROOT, "sitemap.xml"), "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
                 'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(rows) + "\n</urlset>\n")
     print(f"sitemap: {len(rows)} urls")
+    with open(DATES_FILE, "w") as f:
+        json.dump(DATES, f, ensure_ascii=False, indent=0, sort_keys=True)
+
+
+def build_feeds():
+    """RSS 2.0 feeds of the guides, newest first: /feed.xml (English) and /tr/feed.xml (Turkish)."""
+    for lang, out, home, title in (("en", "feed.xml", "/", "HY Apps guides"), ("tr", "tr/feed.xml", "/tr/", "HY Apps rehberleri")):
+        items = sorted((x for x in FEED if x[0] == lang), key=lambda x: (x[4], x[1]), reverse=True)[:60]
+        def rfc(d):
+            return datetime.datetime.strptime(d, "%Y-%m-%d").strftime("%a, %d %b %Y 08:00:00 +0000")
+        body = "".join(f"\n  <item><title>{ESC(t)}</title><link>{SITE}{p}</link><guid>{SITE}{p}</guid>"
+                       f"<pubDate>{rfc(pub)}</pubDate><description>{ESC(d)}</description></item>" for _, p, t, d, pub in items)
+        last = rfc(max((x[4] for x in items), default=TODAY))
+        with open(os.path.join(ROOT, out), "w") as f:
+            f.write(f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>'
+                    f'\n  <title>{title}</title><link>{SITE}{home}</link><language>{lang}</language>'
+                    f'\n  <description>{"Guides for calm iPhone games and apps by HY Apps." if lang == "en" else "HY Apps oyunları ve uygulamaları için rehberler."}</description>'
+                    f'\n  <atom:link href="{SITE}/{out}" rel="self" type="application/rss+xml"/><lastBuildDate>{last}</lastBuildDate>{body}\n</channel></rss>\n')
+    print(f"feeds: {len(FEED)} items")
 
 
 build_esma()
@@ -2230,5 +2432,7 @@ build_quickwits_guides()
 build_brickhaven_guides()
 build_glowfly_guides()
 build_extra_guides()
+build_pyramidcraft_guides()
 build_sitemap()
+build_feeds()
 print(f"guide pages: {len(PAGES)}")

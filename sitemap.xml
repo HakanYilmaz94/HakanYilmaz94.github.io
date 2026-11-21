@@ -1,870 +1,894 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://hyapps.app/</loc>
+  <url><loc>https://hyapps.app/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/tr/"/></url>
-  <url><loc>https://hyapps.app/tr/</loc>
+  <url><loc>https://hyapps.app/tr/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/tr/"/></url>
-  <url><loc>https://hyapps.app/crownly/</loc>
+  <url><loc>https://hyapps.app/crownly/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/"/></url>
-  <url><loc>https://hyapps.app/crownly/privacy.html</loc></url>
-  <url><loc>https://hyapps.app/quickwits/</loc>
+  <url><loc>https://hyapps.app/crownly/privacy.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://hyapps.app/quickwits/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/"/></url>
-  <url><loc>https://hyapps.app/quickwits/tr/</loc>
+  <url><loc>https://hyapps.app/quickwits/tr/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/"/></url>
-  <url><loc>https://hyapps.app/quickwits/privacy.html</loc></url>
-  <url><loc>https://hyapps.app/brickhaven/</loc>
+  <url><loc>https://hyapps.app/quickwits/privacy.html</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://hyapps.app/brickhaven/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/</loc>
+  <url><loc>https://hyapps.app/brickhaven/tr/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/privacy.html</loc></url>
-  <url><loc>https://hyapps.app/glowfly/</loc>
+  <url><loc>https://hyapps.app/brickhaven/privacy.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://hyapps.app/glowfly/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/"/></url>
-  <url><loc>https://hyapps.app/glowfly/tr/</loc>
+  <url><loc>https://hyapps.app/glowfly/tr/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/"/></url>
-  <url><loc>https://hyapps.app/glowfly/privacy.html</loc></url>
-  <url><loc>https://hyapps.app/pyramidcraft/</loc>
+  <url><loc>https://hyapps.app/glowfly/privacy.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://hyapps.app/pyramidcraft/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/"/></url>
-  <url><loc>https://hyapps.app/pyramidcraft/tr/</loc>
+  <url><loc>https://hyapps.app/pyramidcraft/tr/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/"/></url>
-  <url><loc>https://hyapps.app/pyramidcraft/privacy.html</loc></url>
-  <url><loc>https://hyapps.app/besmele/</loc>
+  <url><loc>https://hyapps.app/pyramidcraft/privacy.html</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://hyapps.app/press/</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/press/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/tr/press/"/></url>
+  <url><loc>https://hyapps.app/tr/press/</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/press/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/tr/press/"/></url>
+  <url><loc>https://hyapps.app/besmele/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/</loc>
+  <url><loc>https://hyapps.app/besmele/en/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/"/></url>
-  <url><loc>https://hyapps.app/besmele/destek.html</loc></url>
-  <url><loc>https://hyapps.app/besmele/en/destek.html</loc></url>
-  <url><loc>https://hyapps.app/besmele/gizlilik.html</loc></url>
-  <url><loc>https://hyapps.app/besmele/en/gizlilik.html</loc></url>
-  <url><loc>https://hyapps.app/besmele/esma/</loc>
+  <url><loc>https://hyapps.app/besmele/destek.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://hyapps.app/besmele/en/destek.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://hyapps.app/besmele/gizlilik.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://hyapps.app/besmele/en/gizlilik.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://hyapps.app/besmele/esma/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/1-allah/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/1-allah/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/1-allah/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/1-allah/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/2-er-rahman/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/2-er-rahman/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/2-er-rahman/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/2-ar-rahman/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/3-er-rahim/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/3-er-rahim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/3-er-rahim/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/3-ar-rahim/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/4-el-melik/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/4-el-melik/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/4-el-melik/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/4-al-malik/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/5-el-kuddus/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/5-el-kuddus/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/5-el-kuddus/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/5-al-quddus/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/6-es-selam/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/6-es-selam/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/6-es-selam/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/6-as-salam/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/7-el-mumin/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/7-el-mumin/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/7-el-mumin/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/7-al-mumin/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/8-el-muheymin/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/8-el-muheymin/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/8-el-muheymin/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/8-al-muhaymin/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/9-el-aziz/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/9-el-aziz/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/9-el-aziz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/9-al-aziz/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/10-el-cebbar/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/10-el-cebbar/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/10-el-cebbar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/10-al-jabbar/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/11-el-mutekebbir/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/11-el-mutekebbir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/11-el-mutekebbir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/11-al-mutakabbir/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/12-el-halik/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/12-el-halik/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/12-el-halik/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/12-al-khaliq/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/13-el-bari/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/13-el-bari/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/13-el-bari/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/13-al-bari/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/14-el-musavvir/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/14-el-musavvir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/14-el-musavvir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/14-al-musawwir/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/15-el-gaffar/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/15-el-gaffar/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/15-el-gaffar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/15-al-ghaffar/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/16-el-kahhar/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/16-el-kahhar/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/16-el-kahhar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/16-al-qahhar/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/17-el-vehhab/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/17-el-vehhab/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/17-el-vehhab/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/17-al-wahhab/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/18-er-rezzak/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/18-er-rezzak/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/18-er-rezzak/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/18-ar-razzaq/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/19-el-fettah/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/19-el-fettah/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/19-el-fettah/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/19-al-fattah/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/20-el-alim/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/20-el-alim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/20-el-alim/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/20-al-alim/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/21-el-kabiz/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/21-el-kabiz/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/21-el-kabiz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/21-al-qabid/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/22-el-basit/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/22-el-basit/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/22-el-basit/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/22-al-basit/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/23-el-hafid/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/23-el-hafid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/23-el-hafid/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/23-al-khafid/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/24-er-rafi/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/24-er-rafi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/24-er-rafi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/24-ar-rafi/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/25-el-muizz/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/25-el-muizz/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/25-el-muizz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/25-al-muizz/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/26-el-muzill/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/26-el-muzill/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/26-el-muzill/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/26-al-mudhill/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/27-es-semi/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/27-es-semi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/27-es-semi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/27-as-sami/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/28-el-basir/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/28-el-basir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/28-el-basir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/28-al-basir/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/29-el-hakem/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/29-el-hakem/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/29-el-hakem/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/29-al-hakam/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/30-el-adl/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/30-el-adl/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/30-el-adl/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/30-al-adl/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/31-el-latif/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/31-el-latif/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/31-el-latif/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/31-al-latif/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/32-el-habir/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/32-el-habir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/32-el-habir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/32-al-khabir/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/33-el-halim/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/33-el-halim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/33-el-halim/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/33-al-halim/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/34-el-azim/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/34-el-azim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/34-el-azim/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/34-al-azim/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/35-el-gafur/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/35-el-gafur/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/35-el-gafur/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/35-al-ghafur/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/36-es-sekur/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/36-es-sekur/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/36-es-sekur/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/36-ash-shakur/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/37-el-aliyy/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/37-el-aliyy/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/37-el-aliyy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/37-al-aliyy/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/38-el-kebir/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/38-el-kebir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/38-el-kebir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/38-al-kabir/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/39-el-hafiz/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/39-el-hafiz/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/39-el-hafiz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/39-al-hafiz/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/40-el-mukit/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/40-el-mukit/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/40-el-mukit/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/40-al-muqit/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/41-el-hasib/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/41-el-hasib/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/41-el-hasib/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/41-al-hasib/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/42-el-celil/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/42-el-celil/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/42-el-celil/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/42-al-jalil/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/43-el-kerim/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/43-el-kerim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/43-el-kerim/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/43-al-karim/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/44-er-rakib/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/44-er-rakib/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/44-er-rakib/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/44-ar-raqib/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/45-el-mucib/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/45-el-mucib/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/45-el-mucib/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/45-al-mujib/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/46-el-vasi/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/46-el-vasi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/46-el-vasi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/46-al-wasi/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/47-el-hakim/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/47-el-hakim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/47-el-hakim/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/47-al-hakim/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/48-el-vedud/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/48-el-vedud/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/48-el-vedud/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/48-al-wadud/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/49-el-mecid/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/49-el-mecid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/49-el-mecid/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/49-al-majid/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/50-el-bais/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/50-el-bais/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/50-el-bais/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/50-al-baith/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/51-es-sehid/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/51-es-sehid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/51-es-sehid/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/51-ash-shahid/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/52-el-hakk/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/52-el-hakk/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/52-el-hakk/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/52-al-haqq/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/53-el-vekil/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/53-el-vekil/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/53-el-vekil/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/53-al-wakil/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/54-el-kaviyy/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/54-el-kaviyy/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/54-el-kaviyy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/54-al-qawiyy/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/55-el-metin/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/55-el-metin/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/55-el-metin/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/55-al-matin/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/56-el-veliyy/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/56-el-veliyy/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/56-el-veliyy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/56-al-waliyy/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/57-el-hamid/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/57-el-hamid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/57-el-hamid/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/57-al-hamid/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/58-el-muhsi/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/58-el-muhsi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/58-el-muhsi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/58-al-muhsi/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/59-el-mubdi/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/59-el-mubdi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/59-el-mubdi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/59-al-mubdi/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/60-el-muid/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/60-el-muid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/60-el-muid/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/60-al-muid/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/61-el-muhyi/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/61-el-muhyi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/61-el-muhyi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/61-al-muhyi/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/62-el-mumit/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/62-el-mumit/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/62-el-mumit/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/62-al-mumit/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/63-el-hayy/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/63-el-hayy/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/63-el-hayy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/63-al-hayy/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/64-el-kayyum/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/64-el-kayyum/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/64-el-kayyum/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/64-al-qayyum/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/65-el-vacid/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/65-el-vacid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/65-el-vacid/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/65-al-wajid/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/66-el-macid/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/66-el-macid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/66-el-macid/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/66-al-majid/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/67-el-vahid/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/67-el-vahid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/67-el-vahid/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/67-al-wahid/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/68-es-samed/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/68-es-samed/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/68-es-samed/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/68-as-samad/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/69-el-kadir/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/69-el-kadir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/69-el-kadir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/69-al-qadir/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/70-el-muktedir/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/70-el-muktedir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/70-el-muktedir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/70-al-muqtadir/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/71-el-mukaddim/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/71-el-mukaddim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/71-el-mukaddim/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/71-al-muqaddim/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/72-el-muahhir/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/72-el-muahhir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/72-el-muahhir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/72-al-muakhkhir/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/73-el-evvel/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/73-el-evvel/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/73-el-evvel/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/73-al-awwal/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/74-el-ahir/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/74-el-ahir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/74-el-ahir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/74-al-akhir/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/75-ez-zahir/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/75-ez-zahir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/75-ez-zahir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/75-az-zahir/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/76-el-batin/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/76-el-batin/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/76-el-batin/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/76-al-batin/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/77-el-vali/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/77-el-vali/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/77-el-vali/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/77-al-wali/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/78-el-muteali/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/78-el-muteali/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/78-el-muteali/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/78-al-mutaali/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/79-el-berr/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/79-el-berr/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/79-el-berr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/79-al-barr/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/80-et-tevvab/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/80-et-tevvab/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/80-et-tevvab/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/80-at-tawwab/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/81-el-muntakim/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/81-el-muntakim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/81-el-muntakim/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/81-al-muntaqim/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/82-el-afuvv/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/82-el-afuvv/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/82-el-afuvv/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/82-al-afuww/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/83-er-rauf/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/83-er-rauf/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/83-er-rauf/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/83-ar-rauf/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/84-malikul-mulk/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/84-malikul-mulk/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/84-malikul-mulk/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/84-malik-al-mulk/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/85-zul-celali-vel-ikram/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/85-zul-celali-vel-ikram/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/85-zul-celali-vel-ikram/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/85-dhul-jalali-wal-ikram/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/86-el-muksit/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/86-el-muksit/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/86-el-muksit/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/86-al-muqsit/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/87-el-cami/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/87-el-cami/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/87-el-cami/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/87-al-jami/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/88-el-ganiyy/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/88-el-ganiyy/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/88-el-ganiyy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/88-al-ghaniyy/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/89-el-mugni/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/89-el-mugni/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/89-el-mugni/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/89-al-mughni/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/90-el-mani/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/90-el-mani/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/90-el-mani/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/90-al-mani/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/91-ed-darr/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/91-ed-darr/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/91-ed-darr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/91-ad-darr/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/92-en-nafi/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/92-en-nafi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/92-en-nafi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/92-an-nafi/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/93-en-nur/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/93-en-nur/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/93-en-nur/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/93-an-nur/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/94-el-hadi/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/94-el-hadi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/94-el-hadi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/94-al-hadi/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/95-el-bedi/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/95-el-bedi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/95-el-bedi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/95-al-badi/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/96-el-baki/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/96-el-baki/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/96-el-baki/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/96-al-baqi/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/97-el-varis/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/97-el-varis/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/97-el-varis/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/97-al-warith/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/98-er-resid/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/98-er-resid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/98-er-resid/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/98-ar-rashid/"/></url>
-  <url><loc>https://hyapps.app/besmele/esma/99-es-sabur/</loc>
+  <url><loc>https://hyapps.app/besmele/esma/99-es-sabur/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/99-es-sabur/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/99-as-sabur/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/1-allah/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/1-allah/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/1-allah/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/1-allah/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/2-ar-rahman/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/2-ar-rahman/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/2-ar-rahman/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/2-er-rahman/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/3-ar-rahim/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/3-ar-rahim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/3-ar-rahim/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/3-er-rahim/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/4-al-malik/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/4-al-malik/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/4-al-malik/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/4-el-melik/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/5-al-quddus/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/5-al-quddus/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/5-al-quddus/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/5-el-kuddus/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/6-as-salam/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/6-as-salam/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/6-as-salam/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/6-es-selam/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/7-al-mumin/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/7-al-mumin/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/7-al-mumin/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/7-el-mumin/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/8-al-muhaymin/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/8-al-muhaymin/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/8-al-muhaymin/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/8-el-muheymin/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/9-al-aziz/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/9-al-aziz/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/9-al-aziz/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/9-el-aziz/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/10-al-jabbar/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/10-al-jabbar/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/10-al-jabbar/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/10-el-cebbar/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/11-al-mutakabbir/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/11-al-mutakabbir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/11-al-mutakabbir/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/11-el-mutekebbir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/12-al-khaliq/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/12-al-khaliq/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/12-al-khaliq/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/12-el-halik/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/13-al-bari/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/13-al-bari/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/13-al-bari/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/13-el-bari/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/14-al-musawwir/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/14-al-musawwir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/14-al-musawwir/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/14-el-musavvir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/15-al-ghaffar/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/15-al-ghaffar/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/15-al-ghaffar/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/15-el-gaffar/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/16-al-qahhar/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/16-al-qahhar/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/16-al-qahhar/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/16-el-kahhar/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/17-al-wahhab/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/17-al-wahhab/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/17-al-wahhab/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/17-el-vehhab/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/18-ar-razzaq/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/18-ar-razzaq/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/18-ar-razzaq/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/18-er-rezzak/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/19-al-fattah/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/19-al-fattah/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/19-al-fattah/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/19-el-fettah/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/20-al-alim/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/20-al-alim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/20-al-alim/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/20-el-alim/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/21-al-qabid/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/21-al-qabid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/21-al-qabid/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/21-el-kabiz/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/22-al-basit/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/22-al-basit/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/22-al-basit/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/22-el-basit/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/23-al-khafid/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/23-al-khafid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/23-al-khafid/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/23-el-hafid/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/24-ar-rafi/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/24-ar-rafi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/24-ar-rafi/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/24-er-rafi/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/25-al-muizz/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/25-al-muizz/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/25-al-muizz/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/25-el-muizz/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/26-al-mudhill/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/26-al-mudhill/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/26-al-mudhill/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/26-el-muzill/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/27-as-sami/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/27-as-sami/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/27-as-sami/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/27-es-semi/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/28-al-basir/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/28-al-basir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/28-al-basir/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/28-el-basir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/29-al-hakam/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/29-al-hakam/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/29-al-hakam/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/29-el-hakem/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/30-al-adl/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/30-al-adl/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/30-al-adl/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/30-el-adl/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/31-al-latif/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/31-al-latif/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/31-al-latif/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/31-el-latif/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/32-al-khabir/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/32-al-khabir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/32-al-khabir/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/32-el-habir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/33-al-halim/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/33-al-halim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/33-al-halim/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/33-el-halim/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/34-al-azim/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/34-al-azim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/34-al-azim/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/34-el-azim/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/35-al-ghafur/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/35-al-ghafur/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/35-al-ghafur/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/35-el-gafur/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/36-ash-shakur/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/36-ash-shakur/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/36-ash-shakur/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/36-es-sekur/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/37-al-aliyy/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/37-al-aliyy/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/37-al-aliyy/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/37-el-aliyy/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/38-al-kabir/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/38-al-kabir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/38-al-kabir/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/38-el-kebir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/39-al-hafiz/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/39-al-hafiz/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/39-al-hafiz/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/39-el-hafiz/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/40-al-muqit/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/40-al-muqit/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/40-al-muqit/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/40-el-mukit/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/41-al-hasib/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/41-al-hasib/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/41-al-hasib/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/41-el-hasib/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/42-al-jalil/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/42-al-jalil/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/42-al-jalil/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/42-el-celil/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/43-al-karim/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/43-al-karim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/43-al-karim/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/43-el-kerim/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/44-ar-raqib/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/44-ar-raqib/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/44-ar-raqib/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/44-er-rakib/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/45-al-mujib/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/45-al-mujib/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/45-al-mujib/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/45-el-mucib/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/46-al-wasi/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/46-al-wasi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/46-al-wasi/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/46-el-vasi/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/47-al-hakim/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/47-al-hakim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/47-al-hakim/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/47-el-hakim/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/48-al-wadud/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/48-al-wadud/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/48-al-wadud/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/48-el-vedud/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/49-al-majid/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/49-al-majid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/49-al-majid/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/49-el-mecid/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/50-al-baith/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/50-al-baith/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/50-al-baith/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/50-el-bais/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/51-ash-shahid/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/51-ash-shahid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/51-ash-shahid/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/51-es-sehid/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/52-al-haqq/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/52-al-haqq/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/52-al-haqq/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/52-el-hakk/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/53-al-wakil/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/53-al-wakil/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/53-al-wakil/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/53-el-vekil/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/54-al-qawiyy/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/54-al-qawiyy/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/54-al-qawiyy/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/54-el-kaviyy/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/55-al-matin/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/55-al-matin/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/55-al-matin/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/55-el-metin/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/56-al-waliyy/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/56-al-waliyy/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/56-al-waliyy/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/56-el-veliyy/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/57-al-hamid/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/57-al-hamid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/57-al-hamid/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/57-el-hamid/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/58-al-muhsi/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/58-al-muhsi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/58-al-muhsi/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/58-el-muhsi/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/59-al-mubdi/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/59-al-mubdi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/59-al-mubdi/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/59-el-mubdi/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/60-al-muid/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/60-al-muid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/60-al-muid/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/60-el-muid/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/61-al-muhyi/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/61-al-muhyi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/61-al-muhyi/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/61-el-muhyi/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/62-al-mumit/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/62-al-mumit/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/62-al-mumit/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/62-el-mumit/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/63-al-hayy/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/63-al-hayy/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/63-al-hayy/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/63-el-hayy/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/64-al-qayyum/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/64-al-qayyum/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/64-al-qayyum/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/64-el-kayyum/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/65-al-wajid/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/65-al-wajid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/65-al-wajid/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/65-el-vacid/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/66-al-majid/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/66-al-majid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/66-al-majid/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/66-el-macid/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/67-al-wahid/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/67-al-wahid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/67-al-wahid/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/67-el-vahid/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/68-as-samad/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/68-as-samad/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/68-as-samad/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/68-es-samed/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/69-al-qadir/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/69-al-qadir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/69-al-qadir/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/69-el-kadir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/70-al-muqtadir/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/70-al-muqtadir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/70-al-muqtadir/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/70-el-muktedir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/71-al-muqaddim/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/71-al-muqaddim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/71-al-muqaddim/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/71-el-mukaddim/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/72-al-muakhkhir/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/72-al-muakhkhir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/72-al-muakhkhir/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/72-el-muahhir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/73-al-awwal/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/73-al-awwal/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/73-al-awwal/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/73-el-evvel/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/74-al-akhir/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/74-al-akhir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/74-al-akhir/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/74-el-ahir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/75-az-zahir/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/75-az-zahir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/75-az-zahir/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/75-ez-zahir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/76-al-batin/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/76-al-batin/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/76-al-batin/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/76-el-batin/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/77-al-wali/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/77-al-wali/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/77-al-wali/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/77-el-vali/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/78-al-mutaali/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/78-al-mutaali/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/78-al-mutaali/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/78-el-muteali/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/79-al-barr/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/79-al-barr/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/79-al-barr/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/79-el-berr/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/80-at-tawwab/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/80-at-tawwab/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/80-at-tawwab/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/80-et-tevvab/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/81-al-muntaqim/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/81-al-muntaqim/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/81-al-muntaqim/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/81-el-muntakim/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/82-al-afuww/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/82-al-afuww/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/82-al-afuww/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/82-el-afuvv/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/83-ar-rauf/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/83-ar-rauf/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/83-ar-rauf/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/83-er-rauf/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/84-malik-al-mulk/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/84-malik-al-mulk/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/84-malik-al-mulk/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/84-malikul-mulk/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/85-dhul-jalali-wal-ikram/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/85-dhul-jalali-wal-ikram/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/85-dhul-jalali-wal-ikram/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/85-zul-celali-vel-ikram/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/86-al-muqsit/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/86-al-muqsit/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/86-al-muqsit/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/86-el-muksit/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/87-al-jami/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/87-al-jami/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/87-al-jami/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/87-el-cami/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/88-al-ghaniyy/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/88-al-ghaniyy/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/88-al-ghaniyy/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/88-el-ganiyy/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/89-al-mughni/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/89-al-mughni/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/89-al-mughni/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/89-el-mugni/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/90-al-mani/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/90-al-mani/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/90-al-mani/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/90-el-mani/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/91-ad-darr/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/91-ad-darr/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/91-ad-darr/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/91-ed-darr/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/92-an-nafi/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/92-an-nafi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/92-an-nafi/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/92-en-nafi/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/93-an-nur/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/93-an-nur/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/93-an-nur/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/93-en-nur/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/94-al-hadi/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/94-al-hadi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/94-al-hadi/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/94-el-hadi/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/95-al-badi/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/95-al-badi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/95-al-badi/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/95-el-bedi/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/96-al-baqi/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/96-al-baqi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/96-al-baqi/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/96-el-baki/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/97-al-warith/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/97-al-warith/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/97-al-warith/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/97-el-varis/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/98-ar-rashid/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/98-ar-rashid/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/98-ar-rashid/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/98-er-resid/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/names/99-as-sabur/</loc>
+  <url><loc>https://hyapps.app/besmele/en/names/99-as-sabur/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/names/99-as-sabur/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/esma/99-es-sabur/"/></url>
-  <url><loc>https://hyapps.app/besmele/kible-nasil-bulunur/</loc>
+  <url><loc>https://hyapps.app/besmele/kible-nasil-bulunur/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kible-nasil-bulunur/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/how-to-find-qibla/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/how-to-find-qibla/</loc>
+  <url><loc>https://hyapps.app/besmele/en/how-to-find-qibla/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kible-nasil-bulunur/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/how-to-find-qibla/"/></url>
-  <url><loc>https://hyapps.app/besmele/namaz-vakitleri-nasil-hesaplanir/</loc>
+  <url><loc>https://hyapps.app/besmele/namaz-vakitleri-nasil-hesaplanir/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/namaz-vakitleri-nasil-hesaplanir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/how-prayer-times-are-calculated/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/how-prayer-times-are-calculated/</loc>
+  <url><loc>https://hyapps.app/besmele/en/how-prayer-times-are-calculated/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/namaz-vakitleri-nasil-hesaplanir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/how-prayer-times-are-calculated/"/></url>
-  <url><loc>https://hyapps.app/besmele/kisa-dualar/</loc>
+  <url><loc>https://hyapps.app/besmele/kisa-dualar/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-dualar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-duas/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/short-duas/</loc>
+  <url><loc>https://hyapps.app/besmele/en/short-duas/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-duas/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-dualar/"/></url>
-  <url><loc>https://hyapps.app/besmele/kisa-hadisler/</loc>
+  <url><loc>https://hyapps.app/besmele/kisa-hadisler/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-hadisler/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-hadiths/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/short-hadiths/</loc>
+  <url><loc>https://hyapps.app/besmele/en/short-hadiths/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-hadiths/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-hadisler/"/></url>
-  <url><loc>https://hyapps.app/besmele/kisa-ayetler/</loc>
+  <url><loc>https://hyapps.app/besmele/kisa-ayetler/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-ayetler/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-quran-verses/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/short-quran-verses/</loc>
+  <url><loc>https://hyapps.app/besmele/en/short-quran-verses/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-quran-verses/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-ayetler/"/></url>
-  <url><loc>https://hyapps.app/crownly/queens-puzzle-rules/</loc>
+  <url><loc>https://hyapps.app/crownly/queens-puzzle-rules/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/queens-puzzle-rules/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/queens-nasil-oynanir/"/></url>
-  <url><loc>https://hyapps.app/crownly/queens-strategy/</loc>
+  <url><loc>https://hyapps.app/crownly/queens-strategy/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/queens-strategy/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/queens-stratejileri/"/></url>
-  <url><loc>https://hyapps.app/crownly/linkedin-queens-alternative/</loc>
+  <url><loc>https://hyapps.app/crownly/linkedin-queens-alternative/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-queens-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/queens-nasil-oynanir/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/queens-nasil-oynanir/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/queens-nasil-oynanir/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/queens-puzzle-rules/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/queens-stratejileri/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/queens-stratejileri/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/queens-stratejileri/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/queens-strategy/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-queens-alternative/"/></url>
-  <url><loc>https://hyapps.app/crownly/games-like-sudoku/</loc>
+  <url><loc>https://hyapps.app/crownly/games-like-sudoku/</loc><lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/games-like-sudoku/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/</loc><lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/games-like-sudoku/"/></url>
-  <url><loc>https://hyapps.app/crownly/daily-queens-puzzle/</loc>
+  <url><loc>https://hyapps.app/crownly/daily-queens-puzzle/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-queens-puzzle/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-queens-puzzle/"/></url>
-  <url><loc>https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/</loc>
+  <url><loc>https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/tek-telefonla-oynanan-oyunlar/"/></url>
-  <url><loc>https://hyapps.app/quickwits/reaction-time-test/</loc>
+  <url><loc>https://hyapps.app/quickwits/reaction-time-test/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/reaction-time-test/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/refleks-testi/"/></url>
-  <url><loc>https://hyapps.app/quickwits/group-games-for-game-night/</loc>
+  <url><loc>https://hyapps.app/quickwits/group-games-for-game-night/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/group-games-for-game-night/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/oyun-gecesi-grup-oyunlari/"/></url>
-  <url><loc>https://hyapps.app/quickwits/tr/tek-telefonla-oynanan-oyunlar/</loc>
+  <url><loc>https://hyapps.app/quickwits/tr/tek-telefonla-oynanan-oyunlar/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/tek-telefonla-oynanan-oyunlar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/"/></url>
-  <url><loc>https://hyapps.app/quickwits/tr/refleks-testi/</loc>
+  <url><loc>https://hyapps.app/quickwits/tr/refleks-testi/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/refleks-testi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/reaction-time-test/"/></url>
-  <url><loc>https://hyapps.app/quickwits/tr/oyun-gecesi-grup-oyunlari/</loc>
+  <url><loc>https://hyapps.app/quickwits/tr/oyun-gecesi-grup-oyunlari/</loc><lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/oyun-gecesi-grup-oyunlari/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/group-games-for-game-night/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/buildings/</loc>
+  <url><loc>https://hyapps.app/brickhaven/buildings/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/buildings/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/binalar/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/skill-tree/</loc>
+  <url><loc>https://hyapps.app/brickhaven/skill-tree/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/skill-tree/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/ustalik-agaci/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/design-your-own-house/</loc>
+  <url><loc>https://hyapps.app/brickhaven/design-your-own-house/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/design-your-own-house/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/ev-tasarlama-oyunu/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/cozy-offline-building-game/</loc>
+  <url><loc>https://hyapps.app/brickhaven/cozy-offline-building-game/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/cozy-offline-building-game/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/beginners-guide/</loc>
+  <url><loc>https://hyapps.app/brickhaven/beginners-guide/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/beginners-guide/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/baslangic-rehberi/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/binalar/</loc>
+  <url><loc>https://hyapps.app/brickhaven/tr/binalar/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/binalar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/buildings/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/ustalik-agaci/</loc>
+  <url><loc>https://hyapps.app/brickhaven/tr/ustalik-agaci/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/ustalik-agaci/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/skill-tree/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/ev-tasarlama-oyunu/</loc>
+  <url><loc>https://hyapps.app/brickhaven/tr/ev-tasarlama-oyunu/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/ev-tasarlama-oyunu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/design-your-own-house/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/</loc>
+  <url><loc>https://hyapps.app/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/cozy-offline-building-game/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/baslangic-rehberi/</loc>
+  <url><loc>https://hyapps.app/brickhaven/tr/baslangic-rehberi/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/baslangic-rehberi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/beginners-guide/"/></url>
-  <url><loc>https://hyapps.app/glowfly/relaxing-idle-merge-game/</loc>
+  <url><loc>https://hyapps.app/glowfly/relaxing-idle-merge-game/</loc><lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/relaxing-idle-merge-game/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/rahatlatici-idle-birlestirme-oyunu/"/></url>
-  <url><loc>https://hyapps.app/glowfly/idle-games-offline-progress/</loc>
+  <url><loc>https://hyapps.app/glowfly/idle-games-offline-progress/</loc><lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-games-offline-progress/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/"/></url>
-  <url><loc>https://hyapps.app/glowfly/beginners-guide/</loc>
+  <url><loc>https://hyapps.app/glowfly/beginners-guide/</loc><lastmod>2026-11-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/beginners-guide/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/baslangic-rehberi/"/></url>
-  <url><loc>https://hyapps.app/glowfly/tr/rahatlatici-idle-birlestirme-oyunu/</loc>
+  <url><loc>https://hyapps.app/glowfly/tr/rahatlatici-idle-birlestirme-oyunu/</loc><lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/rahatlatici-idle-birlestirme-oyunu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/relaxing-idle-merge-game/"/></url>
-  <url><loc>https://hyapps.app/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/</loc>
+  <url><loc>https://hyapps.app/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/</loc><lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-games-offline-progress/"/></url>
-  <url><loc>https://hyapps.app/glowfly/tr/baslangic-rehberi/</loc>
+  <url><loc>https://hyapps.app/glowfly/tr/baslangic-rehberi/</loc><lastmod>2026-11-09</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/baslangic-rehberi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/beginners-guide/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/best-cozy-building-games-iphone/</loc>
+  <url><loc>https://hyapps.app/brickhaven/best-cozy-building-games-iphone/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/best-cozy-building-games-iphone/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/en-iyi-rahat-insa-oyunlari/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/en-iyi-rahat-insa-oyunlari/</loc>
+  <url><loc>https://hyapps.app/brickhaven/tr/en-iyi-rahat-insa-oyunlari/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/best-cozy-building-games-iphone/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/en-iyi-rahat-insa-oyunlari/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/brick-laying-simulator/</loc>
+  <url><loc>https://hyapps.app/brickhaven/brick-laying-simulator/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/brick-laying-simulator/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/tugla-orme-oyunu/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/tugla-orme-oyunu/</loc>
+  <url><loc>https://hyapps.app/brickhaven/tr/tugla-orme-oyunu/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/brick-laying-simulator/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/tugla-orme-oyunu/"/></url>
-  <url><loc>https://hyapps.app/glowfly/idle-brick-breaker/</loc>
+  <url><loc>https://hyapps.app/glowfly/idle-brick-breaker/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-brick-breaker/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/idle-tugla-kirma-oyunu/"/></url>
-  <url><loc>https://hyapps.app/glowfly/tr/idle-tugla-kirma-oyunu/</loc>
+  <url><loc>https://hyapps.app/glowfly/tr/idle-tugla-kirma-oyunu/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-brick-breaker/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/idle-tugla-kirma-oyunu/"/></url>
-  <url><loc>https://hyapps.app/glowfly/idle-games-without-forced-ads/</loc>
+  <url><loc>https://hyapps.app/glowfly/idle-games-without-forced-ads/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-games-without-forced-ads/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/zorla-reklamsiz-idle-oyunlar/"/></url>
-  <url><loc>https://hyapps.app/glowfly/tr/zorla-reklamsiz-idle-oyunlar/</loc>
+  <url><loc>https://hyapps.app/glowfly/tr/zorla-reklamsiz-idle-oyunlar/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-games-without-forced-ads/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/zorla-reklamsiz-idle-oyunlar/"/></url>
-  <url><loc>https://hyapps.app/crownly/daily-puzzle-games-like-wordle/</loc>
+  <url><loc>https://hyapps.app/crownly/daily-puzzle-games-like-wordle/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-puzzle-games-like-wordle/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-puzzle-games-like-wordle/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/"/></url>
-  <url><loc>https://hyapps.app/crownly/one-line-path-puzzle-rules/</loc>
+  <url><loc>https://hyapps.app/crownly/one-line-path-puzzle-rules/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/one-line-path-puzzle-rules/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/one-line-path-puzzle-rules/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/"/></url>
-  <url><loc>https://hyapps.app/crownly/how-to-play-shikaku/</loc>
+  <url><loc>https://hyapps.app/crownly/how-to-play-shikaku/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/how-to-play-shikaku/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/shikaku-nasil-oynanir/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/shikaku-nasil-oynanir/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/shikaku-nasil-oynanir/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/how-to-play-shikaku/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/shikaku-nasil-oynanir/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/choosing-a-prayer-times-app/</loc>
+  <url><loc>https://hyapps.app/besmele/en/choosing-a-prayer-times-app/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/choosing-a-prayer-times-app/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/namaz-vakti-uygulamasi-secerken/"/></url>
-  <url><loc>https://hyapps.app/besmele/namaz-vakti-uygulamasi-secerken/</loc>
+  <url><loc>https://hyapps.app/besmele/namaz-vakti-uygulamasi-secerken/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/choosing-a-prayer-times-app/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/namaz-vakti-uygulamasi-secerken/"/></url>
-  <url><loc>https://hyapps.app/crownly/linkedin-zip-alternative/</loc>
+  <url><loc>https://hyapps.app/crownly/linkedin-zip-alternative/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-zip-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-zip-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/linkedin-zip-alternatifi/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/linkedin-zip-alternatifi/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-zip-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-zip-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/crownly/linkedin-patches-alternative/</loc>
+  <url><loc>https://hyapps.app/crownly/linkedin-patches-alternative/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-patches-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-patches-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/linkedin-patches-alternatifi/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/linkedin-patches-alternatifi/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-patches-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-patches-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/crownly/linkedin-games-alternatives/</loc>
+  <url><loc>https://hyapps.app/crownly/linkedin-games-alternatives/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-games-alternatives/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-oyunlari-alternatifleri/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/linkedin-oyunlari-alternatifleri/</loc>
+  <url><loc>https://hyapps.app/crownly/tr/linkedin-oyunlari-alternatifleri/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-games-alternatives/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-oyunlari-alternatifleri/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/brick-by-brick-alternative-iphone/</loc>
+  <url><loc>https://hyapps.app/brickhaven/brick-by-brick-alternative-iphone/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/brick-by-brick-alternative-iphone/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/brick-by-brick-iphone-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/brick-by-brick-iphone-alternatifi/</loc>
+  <url><loc>https://hyapps.app/brickhaven/tr/brick-by-brick-iphone-alternatifi/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/brick-by-brick-alternative-iphone/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/brick-by-brick-iphone-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/townscaper-alternative/</loc>
+  <url><loc>https://hyapps.app/brickhaven/townscaper-alternative/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/townscaper-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/townscaper-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/townscaper-alternatifi/</loc>
+  <url><loc>https://hyapps.app/brickhaven/tr/townscaper-alternatifi/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/townscaper-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/townscaper-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/glowfly/idle-breakout-alternative/</loc>
+  <url><loc>https://hyapps.app/glowfly/idle-breakout-alternative/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-breakout-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/idle-breakout-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/glowfly/tr/idle-breakout-alternatifi/</loc>
+  <url><loc>https://hyapps.app/glowfly/tr/idle-breakout-alternatifi/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-breakout-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/idle-breakout-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/muslim-pro-alternative/</loc>
+  <url><loc>https://hyapps.app/besmele/en/muslim-pro-alternative/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/muslim-pro-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/muslim-pro-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/besmele/muslim-pro-alternatifi/</loc>
+  <url><loc>https://hyapps.app/besmele/muslim-pro-alternatifi/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/muslim-pro-alternative/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/muslim-pro-alternatifi/"/></url>
+  <url><loc>https://hyapps.app/pyramidcraft/pyramid-building-game/</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/pyramid-building-game/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/piramit-yapma-oyunu/"/></url>
+  <url><loc>https://hyapps.app/pyramidcraft/beginners-guide/</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/beginners-guide/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/baslangic-rehberi/"/></url>
+  <url><loc>https://hyapps.app/pyramidcraft/how-were-the-pyramids-built/</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/how-were-the-pyramids-built/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/piramitler-nasil-yapildi/"/></url>
+  <url><loc>https://hyapps.app/pyramidcraft/tr/piramit-yapma-oyunu/</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/piramit-yapma-oyunu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/pyramid-building-game/"/></url>
+  <url><loc>https://hyapps.app/pyramidcraft/tr/baslangic-rehberi/</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/baslangic-rehberi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/beginners-guide/"/></url>
+  <url><loc>https://hyapps.app/pyramidcraft/tr/piramitler-nasil-yapildi/</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/piramitler-nasil-yapildi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/how-were-the-pyramids-built/"/></url>
 </urlset>

@@ -9,7 +9,8 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-APPS = [("Glowfly", "glowfly/index.html", "https://hyapps.app/glowfly/", "https://hyapps.app/glowfly/privacy.html"),
+APPS = [("Pyramid Craft: Brick Builder", "pyramidcraft/index.html", "https://hyapps.app/pyramidcraft/", "https://hyapps.app/pyramidcraft/privacy.html"),
+        ("Glowfly", "glowfly/index.html", "https://hyapps.app/glowfly/", "https://hyapps.app/glowfly/privacy.html"),
         ("Brickhaven", "brickhaven/index.html", "https://hyapps.app/brickhaven/", "https://hyapps.app/brickhaven/privacy.html"),
         ("Crownly", "crownly/index.html", "https://hyapps.app/crownly/", "https://hyapps.app/crownly/privacy.html"),
         ("Quick Wits", "quickwits/index.html", "https://hyapps.app/quickwits/", "https://hyapps.app/quickwits/privacy.html"),

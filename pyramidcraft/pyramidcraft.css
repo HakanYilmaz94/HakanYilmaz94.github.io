@@ -91,3 +91,11 @@ details p { margin: 8px 0 0; color: var(--muted); }
 .monuments div { background: var(--bg2); border: 1px solid var(--border); border-radius: 18px; padding: 18px; text-align: center; }
 .monuments b { display: block; font-size: 20px; }
 .monuments span { color: var(--muted); font-size: 15px; }
+
+.shots-sec { padding: 40px 0 0; }
+.shots { display: grid; grid-auto-flow: column; grid-auto-columns: min(78%, 560px); gap: 14px; overflow-x: auto;
+         scroll-snap-type: x mandatory; padding: 8px 0 12px; }
+.shots figure { margin: 0; scroll-snap-align: start; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--border); }
+.shots figcaption { text-align: center; padding: 6px 0 0; font-size: 14px; color: var(--muted); }
+.guides-sec { padding: 0 0 40px; }

@@ -1,0 +1,1517 @@
+{
+"/": {
+"hash": "4685550152e85e17",
+"modified": "2026-11-21",
+"published": "2026-10-11"
+},
+"/besmele/": {
+"hash": "3e9152f1690b5cd0",
+"modified": "2026-11-21",
+"published": "2026-10-11"
+},
+"/besmele/destek.html": {
+"hash": "34c40acd88bf1b55",
+"modified": "2026-10-20",
+"published": "2026-10-11"
+},
+"/besmele/en/": {
+"hash": "801cac517bbf124d",
+"modified": "2026-11-21",
+"published": "2026-10-11"
+},
+"/besmele/en/choosing-a-prayer-times-app/": {
+"hash": "d6c02edaae21f948",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/besmele/en/destek.html": {
+"hash": "00089259dc32f3c2",
+"modified": "2026-10-20",
+"published": "2026-10-11"
+},
+"/besmele/en/gizlilik.html": {
+"hash": "c6f412ad374c61e3",
+"modified": "2026-10-20",
+"published": "2026-10-11"
+},
+"/besmele/en/how-prayer-times-are-calculated/": {
+"hash": "cf4e84ed2060a152",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/how-to-find-qibla/": {
+"hash": "379e9559ec8750d9",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/muslim-pro-alternative/": {
+"hash": "ca40f61f1a5f87d4",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/besmele/en/names/": {
+"hash": "833d461d0aa4d594",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/1-allah/": {
+"hash": "519afd02af51643f",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/10-al-jabbar/": {
+"hash": "1ca1cb776f7cb362",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/11-al-mutakabbir/": {
+"hash": "62c5de1554684758",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/12-al-khaliq/": {
+"hash": "9e6e0c9f03920aab",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/13-al-bari/": {
+"hash": "d13f8d7613e9d0bb",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/14-al-musawwir/": {
+"hash": "be53068747791d7d",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/15-al-ghaffar/": {
+"hash": "502db1387901fbe4",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/16-al-qahhar/": {
+"hash": "da9d98d4c6d6150a",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/17-al-wahhab/": {
+"hash": "32e55e232aeada59",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/18-ar-razzaq/": {
+"hash": "2fde4f4a4bbaf118",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/19-al-fattah/": {
+"hash": "151c9a6342d9a6d8",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/2-ar-rahman/": {
+"hash": "335a8cd4c80a94c1",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/20-al-alim/": {
+"hash": "bc1e57463da2fff6",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/21-al-qabid/": {
+"hash": "d0a32ddbb888dbf3",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/22-al-basit/": {
+"hash": "5e55f0049711106d",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/23-al-khafid/": {
+"hash": "b55392711146293a",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/24-ar-rafi/": {
+"hash": "79962694a4744dde",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/25-al-muizz/": {
+"hash": "380734bd2e101c45",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/26-al-mudhill/": {
+"hash": "12f64b0070dea1d4",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/27-as-sami/": {
+"hash": "2529f5c844a4a4c4",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/28-al-basir/": {
+"hash": "f89d47c885a44335",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/29-al-hakam/": {
+"hash": "487f31cb5dde9845",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/3-ar-rahim/": {
+"hash": "6a01ef02fafa81ae",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/30-al-adl/": {
+"hash": "faa4ec350b03ae30",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/31-al-latif/": {
+"hash": "52a9e6b23418e32e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/32-al-khabir/": {
+"hash": "90d79f496f45fb6d",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/33-al-halim/": {
+"hash": "6969546b556c0ad3",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/34-al-azim/": {
+"hash": "0359a96640fe54fb",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/35-al-ghafur/": {
+"hash": "afdb8f1923903179",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/36-ash-shakur/": {
+"hash": "21a630c8c33a3379",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/37-al-aliyy/": {
+"hash": "6f8588c238bc13f9",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/38-al-kabir/": {
+"hash": "e9ed2a30d3a01f70",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/39-al-hafiz/": {
+"hash": "362abc0ee32df393",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/4-al-malik/": {
+"hash": "7e6ed04bac73440a",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/40-al-muqit/": {
+"hash": "06852f0e393bc0ef",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/41-al-hasib/": {
+"hash": "f77b9d23eb729301",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/42-al-jalil/": {
+"hash": "66dd6b7d368623a5",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/43-al-karim/": {
+"hash": "7b13ceead8665ea1",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/44-ar-raqib/": {
+"hash": "9051e50d439c9ee6",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/45-al-mujib/": {
+"hash": "93172034946bebce",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/46-al-wasi/": {
+"hash": "c6761b7fd37ed27e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/47-al-hakim/": {
+"hash": "192d8f799494f3dd",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/48-al-wadud/": {
+"hash": "5f3dea06d06f6a70",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/49-al-majid/": {
+"hash": "bafaf9a312bb27b1",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/5-al-quddus/": {
+"hash": "cfea2c2a59c18352",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/50-al-baith/": {
+"hash": "79ba86256f57e845",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/51-ash-shahid/": {
+"hash": "ce3aaf7ab0117cb7",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/52-al-haqq/": {
+"hash": "a56b352e48138c1e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/53-al-wakil/": {
+"hash": "d578725c5f9c7fff",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/54-al-qawiyy/": {
+"hash": "4336ea22337ed077",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/55-al-matin/": {
+"hash": "3384cfd4d77b4dd9",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/56-al-waliyy/": {
+"hash": "f79ab3e6b3692aca",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/57-al-hamid/": {
+"hash": "a94cf57c8e61806c",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/58-al-muhsi/": {
+"hash": "33d5e9da4050255d",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/59-al-mubdi/": {
+"hash": "baab26716dcad3c4",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/6-as-salam/": {
+"hash": "d2e916aac72a26c9",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/60-al-muid/": {
+"hash": "c3e52e2a685a4faf",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/61-al-muhyi/": {
+"hash": "dfd005d161dae30b",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/62-al-mumit/": {
+"hash": "cf67db45b3d42b73",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/63-al-hayy/": {
+"hash": "758839034eb9a19e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/64-al-qayyum/": {
+"hash": "03f5660fb0438cba",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/65-al-wajid/": {
+"hash": "569fdece203a8e87",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/66-al-majid/": {
+"hash": "bd45c3dcd42a50b7",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/67-al-wahid/": {
+"hash": "15f94f0d5b37c1ff",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/68-as-samad/": {
+"hash": "62bb762bedc4aa14",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/69-al-qadir/": {
+"hash": "f984961da8e357e9",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/7-al-mumin/": {
+"hash": "7035559b0b0d4188",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/70-al-muqtadir/": {
+"hash": "e213b41c210b706e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/71-al-muqaddim/": {
+"hash": "1095cbc73ae23805",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/72-al-muakhkhir/": {
+"hash": "73c2e78f51dacd01",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/73-al-awwal/": {
+"hash": "915b4441bf61eb1c",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/74-al-akhir/": {
+"hash": "63c7e8dd0a480bd8",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/75-az-zahir/": {
+"hash": "3fb003413dd57b70",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/76-al-batin/": {
+"hash": "8cbd27b312ada232",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/77-al-wali/": {
+"hash": "e5ae145dc5d26809",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/78-al-mutaali/": {
+"hash": "450528620db907a4",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/79-al-barr/": {
+"hash": "7496aaae3be08886",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/8-al-muhaymin/": {
+"hash": "220034b7d5f4d9bf",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/80-at-tawwab/": {
+"hash": "c9f64d68bf61f160",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/81-al-muntaqim/": {
+"hash": "c37a2303c8a60087",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/82-al-afuww/": {
+"hash": "2913b1e1042cf47b",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/83-ar-rauf/": {
+"hash": "e8e07f46fb02975e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/84-malik-al-mulk/": {
+"hash": "c8d70d77a6795e67",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/85-dhul-jalali-wal-ikram/": {
+"hash": "28329b0f7e53ccc6",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/86-al-muqsit/": {
+"hash": "a89d1b08aceda0d2",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/87-al-jami/": {
+"hash": "699331394165fc52",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/88-al-ghaniyy/": {
+"hash": "cb9a9dbc04ec0afd",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/89-al-mughni/": {
+"hash": "40b684a1ce354023",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/9-al-aziz/": {
+"hash": "13759c51662796e5",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/90-al-mani/": {
+"hash": "26bd7f01bc066600",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/91-ad-darr/": {
+"hash": "b4b589540d196dae",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/92-an-nafi/": {
+"hash": "55f4718124e493fd",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/93-an-nur/": {
+"hash": "8d99301ed340952d",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/94-al-hadi/": {
+"hash": "ca4fd12450f8af23",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/95-al-badi/": {
+"hash": "87394ce450e67071",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/96-al-baqi/": {
+"hash": "703d8999e0dae0f9",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/97-al-warith/": {
+"hash": "ab7ec374b5f93d43",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/98-ar-rashid/": {
+"hash": "6f96f4d74cee0e0d",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/names/99-as-sabur/": {
+"hash": "e8bd4281c58090d7",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/en/short-duas/": {
+"hash": "3e3d6bcde6161e80",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/besmele/en/short-hadiths/": {
+"hash": "586f1e6c3f4ddcbc",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/besmele/en/short-quran-verses/": {
+"hash": "be4638582b2651cd",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/besmele/esma/": {
+"hash": "131a880d1bc08f23",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/1-allah/": {
+"hash": "22602cdd78017986",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/10-el-cebbar/": {
+"hash": "a433f9a09758c106",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/11-el-mutekebbir/": {
+"hash": "b0d36929966be8dc",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/12-el-halik/": {
+"hash": "a9cf54856198f3d4",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/13-el-bari/": {
+"hash": "0944f3f83446ce6a",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/14-el-musavvir/": {
+"hash": "f6ec4776c45b77f8",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/15-el-gaffar/": {
+"hash": "05ce378ed28fb1b6",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/16-el-kahhar/": {
+"hash": "fbbfdf275de31b9a",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/17-el-vehhab/": {
+"hash": "0df7d8a4d6155326",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/18-er-rezzak/": {
+"hash": "d343804d9042fc91",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/19-el-fettah/": {
+"hash": "70f3601b77792890",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/2-er-rahman/": {
+"hash": "fbbfc51cc89d9e66",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/20-el-alim/": {
+"hash": "06c3059df5b110f1",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/21-el-kabiz/": {
+"hash": "0b790c8a067a2646",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/22-el-basit/": {
+"hash": "c4898db6d74d49d5",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/23-el-hafid/": {
+"hash": "a3c8821dc42c7ffd",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/24-er-rafi/": {
+"hash": "1580b8574ecc44e2",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/25-el-muizz/": {
+"hash": "770698fed9717c28",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/26-el-muzill/": {
+"hash": "52fe4f321983b55e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/27-es-semi/": {
+"hash": "715244268c2af376",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/28-el-basir/": {
+"hash": "acdfc467c8371373",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/29-el-hakem/": {
+"hash": "6f78623bb129411e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/3-er-rahim/": {
+"hash": "99362c7de69f01d6",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/30-el-adl/": {
+"hash": "29f70a3412afe119",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/31-el-latif/": {
+"hash": "58efef89c1752b9e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/32-el-habir/": {
+"hash": "34257bff015618f5",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/33-el-halim/": {
+"hash": "4a6d334497a24858",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/34-el-azim/": {
+"hash": "a1ca94027fdc142a",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/35-el-gafur/": {
+"hash": "259262e24f9cca61",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/36-es-sekur/": {
+"hash": "0e521446284ada20",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/37-el-aliyy/": {
+"hash": "2b4f4c647114cb22",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/38-el-kebir/": {
+"hash": "1a1104761cd226ab",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/39-el-hafiz/": {
+"hash": "6fec857011bc51aa",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/4-el-melik/": {
+"hash": "6e459c6ac832a49f",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/40-el-mukit/": {
+"hash": "4e0750cfeffe718f",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/41-el-hasib/": {
+"hash": "941b98c3ccd43bbb",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/42-el-celil/": {
+"hash": "cac5b5d872d44238",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/43-el-kerim/": {
+"hash": "20926d6e9b4e104b",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/44-er-rakib/": {
+"hash": "07078f84dc5481c5",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/45-el-mucib/": {
+"hash": "55d21b72745b69c2",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/46-el-vasi/": {
+"hash": "6d6ef02ca42e5501",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/47-el-hakim/": {
+"hash": "33f61bd8be6ed66e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/48-el-vedud/": {
+"hash": "b38db06cf24e6f6e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/49-el-mecid/": {
+"hash": "997e7fef587a6d73",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/5-el-kuddus/": {
+"hash": "71dae23c73f1ee86",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/50-el-bais/": {
+"hash": "8ad2efb8f88cf0d7",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/51-es-sehid/": {
+"hash": "9057d54265d42bcb",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/52-el-hakk/": {
+"hash": "3f180a6f5bc38364",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/53-el-vekil/": {
+"hash": "44f1a051eb18dcba",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/54-el-kaviyy/": {
+"hash": "a6769235c11d2373",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/55-el-metin/": {
+"hash": "4b4a3cf8b97226c6",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/56-el-veliyy/": {
+"hash": "9b6b781bd7d28eed",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/57-el-hamid/": {
+"hash": "f413d9fe03c85340",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/58-el-muhsi/": {
+"hash": "69713251946fedde",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/59-el-mubdi/": {
+"hash": "11c75b1b2075fe05",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/6-es-selam/": {
+"hash": "6aa46c140c3fd86e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/60-el-muid/": {
+"hash": "c94c3f8e7e7ad286",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/61-el-muhyi/": {
+"hash": "c884e633726da87f",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/62-el-mumit/": {
+"hash": "ff5f5e4224b77bad",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/63-el-hayy/": {
+"hash": "ccdf86ebe67a2fa1",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/64-el-kayyum/": {
+"hash": "01ba4eaacb3c80d1",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/65-el-vacid/": {
+"hash": "06b37c7052b5f339",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/66-el-macid/": {
+"hash": "c8320f08f133fe35",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/67-el-vahid/": {
+"hash": "688f61b28a64c5b6",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/68-es-samed/": {
+"hash": "ab29168b00346401",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/69-el-kadir/": {
+"hash": "13788f415e8e3732",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/7-el-mumin/": {
+"hash": "8ad59070df35f92c",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/70-el-muktedir/": {
+"hash": "a128594d65aa8c8e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/71-el-mukaddim/": {
+"hash": "b20724a4e101f66c",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/72-el-muahhir/": {
+"hash": "b52e0d5b81c98e8a",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/73-el-evvel/": {
+"hash": "2a69f83af578940a",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/74-el-ahir/": {
+"hash": "b1b9838c9452a16f",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/75-ez-zahir/": {
+"hash": "7f339c93072dfd78",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/76-el-batin/": {
+"hash": "21287ecb6e66d1be",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/77-el-vali/": {
+"hash": "951917d7ae55e25a",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/78-el-muteali/": {
+"hash": "e3b96a8031208fa9",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/79-el-berr/": {
+"hash": "0d1fb90bad50ab89",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/8-el-muheymin/": {
+"hash": "f74441686e5cae28",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/80-et-tevvab/": {
+"hash": "c47e26db5da80ee9",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/81-el-muntakim/": {
+"hash": "c3b35cb746d24131",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/82-el-afuvv/": {
+"hash": "b40041d44531c61d",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/83-er-rauf/": {
+"hash": "6ae8708c63fa2dc0",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/84-malikul-mulk/": {
+"hash": "1d762d5abb99d815",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/85-zul-celali-vel-ikram/": {
+"hash": "db2f845495e94004",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/86-el-muksit/": {
+"hash": "a819a172d37343be",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/87-el-cami/": {
+"hash": "8b449bffcbc09611",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/88-el-ganiyy/": {
+"hash": "01df6a7d38a37684",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/89-el-mugni/": {
+"hash": "70ffbd1316c0eedc",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/9-el-aziz/": {
+"hash": "ab7ab23153c4e312",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/90-el-mani/": {
+"hash": "e538587c820caa5f",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/91-ed-darr/": {
+"hash": "01441a6138bf674c",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/92-en-nafi/": {
+"hash": "620f6c538404382e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/93-en-nur/": {
+"hash": "8161bd108be1c129",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/94-el-hadi/": {
+"hash": "0b85fa534cecbcad",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/95-el-bedi/": {
+"hash": "8721b62652f06b2e",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/96-el-baki/": {
+"hash": "1673cf8fae73d612",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/97-el-varis/": {
+"hash": "9cc21adbcd903d36",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/98-er-resid/": {
+"hash": "acd06fc714ccd45c",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/esma/99-es-sabur/": {
+"hash": "a8c24ca5a5df03cd",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/gizlilik.html": {
+"hash": "36c2cf7f86a75085",
+"modified": "2026-10-20",
+"published": "2026-10-11"
+},
+"/besmele/kible-nasil-bulunur/": {
+"hash": "0a2ee983a6d8e9a8",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/kisa-ayetler/": {
+"hash": "41f69ff949582f9b",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/besmele/kisa-dualar/": {
+"hash": "27cfe19f63ee7c55",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/besmele/kisa-hadisler/": {
+"hash": "d8eb8e7f96c2b11d",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/besmele/muslim-pro-alternatifi/": {
+"hash": "27c8508ef579915a",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/besmele/namaz-vakitleri-nasil-hesaplanir/": {
+"hash": "f8a9ad7e9c69f5ac",
+"modified": "2026-11-07",
+"published": "2026-10-20"
+},
+"/besmele/namaz-vakti-uygulamasi-secerken/": {
+"hash": "d36202ca13bad626",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/brickhaven/": {
+"hash": "8e7268dc99db75cc",
+"modified": "2026-11-21",
+"published": "2026-10-26"
+},
+"/brickhaven/beginners-guide/": {
+"hash": "3548e6d7a25f2484",
+"modified": "2026-11-10",
+"published": "2026-10-29"
+},
+"/brickhaven/best-cozy-building-games-iphone/": {
+"hash": "8a7846d9ffcbe899",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/brickhaven/brick-by-brick-alternative-iphone/": {
+"hash": "65a622df9f0cf393",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/brickhaven/brick-laying-simulator/": {
+"hash": "19620540e07f790d",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/brickhaven/buildings/": {
+"hash": "df3391c99bc447fd",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/brickhaven/cozy-offline-building-game/": {
+"hash": "687a3a7a61c4968f",
+"modified": "2026-11-10",
+"published": "2026-10-29"
+},
+"/brickhaven/design-your-own-house/": {
+"hash": "e9f43d3dd046cf26",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/brickhaven/privacy.html": {
+"hash": "f6c7de545ce8a6a5",
+"modified": "2026-10-26",
+"published": "2026-10-26"
+},
+"/brickhaven/skill-tree/": {
+"hash": "094ed6a42f4a3408",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/brickhaven/townscaper-alternative/": {
+"hash": "46c204cc658eb251",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/brickhaven/tr/": {
+"hash": "331e4b21bf28acf1",
+"modified": "2026-11-21",
+"published": "2026-10-26"
+},
+"/brickhaven/tr/baslangic-rehberi/": {
+"hash": "f5988edf7c97d489",
+"modified": "2026-11-10",
+"published": "2026-10-29"
+},
+"/brickhaven/tr/binalar/": {
+"hash": "bb50ab04edafecca",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/brickhaven/tr/brick-by-brick-iphone-alternatifi/": {
+"hash": "cbe7225b04f90f3f",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/brickhaven/tr/en-iyi-rahat-insa-oyunlari/": {
+"hash": "63147b445b0b2bcf",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/brickhaven/tr/ev-tasarlama-oyunu/": {
+"hash": "aa7ec9a2fb9d98d6",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/": {
+"hash": "439f381135aa0347",
+"modified": "2026-11-10",
+"published": "2026-10-29"
+},
+"/brickhaven/tr/townscaper-alternatifi/": {
+"hash": "8ed31b5b1c19e54b",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/brickhaven/tr/tugla-orme-oyunu/": {
+"hash": "71884e3d659a25c7",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/brickhaven/tr/ustalik-agaci/": {
+"hash": "8660b4fb08e8c304",
+"modified": "2026-11-10",
+"published": "2026-11-10"
+},
+"/crownly/": {
+"hash": "49caab45aedca610",
+"modified": "2026-11-21",
+"published": "2026-10-20"
+},
+"/crownly/daily-puzzle-games-like-wordle/": {
+"hash": "8cf3016ba4fc277d",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/daily-queens-puzzle/": {
+"hash": "e43d6fb89b5a4408",
+"modified": "2026-11-13",
+"published": "2026-11-13"
+},
+"/crownly/games-like-sudoku/": {
+"hash": "eee4bb8654f3a1b7",
+"modified": "2026-11-11",
+"published": "2026-11-10"
+},
+"/crownly/how-to-play-shikaku/": {
+"hash": "5e123430308f376e",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/linkedin-games-alternatives/": {
+"hash": "f8674dda4ae318f7",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/linkedin-patches-alternative/": {
+"hash": "983be9f765eb264d",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/linkedin-queens-alternative/": {
+"hash": "31185cd53249f12a",
+"modified": "2026-11-13",
+"published": "2026-10-20"
+},
+"/crownly/linkedin-zip-alternative/": {
+"hash": "08f686967ff747c2",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/one-line-path-puzzle-rules/": {
+"hash": "cbeea6b18cbf8ab8",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/privacy.html": {
+"hash": "866cf109c1211bc7",
+"modified": "2026-11-11",
+"published": "2026-10-20"
+},
+"/crownly/queens-puzzle-rules/": {
+"hash": "7462ff1ddb81f69a",
+"modified": "2026-11-13",
+"published": "2026-10-20"
+},
+"/crownly/queens-strategy/": {
+"hash": "32a0965732186fc8",
+"modified": "2026-11-13",
+"published": "2026-10-20"
+},
+"/crownly/tr/": {
+"hash": "70bf847def12c6a2",
+"modified": "2026-11-21",
+"published": "2026-10-20"
+},
+"/crownly/tr/gunluk-queens-bulmacasi/": {
+"hash": "ab42bc8acaa7598d",
+"modified": "2026-11-13",
+"published": "2026-11-13"
+},
+"/crownly/tr/linkedin-oyunlari-alternatifleri/": {
+"hash": "0fadd947fe14a254",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/tr/linkedin-patches-alternatifi/": {
+"hash": "818062854ca7a05e",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/tr/linkedin-queens-alternatifi/": {
+"hash": "4d791cf27cb131c2",
+"modified": "2026-11-13",
+"published": "2026-10-20"
+},
+"/crownly/tr/linkedin-zip-alternatifi/": {
+"hash": "c397fec27d091047",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/tr/queens-nasil-oynanir/": {
+"hash": "7a81d6d1beede8de",
+"modified": "2026-11-13",
+"published": "2026-10-20"
+},
+"/crownly/tr/queens-stratejileri/": {
+"hash": "0edd7ffe418511d0",
+"modified": "2026-11-13",
+"published": "2026-10-20"
+},
+"/crownly/tr/shikaku-nasil-oynanir/": {
+"hash": "453ee9a6b1a2c4e0",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/tr/sudoku-benzeri-oyunlar/": {
+"hash": "233308cb671d4789",
+"modified": "2026-11-11",
+"published": "2026-11-10"
+},
+"/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/": {
+"hash": "bfe01616872702a6",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/": {
+"hash": "7c4a53efc9e2ed4f",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/glowfly/": {
+"hash": "e16433930fbc11be",
+"modified": "2026-11-21",
+"published": "2026-11-07"
+},
+"/glowfly/beginners-guide/": {
+"hash": "127eff57bf358d33",
+"modified": "2026-11-09",
+"published": "2026-11-07"
+},
+"/glowfly/idle-breakout-alternative/": {
+"hash": "4255b45d51120275",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/glowfly/idle-brick-breaker/": {
+"hash": "07e75162a7dc838c",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/glowfly/idle-games-offline-progress/": {
+"hash": "ae1bd1e85c1035c7",
+"modified": "2026-11-11",
+"published": "2026-11-07"
+},
+"/glowfly/idle-games-without-forced-ads/": {
+"hash": "06930466448131e2",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/glowfly/privacy.html": {
+"hash": "2cefc2ccf1490d86",
+"modified": "2026-11-09",
+"published": "2026-11-07"
+},
+"/glowfly/relaxing-idle-merge-game/": {
+"hash": "e6662741b998c7cc",
+"modified": "2026-11-11",
+"published": "2026-11-07"
+},
+"/glowfly/tr/": {
+"hash": "723e2d5db3635c93",
+"modified": "2026-11-21",
+"published": "2026-11-07"
+},
+"/glowfly/tr/baslangic-rehberi/": {
+"hash": "9c5607bb58253bbe",
+"modified": "2026-11-09",
+"published": "2026-11-07"
+},
+"/glowfly/tr/idle-breakout-alternatifi/": {
+"hash": "dcce6f6e59669730",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/": {
+"hash": "4ba23a6fa07077b5",
+"modified": "2026-11-11",
+"published": "2026-11-07"
+},
+"/glowfly/tr/idle-tugla-kirma-oyunu/": {
+"hash": "cda9a0634a01025a",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/glowfly/tr/rahatlatici-idle-birlestirme-oyunu/": {
+"hash": "b545749e35de70ae",
+"modified": "2026-11-11",
+"published": "2026-11-07"
+},
+"/glowfly/tr/zorla-reklamsiz-idle-oyunlar/": {
+"hash": "5bba86743b6529b6",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/press/": {
+"hash": "f16734b8b98340d3",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/pyramidcraft/": {
+"hash": "d99e346ffe3e0b68",
+"modified": "2026-11-21",
+"published": "2026-11-19"
+},
+"/pyramidcraft/beginners-guide/": {
+"hash": "83e64984fe34e693",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/pyramidcraft/how-were-the-pyramids-built/": {
+"hash": "1e930dc8500483e6",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/pyramidcraft/privacy.html": {
+"hash": "8ac0a8ce2521185f",
+"modified": "2026-11-19",
+"published": "2026-11-19"
+},
+"/pyramidcraft/pyramid-building-game/": {
+"hash": "2534fe81156d30fc",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/pyramidcraft/tr/": {
+"hash": "79a3d9a6527b43e4",
+"modified": "2026-11-21",
+"published": "2026-11-19"
+},
+"/pyramidcraft/tr/baslangic-rehberi/": {
+"hash": "58d4d0b3e4ed1807",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/pyramidcraft/tr/piramit-yapma-oyunu/": {
+"hash": "8261a83fad0d36f4",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/pyramidcraft/tr/piramitler-nasil-yapildi/": {
+"hash": "3f3fd191d150ad92",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+},
+"/quickwits/": {
+"hash": "c54a194c75277c58",
+"modified": "2026-11-13",
+"published": "2026-10-24"
+},
+"/quickwits/games-to-play-with-friends-on-one-phone/": {
+"hash": "d325581c7fc1ff08",
+"modified": "2026-11-13",
+"published": "2026-10-29"
+},
+"/quickwits/group-games-for-game-night/": {
+"hash": "7d392dfde395ee67",
+"modified": "2026-11-07",
+"published": "2026-10-29"
+},
+"/quickwits/privacy.html": {
+"hash": "3378d3d5d98ee081",
+"modified": "2026-10-27",
+"published": "2026-10-24"
+},
+"/quickwits/reaction-time-test/": {
+"hash": "3528c70db1625ce7",
+"modified": "2026-11-07",
+"published": "2026-10-29"
+},
+"/quickwits/tr/": {
+"hash": "3fb6fcd7a223a6c0",
+"modified": "2026-11-13",
+"published": "2026-10-24"
+},
+"/quickwits/tr/oyun-gecesi-grup-oyunlari/": {
+"hash": "52e60a2a93a2a370",
+"modified": "2026-11-07",
+"published": "2026-10-29"
+},
+"/quickwits/tr/refleks-testi/": {
+"hash": "90e3282c306d5749",
+"modified": "2026-11-07",
+"published": "2026-10-29"
+},
+"/quickwits/tr/tek-telefonla-oynanan-oyunlar/": {
+"hash": "c82b6f1120703e5b",
+"modified": "2026-11-13",
+"published": "2026-10-29"
+},
+"/tr/": {
+"hash": "0a471e5fe59dd745",
+"modified": "2026-11-21",
+"published": "2026-10-20"
+},
+"/tr/press/": {
+"hash": "20f4dd6968770742",
+"modified": "2026-11-21",
+"published": "2026-11-21"
+}
+}
