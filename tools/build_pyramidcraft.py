@@ -259,6 +259,78 @@ PRIVACY = {
 }
 
 
+# The 1.1 policy (ads, purchases, anonymous statistics). Ready since 2026-11-21; set PRIVACY_VERSION = "1.1" and rebuild
+# when 1.1 goes to review (not before: 1.0 collects nothing). Piramit/Plans/gizlilik-1.1.md has the rest of the list.
+PRIVACY_VERSION = "1.0"
+_MAIL = "<a href=\"mailto:hyapps@outlook.com?subject=Pyramid%20Craft\">hyapps@outlook.com</a>"
+PRIVACY_V11 = {
+    "en": dict(
+        h="Privacy Policy", date=f"{NAME} · Effective with version 1.1",
+        sections=[
+            (None, "Pyramid Craft is a building game you can play offline. It needs no account and does not track you across "
+                   "other companies' apps or websites. From version 1.1 it shows ads, offers optional purchases and counts "
+                   "anonymous statistics. This page explains, in plain words, what is collected, why, and by whom."),
+            ("No account", "You do not need an account to play. We never ask for your name, e-mail address, contacts or precise location."),
+            ("Stored on your device and in your iCloud", "Your progress and settings are stored on your device. If iCloud is on, "
+             "the game also keeps a backup of your progress in your own iCloud (iCloud key-value storage). We cannot see or read "
+             "this data; it is handled by Apple under <a href=\"https://www.apple.com/legal/privacy/\">Apple's privacy policy</a>."),
+            ("Ads (Google AdMob)", "The game shows a full-screen ad about every ten minutes of play, at a pause (never with Ad-free or "
+             "Pharaoh's Club). Ads come from Google AdMob, which may process your device's IP address (for a rough location), "
+             "device and app information and how ads are viewed, to show and measure ads and prevent fraud. The game does not use "
+             "the advertising identifier (IDFA) and never shows the tracking prompt. In the EEA, the UK and Switzerland, Google's "
+             "consent form asks first, and ads are limited to what you allow. See "
+             "<a href=\"https://policies.google.com/technologies/partner-sites\">how Google uses information from apps</a>."),
+            ("Anonymous statistics (Google Firebase Analytics)", "On copies installed from the App Store, the game counts how it is "
+             "played: tutorial steps, layers and monuments finished, buildings and skills chosen, workers hired, when the shop is "
+             "opened and purchases started or finished, and ads shown. These events are not linked to your identity, contain no "
+             "personal details and do not use the advertising identifier. They help us make the game better."),
+            ("Purchases", "Purchases (gold for workers, Ad-free, the monuments, companions and the Pharaoh's Club subscription) are "
+             "handled entirely by Apple. We never see your payment details; the game only remembers on your device what you own."),
+            ("Game Center", "Game Center is optional. If you are signed in, the game sends your total bricks laid, bricks laid this "
+             "week and time played to Game Center leaderboards, and achievements you earn, which Apple runs."),
+            ("Notifications", "If you allow notifications, the game schedules a daily reminder on your device. Nothing is sent to a server."),
+            ("This website", "hyapps.app uses Cloudflare Web Analytics, which counts visits without cookies and without identifying you."),
+            ("Children", "Pyramid Craft is not directed at children under 13 and collects no personal data knowingly from them."),
+            ("Your choices", "You can buy Ad-free to turn ads off, change your ad consent in the EEA/UK from the form, turn off "
+             "notifications and iCloud in the Settings app, and delete all your data by deleting the app (and its iCloud backup "
+             "in Settings → your name → iCloud)."),
+            ("Changes and contact", "If this changes, this page will say so first, with a new date. Questions: " + _MAIL + "."),
+        ]),
+    "tr": dict(
+        h="Gizlilik Politikası", date="Pyramid Craft: Piramit Yapma · 1.1 sürümüyle yürürlükte",
+        sections=[
+            (None, "Pyramid Craft internetsiz oynanabilen bir inşa oyunudur. Hesap gerektirmez ve seni başka şirketlerin uygulama ve "
+                   "sitelerinde izlemez. 1.1 sürümünden itibaren reklam gösterir, isteğe bağlı satın almalar sunar ve anonim "
+                   "istatistik sayar. Bu sayfa neyin, neden ve kim tarafından toplandığını sade bir dille anlatır."),
+            ("Hesap yok", "Oynamak için hesap gerekmez. Adını, e-posta adresini, kişilerini ya da tam konumunu hiçbir zaman istemeyiz."),
+            ("Cihazında ve iCloud'unda saklananlar", "İlerlemen ve ayarların cihazında saklanır. iCloud açıksa oyun ilerlemenin bir "
+             "yedeğini kendi iCloud'unda (iCloud anahtar-değer deposu) tutar. Bu verileri göremeyiz; Apple tarafından "
+             "<a href=\"https://www.apple.com/tr/legal/privacy/\">Apple'ın gizlilik politikası</a> kapsamında işlenir."),
+            ("Reklamlar (Google AdMob)", "Oyun yaklaşık her on dakikalık oyunda bir, bir mola anında tam ekran reklam gösterir "
+             "(Reklamsız ya da Firavun Kulübü ile hiç göstermez). Reklamlar Google AdMob'dan gelir; Google reklamı göstermek, ölçmek "
+             "ve sahtekârlığı önlemek için cihazının IP adresini (kaba konum için), cihaz ve uygulama bilgisini ve reklamın nasıl "
+             "görüntülendiğini işleyebilir. Oyun reklam kimliğini (IDFA) kullanmaz ve izleme izni sormaz. AB, İngiltere ve "
+             "İsviçre'de önce Google'ın onay formu çıkar; reklamlar verdiğin izinle sınırlıdır. Ayrıntı: "
+             "<a href=\"https://policies.google.com/technologies/partner-sites?hl=tr\">Google uygulamalardan gelen bilgileri nasıl kullanır</a>."),
+            ("Anonim istatistikler (Google Firebase Analytics)", "App Store'dan kurulan kopyalarda oyun nasıl oynandığını sayar: "
+             "öğretici adımları, biten katman ve anıtlar, seçilen yapılar ve yetenekler, işe alınan işçiler, mağazanın açılması, "
+             "başlayan ya da biten satın almalar ve gösterilen reklamlar. Bu olaylar kimliğine bağlanmaz, kişisel bilgi içermez ve "
+             "reklam kimliğini kullanmaz. Oyunu geliştirmemize yardım eder."),
+            ("Satın almalar", "Satın almaları (işçiler için altın, Reklamsız, anıtlar, yol arkadaşları ve Firavun Kulübü aboneliği) "
+             "tamamen Apple işler. Ödeme bilgilerini hiçbir zaman görmeyiz; oyun yalnız neyin senin olduğunu cihazında hatırlar."),
+            ("Game Center", "Game Center isteğe bağlıdır. Giriş yaptıysan oyun toplam ve bu haftaki tuğlanı, oyun süreni ve "
+             "kazandığın başarımları Apple'ın işlettiği Game Center'a gönderir."),
+            ("Bildirimler", "Bildirimlere izin verirsen oyun cihazında günlük bir hatırlatma kurar. Hiçbir sunucuya bir şey gönderilmez."),
+            ("Bu web sitesi", "hyapps.app, ziyaretleri çerezsiz ve seni tanımadan sayan Cloudflare Web Analytics kullanır."),
+            ("Çocuklar", "Pyramid Craft 13 yaşından küçük çocuklara yönelik değildir ve onlardan bilerek kişisel veri toplamaz."),
+            ("Seçimlerin", "Reklamları kapatmak için Reklamsız alabilir, AB/İngiltere'de reklam onayını formdan değiştirebilir, "
+             "bildirimleri ve iCloud'u Ayarlar'dan kapatabilir, uygulamayı (ve iCloud yedeğini) silerek bütün verilerini silebilirsin."),
+            ("Değişiklikler ve iletişim", "Bu değişirse bu sayfa önce bunu yeni tarihle yazar. Sorular için: " + _MAIL + "."),
+        ]),
+}
+if PRIVACY_VERSION == "1.1":
+    PRIVACY = PRIVACY_V11
+
 def privacy():
     body = []
     for lang in ("en", "tr"):
@@ -276,7 +348,7 @@ def privacy():
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pyramid Craft Privacy Policy · Gizlilik Politikası</title>
-  <meta name="description" content="Pyramid Craft privacy policy: no account, no data collected, no ads, no tracking.">
+  <meta name="description" content="{'Pyramid Craft privacy policy: no account, no tracking; ads (AdMob), purchases and anonymous statistics explained.' if PRIVACY_VERSION == '1.1' else 'Pyramid Craft privacy policy: no account, no data collected, no ads, no tracking.'}">
   <link rel="canonical" href="https://hyapps.app/pyramidcraft/privacy.html">
   <link rel="icon" href="/pyramidcraft/img/icon.png">
   <link rel="stylesheet" href="/pyramidcraft/pyramidcraft.css">
