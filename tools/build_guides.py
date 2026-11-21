@@ -1791,6 +1791,360 @@ EXTRA = [
     }),
 ]
 
+# LinkedIn-game alternatives for Crownly (2026-11-21; Hakan: no not-affiliated note).
+NEW = [
+    dict(app="crownly", key="lizip", img=None, langs={
+        "en": dict(path="/crownly/linkedin-zip-alternative/",
+                   title="LinkedIn Zip Alternative: More One-Line Path Puzzles on iPhone",
+                   desc="Finished today's Zip and want more? Route in Crownly is the same kind of puzzle: connect the numbered stops in order with one line through every cell, every day and in thousands of levels.",
+                   intro=["Zip is over in a minute, and the next one comes tomorrow. If you like drawing that single line through every "
+                          "cell, Crownly's Route gives you the same kind of puzzle whenever you want it."],
+                   sections=[
+                       ("Same idea, more boards", {"list": [
+                           "One line from stop 1 to the last stop, visiting the numbers in order.",
+                           "The line fills every cell exactly once and never crosses a wall.",
+                           "A new daily Route board at 07:00 UTC, the same for everyone, with a streak and leaderboards.",
+                           "Route levels in four difficulties, from 5×5 warm-ups to big 9×9 boards.",
+                           "Every board has exactly one solution, so you never need to guess."]}),
+                       ("When you get stuck", [
+                           "Hints don't just draw the answer: the first tap shows the next safe move and why it is forced, the second "
+                           "applies it. That is how the corners-first and no-pockets techniques become habits."]),
+                       ("Two more puzzles in the same app", [
+                           "Crownly also has Crowns (Queens rules: one crown per row, column and colored region) and Mosaic (Shikaku: "
+                           "split the grid into numbered rectangles), each with its own daily board. It is free with an optional "
+                           "one-time Pro purchase, has no ads and works offline."]),
+                   ],
+                   faq=[("Is there an app like LinkedIn Zip?",
+                         "Crownly's Route is a one-line path puzzle with the same kind of rules: connect numbered stops in order with one line that covers every cell. It has a daily board and levels in four difficulties."),
+                        ("Can I play more than one Zip-style puzzle a day?",
+                         "Yes. Besides the daily Route board, Crownly has Route levels you can play any time, plus an archive of past daily puzzles with Pro.")]),
+        "tr": dict(path="/crownly/tr/linkedin-zip-alternatifi/",
+                   title="LinkedIn Zip Alternatifi: iPhone'da Daha Çok Tek Çizgi Yol Bulmacası",
+                   desc="Bugünün Zip'ini bitirdin, daha mı istiyorsun? Crownly'deki Rota aynı türden bir bulmaca: numaralı durakları her kareden geçen tek bir çizgiyle sırayla bağla; her gün ve binlerce seviyede.",
+                   intro=["Zip bir dakikada biter, sıradaki yarın gelir. Her kareden geçen o tek çizgiyi çizmeyi seviyorsan Crownly'deki "
+                          "Rota aynı türden bulmacayı istediğin zaman verir."],
+                   sections=[
+                       ("Aynı fikir, daha çok tahta", {"list": [
+                           "1 numaralı duraktan sonuncusuna, sayılardan sırayla geçen tek bir çizgi.",
+                           "Çizgi her kareden tam bir kez geçer, duvardan geçmez.",
+                           "Her gün 07:00 UTC'de (TR 10:00) herkes için aynı yeni Rota tahtası; seri ve sıralamalar.",
+                           "Dört zorlukta Rota seviyeleri: 5×5 ısınmalardan büyük 9×9 tahtalara.",
+                           "Her tahtanın tam bir çözümü var; tahmin etmen gerekmez."]}),
+                       ("Takıldığında", [
+                           "İpucu cevabı çizip geçmez: ilk dokunuş bir sonraki güvenli hamleyi ve neden zorunlu olduğunu gösterir, ikincisi "
+                           "uygular. \"Önce köşeler\" ve \"cep bırakma\" teknikleri böyle alışkanlık olur."]),
+                       ("Aynı uygulamada iki bulmaca daha", [
+                           "Crownly'de ayrıca Taçlar (Queens kuralları: her satıra, sütuna ve renkli bölgeye bir taç) ve Mozaik (Shikaku: "
+                           "ızgarayı sayılı dikdörtgenlere böl) var; her birinin kendi günlük tahtası var. Ücretsiz, isteğe bağlı tek seferlik "
+                           "Pro satın alması var; reklam yok, internetsiz çalışır."]),
+                   ],
+                   faq=[("LinkedIn Zip gibi bir uygulama var mı?",
+                         "Crownly'deki Rota aynı türden kuralları olan tek çizgi yol bulmacası: numaralı durakları her kareyi kaplayan tek bir çizgiyle sırayla bağlarsın. Günlük tahtası ve dört zorlukta seviyeleri var."),
+                        ("Günde birden çok Zip tarzı bulmaca oynayabilir miyim?",
+                         "Evet. Günlük Rota tahtasının yanında istediğin zaman oynanan Rota seviyeleri ve Pro ile geçmiş günlük bulmacaların arşivi var.")]),
+    }),
+    dict(app="crownly", key="lipatches", img=None, langs={
+        "en": dict(path="/crownly/linkedin-patches-alternative/",
+                   title="LinkedIn Patches Alternative: Daily Shikaku-Style Rectangle Puzzles",
+                   desc="Like LinkedIn's Patches? Mosaic in Crownly is a Shikaku puzzle: split the grid into rectangles, each holding one number equal to its area. A 7×7 and a 10×10 daily board plus levels.",
+                   intro=["Patches is built on a classic Japanese puzzle, Shikaku. Crownly's Mosaic is that same classic, with a daily "
+                          "board for everyone and levels for when one a day isn't enough."],
+                   sections=[
+                       ("How Mosaic plays", {"list": [
+                           "Split the whole grid into rectangles.",
+                           "Each rectangle holds exactly one number, and that number is its area.",
+                           "Drag from corner to corner to draw a piece; a new piece replaces any it overlaps.",
+                           "Every board has exactly one solution."]}),
+                       ("Daily boards and levels", [
+                           "Every day at 07:00 UTC there is a 7×7 daily board and a harder 10×10 one, the same for everyone. Levels go "
+                           "from easy to expert, and hints remove a wrong piece or point to the number with the fewest options left."]),
+                       ("Also in Crownly", [
+                           "Crowns (Queens rules) and Route (a one-line path through numbered stops), each with a daily board, plus live "
+                           "duels with 2 to 4 friends. Free with an optional one-time Pro purchase, no ads, works offline."]),
+                   ],
+                   faq=[("Is there an app like LinkedIn Patches?",
+                         "Crownly's Mosaic is a Shikaku puzzle, the same kind Patches is based on: divide the grid into rectangles, each containing one number equal to its area. It has two daily boards and levels."),
+                        ("What is the puzzle behind Patches called?",
+                         "Shikaku, a Japanese logic puzzle also known as Rectangles or Divide by Box.")]),
+        "tr": dict(path="/crownly/tr/linkedin-patches-alternatifi/",
+                   title="LinkedIn Patches Alternatifi: Her Gün Shikaku Tarzı Dikdörtgen Bulmacaları",
+                   desc="LinkedIn'deki Patches'i seviyor musun? Crownly'deki Mozaik bir Shikaku bulmacası: ızgarayı, her biri alanına eşit tek bir sayı içeren dikdörtgenlere böl. 7×7 ve 10×10 günlük tahta, ayrıca seviyeler.",
+                   intro=["Patches klasik bir Japon bulmacası olan Shikaku üzerine kurulu. Crownly'deki Mozaik da aynı klasik: herkes için "
+                          "günlük bir tahta ve günde bir tanenin yetmediği zamanlar için seviyeler."],
+                   sections=[
+                       ("Mozaik nasıl oynanır", {"list": [
+                           "Bütün ızgarayı dikdörtgenlere böl.",
+                           "Her dikdörtgende tam bir sayı bulunur ve o sayı dikdörtgenin alanıdır.",
+                           "Parçayı köşeden köşeye sürükleyerek çiz; yeni parça çakıştığı parçaların yerini alır.",
+                           "Her tahtanın tam bir çözümü vardır."]}),
+                       ("Günlük tahtalar ve seviyeler", [
+                           "Her gün 07:00 UTC'de (TR 10:00) herkes için aynı 7×7 bir günlük tahta ve daha zor 10×10 bir tahta var. Seviyeler "
+                           "kolaydan uzmana gider; ipucu yanlış bir parçayı kaldırır ya da en az seçeneği kalan sayıyı gösterir."]),
+                       ("Crownly'de ayrıca", [
+                           "Taçlar (Queens kuralları) ve Rota (numaralı duraklardan geçen tek çizgi), her birinin günlük tahtası; ayrıca 2–4 "
+                           "arkadaşla canlı düello. Ücretsiz, isteğe bağlı tek seferlik Pro; reklam yok, internetsiz çalışır."]),
+                   ],
+                   faq=[("LinkedIn Patches gibi bir uygulama var mı?",
+                         "Crownly'deki Mozaik, Patches'in dayandığı türden bir Shikaku bulmacası: ızgarayı, her biri alanına eşit tek bir sayı içeren dikdörtgenlere bölersin. İki günlük tahtası ve seviyeleri var."),
+                        ("Patches'in arkasındaki bulmacanın adı ne?",
+                         "Shikaku; Rectangles ya da Divide by Box olarak da bilinen bir Japon mantık bulmacası.")]),
+    }),
+    dict(app="crownly", key="ligames", img=None, langs={
+        "en": dict(path="/crownly/linkedin-games-alternatives/",
+                   title="LinkedIn Games Alternatives: Queens, Zip, Patches, Tango and Mini Sudoku Outside LinkedIn",
+                   desc="Love LinkedIn's daily games but want more than one puzzle a day, or want to play without opening LinkedIn? Here is what each game is and where to find the same kind of puzzle.",
+                   intro=["LinkedIn's games are short daily logic and word puzzles. Each one is a classic puzzle type with a new name, "
+                          "which means you can find the same kind of puzzle elsewhere, often with unlimited boards."],
+                   items=["Queens", "Zip", "Patches", "Tango", "Mini Sudoku", "Crownly"],
+                   sections=[
+                       ("Queens → Star Battle", [
+                           "One crown in every row, column and colored region, and crowns never touch. The classic name is Star Battle. "
+                           "In Crownly it is Crowns: a daily board, 6,500 levels and hints that explain the logic."]),
+                       ("Zip → one-line path puzzle", [
+                           "Connect numbered stops in order with one line through every cell. In Crownly it is Route, with walls, a daily "
+                           "board and levels in four difficulties."]),
+                       ("Patches → Shikaku", [
+                           "Split the grid into rectangles, each holding one number equal to its area. In Crownly it is Mosaic, with a "
+                           "7×7 and a 10×10 daily board."]),
+                       ("Tango → binary puzzle (Takuzu)", [
+                           "Fill a grid with two symbols so rows and columns balance and no three in a row match. The classic is called "
+                           "Takuzu or Binairo; many free puzzle apps have it. Crownly does not have this one."]),
+                       ("Mini Sudoku → 6×6 sudoku", [
+                           "A smaller sudoku with 2×3 boxes. Any sudoku app with a 6×6 size gives you the same puzzle. Crownly does not "
+                           "have sudoku; if you like it, Queens is a good next step (see our sudoku-like games guide)."]),
+                       ("Three of them in one app", [
+                           "Crownly puts Crowns, Route and Mosaic together on iPhone and iPad, each with a new daily board at 07:00 UTC, "
+                           "streaks, leaderboards and live duels with friends. Free, with an optional one-time Pro purchase, no ads."]),
+                   ],
+                   faq=[("Can I play LinkedIn Queens without LinkedIn?",
+                         "LinkedIn's own boards are only on LinkedIn, but the same kind of puzzle (Star Battle) is in other apps. Crownly has a daily Queens-rules board, 6,500 levels and a free daily puzzle on hyapps.app."),
+                        ("Is there one app with Queens, Zip and Patches style puzzles?",
+                         "Crownly has all three kinds: Crowns (Queens rules), Route (Zip-style path) and Mosaic (Shikaku, like Patches), each with a daily board.")]),
+        "tr": dict(path="/crownly/tr/linkedin-oyunlari-alternatifleri/",
+                   title="LinkedIn Oyunları Alternatifleri: Queens, Zip, Patches, Tango ve Mini Sudoku LinkedIn Dışında",
+                   desc="LinkedIn'in günlük oyunlarını seviyor ama günde birden çok bulmaca ya da LinkedIn'i açmadan oynamak mı istiyorsun? Her oyunun ne olduğu ve aynı türden bulmacayı nerede bulacağın.",
+                   intro=["LinkedIn'in oyunları kısa günlük mantık ve kelime bulmacalarıdır. Her biri yeni bir ada sahip klasik bir bulmaca "
+                          "türüdür; yani aynı türden bulmacayı başka yerlerde, çoğu zaman sınırsız tahtayla bulabilirsin."],
+                   items=["Queens", "Zip", "Patches", "Tango", "Mini Sudoku", "Crownly"],
+                   sections=[
+                       ("Queens → Star Battle", [
+                           "Her satıra, sütuna ve renkli bölgeye bir taç; taçlar birbirine dokunmaz. Klasik adı Star Battle. Crownly'de adı "
+                           "Taçlar: günlük tahta, 6.500 seviye ve mantığı anlatan ipuçları."]),
+                       ("Zip → tek çizgi yol bulmacası", [
+                           "Numaralı durakları her kareden geçen tek bir çizgiyle sırayla bağla. Crownly'de adı Rota: duvarlar, günlük tahta "
+                           "ve dört zorlukta seviyeler."]),
+                       ("Patches → Shikaku", [
+                           "Izgarayı, her biri alanına eşit tek bir sayı içeren dikdörtgenlere böl. Crownly'de adı Mozaik: 7×7 ve 10×10 "
+                           "günlük tahta."]),
+                       ("Tango → ikili bulmaca (Takuzu)", [
+                           "Izgarayı iki simgeyle doldur; satır ve sütunlar dengede olsun, yan yana üç aynı simge olmasın. Klasik adı Takuzu "
+                           "ya da Binairo; birçok ücretsiz bulmaca uygulamasında var. Crownly'de bu yok."]),
+                       ("Mini Sudoku → 6×6 sudoku", [
+                           "2×3 kutulu küçük bir sudoku. 6×6 boyutu olan her sudoku uygulaması aynı bulmacayı verir. Crownly'de sudoku yok; "
+                           "seviyorsan sıradaki iyi adım Queens (sudoku benzeri oyunlar rehberimize bak)."]),
+                       ("Üçü tek uygulamada", [
+                           "Crownly iPhone ve iPad'de Taçlar, Rota ve Mozaik'i bir araya getirir; her birinin 07:00 UTC'de (TR 10:00) yeni "
+                           "günlük tahtası, serisi, sıralamaları ve arkadaşlarla canlı düellosu var. Ücretsiz, isteğe bağlı tek seferlik Pro, reklam yok."]),
+                   ],
+                   faq=[("LinkedIn Queens'i LinkedIn olmadan oynayabilir miyim?",
+                         "LinkedIn'in kendi tahtaları yalnız LinkedIn'de, ama aynı türden bulmaca (Star Battle) başka uygulamalarda var. Crownly'de Queens kurallarıyla günlük tahta, 6.500 seviye ve hyapps.app'te ücretsiz günlük bulmaca var."),
+                        ("Queens, Zip ve Patches tarzı bulmacaların hepsi tek uygulamada var mı?",
+                         "Crownly'de üç türü de var: Taçlar (Queens kuralları), Rota (Zip tarzı yol) ve Mozaik (Patches gibi Shikaku); her birinin günlük tahtası var.")]),
+    }),
+]
+EXTRA += NEW
+
+# "X alternative" pages AI assistants can recommend us from (2026-11-21).
+ALT = [
+    dict(app="brickhaven", key="bbb", img="firin", langs={
+        "en": dict(path="/brickhaven/brick-by-brick-alternative-iphone/",
+                   title="Looking for Brick by Brick on iPhone? A Cozy Brick-Building Game for Mobile",
+                   desc="Brick by Brick: Tidy Up the Small Town is a PC game. If you want the same carry-and-lay brick building on iPhone or iPad, Brickhaven plays offline, solo and at your own pace.",
+                   intro=["Brick by Brick: Tidy Up the Small Town is a co-op building game on PC (Steam): find the right bricks in big piles, "
+                          "carry them and build a small town together. If you want that feeling on your phone, Brickhaven is built "
+                          "around the same simple loop, made for touch screens and short sessions."],
+                   sections=[
+                       ("What feels the same", {"list": [
+                           "Every building is made of individual bricks you pick from a pile by shape and color, carry and lay by hand.",
+                           "Blueprints show what each wall, window and roof section needs; finished sections reward skill points.",
+                           "A skill tree makes you carry more, lay faster and pull bricks with a magnet.",
+                           "A lift takes you up to the high rows and the roof.",
+                           "Finished buildings get decorated and the town comes back to life."]}),
+                       ("What is different", {"list": [
+                           "Brickhaven is single-player and plays fully offline, on iPhone and iPad.",
+                           "A story: Grandma Rose's seaside town, nine buildings, each bringing its owner home.",
+                           "Buildings are sized for a phone: about 520 to 1,400 bricks.",
+                           "Design your own houses at the Architect's Table and decorate the streets.",
+                           "No timers and no ads; the first two buildings are free, the rest of the town is one purchase."]}),
+                   ],
+                   faq=[("Is Brick by Brick on iPhone?",
+                         "Brick by Brick: Tidy Up the Small Town is made for PC. On iPhone and iPad, Brickhaven offers the same kind of first-person brick-by-brick building, offline and single-player."),
+                        ("Is there a game where you build houses brick by brick on mobile?",
+                         "Yes. In Brickhaven you carry every brick to the wall and lay it yourself, from the base course to the roof ridge.")]),
+        "tr": dict(path="/brickhaven/tr/brick-by-brick-iphone-alternatifi/",
+                   title="Brick by Brick'i iPhone'da mı Arıyorsun? Mobil İçin Rahat Bir Tuğla İnşa Oyunu",
+                   desc="Brick by Brick: Tidy Up the Small Town bir PC oyunu. Aynı taşı-koy tuğla inşasını iPhone ya da iPad'de istiyorsan Brickhaven internetsiz, tek kişilik ve kendi hızında oynanır.",
+                   intro=["Brick by Brick: Tidy Up the Small Town, PC'de (Steam) birlikte oynanan bir inşa oyunu: büyük yığınlarda doğru "
+                          "tuğlaları bul, taşı ve birlikte küçük bir kasaba kur. Bu hissi telefonunda istiyorsan Brickhaven aynı basit "
+                          "döngü üzerine, dokunmatik ekran ve kısa oturumlar için yapıldı."],
+                   sections=[
+                       ("Aynı olanlar", {"list": [
+                           "Her bina, yığından şekline ve rengine göre seçip taşıdığın ve elle koyduğun tek tek tuğlalardan oluşur.",
+                           "Plan her duvar, pencere ve çatı bölümünün neye ihtiyacı olduğunu gösterir; biten bölümler yetenek puanı verir.",
+                           "Ustalık ağacı daha çok taşımanı, daha hızlı koymanı ve mıknatısla tuğla çekmeni sağlar.",
+                           "Asansör seni yüksek sıralara ve çatıya çıkarır.",
+                           "Biten binalar süslenir, kasaba yeniden canlanır."]}),
+                       ("Farklı olanlar", {"list": [
+                           "Brickhaven tek kişilik, tamamen internetsiz; iPhone ve iPad'de.",
+                           "Bir hikâye: Büyükanne Rose'un sahil kasabası, dokuz bina, her biri sahibini eve getirir.",
+                           "Binalar telefona göre: yaklaşık 520 ile 1.400 tuğla.",
+                           "Mimar Masası'nda kendi evlerini tasarla, sokakları süsle.",
+                           "Zamanlayıcı ve reklam yok; ilk iki bina ücretsiz, kasabanın geri kalanı tek bir satın alma."]}),
+                   ],
+                   faq=[("Brick by Brick iPhone'da var mı?",
+                         "Brick by Brick: Tidy Up the Small Town PC için yapıldı. iPhone ve iPad'de Brickhaven aynı türden birinci şahıs, tuğla tuğla inşayı internetsiz ve tek kişilik sunar."),
+                        ("Telefonda evleri tuğla tuğla inşa ettiğin bir oyun var mı?",
+                         "Evet. Brickhaven'da her tuğlayı duvara sen taşır ve koyarsın; taban sırasından çatı sırtına kadar.")]),
+    }),
+    dict(app="brickhaven", key="townscaper", img="kafe", langs={
+        "en": dict(path="/brickhaven/townscaper-alternative/",
+                   title="Townscaper Alternative: A Cozy Town Builder With a Story (iPhone and iPad)",
+                   desc="Love building pretty seaside towns in Townscaper but want goals and a story? Brickhaven lets you rebuild a seaside town brick by brick, then design and decorate your own streets.",
+                   intro=["Townscaper is a beautiful toy: tap and a little seaside town grows by itself. Some players love that it has "
+                          "no goals; others finish an afternoon wishing there was something to work toward. Brickhaven is for the second group."],
+                   sections=[
+                       ("Townscaper and Brickhaven side by side", {"list": [
+                           "Townscaper: tap to place blocks, the game shapes them into houses; no goals, no story.",
+                           "Brickhaven: walk your seaside town in first person and lay every brick yourself.",
+                           "Brickhaven has nine story buildings, each with an owner who comes home when it is finished.",
+                           "After the story, design your own houses at the Architect's Table and decorate the streets freely.",
+                           "Both are calm, with no timers; Brickhaven is offline, ad-free, and the first two buildings are free."]}),
+                       ("Who will like Brickhaven", [
+                           "If the slow, hands-on part is what you enjoy, carrying bricks, watching a wall rise row by row, seeing the "
+                           "whole building replayed at the end, Brickhaven gives you hours of it with a gentle goal always in front of you."]),
+                   ],
+                   faq=[("Is there a game like Townscaper with goals?",
+                         "Brickhaven is a cozy seaside town builder with a story and goals: rebuild nine buildings brick by brick, then design and decorate your own."),
+                        ("Does Brickhaven need the internet?",
+                         "No, it plays fully offline on iPhone and iPad.")]),
+        "tr": dict(path="/brickhaven/tr/townscaper-alternatifi/",
+                   title="Townscaper Alternatifi: Hikâyesi Olan Rahat Bir Kasaba Kurma Oyunu (iPhone ve iPad)",
+                   desc="Townscaper'da güzel sahil kasabaları kurmayı seviyor ama hedef ve hikâye mi istiyorsun? Brickhaven'da bir sahil kasabasını tuğla tuğla yeniden kurar, sonra kendi sokaklarını tasarlayıp süslersin.",
+                   intro=["Townscaper güzel bir oyuncak: dokunursun, küçük bir sahil kasabası kendiliğinden büyür. Bazı oyuncular hiç "
+                          "amacı olmamasını sever; bazıları da bir öğleden sonranın sonunda uğraşacak bir hedef ister. Brickhaven ikinciler için."],
+                   sections=[
+                       ("Townscaper ve Brickhaven yan yana", {"list": [
+                           "Townscaper: dokunarak blok koyarsın, oyun onları evlere çevirir; amaç yok, hikâye yok.",
+                           "Brickhaven: sahil kasabanda birinci şahıs gezer, her tuğlayı kendin koyarsın.",
+                           "Brickhaven'da dokuz hikâye binası var; her biri bitince sahibi eve döner.",
+                           "Hikâyeden sonra Mimar Masası'nda kendi evlerini tasarlar, sokakları serbestçe süslersin.",
+                           "İkisi de sakin, zamanlayıcısız; Brickhaven internetsiz, reklamsız ve ilk iki bina ücretsiz."]}),
+                       ("Brickhaven kimlere uygun", [
+                           "Sevdiğin şey yavaş, elle yapılan kısımsa (tuğla taşımak, duvarın sıra sıra yükselmesini izlemek, sonunda "
+                           "binanın baştan yükselişini görmek) Brickhaven bunu saatlerce, önünde hep yumuşak bir hedefle verir."]),
+                   ],
+                   faq=[("Townscaper gibi hedefi olan bir oyun var mı?",
+                         "Brickhaven hikâyesi ve hedefleri olan rahat bir sahil kasabası kurma oyunu: dokuz binayı tuğla tuğla yeniden kur, sonra kendi binalarını tasarla ve süsle."),
+                        ("Brickhaven internet ister mi?",
+                         "Hayır, iPhone ve iPad'de tamamen internetsiz oynanır.")]),
+    }),
+    dict(app="glowfly", key="idlebreakout", img="ch5", langs={
+        "en": dict(path="/glowfly/idle-breakout-alternative/",
+                   title="Idle Breakout Alternative for iPhone: A Calm Idle Brick Breaker With a Story",
+                   desc="Loved Idle Breakout? Glowfly is an idle brick breaker for iPhone and iPad: lights bounce and break glass walls on their own, merge into brighter ones and keep playing while you're away.",
+                   intro=["Idle Breakout turned the bouncing-ball brick game into an idle game: buy balls, upgrade them, watch the board "
+                          "clear. Glowfly keeps that loop and wraps it in a quiet night sky with a story."],
+                   sections=[
+                       ("What you will recognise", {"list": [
+                           "Balls (here, lights) bounce by themselves and break blocks for currency.",
+                           "Buy more lights or level them up; tap blocks yourself to help.",
+                           "Boards get tougher: glass, rock and hard stone.",
+                           "Progress keeps going while the game is closed."]}),
+                       ("What Glowfly adds", {"list": [
+                           "Merging: ten identical lights become one brighter light, twelve kinds in all.",
+                           "Skills at levels 5, 20 and 40 for each light.",
+                           "A story told in postcards: Lumi brings fallen stars home across 10 chapters and 1,000 nights.",
+                           "Hand-drawn night landscapes and soft lo-fi music.",
+                           "No forced ads: an ad plays only if you choose one for a reward."]}),
+                   ],
+                   faq=[("Is there an Idle Breakout game for iPhone?",
+                         "Glowfly is an idle brick breaker for iPhone and iPad in the same spirit: lights bounce and break walls on their own, you buy and upgrade them, and they keep working while you're away."),
+                        ("Is Glowfly free?",
+                         "Yes, free to play from the first night to the last, with optional purchases. Ads only play when you choose to watch one.")]),
+        "tr": dict(path="/glowfly/tr/idle-breakout-alternatifi/",
+                   title="iPhone İçin Idle Breakout Alternatifi: Hikâyesi Olan Sakin Bir Idle Tuğla Kırma Oyunu",
+                   desc="Idle Breakout'u sevdiysen: Glowfly iPhone ve iPad için bir idle tuğla kırma oyunu. Işıklar kendi kendine seker ve cam duvarları kırar, birleşip daha parlak olur, sen yokken de oynar.",
+                   intro=["Idle Breakout, seken topla tuğla kırma oyununu idle oyuna çevirdi: top al, yükselt, tahtanın temizlenmesini izle. "
+                          "Glowfly bu döngüyü korur ve sessiz bir gece gökyüzüyle, bir hikâyeyle sarar."],
+                   sections=[
+                       ("Tanıdık gelecekler", {"list": [
+                           "Toplar (burada ışıklar) kendi kendine seker ve para için blok kırar.",
+                           "Daha çok ışık al ya da seviye yükselt; yardım için bloklara kendin dokun.",
+                           "Tahtalar zorlaşır: cam, kaya ve sert taş.",
+                           "Oyun kapalıyken de ilerleme sürer."]}),
+                       ("Glowfly'ın kattıkları", {"list": [
+                           "Birleştirme: on aynı ışık daha parlak tek bir ışık olur; toplam on iki tür.",
+                           "Her ışık için 5, 20 ve 40. seviyelerde beceri seçimi.",
+                           "Kartpostallarla anlatılan hikâye: Lumi düşen yıldızları eve getirir; 10 bölüm, 1.000 gece.",
+                           "Elle çizilmiş gece manzaraları ve yumuşak lo-fi müzik.",
+                           "Zorla reklam yok: reklam yalnız ödül için sen seçersen oynar."]}),
+                   ],
+                   faq=[("iPhone için Idle Breakout gibi bir oyun var mı?",
+                         "Glowfly aynı ruhta, iPhone ve iPad için bir idle tuğla kırma oyunu: ışıklar kendi kendine seker ve duvar kırar, onları alır ve yükseltirsin, sen yokken de çalışırlar."),
+                        ("Glowfly ücretsiz mi?",
+                         "Evet, ilk geceden son geceye ücretsiz oynanır, isteğe bağlı satın almalar var. Reklam yalnız sen izlemeyi seçersen oynar.")]),
+    }),
+    dict(app="besmele", key="muslimpro", img=None, langs={
+        "en": dict(path="/besmele/en/muslim-pro-alternative/",
+                   title="An Ad-Free Muslim Pro Alternative: Prayer Times, Qur'an and Qibla",
+                   desc="Looking for a simpler, ad-free alternative to Muslim Pro? Bismillah has prayer times with adhan, the Qur'an with audio, a Qibla compass and a missed prayer tracker, and calculates times on your phone.",
+                   intro=["Muslim Pro is one of the best-known Islamic apps, with a free version and a paid premium tier. Some people "
+                          "simply want something smaller and quieter for daily use. Bismillah is built for that."],
+                   sections=[
+                       ("What Bismillah covers", {"list": [
+                           "Prayer times with adhan notifications, calculated on your phone.",
+                           "Calculation method and Asr setting chosen for your location, changeable in Settings.",
+                           "The Qur'an with audio and translation.",
+                           "A Qibla compass with calibration help.",
+                           "A missed prayer (qada) tracker and a dhikr counter.",
+                           "A daily verse, hadith, dua and one of the 99 Beautiful Names."]}),
+                       ("Why people switch to a smaller app", {"list": [
+                           "No ads in the middle of prayer times or the Qur'an.",
+                           "No account to create.",
+                           "Your location is used on the phone to calculate times and the Qibla.",
+                           "One calm screen for the day instead of a feed."]}),
+                   ],
+                   faq=[("Is there a free Muslim Pro alternative without ads?",
+                         "Bismillah (Besmele) is free and ad-free, with prayer times, adhan, the Qur'an with audio, a Qibla compass and a missed prayer tracker."),
+                        ("Does Bismillah work offline?",
+                         "Prayer times and the Qibla are calculated on your phone, so they keep working without a connection.")]),
+        "tr": dict(path="/besmele/muslim-pro-alternatifi/",
+                   title="Reklamsız Bir Muslim Pro Alternatifi: Namaz Vakitleri, Kur'an ve Kıble",
+                   desc="Muslim Pro'ya daha sade, reklamsız bir alternatif mi arıyorsun? Besmele'de ezanlı namaz vakitleri, sesli Kur'an, kıble pusulası ve kaza takibi var; vakitleri telefonunda hesaplar.",
+                   intro=["Muslim Pro en bilinen İslami uygulamalardan biri; ücretsiz sürümü ve ücretli premium katmanı var. Bazıları ise "
+                          "günlük kullanım için daha küçük ve sessiz bir şey ister. Besmele bunun için yapıldı."],
+                   sections=[
+                       ("Besmele'de neler var", {"list": [
+                           "Ezan bildirimli namaz vakitleri, telefonunda hesaplanır.",
+                           "Hesaplama yöntemi ve ikindi ayarı konumuna göre seçilir, Ayarlar'dan değiştirilebilir.",
+                           "Sesli ve mealli Kur'an.",
+                           "Kalibrasyon yardımlı kıble pusulası.",
+                           "Kaza namazı takibi ve zikirmatik.",
+                           "Her gün bir ayet, hadis, dua ve Esmaül Hüsna'dan bir isim."]}),
+                       ("Neden daha küçük bir uygulama", {"list": [
+                           "Namaz vakitlerinin ya da Kur'an'ın ortasında reklam yok.",
+                           "Hesap açmak gerekmez.",
+                           "Konumun vakitleri ve kıbleyi hesaplamak için telefonda kullanılır.",
+                           "Akış yerine günün tek, sakin bir ekranı."]}),
+                   ],
+                   faq=[("Reklamsız, ücretsiz bir Muslim Pro alternatifi var mı?",
+                         "Besmele ücretsiz ve reklamsız: namaz vakitleri, ezan, sesli Kur'an, kıble pusulası ve kaza takibi var."),
+                        ("Besmele internetsiz çalışır mı?",
+                         "Namaz vakitleri ve kıble telefonunda hesaplanır, bu yüzden bağlantı olmadan da çalışır.")]),
+    }),
+]
+EXTRA += ALT
+
 EXTRA_RELATED = {  # existing guides of each app, shown under the new pages
     "brickhaven": {lang: [(BG[lang][k][1].split(":")[0], BG[lang][k][0]) for k in ("cozy", "tips", "buildings", "design")] for lang in ("en", "tr")},
     "glowfly": {lang: [(GG[lang][k][1].split(":")[0], GG[lang][k][0]) for k in ("idle", "offline", "tips")] for lang in ("en", "tr")},

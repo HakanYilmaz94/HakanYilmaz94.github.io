@@ -220,13 +220,19 @@ GUIDES = {
                       ("Games like sudoku", "/crownly/games-like-sudoku/"),
                       ("Daily puzzle games like Wordle", "/crownly/daily-puzzle-games-like-wordle/"),
                       ("How to play Route (one-line path)", "/crownly/one-line-path-puzzle-rules/"),
-                      ("How to play Shikaku (Mosaic)", "/crownly/how-to-play-shikaku/")]),
+                      ("How to play Shikaku (Mosaic)", "/crownly/how-to-play-shikaku/"),
+                      ("LinkedIn Zip alternative", "/crownly/linkedin-zip-alternative/"),
+                      ("LinkedIn Patches alternative", "/crownly/linkedin-patches-alternative/"),
+                      ("LinkedIn games alternatives", "/crownly/linkedin-games-alternatives/")]),
     "tr": ("Rehberler", [("Queens nasıl oynanır?", "/crownly/tr/queens-nasil-oynanir/"), ("Her tahtayı çözen 6 teknik", "/crownly/tr/queens-stratejileri/"),
                          ("LinkedIn Queens alternatifi", "/crownly/tr/linkedin-queens-alternatifi/"),
                          ("Sudoku benzeri oyunlar", "/crownly/tr/sudoku-benzeri-oyunlar/"),
                          ("Wordle gibi günlük bulmacalar", "/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/"),
                          ("Rota nasıl oynanır (tek çizgi)", "/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/"),
-                         ("Shikaku (Mozaik) nasıl oynanır", "/crownly/tr/shikaku-nasil-oynanir/")]),
+                         ("Shikaku (Mozaik) nasıl oynanır", "/crownly/tr/shikaku-nasil-oynanir/"),
+                         ("LinkedIn Zip alternatifi", "/crownly/tr/linkedin-zip-alternatifi/"),
+                         ("LinkedIn Patches alternatifi", "/crownly/tr/linkedin-patches-alternatifi/"),
+                         ("LinkedIn oyunları alternatifleri", "/crownly/tr/linkedin-oyunlari-alternatifleri/")]),
 }
 
 

@@ -79,7 +79,8 @@ T = {
                 ("Beginner's guide: 10 tips for Glowfly", "/glowfly/beginners-guide/"),
                 ("How offline progress works in idle games", "/glowfly/idle-games-offline-progress/"),
                 ("Idle brick breaker games, explained", "/glowfly/idle-brick-breaker/"),
-                ("Idle games without forced ads", "/glowfly/idle-games-without-forced-ads/")],
+                ("Idle games without forced ads", "/glowfly/idle-games-without-forced-ads/"),
+                ("Idle Breakout alternative for iPhone", "/glowfly/idle-breakout-alternative/")],
     ),
     "tr": dict(
         lang="tr", path="/glowfly/tr/", img="../img/", other_href="../", other_label="English", privacy_href="../privacy.html#tr",
@@ -134,7 +135,8 @@ T = {
                 ("Başlangıç rehberi: Glowfly için 10 ipucu", "/glowfly/tr/baslangic-rehberi/"),
                 ("Idle oyunlarda kapalıyken ilerleme nasıl çalışır", "/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/"),
                 ("Idle tuğla kırma oyunları", "/glowfly/tr/idle-tugla-kirma-oyunu/"),
-                ("Zorla reklam göstermeyen idle oyunlar", "/glowfly/tr/zorla-reklamsiz-idle-oyunlar/")],
+                ("Zorla reklam göstermeyen idle oyunlar", "/glowfly/tr/zorla-reklamsiz-idle-oyunlar/"),
+                ("Idle Breakout alternatifi", "/glowfly/tr/idle-breakout-alternatifi/")],
     ),
 }
 
