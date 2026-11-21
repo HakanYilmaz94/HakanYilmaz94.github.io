@@ -77,7 +77,9 @@ T = {
         guides_h="Guides",
         guides=[("A relaxing idle merge game that plays while you're away", "/glowfly/relaxing-idle-merge-game/"),
                 ("Beginner's guide: 10 tips for Glowfly", "/glowfly/beginners-guide/"),
-                ("How offline progress works in idle games", "/glowfly/idle-games-offline-progress/")],
+                ("How offline progress works in idle games", "/glowfly/idle-games-offline-progress/"),
+                ("Idle brick breaker games, explained", "/glowfly/idle-brick-breaker/"),
+                ("Idle games without forced ads", "/glowfly/idle-games-without-forced-ads/")],
     ),
     "tr": dict(
         lang="tr", path="/glowfly/tr/", img="../img/", other_href="../", other_label="English", privacy_href="../privacy.html#tr",
@@ -130,7 +132,9 @@ T = {
         guides_h="Rehberler",
         guides=[("Sen yokken de oynayan rahatlatıcı bir idle birleştirme oyunu", "/glowfly/tr/rahatlatici-idle-birlestirme-oyunu/"),
                 ("Başlangıç rehberi: Glowfly için 10 ipucu", "/glowfly/tr/baslangic-rehberi/"),
-                ("Idle oyunlarda kapalıyken ilerleme nasıl çalışır", "/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/")],
+                ("Idle oyunlarda kapalıyken ilerleme nasıl çalışır", "/glowfly/tr/idle-oyunlarda-kapaliyken-ilerleme/"),
+                ("Idle tuğla kırma oyunları", "/glowfly/tr/idle-tugla-kirma-oyunu/"),
+                ("Zorla reklam göstermeyen idle oyunlar", "/glowfly/tr/zorla-reklamsiz-idle-oyunlar/")],
     ),
 }
 

@@ -1285,6 +1285,559 @@ def build_crownly_like():
         write(path, page("crownly", lang, path, {lang: path, ("tr" if en else "en"): other}, title, desc, body, [g["home"], (title, path)]))
 
 
+# ---------------------------------------------------------------- Comparison and how-to guides (2026-11-20)
+# Pages written for the questions people ask search engines and AI assistants ("best cozy building games for iPhone",
+# "games like Wordle", "how to play Shikaku"). Lists name other games honestly and only with well-known facts; our app is
+# one entry, described the same way. Each topic: app, img (optional), and per language path/title/desc/intro/sections/faq.
+# sections: (heading, [paragraphs]) or (heading, {"list": [...]}) ; items: names for the ItemList schema of a list page.
+
+EXTRA = [
+    dict(app="brickhaven", key="best", img="kitapci", langs={
+        "en": dict(path="/brickhaven/best-cozy-building-games-iphone/",
+                   title="Best Cozy Building Games for iPhone and iPad (No Timers, Little Stress)",
+                   desc="Five relaxing building games for iPhone and iPad compared: what you build, how you play, whether it works offline and how you pay.",
+                   intro=["A cozy building game lets you make something beautiful without a clock or an enemy pushing you. These five are all "
+                          "on the App Store and all calm, but they feel very different: some are toys with no goals, some are puzzles, one "
+                          "lets you lay every brick by hand."],
+                   items=["Brickhaven", "Townscaper", "Islanders: Mobile", "Pocket City 2", "Minecraft"],
+                   sections=[
+                       ("1. Brickhaven: build every brick yourself", [
+                           "A first-person building game: walk to the brick pile, pick the right shape and color, carry it to the wall and "
+                           "lay it. Nine story buildings bring a seaside town back to life, then you design your own houses and decorate the streets.",
+                           "Offline, no timers, no ads. The first two buildings are free; the rest of the town is one purchase. Best if you "
+                           "want the slow, hands-on feeling of building something brick by brick."]),
+                       ("2. Townscaper: a toy town with no goals", [
+                           "Tap the water to place colorful blocks and the game turns them into houses, arches, stairs and gardens. There is "
+                           "no score and nothing to finish. A paid app; best for five minutes of pure, quiet making."]),
+                       ("3. Islanders: Mobile: a minimalist puzzle city", [
+                           "Place buildings on small islands to earn points from what stands nearby. Short runs, gentle music, a little "
+                           "strategy. A paid app; best if you like a light puzzle with your building."]),
+                       ("4. Pocket City 2: a classic city builder", [
+                           "Zone roads, homes and shops, manage money and watch a 3D city grow. More systems than the others, still no "
+                           "pressure. A paid app; best if you miss classic city builders."]),
+                       ("5. Minecraft: build anything, block by block", [
+                           "Creative mode gives you unlimited blocks to build anything you imagine; survival adds monsters at night. A paid "
+                           "app; best for open-ended building and playing with friends."]),
+                       ("How to choose", {"list": [
+                           "Want to lay bricks by hand and follow a story: Brickhaven.",
+                           "Want no goals at all, just making: Townscaper.",
+                           "Want a short puzzle every time: Islanders.",
+                           "Want roads, budgets and a big city: Pocket City 2.",
+                           "Want total freedom and friends: Minecraft (creative mode)."]}),
+                   ],
+                   faq=[("Which cozy building games work offline on iPhone?",
+                         "Brickhaven plays fully offline. Townscaper, Islanders: Mobile and Pocket City 2 are single-player games that also play without a connection; Minecraft needs one only for online play."),
+                        ("Is there a building game with no ads and no timers?",
+                         "Yes. Brickhaven has no ads, no energy bars and no timers; Townscaper, Islanders: Mobile and Pocket City 2 are paid apps without forced ads.")]),
+        "tr": dict(path="/brickhaven/tr/en-iyi-rahat-insa-oyunlari/",
+                   title="iPhone ve iPad İçin En İyi Rahat İnşa Oyunları (Zamanlayıcısız, Stressiz)",
+                   desc="iPhone ve iPad'de beş sakin inşa oyunu karşılaştırması: ne inşa ediyorsun, nasıl oynanıyor, internetsiz çalışıyor mu, nasıl ödeniyor.",
+                   intro=["Rahat bir inşa oyunu, seni kovalayan bir saat ya da düşman olmadan güzel bir şey yapmanı sağlar. Bu beşi de "
+                          "App Store'da ve hepsi sakin, ama birbirinden çok farklı: kimi amaçsız bir oyuncak, kimi bulmaca, biri her "
+                          "tuğlayı kendi elinle koymanı istiyor."],
+                   items=["Brickhaven", "Townscaper", "Islanders: Mobile", "Pocket City 2", "Minecraft"],
+                   sections=[
+                       ("1. Brickhaven: her tuğlayı kendin koy", [
+                           "Birinci şahıs bir inşa oyunu: tuğla yığınına yürü, doğru şekli ve rengi seç, duvara taşı ve yerine koy. "
+                           "Dokuz hikâye binası bir sahil kasabasını yeniden canlandırır; sonra kendi evlerini tasarlar, sokakları süslersin.",
+                           "İnternetsiz, zamanlayıcısız, reklamsız. İlk iki bina ücretsiz; kasabanın geri kalanı tek bir satın alma. "
+                           "Bir şeyi tuğla tuğla, yavaşça ve elle inşa etme hissini istiyorsan en uygunu."]),
+                       ("2. Townscaper: amaçsız bir oyuncak kasaba", [
+                           "Suya dokunarak renkli bloklar koyarsın, oyun bunları evlere, kemerlere, merdivenlere ve bahçelere çevirir. "
+                           "Puan yok, bitirilecek bir şey yok. Ücretli; beş dakikalık sessiz bir yaratma için ideal."]),
+                       ("3. Islanders: Mobile: sade bir bulmaca şehri", [
+                           "Küçük adalara binalar koyup çevresindekilere göre puan kazanırsın. Kısa turlar, yumuşak müzik, biraz strateji. "
+                           "Ücretli; inşaya hafif bir bulmaca eklensin istiyorsan iyi."]),
+                       ("4. Pocket City 2: klasik şehir kurma", [
+                           "Yol, konut ve dükkân alanları belirler, bütçeyi yönetir, 3B bir şehrin büyümesini izlersin. Diğerlerinden "
+                           "daha çok sistem var ama baskı yok. Ücretli; klasik şehir kurma oyunlarını özleyenlere."]),
+                       ("5. Minecraft: blok blok her şeyi inşa et", [
+                           "Yaratıcı modda sınırsız blokla aklına geleni kurarsın; hayatta kalma modu geceleri canavar ekler. Ücretli; "
+                           "sınırsız serbest inşa ve arkadaşlarla oynamak için."]),
+                       ("Hangisini seçmeli?", {"list": [
+                           "Tuğlaları elle koyup bir hikâye izlemek istiyorsan: Brickhaven.",
+                           "Hiç amaç olmasın, sadece yapayım diyorsan: Townscaper.",
+                           "Her seferinde kısa bir bulmaca istiyorsan: Islanders.",
+                           "Yollar, bütçe ve büyük bir şehir istiyorsan: Pocket City 2.",
+                           "Tam özgürlük ve arkadaşlar istiyorsan: Minecraft (yaratıcı mod)."]}),
+                   ],
+                   faq=[("iPhone'da hangi rahat inşa oyunları internetsiz çalışır?",
+                         "Brickhaven tamamen internetsiz oynanır. Townscaper, Islanders: Mobile ve Pocket City 2 de tek kişilik oyunlardır ve bağlantısız oynanır; Minecraft yalnız çevrimiçi oyun için internet ister."),
+                        ("Reklamsız ve zamanlayıcısız bir inşa oyunu var mı?",
+                         "Evet. Brickhaven'da reklam, enerji çubuğu ya da zamanlayıcı yok; Townscaper, Islanders: Mobile ve Pocket City 2 de zorla reklam göstermeyen ücretli oyunlar.")]),
+    }),
+    dict(app="brickhaven", key="bricklaying", img="saat", langs={
+        "en": dict(path="/brickhaven/brick-laying-simulator/",
+                   title="A Brick-Laying Simulator for iPhone: How Building Works in Brickhaven",
+                   desc="Want to build walls brick by brick on your phone? How Brickhaven's bricklaying works: shapes and colors, blueprints, sections, mortar, the lift and skills.",
+                   intro=["Most building games place whole walls or rooms with one tap. Brickhaven goes the other way: every wall is made of "
+                          "real bricks, and you lay each one yourself. It is the closest thing to a bricklaying simulator on iPhone and iPad, "
+                          "but calm, with no timer and no way to fail."],
+                   sections=[
+                       ("Find the right brick", [
+                           "Bricks come in shapes (1×1, 2×1, long blocks, roof tiles, window frames, doors) and colors. The building's "
+                           "blueprint says which ones each section needs. Shapes must match; a wrong color can be laid but glows red until "
+                           "you take it back, so mistakes are always fixable."]),
+                       ("Carry, then lay", [
+                           "You carry a stack of bricks in your arms, six at first and up to twenty with skills. Walk to the wall, aim at "
+                           "the outlined spot and tap Place. A thin bed of mortar appears under every finished row."]),
+                       ("Wall by wall, row by row", [
+                           "Buildings are split into sections: base course, each wall's lower and upper band, corner stones, windows, "
+                           "gables and roof. You may build them in any order; a brick only needs the bricks under it. Finished sections "
+                           "glow gold and give skill points."]),
+                       ("Up to the roof", [
+                           "A scissor lift carries you along the wall to the high rows; you can even walk on the roof frame to lay the "
+                           "ridge. Tall buildings, like the clock tower at about 11 m, take the lift all the way up."]),
+                       ("Tools that grow with you", {"list": [
+                           "Strong Arms: carry more bricks per trip.",
+                           "Skilled Hands: lay each brick faster.",
+                           "Brick Magnet: pull matching bricks straight to your arms.",
+                           "Continuous Building: hold the button to lay brick after brick."]}),
+                       ("How big are the buildings?", [
+                           "The first, the Bakery, has about 520 bricks; later ones like the fire station and the train station have "
+                           "around 1,400. When the last brick goes in, the camera pulls back and replays the whole building rising."]),
+                   ],
+                   faq=[("Is there a realistic bricklaying game on iPhone?",
+                         "Brickhaven is a first-person building game where every wall is made of individual bricks you carry and lay by hand, with blueprints, mortar rows and a scissor lift for high walls."),
+                        ("Can I make mistakes?",
+                         "Yes, and fix them: a brick of the wrong color can be laid, turns red, and comes back with one tap. A section only completes when every brick matches the plan.")]),
+        "tr": dict(path="/brickhaven/tr/tugla-orme-oyunu/",
+                   title="iPhone'da Tuğla Örme Oyunu: Brickhaven'da İnşa Nasıl İşler",
+                   desc="Telefonda duvarı tuğla tuğla örmek ister misin? Brickhaven'da tuğla örme nasıl işler: şekil ve renk, plan, bölümler, harç, asansör ve beceriler.",
+                   intro=["İnşa oyunlarının çoğu tek dokunuşla koca bir duvar ya da oda koyar. Brickhaven tersini yapar: her duvar gerçek "
+                          "tuğlalardan oluşur ve her birini sen koyarsın. iPhone ve iPad'deki en gerçekçi tuğla örme oyunu bu, ama sakin: "
+                          "zamanlayıcı yok, kaybetmek yok."],
+                   sections=[
+                       ("Doğru tuğlayı bul", [
+                           "Tuğlaların şekli (1×1, 2×1, uzun blok, çatı plakası, pencere çerçevesi, kapı) ve rengi var. Binanın planı her "
+                           "bölümün hangilerini istediğini gösterir. Şekil uymalı; yanlış renk konabilir ama sen geri alana dek kırmızı yanar, "
+                           "yani her hata düzeltilebilir."]),
+                       ("Taşı, sonra koy", [
+                           "Tuğlaları kucağında yığın hâlinde taşırsın: başta altı, becerilerle yirmiye kadar. Duvara yürü, kesik çizgili "
+                           "yere nişan al ve Koy'a bas. Biten her sıranın altında ince bir harç yatağı belirir."]),
+                       ("Duvar duvar, sıra sıra", [
+                           "Binalar bölümlere ayrılır: taban sırası, her duvarın alt ve üst bandı, köşe taşları, pencereler, üçgen duvarlar "
+                           "ve çatı. İstediğin sırayla örebilirsin; bir tuğla yalnız altındakileri ister. Biten bölüm altın gibi parlar "
+                           "ve yetenek puanı verir."]),
+                       ("Çatıya kadar", [
+                           "Makaslı asansör seni duvar boyunca yüksek sıralara taşır; çatı iskeletinde yürüyüp mahyayı bile örebilirsin. "
+                           "Yaklaşık 11 m'lik saat kulesi gibi yüksek binalarda asansör en tepeye çıkar."]),
+                       ("Seninle büyüyen aletler", {"list": [
+                           "Güçlü Kollar: her seferde daha çok tuğla taşı.",
+                           "Usta Eller: her tuğlayı daha hızlı koy.",
+                           "Tuğla Mıknatısı: eşleşen tuğlaları doğrudan kucağına çek.",
+                           "Kesintisiz Örme: düğmeyi basılı tut, tuğlalar art arda girsin."]}),
+                       ("Binalar ne kadar büyük?", [
+                           "İlk bina Fırın yaklaşık 520 tuğla; İtfaiye ve Tren İstasyonu gibi sonrakiler 1.400 civarında. Son tuğla girince "
+                           "kamera geri çekilir ve binanın yükselişini baştan oynatır."]),
+                   ],
+                   faq=[("iPhone'da gerçekçi bir tuğla örme oyunu var mı?",
+                         "Brickhaven, her duvarın tek tek taşıyıp elle koyduğun tuğlalardan oluştuğu birinci şahıs bir inşa oyunu: plan, harç sıraları ve yüksek duvarlar için makaslı asansör var."),
+                        ("Hata yapabilir miyim?",
+                         "Evet, ve düzeltebilirsin: yanlış renkte tuğla konabilir, kırmızı yanar ve tek dokunuşla geri gelir. Bölüm ancak her tuğla plana uyunca tamamlanır.")]),
+    }),
+    dict(app="glowfly", key="brickbreaker", img="ch3", langs={
+        "en": dict(path="/glowfly/idle-brick-breaker/",
+                   title="Idle Brick Breaker Games: How They Work and a Calm One to Try on iPhone",
+                   desc="What an idle brick breaker is, why it is so relaxing, how upgrades and merging work, and how Glowfly turns the genre into a quiet night-sky story.",
+                   intro=["An idle brick breaker mixes two old ideas: the bouncing ball that breaks bricks, from arcade classics, and the "
+                          "idle game that keeps playing on its own. You do not aim or catch anything. You decide which balls to buy and "
+                          "upgrade, and watch them clear the board. The browser game Idle Breakout made the genre popular."],
+                   sections=[
+                       ("How a round works", {"list": [
+                           "Balls bounce around the board by themselves and chip away at blocks.",
+                           "Every broken block pays out; the money buys more balls or makes them stronger.",
+                           "Clear the board and the next, tougher one appears.",
+                           "Tapping helps a little; patience helps more."]}),
+                       ("Why it relaxes people", [
+                           "There is nothing to miss and nothing to lose. The screen is always moving, numbers always go up, and you "
+                           "can look away at any time. Many people keep one open next to work or before sleep."]),
+                       ("What Glowfly changes", [
+                           "In Glowfly the balls are fireflies of light and the blocks are glass, rock and hard stone over a hand-drawn "
+                           "night landscape. Ten identical lights merge into one brighter light, twelve kinds in all. Every ten nights "
+                           "Lumi finds a fallen star and a postcard joins the story, across 10 chapters and 1,000 nights.",
+                           "Lights keep working for hours after you close the game, ads play only when you choose one for a reward, "
+                           "and the music is soft lo-fi."]),
+                       ("Tips for any idle brick breaker", {"list": [
+                           "Spread money between new balls and upgrades; one strong ball rarely beats several.",
+                           "Strong single-target balls for hard blocks, splash or fast balls for crowds of weak ones.",
+                           "Start a boost before you step away, not after you return.",
+                           "When progress slows, merge or prestige rather than grind."]}),
+                   ],
+                   faq=[("Is there an idle brick breaker without forced ads?",
+                         "Glowfly plays ads only when you choose to watch one for a reward; none ever plays on its own. Glowfly Plus or the ad-free option removes even those."),
+                        ("Does an idle brick breaker keep playing when closed?",
+                         "Glowfly does: your lights keep breaking walls for 4 hours after you leave, longer with Deep Sleep or Glowfly Plus.")]),
+        "tr": dict(path="/glowfly/tr/idle-tugla-kirma-oyunu/",
+                   title="Idle Tuğla Kırma Oyunları: Nasıl Çalışır, iPhone'da Sakin Bir Örnek",
+                   desc="Idle tuğla kırma oyunu nedir, neden bu kadar rahatlatır, yükseltme ve birleştirme nasıl işler; Glowfly türü nasıl sessiz bir gece hikâyesine çevirir.",
+                   intro=["Idle tuğla kırma oyunu iki eski fikri birleştirir: atari klasiklerindeki tuğla kıran seken top ve kendi kendine "
+                          "oynayan idle oyun. Nişan almaz, bir şey yakalamazsın. Hangi topları alıp yükselteceğine karar verir, tahtayı "
+                          "temizlemelerini izlersin. Türü tarayıcı oyunu Idle Breakout popüler yaptı."],
+                   sections=[
+                       ("Bir tur nasıl işler", {"list": [
+                           "Toplar tahtada kendi kendine seker ve blokları aşındırır.",
+                           "Kırılan her blok para verir; parayla yeni top alır ya da topları güçlendirirsin.",
+                           "Tahta temizlenince daha zor olanı gelir.",
+                           "Dokunmak biraz yardım eder; sabır daha çok."]}),
+                       ("Neden rahatlatır", [
+                           "Kaçıracak ya da kaybedecek bir şey yok. Ekran hep hareketli, sayılar hep artıyor ve istediğin an başka yere "
+                           "bakabilirsin. Birçok kişi işin yanında ya da yatmadan önce bir tane açık tutar."]),
+                       ("Glowfly neyi değiştiriyor", [
+                           "Glowfly'da toplar ışık böcekleri, bloklar ise elle çizilmiş bir gece manzarasının üstündeki cam, kaya ve sert "
+                           "taştır. On aynı ışık birleşip daha parlak bir ışık olur; toplam on iki tür. Her on gecede bir Lumi düşen bir "
+                           "yıldız bulur ve hikâyeye bir kartpostal eklenir: 10 bölüm, 1.000 gece.",
+                           "Oyunu kapattıktan sonra ışıklar saatlerce çalışmaya devam eder, reklam yalnız ödül için sen seçersen oynar, "
+                           "müzik yumuşak lo-fi."]),
+                       ("Her idle tuğla kırma oyunu için ipuçları", {"list": [
+                           "Parayı yeni toplarla yükseltmeler arasında böl; tek güçlü top çoğu zaman birkaç topu geçemez.",
+                           "Sert bloklara tek hedefe güçlü toplar, kalabalık zayıf bloklara hızlı ya da sıçratan toplar.",
+                           "Takviyeyi uzaklaşmadan önce başlat, döndükten sonra değil.",
+                           "İlerleme yavaşlayınca uğraşmak yerine birleştir ya da baştan başla (prestij)."]}),
+                   ],
+                   faq=[("Zorla reklam göstermeyen bir idle tuğla kırma oyunu var mı?",
+                         "Glowfly reklamı yalnız ödül için sen izlemeyi seçersen oynatır; hiçbiri kendiliğinden çıkmaz. Glowfly Plus ya da reklamsız seçenek bunları da kaldırır."),
+                        ("Idle tuğla kırma oyunu kapalıyken de oynar mı?",
+                         "Glowfly oynar: ışıkların sen ayrıldıktan sonra 4 saat duvar kırmaya devam eder; Derin Uyku ya da Glowfly Plus ile daha uzun.")]),
+    }),
+    dict(app="glowfly", key="noads", img="ch7", langs={
+        "en": dict(path="/glowfly/idle-games-without-forced-ads/",
+                   title="Idle Games Without Forced Ads: What to Look For on iPhone",
+                   desc="How to tell an idle game that respects you from one built around ads: rewarded vs forced ads, offline earnings, purchases and timers, with examples.",
+                   intro=["Idle games are meant to be relaxing, yet many interrupt you every few minutes with a full-screen video. The good "
+                          "news: you can usually tell before you install which kind you are getting. Here is what to check."],
+                   items=["Glowfly", "Cookie Clicker", "Egg, Inc.", "Melvor Idle"],
+                   sections=[
+                       ("Rewarded ads vs forced ads", [
+                           "A rewarded ad plays only when you tap a button to get something, such as a boost. A forced ad (interstitial) "
+                           "appears on its own between screens. The App Store page and reviews usually make it clear which one a game uses; "
+                           "words like \"optional ads\" or \"ads only for rewards\" are a good sign."]),
+                       ("Five things to check", {"list": [
+                           "Do ads ever play without you asking?",
+                           "Is there a one-time way to remove ads, not only a subscription?",
+                           "Does it keep earning while closed, and for how long?",
+                           "Are box or chest odds shown before you open one?",
+                           "Can you progress at a normal pace without paying?"]}),
+                       ("A few idle games people like", [
+                           "Cookie Clicker, the classic that started the genre, now on iPhone. Egg, Inc., a farm idle game known for "
+                           "optional video rewards. Melvor Idle, a deep idle RPG for people who like long-term goals. And Glowfly, below."]),
+                       ("How Glowfly handles it", [
+                           "Glowfly never plays an ad on its own. A few rewards, like a boost, can be earned by watching a short video if "
+                           "you want to; Glowfly Plus or the ad-free option gives those rewards without the video. Lights keep breaking "
+                           "walls for 4 hours after you leave, and Star Box odds are listed before you open one."]),
+                   ],
+                   faq=[("Which idle games have no forced ads?",
+                         "Look for games where ads appear only behind a reward button. Glowfly is one: no ad ever plays on its own, and Plus or the ad-free option removes even the optional ones."),
+                        ("Is a rewarded ad better than a forced ad?",
+                         "Yes for most players: you choose when it plays and what you get for it, and you can ignore it completely.")]),
+        "tr": dict(path="/glowfly/tr/zorla-reklamsiz-idle-oyunlar/",
+                   title="Zorla Reklam Göstermeyen Idle Oyunlar: iPhone'da Nelere Bakmalı",
+                   desc="Sana saygı duyan bir idle oyunu reklam üzerine kurulu olandan nasıl ayırırsın: ödüllü ve zorunlu reklam, kapalıyken kazanç, satın almalar, örnekler.",
+                   intro=["Idle oyunların amacı rahatlatmak, ama çoğu birkaç dakikada bir tam ekran videoyla araya girer. İyi haber: "
+                          "hangisini indirdiğini genelde kurmadan anlayabilirsin. Nelere bakacağın aşağıda."],
+                   items=["Glowfly", "Cookie Clicker", "Egg, Inc.", "Melvor Idle"],
+                   sections=[
+                       ("Ödüllü reklam ve zorunlu reklam", [
+                           "Ödüllü reklam yalnız bir şey (ör. takviye) almak için düğmeye basınca oynar. Zorunlu reklam (geçiş reklamı) "
+                           "ekranlar arasında kendiliğinden çıkar. Hangisinin kullanıldığı genelde App Store sayfasından ve yorumlardan "
+                           "anlaşılır; \"isteğe bağlı reklam\" ya da \"reklam yalnız ödül için\" iyi bir işarettir."]),
+                       ("Bakılacak beş şey", {"list": [
+                           "Reklam hiç sen istemeden oynuyor mu?",
+                           "Reklamı yalnız abonelikle değil, tek seferlik bir satın almayla kaldırmak mümkün mü?",
+                           "Kapalıyken kazanmaya devam ediyor mu, ne kadar süre?",
+                           "Kutu ya da sandık olasılıkları açmadan önce gösteriliyor mu?",
+                           "Para ödemeden normal hızda ilerlenebiliyor mu?"]}),
+                       ("Sevilen birkaç idle oyun", [
+                           "Türü başlatan klasik Cookie Clicker artık iPhone'da. Egg, Inc. isteğe bağlı video ödülleriyle bilinen bir çiftlik "
+                           "idle oyunu. Melvor Idle uzun vadeli hedef sevenler için derin bir idle RPG. Bir de aşağıdaki Glowfly."]),
+                       ("Glowfly bunu nasıl yapıyor", [
+                           "Glowfly hiçbir zaman kendiliğinden reklam oynatmaz. Takviye gibi birkaç ödül istersen kısa bir video izleyerek "
+                           "kazanılır; Glowfly Plus ya da reklamsız seçenek bu ödülleri videosuz verir. Ayrıldıktan sonra ışıklar 4 saat "
+                           "duvar kırmaya devam eder, Yıldız Kutusu olasılıkları açmadan önce listelenir."]),
+                   ],
+                   faq=[("Hangi idle oyunlarda zorla reklam yok?",
+                         "Reklamın yalnız bir ödül düğmesinin arkasında çıktığı oyunlara bak. Glowfly bunlardan biri: hiçbir reklam kendiliğinden oynamaz; Plus ya da reklamsız seçenek isteğe bağlı olanları da kaldırır."),
+                        ("Ödüllü reklam zorunlu reklamdan daha mı iyi?",
+                         "Çoğu oyuncu için evet: ne zaman oynayacağını ve karşılığında ne alacağını sen seçersin, tamamen görmezden de gelebilirsin.")]),
+    }),
+    dict(app="crownly", key="daily", img=None, langs={
+        "en": dict(path="/crownly/daily-puzzle-games-like-wordle/",
+                   title="Daily Puzzle Games Like Wordle: 7 to Play Every Morning",
+                   desc="Loved Wordle? Seven daily puzzles with one new board a day, from word games to logic grids like Queens, and where to play them on iPhone.",
+                   intro=["Wordle's magic was simple: one puzzle a day, the same for everyone, done in a few minutes, then a small result "
+                          "to share. Plenty of games now follow that rhythm. Here are seven, word and logic."],
+                   items=["Wordle", "Connections", "Queens", "Zip", "Tango", "Sudoku of the day", "Crownly"],
+                   sections=[
+                       ("Word puzzles", {"list": [
+                           "Wordle (New York Times Games): guess a five-letter word in six tries.",
+                           "Connections (New York Times Games): sort sixteen words into four hidden groups."]}),
+                       ("Logic puzzles", {"list": [
+                           "Queens (LinkedIn): one crown in every row, column and colored region; crowns never touch.",
+                           "Zip (LinkedIn): draw one path through the numbered stops in order, filling every cell.",
+                           "Tango (LinkedIn): fill the grid with two symbols so rows and columns balance.",
+                           "A daily sudoku: most sudoku apps and newspapers publish one board a day."]}),
+                       ("Crownly: three daily logic puzzles in one app", [
+                           "Crownly puts three of these ideas together on iPhone and iPad: Crowns (Queens-style), Route (a one-line path "
+                           "like Zip) and Mosaic (split the grid into numbered rectangles). Each has a new daily board at 07:00 UTC, the "
+                           "same for everyone, with a streak, leaderboards and an archive of past days.",
+                           "Beyond the daily boards there are 6,500 levels, hints that explain the logic instead of giving the answer, and "
+                           "live duels with 2 to 4 friends. It is free with an optional one-time Pro purchase, has no ads and works offline."]),
+                   ],
+                   faq=[("Is there an app with daily Queens and Zip-style puzzles?",
+                         "Crownly has a daily Crowns puzzle (Queens rules) and a daily Route puzzle (a one-line path through numbered stops, like Zip), plus Mosaic, all on iPhone and iPad."),
+                        ("When do daily puzzles reset?",
+                         "In Crownly, every day at 07:00 UTC, at the same moment for everyone in the world.")]),
+        "tr": dict(path="/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/",
+                   title="Wordle Gibi Günlük Bulmaca Oyunları: Her Sabah Çözülecek 7 Bulmaca",
+                   desc="Wordle'ı sevdiysen: kelime oyunlarından Queens gibi mantık tahtalarına, günde bir yeni tahtası olan yedi bulmaca ve iPhone'da nerede oynanır.",
+                   intro=["Wordle'ın sihri basitti: günde bir bulmaca, herkes için aynı, birkaç dakikada biter, sonra paylaşılacak küçük bir "
+                          "sonuç. Artık birçok oyun bu ritmi izliyor. İşte kelime ve mantıktan yedisi."],
+                   items=["Wordle", "Connections", "Queens", "Zip", "Tango", "Günün sudokusu", "Crownly"],
+                   sections=[
+                       ("Kelime bulmacaları", {"list": [
+                           "Wordle (New York Times Games): beş harfli bir kelimeyi altı denemede bul.",
+                           "Connections (New York Times Games): on altı kelimeyi dört gizli gruba ayır."]}),
+                       ("Mantık bulmacaları", {"list": [
+                           "Queens (LinkedIn): her satıra, sütuna ve renkli bölgeye bir taç; taçlar birbirine dokunmaz.",
+                           "Zip (LinkedIn): numaralı durakları sırayla bağlayan, her kareyi dolduran tek bir yol çiz.",
+                           "Tango (LinkedIn): ızgarayı iki simgeyle doldur, satır ve sütunlar dengede olsun.",
+                           "Günün sudokusu: çoğu sudoku uygulaması ve gazete günde bir tahta yayınlar."]}),
+                       ("Crownly: tek uygulamada üç günlük mantık bulmacası", [
+                           "Crownly bu fikirlerden üçünü iPhone ve iPad'de bir araya getirir: Taçlar (Queens tarzı), Rota (Zip gibi tek "
+                           "çizgilik yol) ve Mozaik (ızgarayı sayılı dikdörtgenlere böl). Her birinin 07:00 UTC'de (TR 10:00) herkes için "
+                           "aynı yeni bir günlük tahtası var; seri, sıralamalar ve geçmiş günlerin arşivi de var.",
+                           "Günlük tahtaların dışında 6.500 seviye, cevabı vermek yerine mantığı anlatan ipuçları ve 2–4 arkadaşla canlı "
+                           "düello var. Ücretsiz, isteğe bağlı tek seferlik Pro satın alması var; reklam yok, internetsiz çalışır."]),
+                   ],
+                   faq=[("Günlük Queens ve Zip tarzı bulmaca olan bir uygulama var mı?",
+                         "Crownly'de günlük Taçlar bulmacası (Queens kuralları) ve günlük Rota bulmacası (Zip gibi numaralı duraklardan geçen tek bir yol) var, ayrıca Mozaik; iPhone ve iPad'de."),
+                        ("Günlük bulmacalar ne zaman yenilenir?",
+                         "Crownly'de her gün 07:00 UTC'de (Türkiye saatiyle 10:00), dünyadaki herkes için aynı anda.")]),
+    }),
+    dict(app="crownly", key="route", img=None, langs={
+        "en": dict(path="/crownly/one-line-path-puzzle-rules/",
+                   title="How to Play Route: Rules and Tips for the One-Line Path Puzzle (Like LinkedIn Zip)",
+                   desc="The rules of the one-line path puzzle: connect the numbered stops in order with one line that fills every cell, plus four tips to solve boards faster.",
+                   intro=["Route is a path puzzle with a single rule set you can learn in ten seconds. If you have played Zip on LinkedIn, "
+                          "you already know it."],
+                   sections=[
+                       ("The rules", {"list": [
+                           "Start at stop 1 and draw one continuous line.",
+                           "Visit the numbered stops in order: 1, 2, 3 and so on to the last.",
+                           "The line must pass through every cell of the grid exactly once.",
+                           "It moves up, down, left or right, never diagonally, and never through a wall."]}),
+                       ("Four tips", {"list": [
+                           "Look at corners and dead ends first: a cell with only two open neighbors has only one way through.",
+                           "Don't leave a pocket behind you. If the line cuts off a group of cells it can never return to, back up.",
+                           "Work from both ends of a segment: the line from 3 to 4 must arrive at 4 from somewhere it can reach.",
+                           "Hug the walls. Paths along the edge leave the open middle easier to fill later."]}),
+                       ("Playing Route in Crownly", [
+                           "Crownly has a new Route board every day at 07:00 UTC, the same for everyone, plus Route levels in four "
+                           "difficulties. Drag your finger to draw, lift to stop, and use a hint if you are stuck: it shows the next safe "
+                           "move and why. The app also has Crowns (Queens) and Mosaic."]),
+                   ],
+                   faq=[("Is Route the same as LinkedIn Zip?",
+                         "The rules are the same kind: connect numbered stops in order with one line that covers every cell. Crownly's version adds walls, levels and a daily board."),
+                        ("Can a Route puzzle have two solutions?",
+                         "Not in Crownly: every board is checked to have exactly one solution, so it can always be solved by reasoning.")]),
+        "tr": dict(path="/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/",
+                   title="Rota Nasıl Oynanır: Tek Çizgilik Yol Bulmacasının Kuralları ve İpuçları (LinkedIn Zip Gibi)",
+                   desc="Tek çizgilik yol bulmacasının kuralları: numaralı durakları sırayla, her kareyi dolduran tek bir çizgiyle bağla; tahtaları hızlı çözmek için dört ipucu.",
+                   intro=["Rota, on saniyede öğrenilen kuralları olan bir yol bulmacası. LinkedIn'deki Zip'i oynadıysan zaten biliyorsun."],
+                   sections=[
+                       ("Kurallar", {"list": [
+                           "1 numaralı duraktan başla ve kesintisiz tek bir çizgi çiz.",
+                           "Numaralı duraklardan sırayla geç: 1, 2, 3 ve sonuncusuna kadar.",
+                           "Çizgi ızgaradaki her kareden tam bir kez geçmeli.",
+                           "Yukarı, aşağı, sağa ya da sola gider; çapraz gitmez, duvardan geçmez."]}),
+                       ("Dört ipucu", {"list": [
+                           "Önce köşelere ve çıkmazlara bak: yalnız iki açık komşusu olan karenin tek bir geçiş yolu vardır.",
+                           "Arkanda cep bırakma. Çizgi bir kare grubunu dönülemeyecek şekilde kesiyorsa geri al.",
+                           "Bir bölümü iki uçtan düşün: 3'ten 4'e giden çizgi 4'e ulaşabildiği bir yerden gelmeli.",
+                           "Duvarlara yaslan. Kenar boyunca giden yollar ortadaki açık alanı sonraya kolay bırakır."]}),
+                       ("Crownly'de Rota", [
+                           "Crownly'de her gün 07:00 UTC'de (TR 10:00) herkes için aynı yeni bir Rota tahtası ve dört zorlukta Rota "
+                           "seviyeleri var. Parmağını sürükleyerek çiz, kaldırınca durur; takılırsan ipucu bir sonraki güvenli hamleyi ve "
+                           "nedenini gösterir. Uygulamada Taçlar (Queens) ve Mozaik de var."]),
+                   ],
+                   faq=[("Rota, LinkedIn Zip ile aynı mı?",
+                         "Kurallar aynı türden: numaralı durakları her kareyi kaplayan tek bir çizgiyle sırayla bağlarsın. Crownly'nin sürümünde duvarlar, seviyeler ve günlük tahta var."),
+                        ("Bir Rota bulmacasının iki çözümü olabilir mi?",
+                         "Crownly'de olamaz: her tahtanın tam bir çözümü olduğu denetlenir, yani her zaman akıl yürüterek çözülebilir.")]),
+    }),
+    dict(app="crownly", key="mosaic", img=None, langs={
+        "en": dict(path="/crownly/how-to-play-shikaku/",
+                   title="How to Play Shikaku (Mosaic): Rules and Techniques",
+                   desc="Shikaku rules in one minute: split the grid into rectangles, each holding one number equal to its area. Plus the techniques that solve harder boards.",
+                   intro=["Shikaku is a Japanese logic puzzle, also called Rectangles or Divide by Box, and the idea behind LinkedIn's "
+                          "Patches. In Crownly it is called Mosaic."],
+                   sections=[
+                       ("The rules", {"list": [
+                           "Divide the whole grid into rectangles (squares count too).",
+                           "Every rectangle contains exactly one number.",
+                           "That number equals the rectangle's area: a 6 covers six cells, as 1×6 or 2×3.",
+                           "Rectangles never overlap and every cell belongs to one."]}),
+                       ("Techniques", {"list": [
+                           "Start with numbers that have only one possible rectangle, often big numbers near edges or small ones boxed in.",
+                           "List the shapes: a 4 can be 1×4, 4×1 or 2×2. Rule out the ones that would cover another number or leave the grid.",
+                           "Find shared cells: if every option for a number covers the same cell, that cell is theirs.",
+                           "Find lonely cells: a cell that only one number's rectangles can reach must belong to it."]}),
+                       ("Playing Mosaic in Crownly", [
+                           "Drag from corner to corner to draw a piece; a new piece replaces any it overlaps. Every day at 07:00 UTC "
+                           "there is a 7×7 daily board and a harder 10×10, plus levels from easy to expert. Hints remove a wrong piece or "
+                           "show the number with the fewest options left."]),
+                   ],
+                   faq=[("Is Mosaic the same as Shikaku?",
+                         "Yes. Mosaic is Crownly's name for Shikaku: split the grid into rectangles, each containing one number equal to its area."),
+                        ("Is there a daily Shikaku puzzle app?",
+                         "Crownly has a daily Mosaic (Shikaku) board every day at 07:00 UTC, alongside daily Crowns and Route puzzles.")]),
+        "tr": dict(path="/crownly/tr/shikaku-nasil-oynanir/",
+                   title="Shikaku (Mozaik) Nasıl Oynanır: Kurallar ve Teknikler",
+                   desc="Bir dakikada Shikaku kuralları: ızgarayı, her biri alanına eşit tek bir sayı içeren dikdörtgenlere böl. Zor tahtaları çözen teknikler de burada.",
+                   intro=["Shikaku bir Japon mantık bulmacası; Rectangles ya da Divide by Box diye de bilinir ve LinkedIn'deki Patches'in "
+                          "arkasındaki fikirdir. Crownly'de adı Mozaik."],
+                   sections=[
+                       ("Kurallar", {"list": [
+                           "Bütün ızgarayı dikdörtgenlere böl (kareler de sayılır).",
+                           "Her dikdörtgende tam bir sayı bulunur.",
+                           "Sayı, dikdörtgenin alanına eşittir: 6, 1×6 ya da 2×3 olarak altı kare kaplar.",
+                           "Dikdörtgenler üst üste binmez ve her kare birine aittir."]}),
+                       ("Teknikler", {"list": [
+                           "Tek bir olası dikdörtgeni olan sayılarla başla; çoğu zaman kenara yakın büyük ya da sıkışmış küçük sayılar.",
+                           "Şekilleri say: 4, 1×4, 4×1 ya da 2×2 olabilir. Başka bir sayıyı kaplayan ya da ızgaradan taşanları ele.",
+                           "Ortak kareleri bul: bir sayının her seçeneği aynı kareyi kaplıyorsa o kare onundur.",
+                           "Yalnız kareleri bul: yalnız bir sayının dikdörtgenlerinin ulaşabildiği kare ona aittir."]}),
+                       ("Crownly'de Mozaik", [
+                           "Parçayı köşeden köşeye sürükleyerek çiz; yeni parça çakıştığı parçaların yerini alır. Her gün 07:00 UTC'de "
+                           "(TR 10:00) 7×7 bir günlük tahta ve daha zor 10×10 bir tahta, ayrıca kolaydan uzmana seviyeler var. İpucu yanlış "
+                           "bir parçayı kaldırır ya da en az seçeneği kalan sayıyı gösterir."]),
+                   ],
+                   faq=[("Mozaik, Shikaku ile aynı mı?",
+                         "Evet. Mozaik, Crownly'nin Shikaku için kullandığı ad: ızgarayı, her biri alanına eşit tek bir sayı içeren dikdörtgenlere bölersin."),
+                        ("Günlük Shikaku bulmacası olan bir uygulama var mı?",
+                         "Crownly'de her gün 07:00 UTC'de günlük bir Mozaik (Shikaku) tahtası var; yanında günlük Taçlar ve Rota bulmacaları da.")]),
+    }),
+    dict(app="besmele", key="choose", img=None, langs={
+        "en": dict(path="/besmele/en/choosing-a-prayer-times-app/",
+                   title="Choosing a Prayer Times App: 7 Things to Check",
+                   desc="What makes a prayer times app trustworthy: calculation method, Asr setting, notifications, privacy, ads, Qibla and offline use. A practical checklist.",
+                   intro=["Prayer times apps can disagree by several minutes, and some are full of ads or ask for more data than they need. "
+                          "These seven points help you pick one you can rely on every day."],
+                   sections=[
+                       ("1. The calculation method", [
+                           "Fajr and Isha depend on the sun's angle below the horizon, and organizations use different angles (Muslim "
+                           "World League, ISNA, Umm al-Qura, Egyptian, Diyanet and others). A good app chooses a sensible method for your "
+                           "country and lets you change it to match your mosque."]),
+                       ("2. The Asr setting", [
+                           "Asr starts when a shadow reaches its object's length (the majority view) or twice its length (Hanafi). Check "
+                           "that the app lets you pick."]),
+                       ("3. Notifications that arrive", [
+                           "Look for adhan or reminder notifications that work even if you don't open the app every day, and an easy way "
+                           "to turn each prayer on or off."]),
+                       ("4. Privacy", [
+                           "Times only need your approximate location. Prefer apps that calculate on your phone and don't send your "
+                           "location or build a profile of you."]),
+                       ("5. Ads", [
+                           "A prayer app is opened at quiet moments. Full-screen ads before the Qur'an or at adhan time are a reason to look elsewhere."]),
+                       ("6. A Qibla compass you can calibrate", [
+                           "Phone compasses drift near metal and magnetic cases. A good app explains how to calibrate (a figure-8 movement)."]),
+                       ("7. Works offline", [
+                           "Travel and weak signal happen. Times calculated on the device keep working without a connection."]),
+                       ("How Bismillah does it", [
+                           "Bismillah calculates prayer times on your phone; the method and the Asr setting are chosen automatically for "
+                           "your location and can be changed in Settings. Notifications are prepared for the next 7 days each time you open "
+                           "it. It has the Qur'an with audio, a Qibla compass, a missed prayer tracker and a dhikr counter, and it is free and ad-free."]),
+                   ],
+                   faq=[("Why do prayer time apps show different times?",
+                         "Mostly because of the calculation method (the sun angle for Fajr and Isha) and the Asr setting. Choose the same method your mosque uses."),
+                        ("Is there a prayer times app without ads?",
+                         "Bismillah (Besmele) is free and ad-free, and calculates prayer times on your phone.")]),
+        "tr": dict(path="/besmele/namaz-vakti-uygulamasi-secerken/",
+                   title="Namaz Vakti Uygulaması Seçerken Dikkat Edilecek 7 Şey",
+                   desc="Güvenilir bir namaz vakti uygulamasını ne belirler: hesaplama yöntemi, ikindi ayarı, bildirimler, gizlilik, reklam, kıble ve internetsiz kullanım.",
+                   intro=["Namaz vakti uygulamaları birkaç dakika farklı gösterebilir; bazıları reklamla dolu ya da gereğinden fazla veri "
+                          "ister. Bu yedi madde her gün güvenebileceğin bir uygulama seçmene yardım eder."],
+                   sections=[
+                       ("1. Hesaplama yöntemi", [
+                           "İmsak ve yatsı, güneşin ufkun altındaki açısına bağlıdır ve kurumlar farklı açılar kullanır (Diyanet, Müslüman "
+                           "Dünya Birliği, ISNA, Ümmü'l-Kurâ, Mısır ve diğerleri). İyi bir uygulama ülkene uygun yöntemi seçer ve "
+                           "camindeki takvime uydurmak için değiştirmene izin verir."]),
+                       ("2. İkindi ayarı", [
+                           "İkindi, gölgenin cismin boyuna (çoğunluk görüşü) ya da iki katına (Hanefi) ulaşmasıyla başlar. Uygulamanın "
+                           "seçmene izin verdiğine bak."]),
+                       ("3. Gerçekten gelen bildirimler", [
+                           "Uygulamayı her gün açmasan da çalışan ezan ya da hatırlatma bildirimleri ve her vakti ayrı açıp kapatmanın "
+                           "kolay bir yolu olmalı."]),
+                       ("4. Gizlilik", [
+                           "Vakitler için yalnız yaklaşık konum yeter. Hesabı telefonda yapan, konumunu göndermeyen ve hakkında profil "
+                           "çıkarmayan uygulamaları tercih et."]),
+                       ("5. Reklam", [
+                           "Namaz uygulaması sakin anlarda açılır. Kur'an'dan önce ya da ezan vaktinde tam ekran reklam başka uygulamaya "
+                           "bakmak için yeterli sebep."]),
+                       ("6. Kalibre edilebilen kıble pusulası", [
+                           "Telefon pusulası metal ve mıknatıslı kılıfların yanında şaşar. İyi bir uygulama nasıl kalibre edileceğini (8 "
+                           "çizme hareketi) anlatır."]),
+                       ("7. İnternetsiz çalışma", [
+                           "Yolculuk ve zayıf sinyal olur. Cihazda hesaplanan vakitler bağlantı olmadan da çalışır."]),
+                       ("Besmele bunu nasıl yapıyor", [
+                           "Besmele namaz vakitlerini telefonunda hesaplar; yöntem ve ikindi hesabı konumuna göre otomatik seçilir, "
+                           "Ayarlar'dan değiştirilebilir. Bildirimler uygulamayı her açtığında önümüzdeki 7 gün için hazırlanır. Sesli "
+                           "Kur'an, kıble pusulası, kaza namazı takibi ve zikirmatik var; ücretsiz ve reklamsız."]),
+                   ],
+                   faq=[("Namaz vakti uygulamaları neden farklı saat gösterir?",
+                         "Çoğunlukla hesaplama yöntemi (imsak ve yatsı için güneş açısı) ve ikindi ayarı yüzünden. Caminin kullandığı yöntemi seç."),
+                        ("Reklamsız bir namaz vakti uygulaması var mı?",
+                         "Besmele ücretsiz ve reklamsız; namaz vakitlerini telefonunda hesaplar.")]),
+    }),
+]
+
+EXTRA_RELATED = {  # existing guides of each app, shown under the new pages
+    "brickhaven": {lang: [(BG[lang][k][1].split(":")[0], BG[lang][k][0]) for k in ("cozy", "tips", "buildings", "design")] for lang in ("en", "tr")},
+    "glowfly": {lang: [(GG[lang][k][1].split(":")[0], GG[lang][k][0]) for k in ("idle", "offline", "tips")] for lang in ("en", "tr")},
+    "crownly": {lang: [(CG[lang][k][1].split(":")[0], CG[lang][k][0]) for k in ("rules", "strategy", "alt")] for lang in ("en", "tr")},
+    "besmele": {"en": [("How prayer times are calculated", "/besmele/en/how-prayer-times-are-calculated/"),
+                       ("How to find the Qibla direction", "/besmele/en/how-to-find-qibla/")],
+                "tr": [("Namaz vakitleri nasıl hesaplanır?", "/besmele/namaz-vakitleri-nasil-hesaplanir/"),
+                       ("Kıble yönü nasıl bulunur?", "/besmele/kible-nasil-bulunur/")]},
+}
+EXTRA_IMG = {"brickhaven": lambda lang, name: (f"/brickhaven/img/{lang}-{name}.jpg", 720, 480),
+             "glowfly": lambda lang, name: (f"/glowfly/img/{name}.jpg", 600, 900)}
+EXTRA_HOME = {"brickhaven": BG, "glowfly": GG, "crownly": CG}
+EXTRA_MORE = {"en": "More guides", "tr": "Diğer rehberler"}
+EXTRA_Q = {"en": "Questions", "tr": "Sorular"}
+
+
+def build_extra_guides():
+    for t in EXTRA:
+        app = t["app"]
+        for lang, g in t["langs"].items():
+            alts = {l: x["path"] for l, x in t["langs"].items()}
+            body = f'  <h1>{ESC(g["title"])}</h1>\n  <p class="intro">{ESC(g["desc"])}</p>\n'
+            body += paras(*[ESC(p) for p in g["intro"]]) + "\n"
+            if t.get("img") and app in EXTRA_IMG:
+                src, w, h = EXTRA_IMG[app](lang, t["img"])
+                body += f'  <img class="shot" src="{src}" alt="{ESC(g["title"])}" width="{w}" height="{h}" loading="lazy">\n'
+            for head, content in g["sections"]:
+                body += f"  <h2>{ESC(head)}</h2>\n"
+                if isinstance(content, dict):
+                    body += "  <ul>" + "".join(f"<li>{ESC(x)}</li>" for x in content["list"]) + "</ul>\n"
+                else:
+                    body += paras(*[ESC(p) for p in content]) + "\n"
+            body += f"  <h2>{EXTRA_Q[lang]}</h2>\n" + "".join(f"  <h3>{ESC(q)}</h3>\n  <p>{ESC(a)}</p>\n" for q, a in g["faq"])
+            siblings = [(x["langs"][lang]["title"].split(":")[0], x["langs"][lang]["path"]) for x in EXTRA if x["app"] == app and x is not t]
+            body += related(EXTRA_MORE[lang], siblings + EXTRA_RELATED[app][lang])
+            schema = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+                {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in g["faq"]]}]
+            if g.get("items"):
+                schema.append({"@context": "https://schema.org", "@type": "ItemList", "name": g["title"], "itemListElement": [
+                    {"@type": "ListItem", "position": i + 1, "name": n} for i, n in enumerate(g["items"])]})
+            home = EXTRA_HOME[app][lang]["home"] if app in EXTRA_HOME else (APPS[app]["name"][lang], APPS[app]["home"][lang])
+            html_ = page(app, lang, g["path"], alts, g["title"], g["desc"], body, [home, (g["title"], g["path"])], schema=schema[0])
+            if len(schema) > 1:  # page() takes one extra schema; add the ItemList next to it
+                html_ = html_.replace("</script>\n  " + ANALYTICS, "</script>\n  " + f'<script type="application/ld+json">{json.dumps(schema[1], ensure_ascii=False)}</script>\n  ' + ANALYTICS, 1)
+            write(g["path"], html_)
+
+
 # ---------------------------------------------------------------- sitemap
 
 STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
@@ -1322,5 +1875,6 @@ build_crownly_play()
 build_quickwits_guides()
 build_brickhaven_guides()
 build_glowfly_guides()
+build_extra_guides()
 build_sitemap()
 print(f"guide pages: {len(PAGES)}")

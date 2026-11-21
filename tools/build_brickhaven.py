@@ -108,12 +108,16 @@ GUIDES = {
                       ("Beginner's guide: 8 tips", "/brickhaven/beginners-guide/"),
                       ("All 9 buildings", "/brickhaven/buildings/"),
                       ("Skill tree: what to unlock first", "/brickhaven/skill-tree/"),
-                      ("Design your own house", "/brickhaven/design-your-own-house/")]),
+                      ("Design your own house", "/brickhaven/design-your-own-house/"),
+                      ("Best cozy building games for iPhone", "/brickhaven/best-cozy-building-games-iphone/"),
+                      ("A brick-laying simulator for iPhone", "/brickhaven/brick-laying-simulator/")]),
     "tr": ("Rehberler", [("İnternetsiz, rahatlatıcı bir inşa oyunu", "/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/"),
                          ("Başlangıç rehberi: 8 ipucu", "/brickhaven/tr/baslangic-rehberi/"),
                          ("9 bina ve sahipleri", "/brickhaven/tr/binalar/"),
                          ("Ustalık ağacı: önce hangi beceri?", "/brickhaven/tr/ustalik-agaci/"),
-                         ("Ev tasarlama: kendi evini çiz", "/brickhaven/tr/ev-tasarlama-oyunu/")]),
+                         ("Ev tasarlama: kendi evini çiz", "/brickhaven/tr/ev-tasarlama-oyunu/"),
+                         ("En iyi rahat inşa oyunları", "/brickhaven/tr/en-iyi-rahat-insa-oyunlari/"),
+                         ("iPhone'da tuğla örme oyunu", "/brickhaven/tr/tugla-orme-oyunu/")]),
 }
 
 

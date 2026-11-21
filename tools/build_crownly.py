@@ -217,10 +217,16 @@ MORE = {
 GUIDES = {
     "en": ("Guides", [("How to play Queens", "/crownly/queens-puzzle-rules/"), ("6 techniques to solve any board", "/crownly/queens-strategy/"),
                       ("LinkedIn Queens alternative", "/crownly/linkedin-queens-alternative/"),
-                      ("Games like sudoku", "/crownly/games-like-sudoku/")]),
+                      ("Games like sudoku", "/crownly/games-like-sudoku/"),
+                      ("Daily puzzle games like Wordle", "/crownly/daily-puzzle-games-like-wordle/"),
+                      ("How to play Route (one-line path)", "/crownly/one-line-path-puzzle-rules/"),
+                      ("How to play Shikaku (Mosaic)", "/crownly/how-to-play-shikaku/")]),
     "tr": ("Rehberler", [("Queens nasıl oynanır?", "/crownly/tr/queens-nasil-oynanir/"), ("Her tahtayı çözen 6 teknik", "/crownly/tr/queens-stratejileri/"),
                          ("LinkedIn Queens alternatifi", "/crownly/tr/linkedin-queens-alternatifi/"),
-                         ("Sudoku benzeri oyunlar", "/crownly/tr/sudoku-benzeri-oyunlar/")]),
+                         ("Sudoku benzeri oyunlar", "/crownly/tr/sudoku-benzeri-oyunlar/"),
+                         ("Wordle gibi günlük bulmacalar", "/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/"),
+                         ("Rota nasıl oynanır (tek çizgi)", "/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/"),
+                         ("Shikaku (Mozaik) nasıl oynanır", "/crownly/tr/shikaku-nasil-oynanir/")]),
 }
 
 

@@ -128,11 +128,11 @@ GUIDES = {
     "tr": ("Rehberler", [("Esmaül Hüsna: Allah'ın 99 ismi ve anlamları", "/besmele/esma/"), ("Kıble yönü nasıl bulunur?", "/besmele/kible-nasil-bulunur/"),
                          ("Namaz vakitleri nasıl hesaplanır?", "/besmele/namaz-vakitleri-nasil-hesaplanir/"),
                          ("Kısa dualar: Arapçası ve anlamı", "/besmele/kisa-dualar/"), ("Kısa hadisler", "/besmele/kisa-hadisler/"),
-                         ("Kısa ayetler: Arapçası ve meali", "/besmele/kisa-ayetler/")]),
+                         ("Kısa ayetler: Arapçası ve meali", "/besmele/kisa-ayetler/"), ("Namaz vakti uygulaması seçerken", "/besmele/namaz-vakti-uygulamasi-secerken/")]),
     "en": ("Guides", [("The 99 Names of Allah with meanings", "/besmele/en/names/"), ("How to find the Qibla direction", "/besmele/en/how-to-find-qibla/"),
                       ("How prayer times are calculated", "/besmele/en/how-prayer-times-are-calculated/"),
                       ("Short duas in Arabic with meaning", "/besmele/en/short-duas/"), ("Short hadiths", "/besmele/en/short-hadiths/"),
-                      ("Short Qur'an verses", "/besmele/en/short-quran-verses/")]),
+                      ("Short Qur'an verses", "/besmele/en/short-quran-verses/"), ("Choosing a prayer times app", "/besmele/en/choosing-a-prayer-times-app/")]),
 }
 
 
