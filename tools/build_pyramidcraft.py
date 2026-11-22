@@ -318,7 +318,7 @@ PRIVACY_V11 = {
              "played: tutorial steps, layers and monuments finished, buildings and skills chosen, workers hired, when the shop is "
              "opened and purchases started or finished, and ads shown. These events are not linked to your identity, contain no "
              "personal details and do not use the advertising identifier. They help us make the game better."),
-            ("Purchases", "Purchases (the full game, the companions and gold for workers) are "
+            ("Purchases", "Purchases (the full game, Deluxe and gold for workers) are "
              "handled entirely by Apple. We never see your payment details; the game only remembers on your device what you own."),
             ("Game Center", "Game Center is optional. If you are signed in, the game sends your total bricks laid, bricks laid this "
              "week and time played to Game Center leaderboards, and achievements you earn, which Apple runs."),
@@ -355,7 +355,7 @@ PRIVACY_V11 = {
              "öğretici adımları, biten katman ve anıtlar, seçilen yapılar ve yetenekler, işe alınan işçiler, mağazanın açılması, "
              "başlayan ya da biten satın almalar ve gösterilen reklamlar. Bu olaylar kimliğine bağlanmaz, kişisel bilgi içermez ve "
              "reklam kimliğini kullanmaz. Oyunu geliştirmemize yardım eder."),
-            ("Satın almalar", "Satın almaları (tam sürüm, yol arkadaşları ve işçiler için altın) "
+            ("Satın almalar", "Satın almaları (tam sürüm, Deluxe ve işçiler için altın) "
              "tamamen Apple işler. Ödeme bilgilerini hiçbir zaman görmeyiz; oyun yalnız neyin senin olduğunu cihazında hatırlar."),
             ("Game Center", "Game Center isteğe bağlıdır. Giriş yaptıysan oyun toplam ve bu haftaki tuğlanı, oyun süreni ve "
              "kazandığın başarımları Apple'ın işlettiği Game Center'a gönderir."),
@@ -378,14 +378,14 @@ if PRIVACY_VERSION == "1.1":
     # 1.1 has optional purchases and a rare interstitial at a break (at most about one per ten minutes).
     V11_TEXT = {
         "en": dict(note="iPhone · Plays offline · Free to play",
-                   faq={0: ("Is Pyramid Craft free?", "Yes. The whole Mudbrick Tomb is free. The full game, a one-time purchase, opens the other monuments, "
-                            "removes ads and brings every companion; gold for more workers is optional. Without it, a short "
+                   faq={0: ("Is Pyramid Craft free?", "Yes. The whole Mudbrick Tomb is free. The full game, a one-time purchase, opens the other monuments "
+                            "and removes ads; Deluxe adds every companion; gold for more workers is optional. Without it, a short "
                             "ad may show at a break, at most about once every ten minutes, never in the middle of an action."),
                         6: ("Is it suitable for children?", "Pyramid Craft has no violence, no chat and no account. It has optional "
                             "purchases and occasional ads at breaks, which Screen Time can limit.")}),
         "tr": dict(note="iPhone · İnternetsiz oynanır · Ücretsiz",
                    faq={0: ("Pyramid Craft ücretsiz mi?", "Evet. Kerpiç Mezar'ın tamamı ücretsiz. Tek seferlik tam sürüm diğer anıtları "
-                            "açar, reklamları kaldırır ve bütün yol arkadaşlarını getirir; ek işçi için altın isteğe bağlıdır. Onsuz, bir molada en "
+                            "açar ve reklamları kaldırır; Deluxe bütün yol arkadaşlarını ekler; ek işçi için altın isteğe bağlıdır. Onsuz, bir molada en "
                             "fazla yaklaşık on dakikada bir kısa bir reklam çıkabilir, asla bir işin ortasında değil."),
                         6: ("Çocuklar için uygun mu?", "Pyramid Craft'ta şiddet, sohbet ve hesap yok. İsteğe bağlı satın almalar ve "
                             "molalarda ara sıra reklam var; Ekran Süresi ile sınırlanabilir.")}),
