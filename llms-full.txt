@@ -136,7 +136,7 @@ Q: What is the winter season?
 A: From 1 December to 15 January the town turns snowy by itself: snow on the grass, roofs and roads, light strings and wreaths on finished buildings, a decorated tree on the square once the Clock Tower is rebuilt, and winter decorations in Decorate. You can switch it off in Settings → Game → Winter look.
 
 Q: My phone gets warm. What can I do?
-A: Brickhaven lowers its own graphics a step at a time when the device gets warm, and Low Power Mode makes it lighter still. Settings → Display → Graphics: Normal is the lighter choice.
+A: Brickhaven lowers its own graphics a step at a time when the device gets warm, and Low Power Mode makes it lighter still. Settings → Display → Graphics: Normal is the lighter choice. Settings → Display → Frame rate offers Auto, 30 FPS and 60 FPS: 30 FPS keeps the phone cooler and the battery lasts longer, Auto switches to 30 only when the phone is hot or in Low Power Mode.
 
 Q: How long does it take to finish?
 A: It depends on how you play. The Bakery is a short tutorial; later buildings have more than a thousand bricks each. There is no rush: nothing runs out while you are away.

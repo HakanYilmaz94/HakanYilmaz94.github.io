@@ -180,9 +180,57 @@ def lang_pill(lang, alts):
     return f'<span class="lang">{links}</span>'
 
 
+# Answer-first summaries for the first Brickhaven guides (2026-11-22): the visible intro states the answer in 2-3 sentences,
+# so search snippets and AI assistants can quote it; the meta description stays as it was.
+INTRO_OVERRIDE = {
+    "/brickhaven/cozy-offline-building-game/":
+        "Brickhaven is a cozy first-person building game for iPhone and iPad that plays fully offline, with no timers, no energy "
+        "and no ads. You rebuild a ruined seaside town by laying every brick by hand, nine buildings in all. The first two "
+        "buildings are free; the rest of the town is a one-time purchase.",
+    "/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/":
+        "Brickhaven, iPhone ve iPad için tamamen internetsiz oynanan, zamanlayıcısız, enerjisiz ve reklamsız, rahat bir birinci "
+        "şahıs inşa oyunu. Yıkık bir sahil kasabasını her tuğlayı elinle koyarak yeniden kurarsın; toplam dokuz bina. İlk iki "
+        "bina ücretsiz, kasabanın geri kalanı tek seferlik bir satın alma.",
+    "/brickhaven/beginners-guide/":
+        "To build faster in Brickhaven, fill your arms before every trip, spend your first skill points on Strong Arms (up to "
+        "20 bricks per trip) and unlock the Brick Magnet as soon as you can. Read the blueprint on the construction sign, work "
+        "section by section and use the lift for high rows.",
+    "/brickhaven/tr/baslangic-rehberi/":
+        "Brickhaven'da daha hızlı inşa etmek için her seferde kucağını doldur, ilk yetenek puanlarını Güçlü Kollar'a harca "
+        "(seferde 20 tuğlaya kadar) ve Tuğla Mıknatısı'nı açılır açılmaz al. İnşaat tabelasındaki planı oku, bölüm bölüm çalış "
+        "ve yüksek sıralar için asansörü kullan.",
+    "/brickhaven/buildings/":
+        "Brickhaven has nine story buildings, built in this order: Bakery, Red Barn, Flower Shop, Seaside Café, Ice Cream "
+        "Parlor, Bookshop, Clock Tower, Fire Station and Train Station. Each one is bigger than the last, from about 500 bricks "
+        "to about 1,400, and brings its owner home. The Bakery and the Red Barn are free.",
+    "/brickhaven/tr/binalar/":
+        "Brickhaven'da dokuz hikâye binası var ve şu sırayla yapılır: Fırın, Kırmızı Ahır, Çiçekçi, Sahil Kafesi, Dondurmacı, "
+        "Kitapçı, Saat Kulesi, İtfaiye ve Tren İstasyonu. Her biri öncekinden büyüktür (yaklaşık 500'den 1.400 tuğlaya) ve "
+        "sahibini eve getirir. Fırın ve Kırmızı Ahır ücretsiz.",
+    "/brickhaven/skill-tree/":
+        "In Brickhaven, unlock Strong Arms first, then a few levels of Skilled Hands, then the Brick Magnet as soon as it opens. "
+        "Sprint and the Lift help once buildings get tall; the rest are comforts. The story gives enough points for the whole "
+        "board and you can reset it, so no choice is final.",
+    "/brickhaven/tr/ustalik-agaci/":
+        "Brickhaven'da önce Güçlü Kollar'ı, sonra birkaç kademe Usta Eller'i, ardından açılır açılmaz Tuğla Mıknatısı'nı al. "
+        "Binalar yükselince Koşma ve Asansör işe yarar; gerisi kolaylıktır. Hikâye bütün ağaca yetecek puan verir ve ağaç "
+        "sıfırlanabilir, yani hiçbir seçim kalıcı değil.",
+    "/brickhaven/design-your-own-house/":
+        "At Brickhaven's Architect's Table you draw your own house, shop, café or farm: size, floors, roof, colors, windows and "
+        "doors. Then you build it brick by brick on one of four lots in town. Designing is free; building designs on a lot comes "
+        "with the Whole Town.",
+    "/brickhaven/tr/ev-tasarlama-oyunu/":
+        "Brickhaven'ın Mimar Masası'nda kendi evini, dükkânını, kafeni ya da çiftliğini çizersin: ölçü, kat, çatı, renkler, "
+        "pencereler ve kapılar. Sonra onu kasabadaki dört arsadan birine tuğla tuğla kurarsın. Tasarlamak ücretsiz; tasarımı "
+        "arsaya kurmak Tüm Kasaba ile gelir.",
+}
+
+
 def page(app, lang, path, alts, title, desc, body, crumbs, schema=None, head=""):
     """Renders one guide page. alts = {lang: path} for hreflang; crumbs = [(label, href)]; head = extra <head> markup."""
     a = APPS[app]
+    if path in INTRO_OVERRIDE:
+        body = re.sub(r'<p class="intro">.*?</p>', lambda m: f'<p class="intro">{ESC(INTRO_OVERRIDE[path])}</p>', body, count=1, flags=re.S)
     itunes = f'\n  <meta name="apple-itunes-app" content="app-id={a["id"]}">' if a["live"] else ""
     store = (f'<a class="store" href="{ESC(store_url(app, lang))}">{ESC(STORE_LABEL[lang])}</a>' if a["live"]
              else f'<span class="store" aria-disabled="true">{ESC(SOON_LABEL[lang])}</span>')
@@ -2196,7 +2244,7 @@ EXTRA += ALT
 # Brickhaven guides added 2026-11-22: FAQ, offline games for a flight, the winter season, restoration games. No other game's
 # name. Prices are never written here (they change by country and season); pages say they are on the App Store.
 # FPS_SETTING_LIVE: the Frame rate setting (Auto / 30 / 60 FPS) ships with Brickhaven 1.4.3; set True once it is on the store.
-FPS_SETTING_LIVE = False
+FPS_SETTING_LIVE = True
 _HEAT_EN = ("Brickhaven lowers its own graphics a step at a time when the device gets warm, and Low Power Mode makes it lighter "
             "still. Settings → Display → Graphics: Normal is the lighter choice.")
 _HEAT_TR = ("Brickhaven cihaz ısındıkça grafiği kendiliğinden adım adım hafifletir; Düşük Güç Modu onu daha da hafifletir. "
