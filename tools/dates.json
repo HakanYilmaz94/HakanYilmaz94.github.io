@@ -1105,8 +1105,8 @@
 "published": "2026-11-21"
 },
 "/brickhaven/": {
-"hash": "8e7268dc99db75cc",
-"modified": "2026-11-21",
+"hash": "8f31072c1f886382",
+"modified": "2026-11-22",
 "published": "2026-10-26"
 },
 "/brickhaven/beginners-guide/": {
@@ -1115,18 +1115,18 @@
 "published": "2026-10-29"
 },
 "/brickhaven/best-cozy-building-games-iphone/": {
-"hash": "8a7846d9ffcbe899",
-"modified": "2026-11-21",
+"hash": "36708a9f33c9052e",
+"modified": "2026-11-22",
 "published": "2026-11-21"
 },
 "/brickhaven/brick-by-brick-alternative-iphone/": {
-"hash": "65a622df9f0cf393",
-"modified": "2026-11-21",
+"hash": "abf4429db6a33fdf",
+"modified": "2026-11-22",
 "published": "2026-11-21"
 },
 "/brickhaven/brick-laying-simulator/": {
-"hash": "19620540e07f790d",
-"modified": "2026-11-21",
+"hash": "0dda1986789dbf9a",
+"modified": "2026-11-22",
 "published": "2026-11-21"
 },
 "/brickhaven/buildings/": {
@@ -1139,15 +1139,35 @@
 "modified": "2026-11-10",
 "published": "2026-10-29"
 },
+"/brickhaven/cozy-winter-game/": {
+"hash": "2c5a45c9069db22a",
+"modified": "2026-11-22",
+"published": "2026-11-22"
+},
 "/brickhaven/design-your-own-house/": {
 "hash": "e9f43d3dd046cf26",
 "modified": "2026-11-10",
 "published": "2026-11-10"
 },
+"/brickhaven/faq/": {
+"hash": "1bace8bc452aae4f",
+"modified": "2026-11-22",
+"published": "2026-11-22"
+},
+"/brickhaven/games-to-play-on-a-plane/": {
+"hash": "82c1a511171d0262",
+"modified": "2026-11-22",
+"published": "2026-11-22"
+},
 "/brickhaven/privacy.html": {
 "hash": "f6c7de545ce8a6a5",
 "modified": "2026-10-26",
 "published": "2026-10-26"
+},
+"/brickhaven/restoration-games-iphone/": {
+"hash": "0f7c3d5698132c87",
+"modified": "2026-11-22",
+"published": "2026-11-22"
 },
 "/brickhaven/skill-tree/": {
 "hash": "094ed6a42f4a3408",
@@ -1155,13 +1175,13 @@
 "published": "2026-11-10"
 },
 "/brickhaven/townscaper-alternative/": {
-"hash": "46c204cc658eb251",
-"modified": "2026-11-21",
+"hash": "4710f8e70e591e26",
+"modified": "2026-11-22",
 "published": "2026-11-21"
 },
 "/brickhaven/tr/": {
-"hash": "331e4b21bf28acf1",
-"modified": "2026-11-21",
+"hash": "7dd6b64c667920fa",
+"modified": "2026-11-22",
 "published": "2026-10-26"
 },
 "/brickhaven/tr/baslangic-rehberi/": {
@@ -1175,13 +1195,13 @@
 "published": "2026-11-10"
 },
 "/brickhaven/tr/brick-by-brick-iphone-alternatifi/": {
-"hash": "cbe7225b04f90f3f",
-"modified": "2026-11-21",
+"hash": "cc819871c960e2c1",
+"modified": "2026-11-22",
 "published": "2026-11-21"
 },
 "/brickhaven/tr/en-iyi-rahat-insa-oyunlari/": {
-"hash": "63147b445b0b2bcf",
-"modified": "2026-11-21",
+"hash": "263e2aec00c86033",
+"modified": "2026-11-22",
 "published": "2026-11-21"
 },
 "/brickhaven/tr/ev-tasarlama-oyunu/": {
@@ -1194,15 +1214,35 @@
 "modified": "2026-11-10",
 "published": "2026-10-29"
 },
+"/brickhaven/tr/kasaba-yenileme-oyunu/": {
+"hash": "090f5f80e31b6890",
+"modified": "2026-11-22",
+"published": "2026-11-22"
+},
+"/brickhaven/tr/kis-oyunu/": {
+"hash": "d73a7f55454fa89e",
+"modified": "2026-11-22",
+"published": "2026-11-22"
+},
+"/brickhaven/tr/sss/": {
+"hash": "a2e50d1738d7b492",
+"modified": "2026-11-22",
+"published": "2026-11-22"
+},
 "/brickhaven/tr/townscaper-alternatifi/": {
-"hash": "8ed31b5b1c19e54b",
-"modified": "2026-11-21",
+"hash": "4060f703ce1528ca",
+"modified": "2026-11-22",
 "published": "2026-11-21"
 },
 "/brickhaven/tr/tugla-orme-oyunu/": {
-"hash": "71884e3d659a25c7",
-"modified": "2026-11-21",
+"hash": "3f6d6768c3ac60aa",
+"modified": "2026-11-22",
 "published": "2026-11-21"
+},
+"/brickhaven/tr/ucakta-oynanacak-oyunlar/": {
+"hash": "2b08625ac121673c",
+"modified": "2026-11-22",
+"published": "2026-11-22"
 },
 "/brickhaven/tr/ustalik-agaci/": {
 "hash": "8660b4fb08e8c304",

@@ -108,6 +108,45 @@ A: Open the purchase screen and tap Restore. Purchases are also shared with your
 Q: Is there a mode for color blindness?
 A: Yes: Settings → Color-blind mode prints a small symbol on every brick color, so shapes, not colors alone, tell them apart.
 
+Q: How much does the Whole Town cost?
+A: The current price for your country is shown on the App Store page and on the purchase screen in the game. Prices differ by country and can change for seasonal offers, so this page does not list them.
+
+Q: What does Deluxe add?
+A: Deluxe includes the Whole Town plus supporter extras: four special brick colors for the Architect's Table (gold, marble, midnight blue and moss), a dog or cat companion that follows you around, and Rose's Garden decorations such as a gazebo, greenhouse, fountain and rose arch. If you already own the Whole Town you can upgrade to Deluxe.
+
+Q: Does Brickhaven have ads?
+A: No. There are no ads of any kind, no energy bars and no timers that make you wait.
+
+Q: Does it work without internet?
+A: Yes. Brickhaven plays fully offline, so it works on a plane, on the subway or anywhere without signal. Purchases, iCloud sync and Game Center use the internet when it is there.
+
+Q: Can I play on iPad?
+A: Yes. Brickhaven runs on iPhone and iPad and is played in landscape on both. One purchase covers both devices with the same Apple Account.
+
+Q: Will my town move to a new phone or iPad?
+A: Yes. Your saves are kept in your own iCloud. Sign in with the same Apple Account and your town comes along. The game has three save slots.
+
+Q: I bought it before. How do I get it back?
+A: Open the purchase screen or Settings and tap Restore Purchases. Purchases are also shared with your Family Sharing group.
+
+Q: Which languages does Brickhaven support?
+A: English, Turkish, German, French, Spanish, Italian, Portuguese (Brazil), Japanese and Korean. The game follows your device language; you can change it per app in the iOS Settings app.
+
+Q: What is the winter season?
+A: From 1 December to 15 January the town turns snowy by itself: snow on the grass, roofs and roads, light strings and wreaths on finished buildings, a decorated tree on the square once the Clock Tower is rebuilt, and winter decorations in Decorate. You can switch it off in Settings → Game → Winter look.
+
+Q: My phone gets warm. What can I do?
+A: Brickhaven lowers its own graphics a step at a time when the device gets warm, and Low Power Mode makes it lighter still. Settings → Display → Graphics: Normal is the lighter choice.
+
+Q: How long does it take to finish?
+A: It depends on how you play. The Bakery is a short tutorial; later buildings have more than a thousand bricks each. There is no rush: nothing runs out while you are away.
+
+Q: Does Brickhaven collect personal data?
+A: No. There is no account and no tracking. The App Store version sends only anonymous play statistics and crash reports that are not linked to you. The privacy policy explains it in plain words.
+
+Q: Is it suitable for children?
+A: Yes. Brickhaven is rated 4+ and has no violence, chat or ads. Purchases go through the App Store, so Ask to Buy and Screen Time limits apply.
+
 
 ## Crownly
 

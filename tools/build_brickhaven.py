@@ -112,7 +112,11 @@ GUIDES = {
                       ("Best cozy building games for iPhone", "/brickhaven/best-cozy-building-games-iphone/"),
                       ("A brick-laying simulator for iPhone", "/brickhaven/brick-laying-simulator/"),
                       ("Brick by Brick on iPhone? Try this", "/brickhaven/brick-by-brick-alternative-iphone/"),
-                      ("A Townscaper alternative with a story", "/brickhaven/townscaper-alternative/")]),
+                      ("A Townscaper alternative with a story", "/brickhaven/townscaper-alternative/"),
+                      ("Brickhaven FAQ", "/brickhaven/faq/"),
+                      ("Games to play on a plane", "/brickhaven/games-to-play-on-a-plane/"),
+                      ("A cozy winter game: snow season", "/brickhaven/cozy-winter-game/"),
+                      ("Restoration games: rebuild a town", "/brickhaven/restoration-games-iphone/")]),
     "tr": ("Rehberler", [("İnternetsiz, rahatlatıcı bir inşa oyunu", "/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/"),
                          ("Başlangıç rehberi: 8 ipucu", "/brickhaven/tr/baslangic-rehberi/"),
                          ("9 bina ve sahipleri", "/brickhaven/tr/binalar/"),
@@ -121,7 +125,11 @@ GUIDES = {
                          ("En iyi rahat inşa oyunları", "/brickhaven/tr/en-iyi-rahat-insa-oyunlari/"),
                          ("iPhone'da tuğla örme oyunu", "/brickhaven/tr/tugla-orme-oyunu/"),
                          ("Brick by Brick iPhone alternatifi", "/brickhaven/tr/brick-by-brick-iphone-alternatifi/"),
-                         ("Townscaper alternatifi", "/brickhaven/tr/townscaper-alternatifi/")]),
+                         ("Townscaper alternatifi", "/brickhaven/tr/townscaper-alternatifi/"),
+                         ("Brickhaven SSS", "/brickhaven/tr/sss/"),
+                         ("Uçakta oynanacak oyunlar", "/brickhaven/tr/ucakta-oynanacak-oyunlar/"),
+                         ("Rahat bir kış oyunu: kar mevsimi", "/brickhaven/tr/kis-oyunu/"),
+                         ("Kasaba yenileme oyunu", "/brickhaven/tr/kasaba-yenileme-oyunu/")]),
 }
 
 

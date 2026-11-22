@@ -57,6 +57,12 @@ for name, rel, url, privacy in APPS:
     out += ["", desc, ""]
     if feats:
         out += ["Features:"] + [f"- {f}" for f in feats] + [""]
+    extra = os.path.join(ROOT, os.path.dirname(rel), "faq", "index.html")  # an app's own FAQ page, when it has one
+    if os.path.exists(extra):
+        seen = {q for q, _ in faq}
+        for b in ld_blocks(open(extra).read()):
+            if b.get("@type") == "FAQPage":
+                faq += [(q["name"], q["acceptedAnswer"]["text"]) for q in b.get("mainEntity", []) if q["name"] not in seen]
     if faq:
         out += ["Questions and answers:", ""] + [f"Q: {q}\nA: {a}\n" for q, a in faq]
     out.append("")
