@@ -11,6 +11,7 @@ goes to review. Pictures: the five App Store screenshots (pyramidcraft/img/<lang
 import html
 import json
 import os
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_ID = "6836529298"
@@ -292,6 +293,9 @@ PRIVACY = {
 # The 1.1 policy (ads, purchases, anonymous statistics). Ready since 2026-11-21; set PRIVACY_VERSION = "1.1" and rebuild
 # when 1.1 goes to review (not before: 1.0 collects nothing). Piramit/Plans/gizlilik-1.1.md has the rest of the list.
 PRIVACY_VERSION = "1.0"   # also switches the page's "no ads, no purchases" lines (see V11_TEXT)
+# Preview without publishing: python3 -I tools/build_pyramidcraft.py --preview <dir> (writes only <dir>/privacy.html, 1.1)
+PREVIEW = sys.argv[sys.argv.index("--preview") + 1] if "--preview" in sys.argv else None
+if PREVIEW: PRIVACY_VERSION = "1.1"
 _MAIL = "<a href=\"mailto:hyapps@outlook.com?subject=Pyramid%20Craft\">hyapps@outlook.com</a>"
 PRIVACY_V11 = {
     "en": dict(
@@ -327,8 +331,8 @@ PRIVACY_V11 = {
             ("This website", "hyapps.app uses Cloudflare Web Analytics, which counts visits without cookies and without identifying you."),
             ("Children", "Pyramid Craft is not directed at children under 13 and collects no personal data knowingly from them."),
             ("Your choices", "You can buy Ad-free to turn ads off, change your ad consent in the EEA/UK from the form, turn off "
-             "notifications and iCloud in the Settings app, and delete all your data by deleting the app (and its iCloud backup "
-             "in Settings → your name → iCloud)."),
+             "notifications and iCloud in the Settings app, stop sharing your world with friends in the game's Settings, and "
+             "delete all your data by deleting the app (and its iCloud backup in Settings → your name → iCloud)."),
             ("Changes and contact", "If this changes, this page will say so first, with a new date. Questions: " + _MAIL + "."),
         ]),
     "tr": dict(
@@ -364,7 +368,8 @@ PRIVACY_V11 = {
             ("Bu web sitesi", "hyapps.app, ziyaretleri çerezsiz ve seni tanımadan sayan Cloudflare Web Analytics kullanır."),
             ("Çocuklar", "Pyramid Craft 13 yaşından küçük çocuklara yönelik değildir ve onlardan bilerek kişisel veri toplamaz."),
             ("Seçimlerin", "Reklamları kapatmak için Reklamsız alabilir, AB/İngiltere'de reklam onayını formdan değiştirebilir, "
-             "bildirimleri ve iCloud'u Ayarlar'dan kapatabilir, uygulamayı (ve iCloud yedeğini) silerek bütün verilerini silebilirsin."),
+             "bildirimleri ve iCloud'u Ayarlar'dan kapatabilir, dünyanı arkadaşlarınla paylaşmayı oyunun Ayarlar'ından "
+             "durdurabilir, uygulamayı (ve iCloud yedeğini) silerek bütün verilerini silebilirsin."),
             ("Değişiklikler ve iletişim", "Bu değişirse bu sayfa önce bunu yeni tarihle yazar. Sorular için: " + _MAIL + "."),
         ]),
 }
@@ -431,6 +436,11 @@ def write(rel, text):
     print("wrote", rel)
 
 
+if PREVIEW:
+    os.makedirs(PREVIEW, exist_ok=True)
+    open(os.path.join(PREVIEW, "privacy.html"), "w").write(privacy())
+    print("preview", os.path.join(PREVIEW, "privacy.html"))
+    sys.exit()
 write("pyramidcraft/index.html", page(T["en"]))
 write("pyramidcraft/tr/index.html", page(T["tr"]))
 write("pyramidcraft/privacy.html", privacy())
