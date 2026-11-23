@@ -51,7 +51,7 @@ T = {
             ("What happens when I place a wrong bird?", "You lose one of your three feathers. When all three are gone, start the level again "
              "or use a revive to carry on."),
             ("How does the weekly season work?", "From level 11, every level you clear adds the feathers you kept (up to 3). You race up "
-             "to 49 other players in a group of 50. A new season starts every Monday. You can leave the ranking in Settings."),
+             "to 49 other players in a group of 50. A new season starts every Monday."),
             ("Someone has an offensive name in my group.", "Touch and hold their row in the ranking to report the name or block the player."),
             ("Does it need the internet?", "No for the puzzles. The season ranking and Game Center update when you are online."),
             ("Will my progress move to my new phone?", "Yes. With \"Save progress (iCloud)\" on, your progress follows your Apple Account."),
@@ -87,7 +87,7 @@ T = {
              "renkte tam bir kuş olmalı; kuşlar çaprazdan bile birbirine değemez. Birçok kareyi işaretlemek için parmağını sürükle."),
             ("Yanlış kuş koyarsam ne olur?", "Üç tüyünden birini kaybedersin. Üçü de giderse bölüme baştan başla ya da canlandırmayla devam et."),
             ("Haftalık sezon nasıl işler?", "11. seviyeden sonra geçtiğin her bölüm koruduğun tüyleri (en fazla 3) ekler. 50 kişilik bir "
-             "grupta 49 oyuncuyla yarışırsın. Her pazartesi yeni sezon başlar. Ayarlar'dan sıralamadan çıkabilirsin."),
+             "grupta 49 oyuncuyla yarışırsın. Her pazartesi yeni sezon başlar."),
             ("Grubumda kötü bir isim var.", "Sıralamada o satıra basılı tut; ismi bildirebilir ya da oyuncuyu engelleyebilirsin."),
             ("İnternet gerekir mi?", "Bulmacalar için hayır. Sezon sıralaması ve Game Center çevrimiçi olunca güncellenir."),
             ("İlerlemem yeni telefonuma geçer mi?", "Evet. \"İlerlemeyi kaydet (iCloud)\" açıksa ilerlemen Apple Hesabınla gelir."),
@@ -214,14 +214,14 @@ PRIVACY = {
              "random letters), your avatar and frame, your level, this week's feathers and levels cleared, and a random player "
              "code that is not linked to your name or Apple Account. Players in your group can see your name, avatar, frame and "
              "feathers. Names are filtered for offensive words; you can report a name or block a player by touching and holding "
-             "their row. Reported names are reviewed by us. You can leave the ranking at any time in the game's Settings "
-             "(\"Season ranking\"); this week's entry is then deleted. Old entries are not shown after their week."),
+             "their row. Reported names are reviewed by us. Old entries are not shown after their week. To have your entries "
+             "deleted, write to us."),
             ("Game Center", "Game Center is optional. If you are signed in, the game sends your highest level, Bird Duo level, daily "
              "puzzle time and weekly feathers to Game Center leaderboards, and the achievements you earn, which Apple runs."),
             ("This website", "hyapps.app uses Cloudflare Web Analytics, which counts visits without cookies and without identifying you."),
             ("Children", "Birbdoku has no chat, no ads and no in-app purchases. The only thing other players see is your chosen name, "
-             "avatar and score in the weekly ranking, which you can switch off."),
-            ("Your choices", "Turn off the season ranking in the game's Settings, turn off \"Save progress (iCloud)\" or Game Center, "
+             "avatar and score in the weekly ranking."),
+            ("Your choices", "Turn off \"Save progress (iCloud)\" or Game Center, "
              "and delete all your data by deleting the app (and its iCloud data in Settings → your name → iCloud). To have a "
              "season entry removed, write to us."),
             ("Changes and contact", "If a future version adds anything to this (for example ads or friends), this page will say so "
@@ -243,14 +243,14 @@ PRIVACY = {
              "rastgele harf), avatarın ve çerçeven, seviyen, bu haftaki tüylerin ve geçtiğin bölüm sayısı, adınla ya da Apple "
              "Hesabınla bağlantısı olmayan rastgele bir oyuncu kodu. Grubundaki oyuncular adını, avatarını, çerçeveni ve tüylerini "
              "görür. İsimler kötü kelimelere karşı süzülür; bir satıra basılı tutarak ismi bildirebilir ya da oyuncuyu "
-             "engelleyebilirsin. Bildirilen isimleri biz inceleriz. Sıralamadan istediğin zaman oyunun Ayarlar'ından (\"Sezon "
-             "sıralaması\") çıkabilirsin; bu haftaki kaydın o zaman silinir. Eski kayıtlar haftası bitince gösterilmez."),
+             "engelleyebilirsin. Bildirilen isimleri biz inceleriz. Eski kayıtlar haftası bitince gösterilmez. Kayıtlarının "
+             "silinmesini istersen bize yaz."),
             ("Game Center", "Game Center isteğe bağlıdır. Giriş yaptıysan oyun en yüksek seviyeni, Kuş İkilisi seviyeni, günlük "
              "bulmaca süreni, haftalık tüylerini ve kazandığın başarımları Apple'ın işlettiği Game Center'a gönderir."),
             ("Bu web sitesi", "hyapps.app, ziyaretleri çerezsiz ve seni tanımadan sayan Cloudflare Web Analytics kullanır."),
             ("Çocuklar", "Birbdoku'da sohbet, reklam ve uygulama içi satın alma yoktur. Diğer oyuncuların gördüğü tek şey haftalık "
-             "sıralamadaki seçtiğin ad, avatar ve puandır; bunu kapatabilirsin."),
-            ("Seçimlerin", "Sezon sıralamasını oyunun Ayarlar'ından, \"İlerlemeyi kaydet (iCloud)\"u ya da Game Center'ı kapatabilir, "
+             "sıralamadaki seçtiğin ad, avatar ve puandır."),
+            ("Seçimlerin", "\"İlerlemeyi kaydet (iCloud)\"u ya da Game Center'ı kapatabilir, "
              "uygulamayı (ve Ayarlar → adın → iCloud'daki verisini) silerek bütün verilerini silebilirsin. Bir sezon kaydının "
              "silinmesini istersen bize yaz."),
             ("Değişiklikler ve iletişim", "İleriki bir sürüm buna bir şey eklerse (örneğin reklam ya da arkadaşlar) bu sayfa önce bunu "
