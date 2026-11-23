@@ -2764,6 +2764,8 @@ STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
           ("/glowfly/privacy.html", {}),
           ("/pyramidcraft/", {"en": "/pyramidcraft/", "tr": "/pyramidcraft/tr/"}), ("/pyramidcraft/tr/", {"en": "/pyramidcraft/", "tr": "/pyramidcraft/tr/"}),
           ("/pyramidcraft/privacy.html", {}),
+          ("/birbdoku/", {"en": "/birbdoku/", "tr": "/birbdoku/tr/"}), ("/birbdoku/tr/", {"en": "/birbdoku/", "tr": "/birbdoku/tr/"}),
+          ("/birbdoku/privacy.html", {}),
           ("/press/", {"en": "/press/", "tr": "/tr/press/"}), ("/tr/press/", {"en": "/press/", "tr": "/tr/press/"}),
           ("/besmele/", {"tr": "/besmele/", "en": "/besmele/en/"}), ("/besmele/en/", {"tr": "/besmele/", "en": "/besmele/en/"}),
           ("/besmele/destek.html", {}), ("/besmele/en/destek.html", {}), ("/besmele/gizlilik.html", {}), ("/besmele/en/gizlilik.html", {})]
