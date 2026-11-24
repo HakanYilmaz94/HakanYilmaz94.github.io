@@ -238,8 +238,8 @@ PRIVACY = {
             ("Game Center", "Game Center is optional. If you are signed in, the game sends your highest level, Bird Duo level, daily "
              "puzzle time and weekly feathers to Game Center leaderboards, and the achievements you earn, which Apple runs."),
             ("This website", "hyapps.app uses Cloudflare Web Analytics, which counts visits without cookies and without identifying you."),
-            ("Children", "Birbdoku is not directed at children under 13 and has no chat. Ads are limited to content suitable for "
-             "all ages. Other players only see the profile details described above."),
+            ("Children", "Birbdoku is not directed at children under 13 and has no chat. Ads are filtered by content rating so that "
+             "mature or adult ads are not shown. Other players only see the profile details described above."),
             ("Your choices", "Turn off \"Save progress (iCloud)\", Game Center or the season ranking, change your ad consent in "
              "Settings, and delete all your data by deleting the app (and its iCloud data in Settings → your name → iCloud). To "
              "have a season entry or your public profile removed, write to us."),
@@ -285,8 +285,8 @@ PRIVACY = {
             ("Game Center", "Game Center isteğe bağlıdır. Giriş yaptıysan oyun en yüksek seviyeni, Kuş İkilisi seviyeni, günlük "
              "bulmaca süreni, haftalık tüylerini ve kazandığın başarımları Apple'ın işlettiği Game Center'a gönderir."),
             ("Bu web sitesi", "hyapps.app, ziyaretleri çerezsiz ve seni tanımadan sayan Cloudflare Web Analytics kullanır."),
-            ("Çocuklar", "Birbdoku 13 yaş altı çocuklara yönelik değildir ve sohbet içermez. Reklamlar her yaşa uygun içerikle "
-             "sınırlıdır. Diğer oyuncular yalnız yukarıda anlatılan profil bilgilerini görür."),
+            ("Çocuklar", "Birbdoku 13 yaş altı çocuklara yönelik değildir ve sohbet içermez. Reklamlar içerik derecesine göre süzülür; "
+             "yetişkinlere yönelik reklamlar gösterilmez. Diğer oyuncular yalnız yukarıda anlatılan profil bilgilerini görür."),
             ("Seçimlerin", "\"İlerlemeyi kaydet (iCloud)\"u, Game Center'ı ya da sezon sıralamasını kapatabilir, reklam iznini "
              "Ayarlar'dan değiştirebilir, uygulamayı (ve Ayarlar → adın → iCloud'daki verisini) silerek bütün verilerini "
              "silebilirsin. Bir sezon kaydının ya da herkese açık profilinin silinmesini istersen bize yaz."),
