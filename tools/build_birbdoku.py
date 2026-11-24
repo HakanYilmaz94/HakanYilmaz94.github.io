@@ -4,7 +4,7 @@
 Usage: python3 -I tools/build_birbdoku.py   (run from the site repo root)
 Writes birbdoku/index.html, birbdoku/tr/index.html and birbdoku/privacy.html; style in birbdoku/birbdoku.css.
 Until the app is on the App Store, LIVE is False: a "coming soon" badge instead of the store button, no Smart App Banner.
-1.0 is the plain build (Birbdoku/CLAUDE.md "Sade ilk sürüm"): no ads, no purchases, no analytics; Game Center, iCloud
+1.1 (2026-11-25): ads (AdMob), purchases and anonymous Firebase analytics; 1.0 was the plain build; Game Center, iCloud
 progress and the weekly season groups (CloudKit). 1.1 adds ads, purchases and friends: the policy must say so first.
 Pictures: the app icon and Pika / Chiko poses (birbdoku/img/); App Store screenshots go in a gallery once they exist.
 """
@@ -32,7 +32,7 @@ T = {
         lead="Meet Pika and Chiko, two cockatiels who love logic puzzles. Tap to rule a cell out, double-tap to place a bird, "
              "and remember: birds never touch, not even corner to corner.",
         soon="Coming soon to the App Store", cta="Download on the App Store",
-        note="iPhone · Puzzles play offline · No ads",
+        note="iPhone & iPad · Puzzles play offline",
         nav_story="Features", nav_support="Support",
         features=[
             ("🐦", "Two cockatiels", "Pika and Chiko fill the board with a different face in every cell and cheer when you get it right."),
@@ -45,7 +45,7 @@ T = {
         support_h="Support",
         contact="A bug, an idea or a question? Write to us at {mail}. We read every message.",
         faq=[
-            ("Is Birbdoku free?", "Yes. It is free to play, with no ads and no in-app purchases."),
+            ("Is Birbdoku free?", "Yes. Birbdoku is free to download and every level can be played without paying. It shows ads, and optional in-app purchases remove them or add helpers."),
             ("How do I play?", "Tap a cell once to mark it with an X, tap it twice to place a bird. Every row, every column and "
              "every color needs exactly one bird, and birds may not touch, not even diagonally. Drag across the board to mark many cells."),
             ("What happens when I place a wrong bird?", "You lose one of your three feathers. When all three are gone, start the level again "
@@ -69,7 +69,7 @@ T = {
         lead="Mantık bulmacalarını seven iki sultan papağanı Pika ve Çiko ile tanış. Bir kareyi elemek için dokun, kuş koymak "
              "için iki kez dokun ve unutma: kuşlar birbirine değmez, köşeden bile.",
         soon="Yakında App Store'da", cta="App Store'dan indir",
-        note="iPhone · Bulmacalar internetsiz · Reklamsız",
+        note="iPhone ve iPad · Bulmacalar internetsiz",
         nav_story="Özellikler", nav_support="Destek",
         features=[
             ("🐦", "İki sultan papağanı", "Pika ve Çiko tahtayı her karede farklı bir yüzle doldurur, doğru hamlede sevinir."),
@@ -82,7 +82,7 @@ T = {
         support_h="Destek",
         contact="Bir hata, bir fikir ya da bir soru mu var? {mail} adresine yaz. Her mesajı okuyoruz.",
         faq=[
-            ("Birbdoku ücretsiz mi?", "Evet. Ücretsiz oynanır; reklam ve uygulama içi satın alma yoktur."),
+            ("Birbdoku ücretsiz mi?", "Evet. Birbdoku ücretsiz indirilir ve her bölüm ödeme yapmadan oynanır. Reklam gösterir; isteğe bağlı satın almalar reklamları kaldırır ya da yardımcı ekler."),
             ("Nasıl oynanır?", "Bir kareye bir kez dokununca X konur, iki kez dokununca kuş konur. Her satırda, her sütunda ve her "
              "renkte tam bir kuş olmalı; kuşlar çaprazdan bile birbirine değemez. Birçok kareyi işaretlemek için parmağını sürükle."),
             ("Yanlış kuş koyarsam ne olur?", "Üç tüyünden birini kaybedersin. Üçü de giderse bölüme baştan başla ya da canlandırmayla devam et."),
@@ -199,16 +199,31 @@ def page(t):
 
 PRIVACY = {
     "en": dict(
-        h="Privacy Policy", date=f"{NAME} · Effective November 23, 2026",
+        h="Privacy Policy", date=f"{NAME} · Effective November 25, 2026 (version 1.1)",
         sections=[
-            (None, "Birbdoku is a logic puzzle game. It needs no account, shows no ads, has no in-app purchases and does not track "
-                   "you. This page explains, in plain words, what the game stores, what other players can see and where."),
+            (None, "Birbdoku is a logic puzzle game. It needs no account and does not track you. From version 1.1 it shows ads, "
+                   "offers optional in-app purchases and uses anonymous analytics. This page explains, in plain words, what the "
+                   "game stores, what other players can see, what is shared with whom, and where."),
             ("No account, no tracking", "You do not need an account to play. We never ask for your e-mail address, contacts or "
-             "location. The game uses no analytics or advertising service and does not use the advertising identifier (IDFA)."),
+             "precise location. The game does not ask for tracking permission and does not use the advertising identifier "
+             "(IDFA). Nothing collected is linked to your name or Apple Account."),
             ("Stored on your device and in your iCloud", "Your progress and settings are stored on your device. With \"Save progress "
              "(iCloud)\" on, the game also keeps them in your own iCloud (iCloud key-value storage) so a new device can carry on. "
              "We cannot see or read this data; it is handled by Apple under "
              "<a href=\"https://www.apple.com/legal/privacy/\">Apple's privacy policy</a>."),
+            ("Ads (Google AdMob)", "The game shows banner, full-screen and optional rewarded video ads through Google AdMob. To "
+             "show and measure ads, Google receives technical data from your device: an app-specific device identifier, your "
+             "IP address (from which a coarse location such as your country is derived), device and app information, ad "
+             "interactions and diagnostic data. In the EU, UK and Switzerland the game first asks for your consent through "
+             "Google's consent form, and you can change your choice later in Settings. See "
+             "<a href=\"https://policies.google.com/technologies/partner-sites\">how Google uses data from partner apps</a>. "
+             "Buying \"Remove ads\" or the Special Offer stops the banner and full-screen ads."),
+            ("In-app purchases", "Purchases are handled entirely by Apple. We never see your payment details; the game only learns "
+             "which item was bought so it can deliver it. \"Restore purchases\" in the shop brings back permanent items."),
+            ("Anonymous analytics (Firebase)", "Copies installed from the App Store send anonymous usage events to Google "
+             "Analytics for Firebase (for example a level started or finished, a setting changed, an item bought), with a "
+             "random app-instance identifier. We use them only to improve the game. They are not linked to you, not used for "
+             "advertising and not sold."),
             ("Weekly season ranking", "From level 11 the game puts you in a weekly group of up to 50 players. For this it stores a "
              "season entry in Apple's CloudKit public database: the name you chose in your profile (or \"Player\" with a few "
              "random letters), your avatar and frame, your level, this week's feathers and levels cleared, and a random player "
@@ -216,28 +231,46 @@ PRIVACY = {
              "feathers. Names are filtered for offensive words; you can report a name or block a player by touching and holding "
              "their row. Reported names are reviewed by us. Old entries are not shown after their week. To have your entries "
              "deleted, write to us."),
+            ("Friends", "You can add friends with their player code or an invitation link. Your public profile in CloudKit then "
+             "holds your name, avatar, frame, level, profile numbers (for example streaks and stars), your garden's name and "
+             "whether you played today, and, if you joined through an invitation, the code of the friend who invited you. "
+             "Friends can see these. You can remove a friend or block and report a player from their profile card."),
             ("Game Center", "Game Center is optional. If you are signed in, the game sends your highest level, Bird Duo level, daily "
              "puzzle time and weekly feathers to Game Center leaderboards, and the achievements you earn, which Apple runs."),
             ("This website", "hyapps.app uses Cloudflare Web Analytics, which counts visits without cookies and without identifying you."),
-            ("Children", "Birbdoku has no chat, no ads and no in-app purchases. The only thing other players see is your chosen name, "
-             "avatar and score in the weekly ranking."),
-            ("Your choices", "Turn off \"Save progress (iCloud)\" or Game Center, "
-             "and delete all your data by deleting the app (and its iCloud data in Settings → your name → iCloud). To have a "
-             "season entry removed, write to us."),
-            ("Changes and contact", "If a future version adds anything to this (for example ads or friends), this page will say so "
-             "first, with a new date. Questions: " + MAIL + "."),
+            ("Children", "Birbdoku is not directed at children under 13 and has no chat. Ads are limited to content suitable for "
+             "all ages. Other players only see the profile details described above."),
+            ("Your choices", "Turn off \"Save progress (iCloud)\", Game Center or the season ranking, change your ad consent in "
+             "Settings, and delete all your data by deleting the app (and its iCloud data in Settings → your name → iCloud). To "
+             "have a season entry or your public profile removed, write to us."),
+            ("Changes and contact", "If a future version changes any of this, this page will say so first, with a new date. "
+             "Questions: " + MAIL + "."),
         ]),
     "tr": dict(
-        h="Gizlilik Politikası", date="Birbdoku: Kuş Bulmaca Oyunu · Yürürlük: 23 Kasım 2026",
+        h="Gizlilik Politikası", date="Birbdoku: Kuş Bulmaca Oyunu · Yürürlük: 25 Kasım 2026 (1.1 sürümü)",
         sections=[
-            (None, "Birbdoku bir mantık bulmacası oyunudur. Hesap gerektirmez, reklam göstermez, uygulama içi satın alma yoktur ve "
-                   "seni izlemez. Bu sayfa oyunun neyi nerede sakladığını ve diğer oyuncuların ne gördüğünü sade bir dille anlatır."),
-            ("Hesap yok, izleme yok", "Oynamak için hesap gerekmez. E-posta adresini, kişilerini ya da konumunu hiçbir zaman "
-             "istemeyiz. Oyun analitik ya da reklam hizmeti kullanmaz ve reklam kimliğini (IDFA) kullanmaz."),
+            (None, "Birbdoku bir mantık bulmacası oyunudur. Hesap gerektirmez ve seni izlemez. 1.1 sürümünden itibaren reklam "
+                   "gösterir, isteğe bağlı uygulama içi satın alma sunar ve anonim analitik kullanır. Bu sayfa oyunun neyi nerede "
+                   "sakladığını, diğer oyuncuların ne gördüğünü ve neyin kiminle paylaşıldığını sade bir dille anlatır."),
+            ("Hesap yok, izleme yok", "Oynamak için hesap gerekmez. E-posta adresini, kişilerini ya da kesin konumunu hiçbir zaman "
+             "istemeyiz. Oyun izleme izni istemez ve reklam kimliğini (IDFA) kullanmaz. Toplanan hiçbir şey adına ya da Apple "
+             "Hesabına bağlanmaz."),
             ("Cihazında ve iCloud'unda saklananlar", "İlerlemen ve ayarların cihazında saklanır. \"İlerlemeyi kaydet (iCloud)\" açıksa "
              "oyun bunları yeni bir cihazda devam edebilmen için kendi iCloud'unda (iCloud anahtar-değer deposu) da tutar. Bu "
              "verileri göremeyiz; Apple tarafından "
              "<a href=\"https://www.apple.com/tr/legal/privacy/\">Apple'ın gizlilik politikası</a> kapsamında işlenir."),
+            ("Reklamlar (Google AdMob)", "Oyun Google AdMob ile banner, tam ekran ve isteğe bağlı ödüllü video reklamlar gösterir. "
+             "Reklamları göstermek ve ölçmek için Google cihazından teknik veriler alır: uygulamaya özel bir cihaz kimliği, IP "
+             "adresin (buradan ülke gibi kaba bir konum çıkarılır), cihaz ve uygulama bilgileri, reklam etkileşimleri ve tanılama "
+             "verileri. AB, Birleşik Krallık ve İsviçre'de oyun önce Google'ın izin formuyla onayını ister; seçimini sonra Ayarlar'dan "
+             "değiştirebilirsin. Ayrıntı: <a href=\"https://policies.google.com/technologies/partner-sites?hl=tr\">Google'ın iş ortağı "
+             "uygulamalardan gelen verileri kullanımı</a>. \"Reklamları kaldır\" ya da Özel Teklif alınınca banner ve tam ekran "
+             "reklamlar durur."),
+            ("Uygulama içi satın almalar", "Satın almaları tamamen Apple yürütür. Ödeme bilgilerini hiçbir zaman görmeyiz; oyun yalnız "
+             "hangi ürünün alındığını öğrenir ve onu verir. Mağazadaki \"Satın alımları geri yükle\" kalıcı ürünleri geri getirir."),
+            ("Anonim analitik (Firebase)", "App Store'dan kurulan kopyalar Google Analytics for Firebase'e anonim kullanım olayları "
+             "gönderir (ör. bölüm başladı ya da bitti, ayar değişti, ürün alındı) ve rastgele bir uygulama örneği kimliği taşır. "
+             "Bunları yalnız oyunu geliştirmek için kullanırız. Sana bağlanmaz, reklam için kullanılmaz ve satılmaz."),
             ("Haftalık sezon sıralaması", "11. seviyeden sonra oyun seni en fazla 50 kişilik haftalık bir gruba koyar. Bunun için "
              "Apple'ın CloudKit herkese açık veritabanında bir sezon kaydı tutar: profilde seçtiğin ad (ya da \"Player\" ve birkaç "
              "rastgele harf), avatarın ve çerçeven, seviyen, bu haftaki tüylerin ve geçtiğin bölüm sayısı, adınla ya da Apple "
@@ -245,16 +278,20 @@ PRIVACY = {
              "görür. İsimler kötü kelimelere karşı süzülür; bir satıra basılı tutarak ismi bildirebilir ya da oyuncuyu "
              "engelleyebilirsin. Bildirilen isimleri biz inceleriz. Eski kayıtlar haftası bitince gösterilmez. Kayıtlarının "
              "silinmesini istersen bize yaz."),
+            ("Arkadaşlar", "Arkadaşlarını oyuncu koduyla ya da davet bağlantısıyla ekleyebilirsin. CloudKit'teki herkese açık profilin "
+             "o zaman adını, avatarını, çerçeveni, seviyeni, profil sayılarını (ör. seriler, yıldızlar), bahçenin adını ve bugün "
+             "oynayıp oynamadığını, davetle geldiysen seni davet eden arkadaşın kodunu tutar. Arkadaşların bunları görür. Bir "
+             "arkadaşı profil kartından çıkarabilir, bir oyuncuyu engelleyebilir ya da bildirebilirsin."),
             ("Game Center", "Game Center isteğe bağlıdır. Giriş yaptıysan oyun en yüksek seviyeni, Kuş İkilisi seviyeni, günlük "
              "bulmaca süreni, haftalık tüylerini ve kazandığın başarımları Apple'ın işlettiği Game Center'a gönderir."),
             ("Bu web sitesi", "hyapps.app, ziyaretleri çerezsiz ve seni tanımadan sayan Cloudflare Web Analytics kullanır."),
-            ("Çocuklar", "Birbdoku'da sohbet, reklam ve uygulama içi satın alma yoktur. Diğer oyuncuların gördüğü tek şey haftalık "
-             "sıralamadaki seçtiğin ad, avatar ve puandır."),
-            ("Seçimlerin", "\"İlerlemeyi kaydet (iCloud)\"u ya da Game Center'ı kapatabilir, "
-             "uygulamayı (ve Ayarlar → adın → iCloud'daki verisini) silerek bütün verilerini silebilirsin. Bir sezon kaydının "
-             "silinmesini istersen bize yaz."),
-            ("Değişiklikler ve iletişim", "İleriki bir sürüm buna bir şey eklerse (örneğin reklam ya da arkadaşlar) bu sayfa önce bunu "
-             "yeni tarihle yazar. Sorular için: " + MAIL + "."),
+            ("Çocuklar", "Birbdoku 13 yaş altı çocuklara yönelik değildir ve sohbet içermez. Reklamlar her yaşa uygun içerikle "
+             "sınırlıdır. Diğer oyuncular yalnız yukarıda anlatılan profil bilgilerini görür."),
+            ("Seçimlerin", "\"İlerlemeyi kaydet (iCloud)\"u, Game Center'ı ya da sezon sıralamasını kapatabilir, reklam iznini "
+             "Ayarlar'dan değiştirebilir, uygulamayı (ve Ayarlar → adın → iCloud'daki verisini) silerek bütün verilerini "
+             "silebilirsin. Bir sezon kaydının ya da herkese açık profilinin silinmesini istersen bize yaz."),
+            ("Değişiklikler ve iletişim", "İleriki bir sürüm bunlardan birini değiştirirse bu sayfa önce bunu yeni tarihle yazar. "
+             "Sorular için: " + MAIL + "."),
         ]),
 }
 
@@ -276,7 +313,7 @@ def privacy():
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Birbdoku Privacy Policy · Gizlilik Politikası</title>
-  <meta name="description" content="Birbdoku privacy policy: no account, no ads, no tracking; iCloud progress, Game Center and the weekly season ranking explained.">
+  <meta name="description" content="Birbdoku privacy policy: no account, no tracking; ads (AdMob), in-app purchases, anonymous analytics, iCloud progress, friends, Game Center and the weekly season ranking explained.">
   <link rel="canonical" href="https://hyapps.app/birbdoku/privacy.html">
   <link rel="icon" href="/birbdoku/img/icon.png">
   <link rel="stylesheet" href="/birbdoku/birbdoku.css">
