@@ -513,13 +513,13 @@ BDG = {
 }
 
 BIRB_FACTS = {
-    "en": ["A new daily puzzle at 07:00 UTC, the same 8×8 board for everyone (from level 20).",
+    "en": ["A new daily puzzle at 07:00 UTC, the same board for everyone (from level 20).",
            "A long level path from a 4×4 starter to 10×10 boards, with hide-and-seek levels and Bird Duo (two birds per line) from level 50.",
            "Hints that name the technique and explain the next step; binoculars find one bird; Auto X marks the obvious cells.",
            "Two cockatiels, Pika and Chiko, with a different face in every cell, and a streak garden that grows each day you play.",
            "A weekly season in groups of 50 players, friends with player codes, Game Center leaderboards and achievements.",
            "iPhone and iPad, 12 languages, puzzles work offline. Free to play with ads; optional purchases remove them or add helpers."],
-    "tr": ["Her gün 07:00 UTC'de (TR 10:00) herkese aynı yeni 8×8 günlük bulmaca (20. seviyeden sonra).",
+    "tr": ["Her gün 07:00 UTC'de (TR 10:00) herkese aynı yeni günlük bulmaca (20. seviyeden sonra).",
            "4×4 başlangıç tahtasından 10×10'a uzun bir seviye yolu; saklambaç seviyeleri ve 50. seviyeden sonra Kuş İkilisi (hat başına iki kuş).",
            "Tekniğin adını söyleyip sonraki adımı anlatan ipuçları; bir kuşu bulan dürbün; belli kareleri işaretleyen Otomatik X.",
            "Her karede farklı yüzüyle iki sultan papağanı Pika ve Çiko, oynadığın her gün büyüyen bir seri bahçesi.",
@@ -605,10 +605,10 @@ def build_birbdoku_guides():
 BIRB_PLAY = {
     "en": ("/birbdoku/daily-queens-puzzle/", "Daily Queens Puzzle: Play Today's Birbdoku Bird Puzzle Online",
            "Play today's Queens logic puzzle free in your browser: one bird in every row, column and color, and birds never touch. "
-           "A new 8×8 board every day at 07:00 UTC, the same one as the daily puzzle in the Birbdoku app."),
+           "A new board every day at 07:00 UTC, the same one as the daily puzzle in the Birbdoku app."),
     "tr": ("/birbdoku/tr/gunluk-queens-bulmacasi/", "Günlük Queens Bulmacası: Bugünün Birbdoku Kuş Bulmacasını Online Çöz",
            "Bugünün Queens mantık bulmacasını tarayıcında ücretsiz çöz: her satıra, sütuna ve renge bir kuş, kuşlar birbirine değmez. "
-           "Her gün 07:00 UTC'de yeni 8×8 tahta; Birbdoku uygulamasındaki günlük bulmacayla aynı."),
+           "Her gün 07:00 UTC'de yeni tahta; Birbdoku uygulamasındaki günlük bulmacayla aynı."),
 }
 PLAY_TEXT = {
     "en": dict(crown="bird", dot="X", empty="empty", cell="Row {r}, column {c}", left="Birds left: {n}",
@@ -669,11 +669,11 @@ def build_birbdoku_play():
             ["Her satıra ve her sütuna tam bir kuş koy.", "Her renkli bölgeye tam bir kuş koy.", "Kuşlar birbirine değemez, çapraz da.",
              "Kuş gelemeyecek kareleri X ile işaretle. Her bulmacanın tek çözümü var; tahmin etmen gerekmez."])) + "</ol>\n"
         faq = ([("When does a new puzzle come out?", "Every day at 07:00 UTC, at the same moment for everyone in the world."),
-                ("Is it the same puzzle as in the app?", "Yes. The web puzzle is Birbdoku's daily puzzle (8×8). In the app the daily opens after level 20, next to the level path, hide-and-seek levels, Bird Duo, a streak garden and a weekly season."),
+                ("Is it the same puzzle as in the app?", "Yes. The web puzzle is Birbdoku's daily puzzle. In the app the daily opens after level 20, next to the level path, hide-and-seek levels, Bird Duo, a streak garden and a weekly season."),
                 ("Is it free?", "Yes, today's puzzle is free here and in the app. Your progress is saved in this browser until the next puzzle."),
                 ("Can I play more than one puzzle a day?", "Yes, in the Birbdoku app for iPhone and iPad: the level path goes from 4×4 to 10×10 boards.")] if en else
                [("Yeni bulmaca ne zaman çıkıyor?", "Her gün 07:00 UTC'de (Türkiye saatiyle 10:00), dünyadaki herkes için aynı anda."),
-                ("Uygulamadakiyle aynı bulmaca mı?", "Evet. Web bulmacası Birbdoku'nun günlük bulmacasıdır (8×8). Uygulamada günlük bulmaca 20. seviyeden sonra açılır; yanında seviye yolu, saklambaç seviyeleri, Kuş İkilisi, seri bahçesi ve haftalık sezon var."),
+                ("Uygulamadakiyle aynı bulmaca mı?", "Evet. Web bulmacası Birbdoku'nun günlük bulmacasıdır. Uygulamada günlük bulmaca 20. seviyeden sonra açılır; yanında seviye yolu, saklambaç seviyeleri, Kuş İkilisi, seri bahçesi ve haftalık sezon var."),
                 ("Ücretsiz mi?", "Evet, bugünün bulmacası burada da uygulamada da ücretsiz. İlerlemen yeni bulmacaya kadar bu tarayıcıda saklanır."),
                 ("Günde birden fazla bulmaca çözebilir miyim?", "Evet, iPhone ve iPad için Birbdoku uygulamasında: seviye yolu 4×4'ten 10×10 tahtalara uzanır.")])
         body += f'  <h2>{"Questions" if en else "Sorular"}</h2>\n' + "".join(f"  <h3>{ESC(q)}</h3>\n  <p>{ESC(a)}</p>\n" for q, a in faq)
@@ -2281,7 +2281,7 @@ BIRB_NEW = [
                            "A daily sudoku: most sudoku apps and newspapers publish one board a day."]}),
                        ("Birbdoku: a daily Queens puzzle with two cockatiels", [
                            "Birbdoku puts the Queens rules on iPhone and iPad with birds instead of crowns: one bird in every row, column "
-                           "and color, and birds never touch. A new 8×8 daily board comes out at 07:00 UTC, the same for everyone, and you "
+                           "and color, and birds never touch. A new daily board comes out at 07:00 UTC, the same for everyone, and you "
                            "can play today's board in your browser too.",
                            "Beyond the daily there is a long level path from 4×4 to 10×10, hide-and-seek levels, hints that explain the "
                            "logic, a streak garden and a weekly season in groups of 50 players. It is free to play with ads."]),
@@ -2306,7 +2306,7 @@ BIRB_NEW = [
                            "Günün sudokusu: çoğu sudoku uygulaması ve gazete günde bir tahta yayınlar."]}),
                        ("Birbdoku: iki sultan papağanıyla günlük Queens bulmacası", [
                            "Birbdoku, Queens kurallarını taç yerine kuşlarla iPhone ve iPad'e getirir: her satıra, sütuna ve renge bir kuş, "
-                           "kuşlar birbirine değmez. Her gün 07:00 UTC'de (TR 10:00) herkese aynı yeni 8×8 günlük tahta gelir; bugünün "
+                           "kuşlar birbirine değmez. Her gün 07:00 UTC'de (TR 10:00) herkese aynı yeni günlük tahta gelir; bugünün "
                            "tahtasını tarayıcında da çözebilirsin.",
                            "Günlük bulmacanın dışında 4×4'ten 10×10'a uzun bir seviye yolu, saklambaç seviyeleri, mantığı anlatan ipuçları, "
                            "seri bahçesi ve 50 kişilik gruplarda haftalık sezon var. Reklamlı ve ücretsiz oynanır."]),
@@ -2441,7 +2441,7 @@ BIRB_NEW = [
                            "water bottle saves a day you miss."]),
                    ],
                    faq=[("How long does one puzzle take?",
-                         "In Birbdoku the first boards (4×4 to 6×6) take a minute or two; 9×9 and 10×10 boards take a few minutes. The daily is 8×8."),
+                         "In Birbdoku the first boards (4×4 to 6×6) take a minute or two; 9×9 and 10×10 boards take a few minutes. The daily is a medium board."),
                         ("Do I need to be good at maths?",
                          "No. There are no numbers to add: Queens-style puzzles are about rows, columns and colors.")]),
         "tr": dict(path="/birbdoku/tr/zeka-oyunu/",
@@ -2461,7 +2461,7 @@ BIRB_NEW = [
                            "bir bölüm geçtiğin her günü seriye sayar, Pika ile Çiko'nun bahçesi seriyle büyür; suluk kaçırdığın bir günü kurtarır."]),
                    ],
                    faq=[("Bir bulmaca ne kadar sürer?",
-                         "Birbdoku'da ilk tahtalar (4×4–6×6) bir iki dakika, 9×9 ve 10×10 tahtalar birkaç dakika sürer. Günlük bulmaca 8×8."),
+                         "Birbdoku'da ilk tahtalar (4×4–6×6) bir iki dakika, 9×9 ve 10×10 tahtalar birkaç dakika sürer. Günlük bulmaca orta zorlukta."),
                         ("Matematikte iyi olmam gerekir mi?",
                          "Hayır. Toplanacak sayı yok: Queens tarzı bulmacalar satır, sütun ve renklerle ilgilidir.")]),
     }),
