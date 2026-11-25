@@ -981,7 +981,7 @@ def brickhaven_more(lang, g, alts, rel, shot):
                       "Yetenek puanını tuğlaları doğru koyarak, bölümleri ve binaları bitirerek kazanırsın. Harcamak için ekranın "
                       "üstündeki Ustalık'ı aç. Panoda üç sütun var; istersen sıfırlayıp puanları yeniden dağıtabilirsin.")) + "\n"
     cols = ([("Carrying", [("Strong Arms", "Carry more bricks per trip: from 6 at the start up to 20 at the last level."),
-                           ("Brick Magnet", "A button that pulls bricks of the kind you are looking at straight into your arms: 1 brick at first, 10 at the last level, with a shorter wait each level."),
+                           ("Brick Magnet", "A button that pulls bricks of the kind you are looking at straight into your arms: 2 bricks at first, 11 at the last level, with a shorter wait each level. It opens after one level each of Strong Arms and Skilled Hands, so you can have it in the Bakery. In the free part it goes up to level III in the Bakery and VI after, and works in 10-minute windows of play (the first each day is free, more come from an optional video); the Whole Town removes both limits."),
                            ("Drop All", "Hold Drop to put your whole load down at once.")]),
              ("Laying", [("Skilled Hands", "Each brick goes into the wall faster."),
                          ("Nonstop Laying", "Hold the button and keep laying brick after brick."),
@@ -990,7 +990,7 @@ def brickhaven_more(lang, g, alts, rel, shot):
                          ("Lift", "The lift is free and always reaches the roof; this skill makes it rise and travel faster."),
                          ("High Jump", "Jump higher, up to almost a meter.")])] if en else
             [("Taşıma", [("Güçlü Kollar", "Bir seferde daha çok tuğla taşırsın: başta 6, son kademede 20."),
-                         ("Tuğla Mıknatısı", "Baktığın türden tuğlaları doğrudan eline çeken bir düğme: başta 1, son kademede 10 tuğla; bekleme süresi her kademede kısalır."),
+                         ("Tuğla Mıknatısı", "Baktığın türden tuğlaları doğrudan eline çeken bir düğme: başta 2, son kademede 11 tuğla; bekleme süresi her kademede kısalır. Birer kademe Güçlü Kollar ve Usta Eller'den sonra açılır, yani Fırın'da alınabilir. Ücretsiz kısımda Fırın'da III., sonra VI. kademeye kadar yükselir ve 10 dakikalık oyun süreleriyle çalışır (her gün ilki ücretsiz, fazlası isteğe bağlı videoyla); Tüm Kasaba iki sınırı da kaldırır."),
                          ("Toplu Bırak", "Bırak'ı basılı tutunca elindekilerin hepsini birden yere koyarsın.")]),
              ("Örme", [("Usta Eller", "Her tuğla duvara daha çabuk yerleşir."),
                        ("Kesintisiz Örme", "Düğmeyi basılı tut, tuğlaları art arda koy."),
@@ -1003,12 +1003,12 @@ def brickhaven_more(lang, g, alts, rel, shot):
     body += steps("A good order" if en else "İyi bir sıra", (
         ["Strong Arms first. Every trip to the pile carries more, on every building.",
          "A few levels of Skilled Hands, so a full load goes into the wall quickly.",
-         "The Brick Magnet as soon as it opens. Searching the pile is the slowest part on a phone.",
+         "The Brick Magnet as soon as it opens (one level each of Strong Arms and Skilled Hands). Searching the pile is the slowest part on a phone.",
          "Sprint and Lift once the buildings get tall, from the Bookshop on.",
          "Nonstop Laying, Long Arms, Drop All and High Jump are comforts: take them when points are left over."] if en else
         ["Önce Güçlü Kollar. Yığına her gidişte daha çok taşırsın, her binada işe yarar.",
          "Birkaç kademe Usta Eller; dolu bir yük duvara çabucak girer.",
-         "Açılır açılmaz Tuğla Mıknatısı. Telefonda en yavaş iş yığında tuğla aramaktır.",
+         "Açılır açılmaz Tuğla Mıknatısı (birer kademe Güçlü Kollar ve Usta Eller yeter). Telefonda en yavaş iş yığında tuğla aramaktır.",
          "Binalar yükselince, Kitapçı'dan itibaren, Koşma ve Asansör.",
          "Kesintisiz Örme, Uzun Kollar, Toplu Bırak ve Yüksek Zıplama rahatlıktır: puan artınca al."]))
     body += paras(ESC("The story gives enough points for the whole board, so no choice is final." if en else

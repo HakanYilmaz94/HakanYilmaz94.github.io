@@ -1275,8 +1275,8 @@
 "published": "2026-11-22"
 },
 "/brickhaven/skill-tree/": {
-"hash": "2507e6c2746e204f",
-"modified": "2026-11-23",
+"hash": "be2973627b1728ff",
+"modified": "2026-11-25",
 "published": "2026-11-10"
 },
 "/brickhaven/townscaper-alternative/": {
@@ -1350,8 +1350,8 @@
 "published": "2026-11-22"
 },
 "/brickhaven/tr/ustalik-agaci/": {
-"hash": "210aeee9b14abbe8",
-"modified": "2026-11-23",
+"hash": "6e33f34064b66ac1",
+"modified": "2026-11-25",
 "published": "2026-11-10"
 },
 "/crownly/": {
@@ -1555,7 +1555,7 @@
 "published": "2026-11-21"
 },
 "/press/": {
-"hash": "62a3f60ae951f9af",
+"hash": "fe5ab1cead6e5662",
 "modified": "2026-11-25",
 "published": "2026-11-21"
 },
@@ -1655,7 +1655,7 @@
 "published": "2026-10-20"
 },
 "/tr/press/": {
-"hash": "a7a6a87b3279dd39",
+"hash": "e8bebac8167a3adb",
 "modified": "2026-11-25",
 "published": "2026-11-21"
 }
