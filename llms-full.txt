@@ -148,34 +148,58 @@ Q: Is it suitable for children?
 A: Yes. Brickhaven is rated 4+ and has no violence, chat or ads. Purchases go through the App Store, so Ask to Buy and Screen Time limits apply.
 
 
-## Crownly
+## Birbdoku: Cute Parrot Puzzle
 
-- Page: https://hyapps.app/crownly/
-- Privacy policy: https://hyapps.app/crownly/privacy.html
-- Title: Crownly · Daily Queens, Route & Mosaic Logic Puzzles
+- Page: https://hyapps.app/birbdoku/
+- Privacy policy: https://hyapps.app/birbdoku/privacy.html
+- Title: Birbdoku · Cozy Cockatiel Bird Puzzle Game for iPhone & iPad (Queens logic)
 - Platform: iOS 17 or later
 
-Crownly is a calm collection of daily logic puzzles for iPhone and iPad: Crowns (Queens), Route and Mosaic. A new puzzle in every game every day, live duels with friends, 6,500 levels, hints that explain the logic. No ads, works offline.
+Birbdoku is a cozy bird puzzle game for iPhone and iPad with two cockatiels, Pika and Chiko: place one bird in every row, column and color, birds never touch. A Queens-style logic puzzle with a daily board, hints that teach and a streak garden.
+
+Features:
+- Two cockatiels: Pika and Chiko fill the board with a different face in every cell and cheer when you get it right.
+- Pure logic: Every puzzle has exactly one solution, found by logic alone. No guessing needed.
+- A gentle path: From a 4×4 starter board up to 10×10, with hide-and-seek levels and Bird Duo (two birds per line) along the way.
+- Daily puzzle: A new 8×8 board every day, the same for everyone. You can also play today's board free in your browser.
+- A streak garden: Pika and Chiko's millet grows each day you clear a level; the cockatiels walk, peck and nap in their garden.
+- Hints that teach: Hints explain the next logical step instead of just giving the answer. Binoculars find a bird.
+- Weekly season and friends: Race up to 49 other players in your weekly group, add friends with a player code and visit their gardens.
 
 Questions and answers:
 
-Q: When do the daily puzzles change?
-A: New daily puzzles appear every day at 07:00 UTC, at the same moment for everyone in the world.
+Q: Is Birbdoku free?
+A: Yes. Birbdoku is free to download and every level can be played without paying. It shows ads, and optional in-app purchases remove them or add helpers.
 
-Q: How do duels work?
-A: Open Duel, create a room and share its code. 2 to 4 friends race live on the same Crowns board; the first to solve it wins. You can also practice against bots without an internet connection.
+Q: How do I play?
+A: Tap a cell once to mark it with an X, tap it twice to place a bird. Every row, every column and every color needs exactly one bird, and birds may not touch, not even diagonally. Drag across the board to mark many cells.
 
-Q: Will I lose my progress if I change phones?
-A: With iCloud sync turned on (Settings → General), your solved puzzles, stars and streak sync to your other devices through your private iCloud account. Without iCloud, progress is stored only on this device and deleting the app deletes it.
+Q: What happens when I place a wrong bird?
+A: You lose one of your three feathers. When all three are gone, start the level again or use a revive to carry on.
 
-Q: What does Crownly Pro add?
-A: All 6,500 levels (the first 50 of every difficulty are free), unlimited hints and duels, the archive of every past daily puzzle and 3 streak freezes a month instead of 1. It is a one-time purchase, shared with your Family Sharing group. To restore it, open Settings → Crownly Pro → Restore purchases.
+Q: How does the weekly season work?
+A: From level 11, every level you clear adds the feathers you kept (up to 3). You race up to 49 other players in a group of 50. A new season starts every Monday.
 
-Q: I missed a day. Is my streak gone?
-A: Not always. A streak freeze is used automatically when you miss a day (one per month, three with Pro).
+Q: Someone has an offensive name in my group.
+A: Touch and hold their row in the ranking to report the name or block the player.
 
-Q: Some colors look alike to me.
-A: Turn on Color-blind mode in Settings → Game. Every region gets its own symbol and the borders get bolder, so you never need to tell colors apart. You can also try the High contrast board palette.
+Q: Does it need the internet?
+A: No for the puzzles. The season ranking and Game Center update when you are online.
+
+Q: Will my progress move to my new phone?
+A: Yes. With "Save progress (iCloud)" on, your progress follows your Apple Account.
+
+Q: Is Birbdoku like LinkedIn Queens?
+A: Yes, it uses the same rules (also known as Star Battle): one per row, column and colored region, never touching. Birbdoku draws birds instead of crowns and adds a level path, a daily puzzle and hints that explain the logic. It is not affiliated with LinkedIn.
+
+Q: Is there a cockatiel game?
+A: Birbdoku stars two cockatiels: Pika, a lutino with a pink bow, and Chiko, a grey cockatiel. They play on the board and live in a garden that grows as you play.
+
+Q: Does it work on iPad?
+A: Yes, on iPhone and iPad with iOS 17 or later.
+
+Q: Which languages?
+A: English, Turkish, German, French, Spanish, Italian, Portuguese (Brazil), Dutch, Russian, Japanese, Korean and Traditional Chinese.
 
 
 ## Quick Wits

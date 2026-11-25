@@ -1,0 +1,23 @@
+/* Birbdoku theme for the guide pages, on top of /assets/app.css: sky blue, sunflower yellow and the game's brown ink. */
+:root {
+  --bg: #f4fbff;
+  --card: #ffffff;
+  --ink: #5e3b2b;
+  --muted: #7d6558;
+  --line: #d9ecf7;
+  --gold: #c27a12;
+  --gold-hi: #ffd34d;
+  --night: #3f86b5;
+  --night-2: #6fb7e3;
+  --on-night: #fffdf6;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #14202a; --card: #1c2b37; --ink: #f6ead8; --muted: #c2b3a3; --line: #2a3d4c; --gold: #ffc94a; }
+}
+.bar { background: rgba(63, 134, 181, .78); }
+.foot { background: #2c5f82; }
+.article .shot { width: 100%; height: auto; border-radius: 18px; margin: 8px 0 24px; }
+.article .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 8px 0 24px; }
+.article .shots img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); }
+.board .crown img { width: 86%; height: auto; display: block; }
+.article img.shot[src*="/shots/"] { display: block; max-width: 320px; margin: 8px auto 24px; border: 1px solid var(--line); }

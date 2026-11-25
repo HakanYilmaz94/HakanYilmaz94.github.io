@@ -1,12 +1,12 @@
 {
 "/": {
-"hash": "d4a4e70657e513a7",
-"modified": "2026-11-21",
+"hash": "2f17dcc8aa3fbd1b",
+"modified": "2026-11-25",
 "published": "2026-10-11"
 },
 "/besmele/": {
-"hash": "3e9152f1690b5cd0",
-"modified": "2026-11-21",
+"hash": "f235d9206ed61932",
+"modified": "2026-11-25",
 "published": "2026-10-11"
 },
 "/besmele/destek.html": {
@@ -15,8 +15,8 @@
 "published": "2026-10-11"
 },
 "/besmele/en/": {
-"hash": "801cac517bbf124d",
-"modified": "2026-11-21",
+"hash": "f0e03a19fabb8264",
+"modified": "2026-11-25",
 "published": "2026-10-11"
 },
 "/besmele/en/choosing-a-prayer-times-app/": {
@@ -1105,19 +1105,109 @@
 "published": "2026-11-21"
 },
 "/birbdoku/": {
-"hash": "55253babd7899c85",
+"hash": "1a514824fe1f14df",
 "modified": "2026-11-25",
 "published": "2026-11-23"
+},
+"/birbdoku/bird-games-iphone/": {
+"hash": "b08f82e60e41c400",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/cockatiel-game/": {
+"hash": "26630549cf05ca45",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/daily-brain-teaser/": {
+"hash": "aa85718495d45ee3",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/daily-puzzle-games-like-wordle/": {
+"hash": "53b0e47caf20ebd5",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/daily-queens-puzzle/": {
+"hash": "bac729923a4bc444",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/games-like-sudoku/": {
+"hash": "09a25924f664b377",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/linkedin-queens-alternative/": {
+"hash": "a192705f7db53331",
+"modified": "2026-11-25",
+"published": "2026-11-25"
 },
 "/birbdoku/privacy.html": {
-"hash": "3af1549b9ccbac47",
+"hash": "12e14aa308a37481",
 "modified": "2026-11-25",
 "published": "2026-11-23"
 },
+"/birbdoku/queens-puzzle-rules/": {
+"hash": "01d8c13211654c5d",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/queens-strategy/": {
+"hash": "43ff9399aebf84e0",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
 "/birbdoku/tr/": {
-"hash": "ec3376618bd76ab7",
+"hash": "55db809b21c42587",
 "modified": "2026-11-25",
 "published": "2026-11-23"
+},
+"/birbdoku/tr/gunluk-queens-bulmacasi/": {
+"hash": "480ee8eaa2e95c3c",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/tr/kus-oyunlari/": {
+"hash": "4d97fbd3d7cde045",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/tr/linkedin-queens-alternatifi/": {
+"hash": "2243f9aacc5100d5",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/tr/queens-nasil-oynanir/": {
+"hash": "61b0e78e006f88c2",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/tr/queens-stratejileri/": {
+"hash": "1e720e023f260ead",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/tr/sudoku-benzeri-oyunlar/": {
+"hash": "581550843e2d8612",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/tr/sultan-papagani-oyunu/": {
+"hash": "647fb97cc3a79f57",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/tr/wordle-gibi-gunluk-bulmaca-oyunlari/": {
+"hash": "a40f631c07c664a0",
+"modified": "2026-11-25",
+"published": "2026-11-25"
+},
+"/birbdoku/tr/zeka-oyunu/": {
+"hash": "c3be30702ee1caa0",
+"modified": "2026-11-25",
+"published": "2026-11-25"
 },
 "/brickhaven/": {
 "hash": "8f31072c1f886382",
@@ -1170,8 +1260,8 @@
 "published": "2026-11-22"
 },
 "/brickhaven/games-to-play-on-a-plane/": {
-"hash": "82c1a511171d0262",
-"modified": "2026-11-22",
+"hash": "9074375a5982cccd",
+"modified": "2026-11-25",
 "published": "2026-11-22"
 },
 "/brickhaven/privacy.html": {
@@ -1255,8 +1345,8 @@
 "published": "2026-11-21"
 },
 "/brickhaven/tr/ucakta-oynanacak-oyunlar/": {
-"hash": "2b08625ac121673c",
-"modified": "2026-11-22",
+"hash": "dccdcd680f68dae1",
+"modified": "2026-11-25",
 "published": "2026-11-22"
 },
 "/brickhaven/tr/ustalik-agaci/": {
@@ -1465,8 +1555,8 @@
 "published": "2026-11-21"
 },
 "/press/": {
-"hash": "f16734b8b98340d3",
-"modified": "2026-11-21",
+"hash": "62a3f60ae951f9af",
+"modified": "2026-11-25",
 "published": "2026-11-21"
 },
 "/pyramidcraft/": {
@@ -1515,8 +1605,8 @@
 "published": "2026-11-21"
 },
 "/quickwits/": {
-"hash": "c54a194c75277c58",
-"modified": "2026-11-13",
+"hash": "733938f400b6ca23",
+"modified": "2026-11-25",
 "published": "2026-10-24"
 },
 "/quickwits/games-to-play-with-friends-on-one-phone/": {
@@ -1540,8 +1630,8 @@
 "published": "2026-10-29"
 },
 "/quickwits/tr/": {
-"hash": "3fb6fcd7a223a6c0",
-"modified": "2026-11-13",
+"hash": "c877adbdfe9b534a",
+"modified": "2026-11-25",
 "published": "2026-10-24"
 },
 "/quickwits/tr/oyun-gecesi-grup-oyunlari/": {
@@ -1560,13 +1650,13 @@
 "published": "2026-10-29"
 },
 "/tr/": {
-"hash": "e00a6cbadd8db091",
-"modified": "2026-11-21",
+"hash": "fddaed68577dfc96",
+"modified": "2026-11-25",
 "published": "2026-10-20"
 },
 "/tr/press/": {
-"hash": "20f4dd6968770742",
-"modified": "2026-11-21",
+"hash": "a7a6a87b3279dd39",
+"modified": "2026-11-25",
 "published": "2026-11-21"
 }
 }

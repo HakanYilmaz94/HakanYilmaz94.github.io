@@ -24,9 +24,9 @@ T = {
     "en": dict(
         lang="en", path="/birbdoku/", img="img/", other_href="tr/", other_label="Türkçe", privacy_href="privacy.html",
         store=f"https://apps.apple.com/app/apple-store/id{APP_ID}?pt=129592179&ct=web&mt=8",
-        title="Birbdoku: Cute Parrot Puzzle · A cozy Queens logic puzzle with two cockatiels (iPhone)",
-        desc="Birbdoku is a cozy logic puzzle for iPhone: place one bird in every row, column and color, and birds never "
-             "touch. Two cockatiels, Pika and Chiko, a gentle level path, a daily puzzle, hints that teach and a weekly season.",
+        title="Birbdoku · Cozy Cockatiel Bird Puzzle Game for iPhone & iPad (Queens logic)",
+        desc="Birbdoku is a cozy bird puzzle game for iPhone and iPad with two cockatiels, Pika and Chiko: place one bird in every "
+             "row, column and color, birds never touch. A Queens-style logic puzzle with a daily board, hints that teach and a streak garden.",
         eyebrow="A cozy logic puzzle for iPhone",
         h1="One bird in every row, <em>column and color.</em>",
         lead="Meet Pika and Chiko, two cockatiels who love logic puzzles. Tap to rule a cell out, double-tap to place a bird, "
@@ -36,11 +36,11 @@ T = {
         nav_story="Features", nav_support="Support",
         features=[
             ("🐦", "Two cockatiels", "Pika and Chiko fill the board with a different face in every cell and cheer when you get it right."),
-            ("🧩", "Pure logic", "Every puzzle has exactly one solution, found by logic alone. No guessing needed."),
-            ("📈", "A gentle path", "From a 4×4 starter board up to 10×10, with hide-and-seek levels and harder boards along the way."),
-            ("📅", "Daily puzzle and streak", "A new board every day, the same for everyone, and a streak plant that grows each day you clear a level."),
-            ("💡", "Hints that teach", "Hints explain the next logical step instead of just giving the answer. Binoculars find a bird."),
-            ("🏆", "Weekly season", "Clear levels, keep your feathers and race up to 49 other players in your group. The winner earns the golden frame."),
+            ("🧩", "Pure logic, hints that teach", "Every puzzle has exactly one solution, found by logic alone. Hints explain the next step instead of giving the answer."),
+            ("📈", "A gentle path", "From a 4×4 starter board up to 10×10, with hide-and-seek levels and Bird Duo (two birds per line) along the way."),
+            ("📅", "Daily puzzle", "A new 8×8 board every day, the same for everyone. You can also play today's board free in your browser."),
+            ("🌱", "A streak garden", "Pika and Chiko's millet grows each day you clear a level; the cockatiels walk, peck and nap in their garden."),
+            ("🏆", "Weekly season and friends", "Race up to 49 other players in your weekly group, add friends with a player code and visit their gardens."),
         ],
         support_h="Support",
         contact="A bug, an idea or a question? Write to us at {mail}. We read every message.",
@@ -55,15 +55,26 @@ T = {
             ("Someone has an offensive name in my group.", "Touch and hold their row in the ranking to report the name or block the player."),
             ("Does it need the internet?", "No for the puzzles. The season ranking and Game Center update when you are online."),
             ("Will my progress move to my new phone?", "Yes. With \"Save progress (iCloud)\" on, your progress follows your Apple Account."),
+            ("Is Birbdoku like LinkedIn Queens?", "Yes, it uses the same rules (also known as Star Battle): one per row, column and colored region, never touching. Birbdoku draws birds instead of crowns and adds a level path, a daily puzzle and hints that explain the logic. It is not affiliated with LinkedIn."),
+            ("Is there a cockatiel game?", "Birbdoku stars two cockatiels: Pika, a lutino with a pink bow, and Chiko, a grey cockatiel. They play on the board and live in a garden that grows as you play."),
+            ("Does it work on iPad?", "Yes, on iPhone and iPad with iOS 17 or later."),
+            ("Which languages?", "English, Turkish, German, French, Spanish, Italian, Portuguese (Brazil), Dutch, Russian, Japanese, Korean and Traditional Chinese."),
         ],
+        shots_h="Screenshots", shots_alt="Birbdoku screenshot",
+        play_h="Play today's puzzle in your browser", play_p="The same 8×8 daily board as in the app, free, no download.", play_href="/birbdoku/daily-queens-puzzle/", play_cta="Play today's puzzle →",
+        guides_h="Guides",
+        guides=[("How to play Queens: the rules", "/birbdoku/queens-puzzle-rules/"), ("Queens strategy: 6 techniques", "/birbdoku/queens-strategy/"),
+                ("A LinkedIn Queens alternative", "/birbdoku/linkedin-queens-alternative/"), ("A cockatiel game for iPhone", "/birbdoku/cockatiel-game/"),
+                ("Bird games for iPhone", "/birbdoku/bird-games-iphone/"), ("Games like sudoku", "/birbdoku/games-like-sudoku/"),
+                ("Daily puzzle games like Wordle", "/birbdoku/daily-puzzle-games-like-wordle/"), ("A daily brain teaser habit", "/birbdoku/daily-brain-teaser/")],
         made="Made with care by an independent developer.", footer_privacy="Privacy policy",
     ),
     "tr": dict(
         lang="tr", path="/birbdoku/tr/", img="../img/", other_href="../", other_label="English", privacy_href="../privacy.html#tr",
         store=f"https://apps.apple.com/tr/app/apple-store/id{APP_ID}?pt=129592179&ct=web&mt=8",
-        title="Birbdoku: Kuş Bulmaca Oyunu · İki sultan papağanıyla Queens mantık bulmacası (iPhone)",
-        desc="Birbdoku, iPhone için rahat bir mantık bulmacası: her satıra, sütuna ve renge bir kuş koy, kuşlar birbirine değmesin. "
-             "İki sultan papağanı Pika ve Çiko, yumuşak bir seviye yolu, günlük bulmaca, öğreten ipuçları ve haftalık sezon.",
+        title="Birbdoku · Sultan Papağanlı Kuş Bulmaca Oyunu (iPhone ve iPad, zeka oyunu)",
+        desc="Birbdoku, iki sultan papağanı Pika ve Çiko ile iPhone ve iPad için rahat bir kuş bulmaca oyunu: her satıra, sütuna ve "
+             "renge bir kuş koy, kuşlar birbirine değmesin. Günlük bulmaca, öğreten ipuçları ve seri bahçesiyle Queens tarzı bir zeka oyunu.",
         eyebrow="iPhone için rahat bir mantık bulmacası",
         h1="Her satıra, sütuna ve <em>renge bir kuş.</em>",
         lead="Mantık bulmacalarını seven iki sultan papağanı Pika ve Çiko ile tanış. Bir kareyi elemek için dokun, kuş koymak "
@@ -73,11 +84,11 @@ T = {
         nav_story="Özellikler", nav_support="Destek",
         features=[
             ("🐦", "İki sultan papağanı", "Pika ve Çiko tahtayı her karede farklı bir yüzle doldurur, doğru hamlede sevinir."),
-            ("🧩", "Saf mantık", "Her bulmacanın tek bir çözümü var, yalnız mantıkla bulunur. Tahmin gerekmez."),
-            ("📈", "Yumuşak bir yol", "4×4 başlangıç tahtasından 10×10'a; yol boyunca saklambaç seviyeleri ve zor tahtalar."),
-            ("📅", "Günlük bulmaca ve seri", "Her gün herkese aynı yeni bir tahta ve bölüm geçtiğin her gün büyüyen bir seri fidanı."),
-            ("💡", "Öğreten ipuçları", "İpuçları cevabı vermek yerine bir sonraki mantıklı adımı anlatır. Dürbün bir kuş bulur."),
-            ("🏆", "Haftalık sezon", "Bölüm geç, tüylerini koru ve grubundaki 49 oyuncuyla yarış. Birinci altın çerçeveyi kazanır."),
+            ("🧩", "Saf mantık, öğreten ipuçları", "Her bulmacanın tek çözümü var, yalnız mantıkla bulunur. İpuçları cevabı değil sonraki adımı anlatır."),
+            ("📈", "Yumuşak bir yol", "4×4 başlangıç tahtasından 10×10'a; yol boyunca saklambaç seviyeleri ve Kuş İkilisi (hat başına iki kuş)."),
+            ("📅", "Günlük bulmaca", "Her gün herkese aynı yeni 8×8 tahta. Bugünün tahtasını tarayıcında da ücretsiz çözebilirsin."),
+            ("🌱", "Seri bahçesi", "Bölüm geçtiğin her gün Pika ile Çiko'nun darısı büyür; sultan papağanları bahçelerinde yürür, gagalar, uyuklar."),
+            ("🏆", "Haftalık sezon ve arkadaşlar", "Haftalık grubundaki 49 oyuncuyla yarış, oyuncu koduyla arkadaş ekle, bahçelerini ziyaret et."),
         ],
         support_h="Destek",
         contact="Bir hata, bir fikir ya da bir soru mu var? {mail} adresine yaz. Her mesajı okuyoruz.",
@@ -91,7 +102,18 @@ T = {
             ("Grubumda kötü bir isim var.", "Sıralamada o satıra basılı tut; ismi bildirebilir ya da oyuncuyu engelleyebilirsin."),
             ("İnternet gerekir mi?", "Bulmacalar için hayır. Sezon sıralaması ve Game Center çevrimiçi olunca güncellenir."),
             ("İlerlemem yeni telefonuma geçer mi?", "Evet. \"İlerlemeyi kaydet (iCloud)\" açıksa ilerlemen Apple Hesabınla gelir."),
+            ("LinkedIn Queens gibi mi?", "Evet, aynı kuralları kullanır (Star Battle olarak da bilinir): her satıra, sütuna ve renkli bölgeye bir tane, birbirine değmeden. Birbdoku taç yerine kuş çizer; seviye yolu, günlük bulmaca ve mantığı anlatan ipuçları ekler. LinkedIn ile bağlantısı yoktur."),
+            ("Sultan papağanı oyunu mu?", "Evet: Birbdoku'nun iki kahramanı sultan papağanı. Pembe fiyonklu lutino Pika ve gri Çiko tahtada oynar, oynadıkça büyüyen bir bahçede yaşar."),
+            ("iPad'de çalışır mı?", "Evet, iOS 17 ve sonrası iPhone ve iPad'de."),
+            ("Hangi dillerde?", "Türkçe, İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca, Portekizce (Brezilya), Felemenkçe, Rusça, Japonca, Korece ve Geleneksel Çince."),
         ],
+        shots_h="Ekran görüntüleri", shots_alt="Birbdoku ekran görüntüsü",
+        play_h="Bugünün bulmacasını tarayıcında çöz", play_p="Uygulamadakiyle aynı 8×8 günlük tahta; ücretsiz, indirme yok.", play_href="/birbdoku/tr/gunluk-queens-bulmacasi/", play_cta="Bugünün bulmacasını çöz →",
+        guides_h="Rehberler",
+        guides=[("Queens nasıl oynanır: kurallar", "/birbdoku/tr/queens-nasil-oynanir/"), ("Queens taktikleri: 6 teknik", "/birbdoku/tr/queens-stratejileri/"),
+                ("LinkedIn Queens alternatifi", "/birbdoku/tr/linkedin-queens-alternatifi/"), ("Sultan papağanı oyunu", "/birbdoku/tr/sultan-papagani-oyunu/"),
+                ("Kuş oyunları", "/birbdoku/tr/kus-oyunlari/"), ("Sudoku benzeri oyunlar", "/birbdoku/tr/sudoku-benzeri-oyunlar/"),
+                ("Wordle gibi günlük bulmacalar", "/birbdoku/tr/wordle-gibi-gunluk-bulmaca-oyunlari/"), ("Zeka oyunu: günlük 5 dakika", "/birbdoku/tr/zeka-oyunu/")],
         made="Bağımsız bir geliştirici tarafından özenle yapıldı.", footer_privacy="Gizlilik politikası",
     ),
 }
@@ -115,9 +137,11 @@ def page(t):
         "applicationSubCategory": "Logic puzzle", "genre": ["Puzzle", "Logic"],
         "description": t["desc"], "url": canonical, "inLanguage": lang, "image": "https://hyapps.app/birbdoku/img/icon.png",
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-        "gamePlatform": ["iPhone"], "playMode": "SinglePlayer",
-        "keywords": ("logic puzzle, queens puzzle, cockatiel, bird game, daily puzzle, cozy game, brain teaser"
-                     if lang == "en" else "mantık bulmacası, queens bulmaca, sultan papağanı, kuş oyunu, günlük bulmaca, zeka oyunu"),
+        "gamePlatform": ["iPhone", "iPad"], "playMode": "SinglePlayer",
+        "screenshot": [f"https://hyapps.app/birbdoku/img/shots/{lang}-{n}.jpg" for n in ("play", "big", "garden", "season")],
+        "character": [{"@type": "Person", "name": "Pika", "description": "a lutino cockatiel with a pink bow"}, {"@type": "Person", "name": "Chiko", "description": "a grey cockatiel"}],
+        "keywords": ("cockatiel game, bird puzzle game, parrot game, logic puzzle, queens puzzle, star battle, daily puzzle, cozy game, brain teaser, cute animal puzzle"
+                     if lang == "en" else "sultan papağanı oyunu, kuş oyunu, kuş bulmaca, papağan oyunu, mantık bulmacası, queens bulmaca, zeka oyunu, günlük bulmaca"),
         "isFamilyFriendly": True,
         "featureList": [f"{f[1]}: {f[2]}" for f in t["features"]],
         "author": {"@type": "Organization", "name": "HY Apps", "url": "https://hyapps.app/"},
@@ -149,10 +173,12 @@ def page(t):
   <meta property="og:site_name" content="HY Apps">
   <meta property="og:title" content="{html.escape(t["title"])}">
   <meta property="og:description" content="{html.escape(t["desc"])}">
-  <meta property="og:image" content="https://hyapps.app/birbdoku/img/icon.png">
+  <meta property="og:image" content="https://hyapps.app/assets/og/birbdoku-{lang}.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="{canonical}">
   <meta property="og:locale" content="{"en_US" if lang == "en" else "tr_TR"}">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/birbdoku/img/icon.png">
   <link rel="apple-touch-icon" href="/birbdoku/img/icon.png">
   <link rel="stylesheet" href="/birbdoku/birbdoku.css">
@@ -179,6 +205,22 @@ def page(t):
 
 <main>
   <section class="features" id="features">{feats}</section>
+
+  <section class="shots" aria-label="{html.escape(t["shots_h"])}">
+    <h2>{html.escape(t["shots_h"])}</h2>
+    <div class="shot-row">{"".join(f'<img src="/birbdoku/img/shots/{lang}-{n}.jpg" alt="{html.escape(t["shots_alt"])}" width="540" height="1173" loading="lazy">' for n in ("play", "big", "garden", "season", "friends", "hint"))}</div>
+  </section>
+
+  <section class="card play">
+    <h2>{html.escape(t["play_h"])}</h2>
+    <p>{html.escape(t["play_p"])}</p>
+    <a href="{t["play_href"]}">{html.escape(t["play_cta"])}</a>
+  </section>
+
+  <section class="guides" id="guides">
+    <h2>{html.escape(t["guides_h"])}</h2>
+    <ul>{"".join(f'<li><a href="{h}">{html.escape(x)}</a></li>' for x, h in t["guides"])}</ul>
+  </section>
 
   <section class="support" id="support">
     <h2>{html.escape(t["support_h"])}</h2>

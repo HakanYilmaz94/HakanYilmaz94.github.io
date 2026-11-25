@@ -117,10 +117,10 @@ def poster(src, alt, cls=""):
 
 
 MORE = {
-    "en": ("More from HY Apps", "/crownly/", "/crownly/img/icon.png", "Crownly",
-           "A calm daily logic puzzle with hints that explain the logic.", "All apps", "/"),
-    "tr": ("HY Apps'in diğer uygulamaları", "/crownly/tr/", "/crownly/img/icon.png", "Crownly",
-           "Mantığı anlatan ipuçlarıyla sakin bir günlük bulmaca.", "Tüm uygulamalar", "/tr/"),
+    "en": ("More from HY Apps", "/birbdoku/", "/birbdoku/img/icon.png", "Birbdoku",
+           "A cozy bird puzzle with two cockatiels and hints that explain the logic.", "All apps", "/"),
+    "tr": ("HY Apps'in diğer uygulamaları", "/birbdoku/tr/", "/birbdoku/img/icon.png", "Birbdoku",
+           "İki sultan papağanı ve mantığı anlatan ipuçlarıyla rahat bir kuş bulmacası.", "Tüm uygulamalar", "/tr/"),
 }
 
 

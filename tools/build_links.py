@@ -8,7 +8,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLATFORMS = ["tiktok", "instagram", "youtube", "x"]
 APPS = [  # (folder, name, line, App Store id)
     ("brickhaven", "Brickhaven", "Build a cozy brick town, one brick at a time", "6826958666"),
-    ("crownly", "Crownly", "A calm daily queens logic puzzle", "6822852151"),
+    ("birbdoku", "Birbdoku", "A cozy cockatiel logic puzzle", "6837803599"),
     ("glowfly", "Glowfly", "A relaxing idle game of glowing fireflies", "6830895618"),
 ]
 CF = """<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "89e9ceae59114244a972f60af4a20851"}'></script><!-- End Cloudflare Web Analytics -->"""

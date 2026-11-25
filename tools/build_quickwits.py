@@ -2,7 +2,7 @@
 """Builds the Quick Wits (Kıvrak Zeka in Turkish) landing pages (EN + TR) from one template.
 
 Usage: python3 -I tools/build_quickwits.py   (run from the site repo root)
-Writes quickwits/index.html and quickwits/tr/index.html. Shares assets/app.css with Crownly.
+Writes quickwits/index.html and quickwits/tr/index.html. Shares assets/app.css with the guide pages.
 Until the app is on the App Store, LIVE is False: the store button is a "coming soon" badge.
 """
 import html
@@ -123,10 +123,10 @@ T = {
 }
 
 MORE = {
-    "en": ("More from HY Apps", "/crownly/", "/crownly/img/icon.png", "Crownly",
-           "A calm daily logic puzzle. One crown in every row, column and region.", "All apps", "/"),
-    "tr": ("HY Apps'in diğer uygulamaları", "/crownly/tr/", "/crownly/img/icon.png", "Crownly",
-           "Sakin bir günlük mantık bulmacası. Her satıra, sütuna ve bölgeye bir taç.", "Tüm uygulamalar", "/tr/"),
+    "en": ("More from HY Apps", "/birbdoku/", "/birbdoku/img/icon.png", "Birbdoku",
+           "A cozy bird puzzle with two cockatiels. One bird in every row, column and color.", "All apps", "/"),
+    "tr": ("HY Apps'in diğer uygulamaları", "/birbdoku/tr/", "/birbdoku/img/icon.png", "Birbdoku",
+           "İki sultan papağanıyla rahat bir kuş bulmacası. Her satıra, sütuna ve renge bir kuş.", "Tüm uygulamalar", "/tr/"),
 }
 
 

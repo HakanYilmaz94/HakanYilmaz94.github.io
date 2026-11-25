@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://hyapps.app/</loc><lastmod>2026-11-21</lastmod>
+  <url><loc>https://hyapps.app/</loc><lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/tr/"/></url>
-  <url><loc>https://hyapps.app/tr/</loc><lastmod>2026-11-21</lastmod>
+  <url><loc>https://hyapps.app/tr/</loc><lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/tr/"/></url>
-  <url><loc>https://hyapps.app/crownly/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/"/></url>
-  <url><loc>https://hyapps.app/crownly/privacy.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://hyapps.app/quickwits/</loc><lastmod>2026-11-13</lastmod>
+  <url><loc>https://hyapps.app/quickwits/</loc><lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/"/></url>
-  <url><loc>https://hyapps.app/quickwits/tr/</loc><lastmod>2026-11-13</lastmod>
+  <url><loc>https://hyapps.app/quickwits/tr/</loc><lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/"/></url>
   <url><loc>https://hyapps.app/quickwits/privacy.html</loc><lastmod>2026-10-27</lastmod></url>
@@ -48,16 +41,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/"/></url>
   <url><loc>https://hyapps.app/birbdoku/privacy.html</loc><lastmod>2026-11-25</lastmod></url>
-  <url><loc>https://hyapps.app/press/</loc><lastmod>2026-11-21</lastmod>
+  <url><loc>https://hyapps.app/press/</loc><lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/press/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/tr/press/"/></url>
-  <url><loc>https://hyapps.app/tr/press/</loc><lastmod>2026-11-21</lastmod>
+  <url><loc>https://hyapps.app/tr/press/</loc><lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/press/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/tr/press/"/></url>
-  <url><loc>https://hyapps.app/besmele/</loc><lastmod>2026-11-21</lastmod>
+  <url><loc>https://hyapps.app/besmele/</loc><lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/"/></url>
-  <url><loc>https://hyapps.app/besmele/en/</loc><lastmod>2026-11-21</lastmod>
+  <url><loc>https://hyapps.app/besmele/en/</loc><lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/"/></url>
   <url><loc>https://hyapps.app/besmele/destek.html</loc><lastmod>2026-10-20</lastmod></url>
@@ -694,36 +687,36 @@
   <url><loc>https://hyapps.app/besmele/en/short-quran-verses/</loc><lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/short-quran-verses/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/kisa-ayetler/"/></url>
-  <url><loc>https://hyapps.app/crownly/queens-puzzle-rules/</loc><lastmod>2026-11-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/queens-puzzle-rules/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/queens-nasil-oynanir/"/></url>
-  <url><loc>https://hyapps.app/crownly/queens-strategy/</loc><lastmod>2026-11-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/queens-strategy/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/queens-stratejileri/"/></url>
-  <url><loc>https://hyapps.app/crownly/linkedin-queens-alternative/</loc><lastmod>2026-11-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-queens-alternative/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/queens-nasil-oynanir/</loc><lastmod>2026-11-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/queens-nasil-oynanir/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/queens-puzzle-rules/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/queens-stratejileri/</loc><lastmod>2026-11-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/queens-stratejileri/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/queens-strategy/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/</loc><lastmod>2026-11-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-queens-alternatifi/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-queens-alternative/"/></url>
-  <url><loc>https://hyapps.app/crownly/games-like-sudoku/</loc><lastmod>2026-11-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/games-like-sudoku/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/</loc><lastmod>2026-11-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/sudoku-benzeri-oyunlar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/games-like-sudoku/"/></url>
-  <url><loc>https://hyapps.app/crownly/daily-queens-puzzle/</loc><lastmod>2026-11-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-queens-puzzle/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/</loc><lastmod>2026-11-13</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/gunluk-queens-bulmacasi/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-queens-puzzle/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/queens-puzzle-rules/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/queens-puzzle-rules/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/queens-nasil-oynanir/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/queens-strategy/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/queens-strategy/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/queens-stratejileri/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/linkedin-queens-alternative/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/linkedin-queens-alternative/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/linkedin-queens-alternatifi/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/tr/queens-nasil-oynanir/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/queens-nasil-oynanir/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/queens-puzzle-rules/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/tr/queens-stratejileri/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/queens-stratejileri/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/queens-strategy/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/tr/linkedin-queens-alternatifi/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/linkedin-queens-alternatifi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/linkedin-queens-alternative/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/games-like-sudoku/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/games-like-sudoku/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/sudoku-benzeri-oyunlar/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/tr/sudoku-benzeri-oyunlar/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/sudoku-benzeri-oyunlar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/games-like-sudoku/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/daily-queens-puzzle/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/daily-queens-puzzle/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/gunluk-queens-bulmacasi/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/tr/gunluk-queens-bulmacasi/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/gunluk-queens-bulmacasi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/daily-queens-puzzle/"/></url>
   <url><loc>https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/</loc><lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/quickwits/games-to-play-with-friends-on-one-phone/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/quickwits/tr/tek-telefonla-oynanan-oyunlar/"/></url>
@@ -814,48 +807,12 @@
   <url><loc>https://hyapps.app/glowfly/tr/zorla-reklamsiz-idle-oyunlar/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/glowfly/idle-games-without-forced-ads/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/glowfly/tr/zorla-reklamsiz-idle-oyunlar/"/></url>
-  <url><loc>https://hyapps.app/crownly/daily-puzzle-games-like-wordle/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-puzzle-games-like-wordle/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/daily-puzzle-games-like-wordle/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/"/></url>
-  <url><loc>https://hyapps.app/crownly/one-line-path-puzzle-rules/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/one-line-path-puzzle-rules/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/one-line-path-puzzle-rules/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/"/></url>
-  <url><loc>https://hyapps.app/crownly/how-to-play-shikaku/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/how-to-play-shikaku/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/shikaku-nasil-oynanir/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/shikaku-nasil-oynanir/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/how-to-play-shikaku/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/shikaku-nasil-oynanir/"/></url>
   <url><loc>https://hyapps.app/besmele/en/choosing-a-prayer-times-app/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/choosing-a-prayer-times-app/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/namaz-vakti-uygulamasi-secerken/"/></url>
   <url><loc>https://hyapps.app/besmele/namaz-vakti-uygulamasi-secerken/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/besmele/en/choosing-a-prayer-times-app/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/besmele/namaz-vakti-uygulamasi-secerken/"/></url>
-  <url><loc>https://hyapps.app/crownly/linkedin-zip-alternative/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-zip-alternative/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-zip-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/linkedin-zip-alternatifi/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-zip-alternative/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-zip-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/crownly/linkedin-patches-alternative/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-patches-alternative/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-patches-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/linkedin-patches-alternatifi/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-patches-alternative/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-patches-alternatifi/"/></url>
-  <url><loc>https://hyapps.app/crownly/linkedin-games-alternatives/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-games-alternatives/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-oyunlari-alternatifleri/"/></url>
-  <url><loc>https://hyapps.app/crownly/tr/linkedin-oyunlari-alternatifleri/</loc><lastmod>2026-11-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/crownly/linkedin-games-alternatives/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/crownly/tr/linkedin-oyunlari-alternatifleri/"/></url>
   <url><loc>https://hyapps.app/brickhaven/brick-by-brick-alternative-iphone/</loc><lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/brick-by-brick-alternative-iphone/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/brick-by-brick-iphone-alternatifi/"/></url>
@@ -886,10 +843,10 @@
   <url><loc>https://hyapps.app/brickhaven/tr/sss/</loc><lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/faq/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/sss/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/games-to-play-on-a-plane/</loc><lastmod>2026-11-22</lastmod>
+  <url><loc>https://hyapps.app/brickhaven/games-to-play-on-a-plane/</loc><lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/games-to-play-on-a-plane/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/ucakta-oynanacak-oyunlar/"/></url>
-  <url><loc>https://hyapps.app/brickhaven/tr/ucakta-oynanacak-oyunlar/</loc><lastmod>2026-11-22</lastmod>
+  <url><loc>https://hyapps.app/brickhaven/tr/ucakta-oynanacak-oyunlar/</loc><lastmod>2026-11-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/games-to-play-on-a-plane/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/ucakta-oynanacak-oyunlar/"/></url>
   <url><loc>https://hyapps.app/brickhaven/cozy-winter-game/</loc><lastmod>2026-11-22</lastmod>
@@ -904,6 +861,30 @@
   <url><loc>https://hyapps.app/brickhaven/tr/kasaba-yenileme-oyunu/</loc><lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/brickhaven/restoration-games-iphone/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/brickhaven/tr/kasaba-yenileme-oyunu/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/daily-puzzle-games-like-wordle/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/daily-puzzle-games-like-wordle/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/wordle-gibi-gunluk-bulmaca-oyunlari/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/tr/wordle-gibi-gunluk-bulmaca-oyunlari/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/daily-puzzle-games-like-wordle/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/wordle-gibi-gunluk-bulmaca-oyunlari/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/cockatiel-game/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/cockatiel-game/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/sultan-papagani-oyunu/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/tr/sultan-papagani-oyunu/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/cockatiel-game/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/sultan-papagani-oyunu/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/bird-games-iphone/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/bird-games-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/kus-oyunlari/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/tr/kus-oyunlari/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/bird-games-iphone/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/kus-oyunlari/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/daily-brain-teaser/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/daily-brain-teaser/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/zeka-oyunu/"/></url>
+  <url><loc>https://hyapps.app/birbdoku/tr/zeka-oyunu/</loc><lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/birbdoku/daily-brain-teaser/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/birbdoku/tr/zeka-oyunu/"/></url>
   <url><loc>https://hyapps.app/pyramidcraft/pyramid-building-game/</loc><lastmod>2026-11-21</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://hyapps.app/pyramidcraft/pyramid-building-game/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://hyapps.app/pyramidcraft/tr/piramit-yapma-oyunu/"/></url>

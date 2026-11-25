@@ -5,7 +5,8 @@ Usage: python3 -I tools/build_guides.py   (run from the site repo root)
 
 - Besmele: Esmaül Hüsna hub + 99 name pages (TR /besmele/esma/, EN /besmele/en/names/) from the app's own data
   (Hikmet/Ortak/icerik.json, icerik_en.json), plus two how-to guides per language.
-- Crownly: Queens rules, strategy and "LinkedIn Queens alternative" guides (EN + TR).
+- Birbdoku: Queens rules, strategy, LinkedIn Queens alternative, a playable web daily, cockatiel / bird game / brain teaser pages (EN + TR).
+- Crownly (off the App Store since 2026-11-23): old guide URLs are redirect stubs to the Birbdoku pages.
 - Quick Wits: one-phone party games, a reaction time test (with a live test on the page) and group games for game night.
 - Brickhaven: a cozy offline building game page and a beginner's guide.
 - Glowfly: a relaxing idle merge game page and a beginner's guide (EN + TR).
@@ -25,15 +26,6 @@ import unicodedata
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-def crownly_store():
-    """Reads STORE from build_crownly.py: 1.2 has 6,500 levels in three games; 1.0.1 had 200 and no purchases."""
-    with open(os.path.join(ROOT, "tools", "build_crownly.py")) as f:
-        m = re.search(r"^STORE = (True|False)", f.read(), re.M)
-    return m is None or m.group(1) == "True"
-
-
-CROWNLY_STORE = crownly_store()
-CROWNLY_LEVELS = {"en": "6,500" if CROWNLY_STORE else "200", "tr": "6.500" if CROWNLY_STORE else "200"}
 HIKMET = os.path.join(os.path.dirname(ROOT), "Hikmet", "Ortak")
 SITE = "https://hyapps.app"
 PT = "?pt=129592179&ct=web&mt=8"
@@ -43,12 +35,12 @@ ESC = html.escape
 PAGES = []  # (path, {lang: path} alternates) for the sitemap
 
 APPS = {
-    "crownly": dict(id="6822852151", css=[], theme="#2b1a42", icon="/crownly/img/icon.png",
-                    name={"en": "Crownly", "tr": "Crownly"}, home={"en": "/crownly/", "tr": "/crownly/tr/"},
-                    og={"en": "/assets/og/crownly-en.jpg", "tr": "/assets/og/crownly-tr.jpg"},
-                    cta_h={"en": "Play a new Queens puzzle every day", "tr": "Her gün yeni bir Queens bulmacası çöz"},
-                    cta_p={"en": f"Crownly: three daily logic puzzles, live duels, {CROWNLY_LEVELS['en']} levels and hints that explain the logic. Free on iPhone and iPad.",
-                           "tr": f"Crownly: her gün üç mantık bulmacası, canlı düello, {CROWNLY_LEVELS['tr']} seviye ve mantığı anlatan ipuçları. iPhone ve iPad'de ücretsiz."}),
+    "birbdoku": dict(id="6837803599", css=["/birbdoku/guide.css"], theme="#9fd8f5", icon="/birbdoku/img/icon.png",
+                     name={"en": "Birbdoku", "tr": "Birbdoku"}, home={"en": "/birbdoku/", "tr": "/birbdoku/tr/"},
+                     og={"en": "/assets/og/birbdoku-en.jpg", "tr": "/assets/og/birbdoku-tr.jpg"},
+                     cta_h={"en": "Play a new bird puzzle every day", "tr": "Her gün yeni bir kuş bulmacası çöz"},
+                     cta_p={"en": "Birbdoku: a cozy Queens logic puzzle with two cockatiels. Daily puzzle, hints that teach, a streak garden and a weekly season. Free on iPhone and iPad.",
+                            "tr": "Birbdoku: iki sultan papağanıyla rahat bir Queens mantık bulmacası. Günlük bulmaca, öğreten ipuçları, seri bahçesi ve haftalık sezon. iPhone ve iPad'de ücretsiz."}),
     "besmele": dict(id="6821501310", css=["/besmele/besmele.css"], theme="#0f3324", icon="/besmele/img/icon.png",
                     name={"en": "Bismillah", "tr": "Besmele"}, home={"en": "/besmele/en/", "tr": "/besmele/"},
                     og={"en": "/assets/og/besmele-en.jpg", "tr": "/assets/og/besmele-tr.jpg"},
@@ -106,7 +98,7 @@ GLOWFLY_STORE = glowfly_store()
 STORE_LABEL = {"en": "Download on the App Store", "tr": "App Store'dan indir"}
 SOON_LABEL = {"en": "Coming soon to the App Store", "tr": "Yakında App Store'da"}
 MADE = {"en": "Made with care by an independent developer.", "tr": "Bağımsız bir geliştirici tarafından yapıldı."}
-PRIVACY = {"crownly": {"en": "/crownly/privacy.html", "tr": "/crownly/privacy.html#tr"},
+PRIVACY = {"birbdoku": {"en": "/birbdoku/privacy.html", "tr": "/birbdoku/privacy.html#tr"},
            "besmele": {"en": "/besmele/en/gizlilik.html", "tr": "/besmele/gizlilik.html"},
            "quickwits": {"en": "/quickwits/privacy.html", "tr": "/quickwits/privacy.html#tr"},
            "brickhaven": {"en": "/brickhaven/privacy.html", "tr": "/brickhaven/privacy.html#tr"},
@@ -455,13 +447,18 @@ def build_besmele_guides():
         write(path, page("besmele", lang, path, links[key], title, desc, body, [home[lang], (title, path)]))
 
 
-# ---------------------------------------------------------------- Crownly: Queens guides
+# ---------------------------------------------------------------- Birbdoku: Queens guides (from the retired Crownly guides, 2026-11-25)
+# Crownly left the App Store on 2026-11-23; Birbdoku is the same kind of puzzle (Queens rules) with two cockatiels.
+# The old /crownly/ guide URLs redirect here (build_crownly_redirects).
 
 BOARD = ["AABBB", "ACCBB", "DCCEB", "DDCEE", "DDEEE"]
 CROWNS = {(2, 0), (0, 1), (3, 2), (1, 3), (4, 4)}
-REGION = {"A": "#CDBEEB", "B": "#B9D3F2", "C": "#F6CFA8", "D": "#C5E0B5", "E": "#F2B8C6"}
-CROWN = ('<span class="crown"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18l-1.6-9.2-4.6 3.8L12 5.5 9.2 12.6 4.6 8.8z" '
-         'fill="#E3AE2C" stroke="#8a5a00" stroke-width=".8" stroke-linejoin="round"/></svg></span>')
+REGION = {"A": "#F7C6D9", "B": "#BFE3F8", "C": "#FFE08A", "D": "#C9E8B5", "E": "#E2CCF5"}
+
+
+def bird_img(r, c):
+    who = "pika" if (r + c) % 2 == 0 else "chiko"
+    return f'<span class="crown"><img src="/birbdoku/img/board-{who}.png" alt="" width="40" height="40"></span>'
 
 
 def board(label):
@@ -470,142 +467,154 @@ def board(label):
         for c, reg in enumerate(row):
             e = [n for n, cond in (("et", r == 0 or BOARD[r - 1][c] != reg), ("eb", r == 4 or BOARD[r + 1][c] != reg),
                                    ("el", c == 0 or BOARD[r][c - 1] != reg), ("er", c == 4 or BOARD[r][c + 1] != reg)) if cond]
-            cells.append(f'<div class="cell {" ".join(e)}" style="background:{REGION[reg]}">{CROWN if (r, c) in CROWNS else ""}</div>')
+            cells.append(f'<div class="cell {" ".join(e)}" style="background:{REGION[reg]}">{bird_img(r, c) if (r, c) in CROWNS else ""}</div>')
     return f'  <div class="board" role="img" aria-label="{ESC(label)}">{"".join(cells)}</div>\n'
 
 
+def shots(lang, names, alt):
+    return ('  <div class="shots">' + "".join(
+        f'<img src="/birbdoku/img/shots/{lang}-{n}.jpg" alt="{ESC(alt)}" width="540" height="1173" loading="lazy">' for n in names) + "</div>\n")
+
+
 TECH = {
-    "en": [("Crown's reach", "A crown rules out its row, its column, its region and every cell touching it, diagonals included. Mark those cells with a dot right away."),
-           ("Last cell", "If a region, row or column has only one open cell left, the crown must go there."),
-           ("Region in one line", "If all open cells of a region sit in a single row (or column), that region's crown is in that line, so every other cell of the line is out."),
-           ("Line inside one region", "If all open cells of a row (or column) belong to one region, the row's crown is that region's crown: the rest of the region is out."),
-           ("Group squeeze", "If two regions can only fit in the same two rows, those two rows belong to them, and every other region's cells in those rows are out. The same works for three regions in three rows."),
-           ("Blocking cell", "Imagine a crown on a cell. If it would leave some region, row or column with no open cell, that cell can't hold a crown.")],
-    "tr": [("Tacın etki alanı", "Bir taç; satırını, sütununu, bölgesini ve çapraz dahil değdiği her hücreyi eler. Bu hücrelere hemen nokta koy."),
-           ("Son hücre", "Bir bölgede, satırda ya da sütunda tek boş hücre kaldıysa taç oraya gelir."),
-           ("Tek hatta sıkışan bölge", "Bir bölgenin tüm boş hücreleri tek bir satırdaysa (ya da sütundaysa) o bölgenin tacı o hattadır; hattın geri kalanı elenir."),
-           ("Tek bölgeye ait hat", "Bir satırın (ya da sütunun) tüm boş hücreleri tek bir bölgedeyse satırın tacı o bölgenin tacıdır; bölgenin geri kalanı elenir."),
-           ("Grup sıkışması", "İki bölge yalnızca aynı iki satıra sığıyorsa o iki satır onlarındır; başka bölgelerin o satırlardaki hücreleri elenir. Üç bölge ve üç satır için de geçerlidir."),
-           ("Engelleyen hücre", "Bir hücreye taç koyduğunu düşün. Bu taç bir bölgede, satırda ya da sütunda hiç boş hücre bırakmıyorsa o hücreye taç gelemez.")],
+    "en": [("A bird's reach", "A bird rules out its row, its column, its color and every cell touching it, diagonals included. Mark those cells with an X right away."),
+           ("Last cell", "If a color, row or column has only one open cell left, the bird must go there."),
+           ("Color in one line", "If all open cells of a color sit in a single row (or column), that color's bird is in that line, so every other cell of the line is out."),
+           ("Line inside one color", "If all open cells of a row (or column) belong to one color, the row's bird is that color's bird: the rest of the color is out."),
+           ("Group squeeze", "If two colors can only fit in the same two rows, those two rows belong to them, and every other color's cells in those rows are out. The same works for three colors in three rows."),
+           ("Blocking cell", "Imagine a bird on a cell. If it would leave some color, row or column with no open cell, that cell can't hold a bird.")],
+    "tr": [("Kuşun etki alanı", "Bir kuş; satırını, sütununu, rengini ve çapraz dahil değdiği her kareyi eler. Bu karelere hemen X koy."),
+           ("Son kare", "Bir renkte, satırda ya da sütunda tek boş kare kaldıysa kuş oraya gelir."),
+           ("Tek hatta sıkışan renk", "Bir rengin tüm boş kareleri tek bir satırdaysa (ya da sütundaysa) o rengin kuşu o hattadır; hattın geri kalanı elenir."),
+           ("Tek renge ait hat", "Bir satırın (ya da sütunun) tüm boş kareleri tek bir renkteyse satırın kuşu o rengin kuşudur; rengin geri kalanı elenir."),
+           ("Grup sıkışması", "İki renk yalnızca aynı iki satıra sığıyorsa o iki satır onlarındır; başka renklerin o satırlardaki kareleri elenir. Üç renk ve üç satır için de geçerlidir."),
+           ("Engelleyen kare", "Bir kareye kuş koyduğunu düşün. Bu kuş bir renkte, satırda ya da sütunda hiç boş kare bırakmıyorsa o kareye kuş gelemez.")],
 }
 
-CG = {
+BDG = {
     "en": dict(
-        home=("Crownly", "/crownly/"),
-        rules=("/crownly/queens-puzzle-rules/", "How to Play Queens: Rules of the Queens Logic Puzzle",
-               "The rules of the Queens puzzle (also known as Star Battle) explained simply: one crown per row, column and region, and crowns never touch."),
-        strategy=("/crownly/queens-strategy/", "Queens Puzzle Strategy: 6 Techniques to Solve Any Board",
-                  "Six logical techniques that solve every Queens puzzle without guessing, from crown's reach to group squeezes."),
-        alt=("/crownly/linkedin-queens-alternative/", "LinkedIn Queens Alternative: Play Queens Every Day on iPhone",
-             f"Love the LinkedIn Queens game? Crownly is a free iPhone app with a new Queens puzzle every day, {CROWNLY_LEVELS['en']} levels and hints that explain the logic."),
-        board_label="A solved 5×5 Queens puzzle", related="More guides"),
+        home=("Birbdoku", "/birbdoku/"),
+        rules=("/birbdoku/queens-puzzle-rules/", "How to Play Queens: Rules of the Queens Logic Puzzle",
+               "The rules of the Queens puzzle (also known as Star Battle) explained simply: one bird per row, column and color, and birds never touch."),
+        strategy=("/birbdoku/queens-strategy/", "Queens Puzzle Strategy: 6 Techniques to Solve Any Board",
+                  "Six logical techniques that solve every Queens puzzle without guessing, from a bird's reach to group squeezes."),
+        alt=("/birbdoku/linkedin-queens-alternative/", "LinkedIn Queens Alternative: Play Queens Every Day on iPhone",
+             "Love the LinkedIn Queens game? Birbdoku is a free iPhone and iPad game with the same rules, a new daily puzzle, a long level path and hints that explain the logic, played with two cockatiels."),
+        board_label="A solved 5×5 Queens puzzle with birds", related="More guides"),
     "tr": dict(
-        home=("Crownly", "/crownly/tr/"),
-        rules=("/crownly/tr/queens-nasil-oynanir/", "Queens Nasıl Oynanır? Queens Mantık Bulmacası Kuralları",
-               "Queens bulmacasının (Star Battle olarak da bilinir) kuralları sade bir dille: her satıra, sütuna ve bölgeye bir taç; taçlar birbirine dokunmaz."),
-        strategy=("/crownly/tr/queens-stratejileri/", "Queens Bulmacası Taktikleri: Her Tahtayı Çözen 6 Teknik",
-                  "Her Queens bulmacasını tahmin etmeden çözen altı mantık tekniği: tacın etki alanından grup sıkışmasına."),
-        alt=("/crownly/tr/linkedin-queens-alternatifi/", "LinkedIn Queens Alternatifi: iPhone'da Her Gün Queens Oyna",
-             f"LinkedIn'deki Queens oyununu seviyor musun? Crownly her gün yeni bir Queens bulmacası, {CROWNLY_LEVELS['tr']} seviye ve mantığı anlatan ipuçları sunan ücretsiz bir iPhone uygulaması."),
-        board_label="Çözülmüş 5×5 Queens bulmacası", related="Diğer rehberler"),
+        home=("Birbdoku", "/birbdoku/tr/"),
+        rules=("/birbdoku/tr/queens-nasil-oynanir/", "Queens Nasıl Oynanır? Queens Mantık Bulmacası Kuralları",
+               "Queens bulmacasının (Star Battle olarak da bilinir) kuralları sade bir dille: her satıra, sütuna ve renge bir kuş; kuşlar birbirine değmez."),
+        strategy=("/birbdoku/tr/queens-stratejileri/", "Queens Bulmacası Taktikleri: Her Tahtayı Çözen 6 Teknik",
+                  "Her Queens bulmacasını tahmin etmeden çözen altı mantık tekniği: kuşun etki alanından grup sıkışmasına."),
+        alt=("/birbdoku/tr/linkedin-queens-alternatifi/", "LinkedIn Queens Alternatifi: iPhone'da Her Gün Queens Oyna",
+             "LinkedIn'deki Queens oyununu seviyor musun? Birbdoku aynı kurallarla, her gün yeni bir bulmaca, uzun bir seviye yolu ve mantığı anlatan ipuçları sunan, iki sultan papağanıyla oynanan ücretsiz bir iPhone ve iPad oyunu."),
+        board_label="Kuşlarla çözülmüş 5×5 Queens bulmacası", related="Diğer rehberler"),
+}
+
+BIRB_FACTS = {
+    "en": ["A new daily puzzle at 07:00 UTC, the same 8×8 board for everyone (from level 20).",
+           "A long level path from a 4×4 starter to 10×10 boards, with hide-and-seek levels and Bird Duo (two birds per line) from level 50.",
+           "Hints that name the technique and explain the next step; binoculars find one bird; Auto X marks the obvious cells.",
+           "Two cockatiels, Pika and Chiko, with a different face in every cell, and a streak garden that grows each day you play.",
+           "A weekly season in groups of 50 players, friends with player codes, Game Center leaderboards and achievements.",
+           "iPhone and iPad, 12 languages, puzzles work offline. Free to play with ads; optional purchases remove them or add helpers."],
+    "tr": ["Her gün 07:00 UTC'de (TR 10:00) herkese aynı yeni 8×8 günlük bulmaca (20. seviyeden sonra).",
+           "4×4 başlangıç tahtasından 10×10'a uzun bir seviye yolu; saklambaç seviyeleri ve 50. seviyeden sonra Kuş İkilisi (hat başına iki kuş).",
+           "Tekniğin adını söyleyip sonraki adımı anlatan ipuçları; bir kuşu bulan dürbün; belli kareleri işaretleyen Otomatik X.",
+           "Her karede farklı yüzüyle iki sultan papağanı Pika ve Çiko, oynadığın her gün büyüyen bir seri bahçesi.",
+           "50 kişilik gruplarda haftalık sezon, oyuncu koduyla arkadaşlar, Game Center sıralamaları ve başarımlar.",
+           "iPhone ve iPad, 12 dil, bulmacalar internetsiz. Reklamlı ve ücretsiz; isteğe bağlı satın almalar reklamı kaldırır ya da yardımcı ekler."],
 }
 
 
-def build_crownly_guides():
+def build_birbdoku_guides():
     for lang in ("en", "tr"):
-        g = CG[lang]
-        other = CG["tr" if lang == "en" else "en"]
+        g = BDG[lang]
+        other = BDG["tr" if lang == "en" else "en"]
         alts = lambda key: {lang: g[key][0], ("tr" if lang == "en" else "en"): other[key][0]}
-        rel = lambda skip: related(g["related"], [(CG_PLAY[lang][1].split(":")[0], CG_PLAY[lang][0])]
+        rel = lambda skip: related(g["related"], [(BIRB_PLAY[lang][1].split(":")[0], BIRB_PLAY[lang][0])]
                                             + [(g[k][1].split(":")[0], g[k][0]) for k in ("rules", "strategy", "alt") if k != skip]
-                                            + [(CG_LIKE[lang][1].split(":")[0], CG_LIKE[lang][0])])
+                                            + [(BIRB_LIKE[lang][1].split(":")[0], BIRB_LIKE[lang][0])])
         en = lang == "en"
 
         # Rules
         path, title, desc = g["rules"]
         body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
         body += f'  <h2>{"The rules" if en else "Kurallar"}</h2>\n  <ol>' + "".join(f"<li>{ESC(x)}</li>" for x in (
-            ["Place exactly one crown in every row.", "Place exactly one crown in every column.",
-             "Place exactly one crown in every colored region.", "Crowns may not touch each other, not even diagonally."] if en else
-            ["Her satıra tam bir taç koy.", "Her sütuna tam bir taç koy.", "Her renkli bölgeye tam bir taç koy.",
-             "Taçlar birbirine dokunamaz, çapraz olarak da."])) + "</ol>\n"
+            ["Place exactly one bird in every row.", "Place exactly one bird in every column.",
+             "Place exactly one bird in every colored region.", "Birds may not touch each other, not even diagonally."] if en else
+            ["Her satıra tam bir kuş koy.", "Her sütuna tam bir kuş koy.", "Her renkli bölgeye tam bir kuş koy.",
+             "Kuşlar birbirine değemez, çapraz olarak da."])) + "</ol>\n"
         body += board(g["board_label"])
-        body += paras(*([ESC("On an N×N board there are N rows, N columns and N regions, so a solved board always has exactly N crowns. "
-                             "A good puzzle has exactly one solution and can be solved with logic alone, without guessing."),
+        body += paras(*([ESC("On an N×N board there are N rows, N columns and N colored regions, so a solved board always has exactly N "
+                             "birds. A good puzzle has exactly one solution and can be solved with logic alone, without guessing."),
                          ESC("Queens is a version of the classic Star Battle puzzle with one star per line. It became popular as a quick daily "
-                             "game; in some apps crowns are drawn as queens, in Crownly they are golden crowns.")] if en else
-                        [ESC("N×N bir tahtada N satır, N sütun ve N bölge vardır; bu yüzden çözülmüş tahtada her zaman tam N taç bulunur. "
-                             "İyi bir bulmacanın tek çözümü vardır ve tahmin etmeden, yalnızca mantıkla çözülür."),
+                             "game; some apps draw queens or crowns, Birbdoku uses two cockatiels, Pika and Chiko.")] if en else
+                        [ESC("N×N bir tahtada N satır, N sütun ve N renkli bölge vardır; bu yüzden çözülmüş tahtada her zaman tam N kuş "
+                             "bulunur. İyi bir bulmacanın tek çözümü vardır ve tahmin etmeden, yalnızca mantıkla çözülür."),
                          ESC("Queens, hat başına bir yıldızlı klasik Star Battle bulmacasının bir türüdür. Kısa bir günlük oyun olarak "
-                             "popüler oldu; bazı uygulamalarda vezir, Crownly'de altın taç olarak çizilir.")])) + "\n"
+                             "popüler oldu; bazı uygulamalar vezir ya da taç çizer, Birbdoku'da iki sultan papağanı Pika ve Çiko var.")])) + "\n"
         body += f'  <h2>{"How to start" if en else "Nasıl başlanır"}</h2>\n  <ol>' + "".join(f"<li>{ESC(x)}</li>" for x in (
-            ["Look for the smallest region or a region squeezed into one row or column.",
-             "Mark cells that can't hold a crown with a dot (tap once in Crownly). Dots are as important as crowns.",
-             "Every time you place a crown, dot its row, column, region and the eight cells around it.",
-             "When you get stuck, look for a region whose open cells all sit in one line."] if en else
-            ["En küçük bölgeye ya da tek bir satıra veya sütuna sıkışmış bölgeye bak.",
-             "Taç gelemeyecek hücrelere nokta koy (Crownly'de bir dokunuş). Noktalar taçlar kadar önemlidir.",
-             "Her taç koyduğunda satırına, sütununa, bölgesine ve çevresindeki sekiz hücreye nokta koy.",
-             "Takılınca boş hücrelerinin hepsi tek bir hatta olan bir bölge ara."])) + "</ol>\n"
+            ["Look for the smallest color or a color squeezed into one row or column.",
+             "Mark cells that can't hold a bird with an X (tap once in Birbdoku; drag to mark many). X marks are as important as birds.",
+             "Every time you place a bird (double-tap), mark its row, column, color and the eight cells around it.",
+             "When you get stuck, look for a color whose open cells all sit in one line."] if en else
+            ["En küçük renge ya da tek bir satıra veya sütuna sıkışmış renge bak.",
+             "Kuş gelemeyecek karelere X koy (Birbdoku'da bir dokunuş; çok kareye sürükle). X'ler kuşlar kadar önemlidir.",
+             "Her kuş koyduğunda (çift dokunuş) satırına, sütununa, rengine ve çevresindeki sekiz kareye X koy.",
+             "Takılınca boş karelerinin hepsi tek bir hatta olan bir renk ara."])) + "</ol>\n"
+        body += shots(lang, ["play", "hint"], "Birbdoku" if en else "Birbdoku")
         body += rel("rules")
-        write(path, page("crownly", lang, path, alts("rules"), title, desc, body, [g["home"], (title, path)]))
+        write(path, page("birbdoku", lang, path, alts("rules"), title, desc, body, [g["home"], (title, path)]))
 
         # Strategy
         path, title, desc = g["strategy"]
         body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
         for i, (h, p) in enumerate(TECH[lang]):
             body += f"  <h2>{i + 1}. {ESC(h)}</h2>\n  <p>{ESC(p)}</p>\n"
-        body += paras(ESC("Crownly's hints use exactly these techniques: when you are stuck, a hint names the technique, highlights the "
-                          "row, column or region it is about and explains the step."
+        body += paras(ESC("Birbdoku's hints use exactly these techniques: when you are stuck, a hint names the technique, highlights the "
+                          "row, column or color it is about and explains the step."
                           if en else
-                          "Crownly'nin ipuçları tam olarak bu teknikleri kullanır: takıldığında ipucu tekniğin adını söyler, ilgili satırı, sütunu "
-                          "ya da bölgeyi vurgular ve adımı açıklar.")) + "\n"
+                          "Birbdoku'nun ipuçları tam olarak bu teknikleri kullanır: takıldığında ipucu tekniğin adını söyler, ilgili satırı, sütunu "
+                          "ya da rengi vurgular ve adımı açıklar.")) + "\n"
         body += rel("strategy")
-        write(path, page("crownly", lang, path, alts("strategy"), title, desc, body, [g["home"], (title, path)]))
+        write(path, page("birbdoku", lang, path, alts("strategy"), title, desc, body, [g["home"], (title, path)]))
 
         # LinkedIn Queens alternative
         path, title, desc = g["alt"]
         body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
-        body += paras(*([ESC("LinkedIn's Queens is one puzzle a day, and then it's over until tomorrow. If you want more, Crownly gives you the same "
-                             "kind of puzzle with the same rules (one crown in every row, column and region, no touching), designed as a calm iPhone game."),] if en else
-                        [ESC("LinkedIn'deki Queens günde bir bulmaca sunar, sonra ertesi güne kadar bitti. Daha fazlasını istiyorsan Crownly aynı "
-                             "kurallarla (her satıra, sütuna ve bölgeye bir taç, taçlar birbirine dokunmaz) aynı türde bulmacalar sunan sakin bir iPhone oyunu.")]))
-        whats_in = "What you get in Crownly" if en else "Crownly'de neler var"
-        body += f'\n  <h2>{whats_in}</h2>\n  <ul>' +"".join(f"<li>{ESC(x)}</li>" for x in (
-            ["A new daily puzzle at the same time for everyone, plus a 10×10 Daily Hard.",
-             f"{CROWNLY_LEVELS['en']} levels from Easy to Expert in three games, with up to three stars each.",
-             "Hints that explain the next logical step instead of revealing the answer.",
-             "Two more daily puzzles, Route and Mosaic, plus Double Crowns and live duels with friends.",
-             "Streaks, streak freezes, Game Center leaderboards and widgets.",
-             "Color-blind mode, dark mode, no ads, works offline."] if en else
-            ["Herkese aynı anda gelen yeni bir günlük bulmaca ve 10×10 Günlük Zor.",
-             f"Üç oyunda Kolaydan Uzmana {CROWNLY_LEVELS['tr']} seviye, her birinde üç yıldıza kadar.",
-             "Cevabı vermek yerine sıradaki mantıklı adımı anlatan ipuçları.",
-             "İki günlük bulmaca daha (Rota ve Mozaik), Çift Taç ve arkadaşlarınla canlı düello.",
-             "Seri, seri dondurma, Game Center sıralamaları ve widget'lar.",
-             "Renk körü modu, koyu tema, reklamsız, internetsiz oynanır."])) + "</ul>\n"
-        body += paras(ESC("Crownly is an independent app and is not affiliated with or endorsed by LinkedIn. Queens and Star Battle are names of a puzzle type."
-                          if en else "Crownly bağımsız bir uygulamadır; LinkedIn ile bir bağlantısı yoktur ve LinkedIn tarafından desteklenmez. "
+        body += paras(ESC("LinkedIn's Queens is one puzzle a day, and then it's over until tomorrow. If you want more, Birbdoku gives you the "
+                          "same kind of puzzle with the same rules (one in every row, column and color, no touching), with birds instead of "
+                          "crowns, designed as a cozy iPhone and iPad game." if en else
+                          "LinkedIn'deki Queens günde bir bulmaca sunar, sonra ertesi güne kadar bitti. Daha fazlasını istiyorsan Birbdoku aynı "
+                          "kurallarla (her satıra, sütuna ve renge bir tane, birbirine değmeden) taç yerine kuşlarla aynı türde bulmacalar sunan, "
+                          "iPhone ve iPad için rahat bir oyun."))
+        body += f'\n  <h2>{"What you get in Birbdoku" if en else "Birbdoku’da neler var"}</h2>\n  <ul>' + "".join(
+            f"<li>{ESC(x)}</li>" for x in BIRB_FACTS[lang]) + "</ul>\n"
+        body += shots(lang, ["play", "big", "garden"], "Birbdoku")
+        body += paras(ESC("Birbdoku is an independent game and is not affiliated with or endorsed by LinkedIn. Queens and Star Battle are names of a puzzle type."
+                          if en else "Birbdoku bağımsız bir oyundur; LinkedIn ile bir bağlantısı yoktur ve LinkedIn tarafından desteklenmez. "
                           "Queens ve Star Battle bir bulmaca türünün adlarıdır.")).replace("<p>", '<p class="note">') + "\n"
         body += rel("alt")
-        write(path, page("crownly", lang, path, alts("alt"), title, desc, body, [g["home"], (title, path)]))
+        write(path, page("birbdoku", lang, path, alts("alt"), title, desc, body, [g["home"], (title, path)]))
 
 
-# ---------------------------------------------------------------- Crownly: playable web daily
+# ---------------------------------------------------------------- Birbdoku: playable web daily
 
-CG_PLAY = {
-    "en": ("/crownly/daily-queens-puzzle/", "Daily Queens Puzzle: Play Today's Crownly Puzzle Online",
-           "Play today's Queens logic puzzle free in your browser: one crown in every row, column and region, and crowns never touch. "
-           "A new board every day at 07:00 UTC, the same one as in the Crownly app."),
-    "tr": ("/crownly/tr/gunluk-queens-bulmacasi/", "Günlük Queens Bulmacası: Bugünün Crownly Bulmacasını Online Çöz",
-           "Bugünün Queens mantık bulmacasını tarayıcında ücretsiz çöz: her satıra, sütuna ve bölgeye bir taç, taçlar birbirine dokunmaz. "
-           "Her gün 07:00 UTC'de yeni tahta; Crownly uygulamasındakiyle aynı bulmaca."),
+BIRB_PLAY = {
+    "en": ("/birbdoku/daily-queens-puzzle/", "Daily Queens Puzzle: Play Today's Birbdoku Bird Puzzle Online",
+           "Play today's Queens logic puzzle free in your browser: one bird in every row, column and color, and birds never touch. "
+           "A new 8×8 board every day at 07:00 UTC, the same one as the daily puzzle in the Birbdoku app."),
+    "tr": ("/birbdoku/tr/gunluk-queens-bulmacasi/", "Günlük Queens Bulmacası: Bugünün Birbdoku Kuş Bulmacasını Online Çöz",
+           "Bugünün Queens mantık bulmacasını tarayıcında ücretsiz çöz: her satıra, sütuna ve renge bir kuş, kuşlar birbirine değmez. "
+           "Her gün 07:00 UTC'de yeni 8×8 tahta; Birbdoku uygulamasındaki günlük bulmacayla aynı."),
 }
 PLAY_TEXT = {
-    "en": dict(crown="crown", dot="dot", empty="empty", cell="Row {r}, column {c}", left="Crowns left: {n}",
+    "en": dict(crown="bird", dot="X", empty="empty", cell="Row {r}, column {c}", left="Birds left: {n}",
                next="Next puzzle in {t}", ready="A new puzzle is ready. Reload the page.", solved="Solved in {t}!",
                share="Share result", copied="Copied", error="Today's puzzle could not be loaded. Check your connection and reload."),
-    "tr": dict(crown="taç", dot="nokta", empty="boş", cell="{r}. satır, {c}. sütun", left="Kalan taç: {n}",
+    "tr": dict(crown="kuş", dot="X", empty="boş", cell="{r}. satır, {c}. sütun", left="Kalan kuş: {n}",
                next="Yeni bulmacaya {t}", ready="Yeni bulmaca hazır. Sayfayı yenile.", solved="{t} sürede çözdün!",
                share="Sonucu paylaş", copied="Kopyalandı", error="Bugünün bulmacası yüklenemedi. Bağlantını kontrol edip sayfayı yenile."),
 }
@@ -618,21 +627,21 @@ def asset_version(rel):
         return hashlib.md5(f.read()).hexdigest()[:8]
 
 
-def build_crownly_play():
-    js_v, css_v = asset_version("/crownly/play.js"), asset_version("/crownly/play.css")
+def build_birbdoku_play():
+    js_v, css_v = asset_version("/birbdoku/play.js"), asset_version("/birbdoku/play.css")
     for lang in ("en", "tr"):
         en = lang == "en"
-        path, title, desc = CG_PLAY[lang]
-        other = CG_PLAY["tr" if en else "en"][0]
-        g = CG[lang]
-        t = dict(PLAY_TEXT[lang], **{})
+        path, title, desc = BIRB_PLAY[lang]
+        other = BIRB_PLAY["tr" if en else "en"][0]
+        g = BDG[lang]
+        t = dict(PLAY_TEXT[lang])
         cfg = json.dumps({"lang": lang, "url": SITE + path, "t": t}, ensure_ascii=False)
-        store = f"https://apps.apple.com/{'tr/' if lang == 'tr' else ''}app/apple-store/id6822852151?pt=129592179&ct=webdaily&mt=8"
+        store = f"https://apps.apple.com/{'tr/' if lang == 'tr' else ''}app/apple-store/id{APPS['birbdoku']['id']}?pt=129592179&ct=webdaily&mt=8"
         h1 = "Today's Queens Puzzle" if en else "Bugünün Queens Bulmacası"
-        intro = ("Place one crown in every row, column and colored region. Crowns never touch, not even diagonally. "
-                 "Tap a cell once for a dot, twice for a crown, or drag to dot many cells." if en else
-                 "Her satıra, sütuna ve renkli bölgeye bir taç koy. Taçlar birbirine dokunmaz, çapraz da. "
-                 "Hücreye bir kez dokun nokta, iki kez taç; sürükleyerek çok hücreye nokta koy.")
+        intro = ("Place one bird in every row, column and colored region. Birds never touch, not even diagonally. "
+                 "Tap a cell once for an X, twice for a bird, or drag to mark many cells." if en else
+                 "Her satıra, sütuna ve renkli bölgeye bir kuş koy. Kuşlar birbirine değmez, çapraz da. "
+                 "Kareye bir kez dokun X, iki kez kuş; sürükleyerek çok kareyi işaretle.")
         body = f'  <h1>{ESC(h1)}</h1>\n  <p class="intro">{ESC(intro)}</p>\n'
         body += f"""  <section class="cq loading" id="cq" aria-label="{ESC(h1)}">
     <div class="cq-head"><span class="cq-date" id="cq-date"></span><span class="cq-time" id="cq-time" aria-label="{'Time' if en else 'Süre'}">0:00</span></div>
@@ -646,33 +655,33 @@ def build_crownly_play():
       <p class="big" id="cq-result-time">0:00</p>
       <button type="button" class="cq-share" id="cq-share">{ESC(t['share'])}</button>
       <p class="next" id="cq-next"></p>
-      <p class="more">{ESC('Want more? Crownly has two more daily puzzles (Route and Mosaic), a 10×10 Hard Daily, streaks and live duels.' if en else 'Daha fazlası mı? Crownly’de iki günlük bulmaca daha (Rota ve Mozaik), 10×10 Günlük Zor, seri ve canlı düello var.')}</p>
+      <p class="more">{ESC('Want more? Birbdoku has a long level path up to 10×10, hide-and-seek levels, Bird Duo, a streak garden and a weekly season.' if en else 'Daha fazlası mı? Birbdoku’da 10×10’a uzanan bir seviye yolu, saklambaç seviyeleri, Kuş İkilisi, seri bahçesi ve haftalık sezon var.')}</p>
       <a class="store" href="{ESC(store)}">{ESC(STORE_LABEL[lang])}</a>
     </div>
   </section>
-  <script>window.CROWNLY_PLAY = {cfg};</script>
-  <script src="/crownly/play.js?v={js_v}" defer></script>
+  <script>window.BIRB_PLAY = {cfg};</script>
+  <script src="/birbdoku/play.js?v={js_v}" defer></script>
 """
         body += f'  <h2>{"How to play Queens" if en else "Queens nasıl oynanır"}</h2>\n  <ol>' + "".join(f"<li>{ESC(x)}</li>" for x in (
-            ["Place exactly one crown in every row and every column.", "Place exactly one crown in every colored region.",
-             "Crowns may not touch each other, not even diagonally.",
-             "Use dots to mark cells that can't hold a crown. Every puzzle has exactly one solution, so you never have to guess."] if en else
-            ["Her satıra ve her sütuna tam bir taç koy.", "Her renkli bölgeye tam bir taç koy.", "Taçlar birbirine dokunamaz, çapraz da.",
-             "Taç gelemeyecek hücreleri noktayla işaretle. Her bulmacanın tek çözümü var; tahmin etmen gerekmez."])) + "</ol>\n"
+            ["Place exactly one bird in every row and every column.", "Place exactly one bird in every colored region.",
+             "Birds may not touch each other, not even diagonally.",
+             "Use X marks for cells that can't hold a bird. Every puzzle has exactly one solution, so you never have to guess."] if en else
+            ["Her satıra ve her sütuna tam bir kuş koy.", "Her renkli bölgeye tam bir kuş koy.", "Kuşlar birbirine değemez, çapraz da.",
+             "Kuş gelemeyecek kareleri X ile işaretle. Her bulmacanın tek çözümü var; tahmin etmen gerekmez."])) + "</ol>\n"
         faq = ([("When does a new puzzle come out?", "Every day at 07:00 UTC, at the same moment for everyone in the world."),
-                ("Is it the same puzzle as in the app?", "Yes. The web puzzle is Crownly's normal daily Crowns puzzle (7×7). In the app you also get the 10×10 Hard Daily, Route and Mosaic dailies, a streak and Game Center leaderboards."),
+                ("Is it the same puzzle as in the app?", "Yes. The web puzzle is Birbdoku's daily puzzle (8×8). In the app the daily opens after level 20, next to the level path, hide-and-seek levels, Bird Duo, a streak garden and a weekly season."),
                 ("Is it free?", "Yes, today's puzzle is free here and in the app. Your progress is saved in this browser until the next puzzle."),
-                ("Can I play older puzzles?", "Past daily puzzles are in the Crownly app's archive (Crownly Pro).")] if en else
+                ("Can I play more than one puzzle a day?", "Yes, in the Birbdoku app for iPhone and iPad: the level path goes from 4×4 to 10×10 boards.")] if en else
                [("Yeni bulmaca ne zaman çıkıyor?", "Her gün 07:00 UTC'de (Türkiye saatiyle 10:00), dünyadaki herkes için aynı anda."),
-                ("Uygulamadakiyle aynı bulmaca mı?", "Evet. Web bulmacası Crownly'nin normal günlük Taçlar bulmacasıdır (7×7). Uygulamada ayrıca 10×10 Günlük Zor, Rota ve Mozaik günlükleri, seri ve Game Center sıralamaları var."),
+                ("Uygulamadakiyle aynı bulmaca mı?", "Evet. Web bulmacası Birbdoku'nun günlük bulmacasıdır (8×8). Uygulamada günlük bulmaca 20. seviyeden sonra açılır; yanında seviye yolu, saklambaç seviyeleri, Kuş İkilisi, seri bahçesi ve haftalık sezon var."),
                 ("Ücretsiz mi?", "Evet, bugünün bulmacası burada da uygulamada da ücretsiz. İlerlemen yeni bulmacaya kadar bu tarayıcıda saklanır."),
-                ("Eski bulmacaları çözebilir miyim?", "Geçmiş günlük bulmacalar Crownly uygulamasının arşivinde (Crownly Pro).")])
+                ("Günde birden fazla bulmaca çözebilir miyim?", "Evet, iPhone ve iPad için Birbdoku uygulamasında: seviye yolu 4×4'ten 10×10 tahtalara uzanır.")])
         body += f'  <h2>{"Questions" if en else "Sorular"}</h2>\n' + "".join(f"  <h3>{ESC(q)}</h3>\n  <p>{ESC(a)}</p>\n" for q, a in faq)
         body += related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("rules", "strategy", "alt")]) + "\n"
         schema = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
-        write(path, page("crownly", lang, path, {lang: path, ("tr" if en else "en"): other}, title, desc, body,
-                         [g["home"], (title, path)], schema=schema, head=f'\n  <link rel="stylesheet" href="/crownly/play.css?v={css_v}">'))
+        write(path, page("birbdoku", lang, path, {lang: path, ("tr" if en else "en"): other}, title, desc, body,
+                         [g["home"], (title, path)], schema=schema, head=f'\n  <link rel="stylesheet" href="/birbdoku/play.css?v={css_v}">'))
 
 
 # ---------------------------------------------------------------- Quick Wits: party game guides
@@ -1335,34 +1344,34 @@ def build_besmele_collections():
             write(path, page("besmele", lang, path, {lang: path, other: langs[other][0]}, title, desc, body, crumbs))
 
 
-# ---------------------------------------------------------------- Crownly: logic puzzles like sudoku
+# ---------------------------------------------------------------- Birbdoku: logic puzzles like sudoku
 
-CG_LIKE = {
-    "en": ("/crownly/games-like-sudoku/", "Games Like Sudoku: Queens and 5 Other Logic Puzzles Worth Trying",
+BIRB_LIKE = {
+    "en": ("/birbdoku/games-like-sudoku/", "Games Like Sudoku: Queens and 5 Other Logic Puzzles Worth Trying",
            "Finished your sudoku? Six logic puzzles with the same pure-deduction feel: Queens, nonograms, kakuro, killer sudoku, futoshiki and tents, with the rules of each."),
-    "tr": ("/crownly/tr/sudoku-benzeri-oyunlar/", "Sudoku Benzeri Oyunlar: Queens ve Denemeye Değer 5 Mantık Bulmacası",
+    "tr": ("/birbdoku/tr/sudoku-benzeri-oyunlar/", "Sudoku Benzeri Oyunlar: Queens ve Denemeye Değer 5 Mantık Bulmacası",
            "Sudoku'yu bitirdin mi? Aynı saf mantık tadını veren altı bulmaca: Queens, nonogram, kakuro, killer sudoku, futoshiki ve çadırlar; her birinin kurallarıyla."),
 }
 
 
-def build_crownly_like():
+def build_birbdoku_like():
     for lang in ("en", "tr"):
         en = lang == "en"
-        g = CG[lang]
-        path, title, desc = CG_LIKE[lang]
-        other = CG_LIKE["tr" if en else "en"][0]
+        g = BDG[lang]
+        path, title, desc = BIRB_LIKE[lang]
+        other = BIRB_LIKE["tr" if en else "en"][0]
         body = f'  <h1>{ESC(title)}</h1>\n  <p class="intro">{ESC(desc)}</p>\n'
         body += paras(ESC("What makes sudoku satisfying is not the numbers. It is that every puzzle has exactly one solution and you can "
                           "reach it by reasoning alone, never by guessing. These six puzzles share that quality." if en else
                           "Sudoku'yu keyifli yapan sayılar değildir. Her bulmacanın tek bir çözümü olması ve o çözüme tahminle değil, "
                           "yalnızca akıl yürüterek ulaşılmasıdır. Bu altı bulmaca da aynı özelliği taşır.")) + "\n"
-        items = ([("1. Queens", "The board is split into colored regions. Place one crown in every row, every column and every region, and no two crowns may touch, not even diagonally. There are no numbers at all, so a board reads at a glance, and a small one takes a minute or two. It is the same family as Star Battle."),
+        items = ([("1. Queens", "The board is split into colored regions. Place one piece (a crown, a queen or, in Birbdoku, a bird) in every row, every column and every region, and no two may touch, not even diagonally. There are no numbers at all, so a board reads at a glance, and a small one takes a minute or two. It is the same family as Star Battle."),
                   ("2. Nonogram", "Numbers beside each row and above each column give the lengths of the filled blocks in that line, in order. Fill the right cells and a small picture appears."),
                   ("3. Kakuro", "A crossword made of sums. Each run of white cells must add up to the clue next to it, using the digits 1 to 9 without repeating a digit inside a run."),
                   ("4. Killer sudoku", "Ordinary sudoku rules, but instead of given digits the grid is divided into cages. The digits in a cage add up to its small number, and a digit cannot repeat inside a cage."),
                   ("5. Futoshiki", "Fill the grid so every row and column holds each number once, like a small sudoku without boxes, while obeying the greater-than and less-than signs between cells."),
                   ("6. Tents", "Every tree on the grid needs one tent in a cell next to it. Tents may not touch each other, not even diagonally, and the numbers at the edges say how many tents each row and column holds.")] if en else
-                 [("1. Queens", "Tahta renkli bölgelere ayrılmıştır. Her satıra, her sütuna ve her bölgeye bir taç koyarsın; iki taç birbirine çaprazdan bile dokunamaz. Hiç sayı yoktur, tahta bir bakışta okunur; küçük bir tahta bir iki dakika sürer. Star Battle ile aynı ailedendir."),
+                 [("1. Queens", "Tahta renkli bölgelere ayrılmıştır. Her satıra, her sütuna ve her bölgeye bir parça (taç, vezir ya da Birbdoku'da kuş) koyarsın; ikisi çaprazdan bile birbirine değemez. Hiç sayı yoktur, tahta bir bakışta okunur; küçük bir tahta bir iki dakika sürer. Star Battle ile aynı ailedendir."),
                   ("2. Nonogram", "Her satırın yanındaki ve her sütunun üstündeki sayılar, o çizgideki dolu blokların uzunluklarını sırasıyla verir. Doğru kareleri doldurunca küçük bir resim ortaya çıkar."),
                   ("3. Kakuro", "Toplamlardan oluşan bir çapraz bulmaca. Her beyaz kare dizisi, yanındaki ipucu sayısını vermelidir; 1'den 9'a rakamlar kullanılır ve bir dizide aynı rakam tekrarlanmaz."),
                   ("4. Killer sudoku", "Kurallar bildiğin sudoku, ama verilmiş rakamlar yerine ızgara kafeslere bölünmüştür. Bir kafesteki rakamların toplamı köşedeki küçük sayıyı verir ve kafes içinde rakam tekrarlanmaz."),
@@ -1371,14 +1380,14 @@ def build_crownly_like():
         for h, p in items:
             body += f"  <h2>{ESC(h)}</h2>\n  <p>{ESC(p)}</p>\n"
         body += f"  <h2>{ESC('Where to start' if en else 'Nereden başlamalı')}</h2>\n"
-        body += paras(ESC(f"If you want something quicker than sudoku, start with Queens: the rules fit in one sentence and the first boards "
-                          f"are solved in a minute. Crownly has a new Queens puzzle every day and {CROWNLY_LEVELS['en']} levels, and when you are "
-                          f"stuck its hints explain the reasoning instead of just showing the answer." if en else
-                          f"Sudoku'dan daha kısa süren bir şey istiyorsan Queens ile başla: kuralları tek cümleye sığar, ilk tahtalar bir dakikada "
-                          f"çözülür. Crownly'de her gün yeni bir Queens bulmacası ve {CROWNLY_LEVELS['tr']} seviye var; takıldığında ipuçları "
-                          f"yalnızca cevabı göstermez, mantığını anlatır.")) + "\n"
+        body += paras(ESC("If you want something quicker than sudoku, start with Queens: the rules fit in one sentence and the first boards "
+                          "are solved in a minute. Birbdoku has a new Queens puzzle every day with two cockatiels, a level path from 4×4 to 10×10, "
+                          "and when you are stuck its hints explain the reasoning instead of just showing the answer." if en else
+                          "Sudoku'dan daha kısa süren bir şey istiyorsan Queens ile başla: kuralları tek cümleye sığar, ilk tahtalar bir dakikada "
+                          "çözülür. Birbdoku'da iki sultan papağanıyla her gün yeni bir Queens bulmacası ve 4×4'ten 10×10'a bir seviye yolu var; "
+                          "takıldığında ipuçları yalnızca cevabı göstermez, mantığını anlatır.")) + "\n"
         body += related(g["related"], [(g[k][1].split(":")[0], g[k][0]) for k in ("rules", "strategy", "alt")])
-        write(path, page("crownly", lang, path, {lang: path, ("tr" if en else "en"): other}, title, desc, body, [g["home"], (title, path)]))
+        write(path, page("birbdoku", lang, path, {lang: path, ("tr" if en else "en"): other}, title, desc, body, [g["home"], (title, path)]))
 
 
 # ---------------------------------------------------------------- Comparison and how-to guides (2026-11-20)
@@ -1656,163 +1665,6 @@ EXTRA = [
                         ("Ödüllü reklam zorunlu reklamdan daha mı iyi?",
                          "Çoğu oyuncu için evet: ne zaman oynayacağını ve karşılığında ne alacağını sen seçersin, tamamen görmezden de gelebilirsin.")]),
     }),
-    dict(app="crownly", key="daily", img=None, langs={
-        "en": dict(path="/crownly/daily-puzzle-games-like-wordle/",
-                   title="Daily Puzzle Games Like Wordle: 7 to Play Every Morning",
-                   desc="Loved Wordle? Seven daily puzzles with one new board a day, from word games to logic grids like Queens, and where to play them on iPhone.",
-                   intro=["Wordle's magic was simple: one puzzle a day, the same for everyone, done in a few minutes, then a small result "
-                          "to share. Plenty of games now follow that rhythm. Here are seven, word and logic."],
-                   items=["Wordle", "Connections", "Queens", "Zip", "Tango", "Sudoku of the day", "Crownly"],
-                   sections=[
-                       ("Word puzzles", {"list": [
-                           "Wordle (New York Times Games): guess a five-letter word in six tries.",
-                           "Connections (New York Times Games): sort sixteen words into four hidden groups."]}),
-                       ("Logic puzzles", {"list": [
-                           "Queens (LinkedIn): one crown in every row, column and colored region; crowns never touch.",
-                           "Zip (LinkedIn): draw one path through the numbered stops in order, filling every cell.",
-                           "Tango (LinkedIn): fill the grid with two symbols so rows and columns balance.",
-                           "A daily sudoku: most sudoku apps and newspapers publish one board a day."]}),
-                       ("Crownly: three daily logic puzzles in one app", [
-                           "Crownly puts three of these ideas together on iPhone and iPad: Crowns (Queens-style), Route (a one-line path "
-                           "like Zip) and Mosaic (split the grid into numbered rectangles). Each has a new daily board at 07:00 UTC, the "
-                           "same for everyone, with a streak, leaderboards and an archive of past days.",
-                           "Beyond the daily boards there are 6,500 levels, hints that explain the logic instead of giving the answer, and "
-                           "live duels with 2 to 4 friends. It is free with an optional one-time Pro purchase, has no ads and works offline."]),
-                   ],
-                   faq=[("Is there an app with daily Queens and Zip-style puzzles?",
-                         "Crownly has a daily Crowns puzzle (Queens rules) and a daily Route puzzle (a one-line path through numbered stops, like Zip), plus Mosaic, all on iPhone and iPad."),
-                        ("When do daily puzzles reset?",
-                         "In Crownly, every day at 07:00 UTC, at the same moment for everyone in the world.")]),
-        "tr": dict(path="/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/",
-                   title="Wordle Gibi Günlük Bulmaca Oyunları: Her Sabah Çözülecek 7 Bulmaca",
-                   desc="Wordle'ı sevdiysen: kelime oyunlarından Queens gibi mantık tahtalarına, günde bir yeni tahtası olan yedi bulmaca ve iPhone'da nerede oynanır.",
-                   intro=["Wordle'ın sihri basitti: günde bir bulmaca, herkes için aynı, birkaç dakikada biter, sonra paylaşılacak küçük bir "
-                          "sonuç. Artık birçok oyun bu ritmi izliyor. İşte kelime ve mantıktan yedisi."],
-                   items=["Wordle", "Connections", "Queens", "Zip", "Tango", "Günün sudokusu", "Crownly"],
-                   sections=[
-                       ("Kelime bulmacaları", {"list": [
-                           "Wordle (New York Times Games): beş harfli bir kelimeyi altı denemede bul.",
-                           "Connections (New York Times Games): on altı kelimeyi dört gizli gruba ayır."]}),
-                       ("Mantık bulmacaları", {"list": [
-                           "Queens (LinkedIn): her satıra, sütuna ve renkli bölgeye bir taç; taçlar birbirine dokunmaz.",
-                           "Zip (LinkedIn): numaralı durakları sırayla bağlayan, her kareyi dolduran tek bir yol çiz.",
-                           "Tango (LinkedIn): ızgarayı iki simgeyle doldur, satır ve sütunlar dengede olsun.",
-                           "Günün sudokusu: çoğu sudoku uygulaması ve gazete günde bir tahta yayınlar."]}),
-                       ("Crownly: tek uygulamada üç günlük mantık bulmacası", [
-                           "Crownly bu fikirlerden üçünü iPhone ve iPad'de bir araya getirir: Taçlar (Queens tarzı), Rota (Zip gibi tek "
-                           "çizgilik yol) ve Mozaik (ızgarayı sayılı dikdörtgenlere böl). Her birinin 07:00 UTC'de (TR 10:00) herkes için "
-                           "aynı yeni bir günlük tahtası var; seri, sıralamalar ve geçmiş günlerin arşivi de var.",
-                           "Günlük tahtaların dışında 6.500 seviye, cevabı vermek yerine mantığı anlatan ipuçları ve 2–4 arkadaşla canlı "
-                           "düello var. Ücretsiz, isteğe bağlı tek seferlik Pro satın alması var; reklam yok, internetsiz çalışır."]),
-                   ],
-                   faq=[("Günlük Queens ve Zip tarzı bulmaca olan bir uygulama var mı?",
-                         "Crownly'de günlük Taçlar bulmacası (Queens kuralları) ve günlük Rota bulmacası (Zip gibi numaralı duraklardan geçen tek bir yol) var, ayrıca Mozaik; iPhone ve iPad'de."),
-                        ("Günlük bulmacalar ne zaman yenilenir?",
-                         "Crownly'de her gün 07:00 UTC'de (Türkiye saatiyle 10:00), dünyadaki herkes için aynı anda.")]),
-    }),
-    dict(app="crownly", key="route", img=None, langs={
-        "en": dict(path="/crownly/one-line-path-puzzle-rules/",
-                   title="How to Play Route: Rules and Tips for the One-Line Path Puzzle (Like LinkedIn Zip)",
-                   desc="The rules of the one-line path puzzle: connect the numbered stops in order with one line that fills every cell, plus four tips to solve boards faster.",
-                   intro=["Route is a path puzzle with a single rule set you can learn in ten seconds. If you have played Zip on LinkedIn, "
-                          "you already know it."],
-                   sections=[
-                       ("The rules", {"list": [
-                           "Start at stop 1 and draw one continuous line.",
-                           "Visit the numbered stops in order: 1, 2, 3 and so on to the last.",
-                           "The line must pass through every cell of the grid exactly once.",
-                           "It moves up, down, left or right, never diagonally, and never through a wall."]}),
-                       ("Four tips", {"list": [
-                           "Look at corners and dead ends first: a cell with only two open neighbors has only one way through.",
-                           "Don't leave a pocket behind you. If the line cuts off a group of cells it can never return to, back up.",
-                           "Work from both ends of a segment: the line from 3 to 4 must arrive at 4 from somewhere it can reach.",
-                           "Hug the walls. Paths along the edge leave the open middle easier to fill later."]}),
-                       ("Playing Route in Crownly", [
-                           "Crownly has a new Route board every day at 07:00 UTC, the same for everyone, plus Route levels in four "
-                           "difficulties. Drag your finger to draw, lift to stop, and use a hint if you are stuck: it shows the next safe "
-                           "move and why. The app also has Crowns (Queens) and Mosaic."]),
-                   ],
-                   faq=[("Is Route the same as LinkedIn Zip?",
-                         "The rules are the same kind: connect numbered stops in order with one line that covers every cell. Crownly's version adds walls, levels and a daily board."),
-                        ("Can a Route puzzle have two solutions?",
-                         "Not in Crownly: every board is checked to have exactly one solution, so it can always be solved by reasoning.")]),
-        "tr": dict(path="/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/",
-                   title="Rota Nasıl Oynanır: Tek Çizgilik Yol Bulmacasının Kuralları ve İpuçları (LinkedIn Zip Gibi)",
-                   desc="Tek çizgilik yol bulmacasının kuralları: numaralı durakları sırayla, her kareyi dolduran tek bir çizgiyle bağla; tahtaları hızlı çözmek için dört ipucu.",
-                   intro=["Rota, on saniyede öğrenilen kuralları olan bir yol bulmacası. LinkedIn'deki Zip'i oynadıysan zaten biliyorsun."],
-                   sections=[
-                       ("Kurallar", {"list": [
-                           "1 numaralı duraktan başla ve kesintisiz tek bir çizgi çiz.",
-                           "Numaralı duraklardan sırayla geç: 1, 2, 3 ve sonuncusuna kadar.",
-                           "Çizgi ızgaradaki her kareden tam bir kez geçmeli.",
-                           "Yukarı, aşağı, sağa ya da sola gider; çapraz gitmez, duvardan geçmez."]}),
-                       ("Dört ipucu", {"list": [
-                           "Önce köşelere ve çıkmazlara bak: yalnız iki açık komşusu olan karenin tek bir geçiş yolu vardır.",
-                           "Arkanda cep bırakma. Çizgi bir kare grubunu dönülemeyecek şekilde kesiyorsa geri al.",
-                           "Bir bölümü iki uçtan düşün: 3'ten 4'e giden çizgi 4'e ulaşabildiği bir yerden gelmeli.",
-                           "Duvarlara yaslan. Kenar boyunca giden yollar ortadaki açık alanı sonraya kolay bırakır."]}),
-                       ("Crownly'de Rota", [
-                           "Crownly'de her gün 07:00 UTC'de (TR 10:00) herkes için aynı yeni bir Rota tahtası ve dört zorlukta Rota "
-                           "seviyeleri var. Parmağını sürükleyerek çiz, kaldırınca durur; takılırsan ipucu bir sonraki güvenli hamleyi ve "
-                           "nedenini gösterir. Uygulamada Taçlar (Queens) ve Mozaik de var."]),
-                   ],
-                   faq=[("Rota, LinkedIn Zip ile aynı mı?",
-                         "Kurallar aynı türden: numaralı durakları her kareyi kaplayan tek bir çizgiyle sırayla bağlarsın. Crownly'nin sürümünde duvarlar, seviyeler ve günlük tahta var."),
-                        ("Bir Rota bulmacasının iki çözümü olabilir mi?",
-                         "Crownly'de olamaz: her tahtanın tam bir çözümü olduğu denetlenir, yani her zaman akıl yürüterek çözülebilir.")]),
-    }),
-    dict(app="crownly", key="mosaic", img=None, langs={
-        "en": dict(path="/crownly/how-to-play-shikaku/",
-                   title="How to Play Shikaku (Mosaic): Rules and Techniques",
-                   desc="Shikaku rules in one minute: split the grid into rectangles, each holding one number equal to its area. Plus the techniques that solve harder boards.",
-                   intro=["Shikaku is a Japanese logic puzzle, also called Rectangles or Divide by Box, and the idea behind LinkedIn's "
-                          "Patches. In Crownly it is called Mosaic."],
-                   sections=[
-                       ("The rules", {"list": [
-                           "Divide the whole grid into rectangles (squares count too).",
-                           "Every rectangle contains exactly one number.",
-                           "That number equals the rectangle's area: a 6 covers six cells, as 1×6 or 2×3.",
-                           "Rectangles never overlap and every cell belongs to one."]}),
-                       ("Techniques", {"list": [
-                           "Start with numbers that have only one possible rectangle, often big numbers near edges or small ones boxed in.",
-                           "List the shapes: a 4 can be 1×4, 4×1 or 2×2. Rule out the ones that would cover another number or leave the grid.",
-                           "Find shared cells: if every option for a number covers the same cell, that cell is theirs.",
-                           "Find lonely cells: a cell that only one number's rectangles can reach must belong to it."]}),
-                       ("Playing Mosaic in Crownly", [
-                           "Drag from corner to corner to draw a piece; a new piece replaces any it overlaps. Every day at 07:00 UTC "
-                           "there is a 7×7 daily board and a harder 10×10, plus levels from easy to expert. Hints remove a wrong piece or "
-                           "show the number with the fewest options left."]),
-                   ],
-                   faq=[("Is Mosaic the same as Shikaku?",
-                         "Yes. Mosaic is Crownly's name for Shikaku: split the grid into rectangles, each containing one number equal to its area."),
-                        ("Is there a daily Shikaku puzzle app?",
-                         "Crownly has a daily Mosaic (Shikaku) board every day at 07:00 UTC, alongside daily Crowns and Route puzzles.")]),
-        "tr": dict(path="/crownly/tr/shikaku-nasil-oynanir/",
-                   title="Shikaku (Mozaik) Nasıl Oynanır: Kurallar ve Teknikler",
-                   desc="Bir dakikada Shikaku kuralları: ızgarayı, her biri alanına eşit tek bir sayı içeren dikdörtgenlere böl. Zor tahtaları çözen teknikler de burada.",
-                   intro=["Shikaku bir Japon mantık bulmacası; Rectangles ya da Divide by Box diye de bilinir ve LinkedIn'deki Patches'in "
-                          "arkasındaki fikirdir. Crownly'de adı Mozaik."],
-                   sections=[
-                       ("Kurallar", {"list": [
-                           "Bütün ızgarayı dikdörtgenlere böl (kareler de sayılır).",
-                           "Her dikdörtgende tam bir sayı bulunur.",
-                           "Sayı, dikdörtgenin alanına eşittir: 6, 1×6 ya da 2×3 olarak altı kare kaplar.",
-                           "Dikdörtgenler üst üste binmez ve her kare birine aittir."]}),
-                       ("Teknikler", {"list": [
-                           "Tek bir olası dikdörtgeni olan sayılarla başla; çoğu zaman kenara yakın büyük ya da sıkışmış küçük sayılar.",
-                           "Şekilleri say: 4, 1×4, 4×1 ya da 2×2 olabilir. Başka bir sayıyı kaplayan ya da ızgaradan taşanları ele.",
-                           "Ortak kareleri bul: bir sayının her seçeneği aynı kareyi kaplıyorsa o kare onundur.",
-                           "Yalnız kareleri bul: yalnız bir sayının dikdörtgenlerinin ulaşabildiği kare ona aittir."]}),
-                       ("Crownly'de Mozaik", [
-                           "Parçayı köşeden köşeye sürükleyerek çiz; yeni parça çakıştığı parçaların yerini alır. Her gün 07:00 UTC'de "
-                           "(TR 10:00) 7×7 bir günlük tahta ve daha zor 10×10 bir tahta, ayrıca kolaydan uzmana seviyeler var. İpucu yanlış "
-                           "bir parçayı kaldırır ya da en az seçeneği kalan sayıyı gösterir."]),
-                   ],
-                   faq=[("Mozaik, Shikaku ile aynı mı?",
-                         "Evet. Mozaik, Crownly'nin Shikaku için kullandığı ad: ızgarayı, her biri alanına eşit tek bir sayı içeren dikdörtgenlere bölersin."),
-                        ("Günlük Shikaku bulmacası olan bir uygulama var mı?",
-                         "Crownly'de her gün 07:00 UTC'de günlük bir Mozaik (Shikaku) tahtası var; yanında günlük Taçlar ve Rota bulmacaları da.")]),
-    }),
     dict(app="besmele", key="choose", img=None, langs={
         "en": dict(path="/besmele/en/choosing-a-prayer-times-app/",
                    title="Choosing a Prayer Times App: 7 Things to Check",
@@ -1887,168 +1739,6 @@ EXTRA = [
     }),
 ]
 
-# LinkedIn-game alternatives for Crownly (2026-11-21; Hakan: no not-affiliated note).
-NEW = [
-    dict(app="crownly", key="lizip", img=None, langs={
-        "en": dict(path="/crownly/linkedin-zip-alternative/",
-                   title="LinkedIn Zip Alternative: More One-Line Path Puzzles on iPhone",
-                   desc="Finished today's Zip and want more? Route in Crownly is the same kind of puzzle: connect the numbered stops in order with one line through every cell, every day and in thousands of levels.",
-                   intro=["Zip is over in a minute, and the next one comes tomorrow. If you like drawing that single line through every "
-                          "cell, Crownly's Route gives you the same kind of puzzle whenever you want it."],
-                   sections=[
-                       ("Same idea, more boards", {"list": [
-                           "One line from stop 1 to the last stop, visiting the numbers in order.",
-                           "The line fills every cell exactly once and never crosses a wall.",
-                           "A new daily Route board at 07:00 UTC, the same for everyone, with a streak and leaderboards.",
-                           "Route levels in four difficulties, from 5×5 warm-ups to big 9×9 boards.",
-                           "Every board has exactly one solution, so you never need to guess."]}),
-                       ("When you get stuck", [
-                           "Hints don't just draw the answer: the first tap shows the next safe move and why it is forced, the second "
-                           "applies it. That is how the corners-first and no-pockets techniques become habits."]),
-                       ("Two more puzzles in the same app", [
-                           "Crownly also has Crowns (Queens rules: one crown per row, column and colored region) and Mosaic (Shikaku: "
-                           "split the grid into numbered rectangles), each with its own daily board. It is free with an optional "
-                           "one-time Pro purchase, has no ads and works offline."]),
-                   ],
-                   faq=[("Is there an app like LinkedIn Zip?",
-                         "Crownly's Route is a one-line path puzzle with the same kind of rules: connect numbered stops in order with one line that covers every cell. It has a daily board and levels in four difficulties."),
-                        ("Can I play more than one Zip-style puzzle a day?",
-                         "Yes. Besides the daily Route board, Crownly has Route levels you can play any time, plus an archive of past daily puzzles with Pro.")]),
-        "tr": dict(path="/crownly/tr/linkedin-zip-alternatifi/",
-                   title="LinkedIn Zip Alternatifi: iPhone'da Daha Çok Tek Çizgi Yol Bulmacası",
-                   desc="Bugünün Zip'ini bitirdin, daha mı istiyorsun? Crownly'deki Rota aynı türden bir bulmaca: numaralı durakları her kareden geçen tek bir çizgiyle sırayla bağla; her gün ve binlerce seviyede.",
-                   intro=["Zip bir dakikada biter, sıradaki yarın gelir. Her kareden geçen o tek çizgiyi çizmeyi seviyorsan Crownly'deki "
-                          "Rota aynı türden bulmacayı istediğin zaman verir."],
-                   sections=[
-                       ("Aynı fikir, daha çok tahta", {"list": [
-                           "1 numaralı duraktan sonuncusuna, sayılardan sırayla geçen tek bir çizgi.",
-                           "Çizgi her kareden tam bir kez geçer, duvardan geçmez.",
-                           "Her gün 07:00 UTC'de (TR 10:00) herkes için aynı yeni Rota tahtası; seri ve sıralamalar.",
-                           "Dört zorlukta Rota seviyeleri: 5×5 ısınmalardan büyük 9×9 tahtalara.",
-                           "Her tahtanın tam bir çözümü var; tahmin etmen gerekmez."]}),
-                       ("Takıldığında", [
-                           "İpucu cevabı çizip geçmez: ilk dokunuş bir sonraki güvenli hamleyi ve neden zorunlu olduğunu gösterir, ikincisi "
-                           "uygular. \"Önce köşeler\" ve \"cep bırakma\" teknikleri böyle alışkanlık olur."]),
-                       ("Aynı uygulamada iki bulmaca daha", [
-                           "Crownly'de ayrıca Taçlar (Queens kuralları: her satıra, sütuna ve renkli bölgeye bir taç) ve Mozaik (Shikaku: "
-                           "ızgarayı sayılı dikdörtgenlere böl) var; her birinin kendi günlük tahtası var. Ücretsiz, isteğe bağlı tek seferlik "
-                           "Pro satın alması var; reklam yok, internetsiz çalışır."]),
-                   ],
-                   faq=[("LinkedIn Zip gibi bir uygulama var mı?",
-                         "Crownly'deki Rota aynı türden kuralları olan tek çizgi yol bulmacası: numaralı durakları her kareyi kaplayan tek bir çizgiyle sırayla bağlarsın. Günlük tahtası ve dört zorlukta seviyeleri var."),
-                        ("Günde birden çok Zip tarzı bulmaca oynayabilir miyim?",
-                         "Evet. Günlük Rota tahtasının yanında istediğin zaman oynanan Rota seviyeleri ve Pro ile geçmiş günlük bulmacaların arşivi var.")]),
-    }),
-    dict(app="crownly", key="lipatches", img=None, langs={
-        "en": dict(path="/crownly/linkedin-patches-alternative/",
-                   title="LinkedIn Patches Alternative: Daily Shikaku-Style Rectangle Puzzles",
-                   desc="Like LinkedIn's Patches? Mosaic in Crownly is a Shikaku puzzle: split the grid into rectangles, each holding one number equal to its area. A 7×7 and a 10×10 daily board plus levels.",
-                   intro=["Patches is built on a classic Japanese puzzle, Shikaku. Crownly's Mosaic is that same classic, with a daily "
-                          "board for everyone and levels for when one a day isn't enough."],
-                   sections=[
-                       ("How Mosaic plays", {"list": [
-                           "Split the whole grid into rectangles.",
-                           "Each rectangle holds exactly one number, and that number is its area.",
-                           "Drag from corner to corner to draw a piece; a new piece replaces any it overlaps.",
-                           "Every board has exactly one solution."]}),
-                       ("Daily boards and levels", [
-                           "Every day at 07:00 UTC there is a 7×7 daily board and a harder 10×10 one, the same for everyone. Levels go "
-                           "from easy to expert, and hints remove a wrong piece or point to the number with the fewest options left."]),
-                       ("Also in Crownly", [
-                           "Crowns (Queens rules) and Route (a one-line path through numbered stops), each with a daily board, plus live "
-                           "duels with 2 to 4 friends. Free with an optional one-time Pro purchase, no ads, works offline."]),
-                   ],
-                   faq=[("Is there an app like LinkedIn Patches?",
-                         "Crownly's Mosaic is a Shikaku puzzle, the same kind Patches is based on: divide the grid into rectangles, each containing one number equal to its area. It has two daily boards and levels."),
-                        ("What is the puzzle behind Patches called?",
-                         "Shikaku, a Japanese logic puzzle also known as Rectangles or Divide by Box.")]),
-        "tr": dict(path="/crownly/tr/linkedin-patches-alternatifi/",
-                   title="LinkedIn Patches Alternatifi: Her Gün Shikaku Tarzı Dikdörtgen Bulmacaları",
-                   desc="LinkedIn'deki Patches'i seviyor musun? Crownly'deki Mozaik bir Shikaku bulmacası: ızgarayı, her biri alanına eşit tek bir sayı içeren dikdörtgenlere böl. 7×7 ve 10×10 günlük tahta, ayrıca seviyeler.",
-                   intro=["Patches klasik bir Japon bulmacası olan Shikaku üzerine kurulu. Crownly'deki Mozaik da aynı klasik: herkes için "
-                          "günlük bir tahta ve günde bir tanenin yetmediği zamanlar için seviyeler."],
-                   sections=[
-                       ("Mozaik nasıl oynanır", {"list": [
-                           "Bütün ızgarayı dikdörtgenlere böl.",
-                           "Her dikdörtgende tam bir sayı bulunur ve o sayı dikdörtgenin alanıdır.",
-                           "Parçayı köşeden köşeye sürükleyerek çiz; yeni parça çakıştığı parçaların yerini alır.",
-                           "Her tahtanın tam bir çözümü vardır."]}),
-                       ("Günlük tahtalar ve seviyeler", [
-                           "Her gün 07:00 UTC'de (TR 10:00) herkes için aynı 7×7 bir günlük tahta ve daha zor 10×10 bir tahta var. Seviyeler "
-                           "kolaydan uzmana gider; ipucu yanlış bir parçayı kaldırır ya da en az seçeneği kalan sayıyı gösterir."]),
-                       ("Crownly'de ayrıca", [
-                           "Taçlar (Queens kuralları) ve Rota (numaralı duraklardan geçen tek çizgi), her birinin günlük tahtası; ayrıca 2–4 "
-                           "arkadaşla canlı düello. Ücretsiz, isteğe bağlı tek seferlik Pro; reklam yok, internetsiz çalışır."]),
-                   ],
-                   faq=[("LinkedIn Patches gibi bir uygulama var mı?",
-                         "Crownly'deki Mozaik, Patches'in dayandığı türden bir Shikaku bulmacası: ızgarayı, her biri alanına eşit tek bir sayı içeren dikdörtgenlere bölersin. İki günlük tahtası ve seviyeleri var."),
-                        ("Patches'in arkasındaki bulmacanın adı ne?",
-                         "Shikaku; Rectangles ya da Divide by Box olarak da bilinen bir Japon mantık bulmacası.")]),
-    }),
-    dict(app="crownly", key="ligames", img=None, langs={
-        "en": dict(path="/crownly/linkedin-games-alternatives/",
-                   title="LinkedIn Games Alternatives: Queens, Zip, Patches, Tango and Mini Sudoku Outside LinkedIn",
-                   desc="Love LinkedIn's daily games but want more than one puzzle a day, or want to play without opening LinkedIn? Here is what each game is and where to find the same kind of puzzle.",
-                   intro=["LinkedIn's games are short daily logic and word puzzles. Each one is a classic puzzle type with a new name, "
-                          "which means you can find the same kind of puzzle elsewhere, often with unlimited boards."],
-                   items=["Queens", "Zip", "Patches", "Tango", "Mini Sudoku", "Crownly"],
-                   sections=[
-                       ("Queens → Star Battle", [
-                           "One crown in every row, column and colored region, and crowns never touch. The classic name is Star Battle. "
-                           "In Crownly it is Crowns: a daily board, 6,500 levels and hints that explain the logic."]),
-                       ("Zip → one-line path puzzle", [
-                           "Connect numbered stops in order with one line through every cell. In Crownly it is Route, with walls, a daily "
-                           "board and levels in four difficulties."]),
-                       ("Patches → Shikaku", [
-                           "Split the grid into rectangles, each holding one number equal to its area. In Crownly it is Mosaic, with a "
-                           "7×7 and a 10×10 daily board."]),
-                       ("Tango → binary puzzle (Takuzu)", [
-                           "Fill a grid with two symbols so rows and columns balance and no three in a row match. The classic is called "
-                           "Takuzu or Binairo; many free puzzle apps have it. Crownly does not have this one."]),
-                       ("Mini Sudoku → 6×6 sudoku", [
-                           "A smaller sudoku with 2×3 boxes. Any sudoku app with a 6×6 size gives you the same puzzle. Crownly does not "
-                           "have sudoku; if you like it, Queens is a good next step (see our sudoku-like games guide)."]),
-                       ("Three of them in one app", [
-                           "Crownly puts Crowns, Route and Mosaic together on iPhone and iPad, each with a new daily board at 07:00 UTC, "
-                           "streaks, leaderboards and live duels with friends. Free, with an optional one-time Pro purchase, no ads."]),
-                   ],
-                   faq=[("Can I play LinkedIn Queens without LinkedIn?",
-                         "LinkedIn's own boards are only on LinkedIn, but the same kind of puzzle (Star Battle) is in other apps. Crownly has a daily Queens-rules board, 6,500 levels and a free daily puzzle on hyapps.app."),
-                        ("Is there one app with Queens, Zip and Patches style puzzles?",
-                         "Crownly has all three kinds: Crowns (Queens rules), Route (Zip-style path) and Mosaic (Shikaku, like Patches), each with a daily board.")]),
-        "tr": dict(path="/crownly/tr/linkedin-oyunlari-alternatifleri/",
-                   title="LinkedIn Oyunları Alternatifleri: Queens, Zip, Patches, Tango ve Mini Sudoku LinkedIn Dışında",
-                   desc="LinkedIn'in günlük oyunlarını seviyor ama günde birden çok bulmaca ya da LinkedIn'i açmadan oynamak mı istiyorsun? Her oyunun ne olduğu ve aynı türden bulmacayı nerede bulacağın.",
-                   intro=["LinkedIn'in oyunları kısa günlük mantık ve kelime bulmacalarıdır. Her biri yeni bir ada sahip klasik bir bulmaca "
-                          "türüdür; yani aynı türden bulmacayı başka yerlerde, çoğu zaman sınırsız tahtayla bulabilirsin."],
-                   items=["Queens", "Zip", "Patches", "Tango", "Mini Sudoku", "Crownly"],
-                   sections=[
-                       ("Queens → Star Battle", [
-                           "Her satıra, sütuna ve renkli bölgeye bir taç; taçlar birbirine dokunmaz. Klasik adı Star Battle. Crownly'de adı "
-                           "Taçlar: günlük tahta, 6.500 seviye ve mantığı anlatan ipuçları."]),
-                       ("Zip → tek çizgi yol bulmacası", [
-                           "Numaralı durakları her kareden geçen tek bir çizgiyle sırayla bağla. Crownly'de adı Rota: duvarlar, günlük tahta "
-                           "ve dört zorlukta seviyeler."]),
-                       ("Patches → Shikaku", [
-                           "Izgarayı, her biri alanına eşit tek bir sayı içeren dikdörtgenlere böl. Crownly'de adı Mozaik: 7×7 ve 10×10 "
-                           "günlük tahta."]),
-                       ("Tango → ikili bulmaca (Takuzu)", [
-                           "Izgarayı iki simgeyle doldur; satır ve sütunlar dengede olsun, yan yana üç aynı simge olmasın. Klasik adı Takuzu "
-                           "ya da Binairo; birçok ücretsiz bulmaca uygulamasında var. Crownly'de bu yok."]),
-                       ("Mini Sudoku → 6×6 sudoku", [
-                           "2×3 kutulu küçük bir sudoku. 6×6 boyutu olan her sudoku uygulaması aynı bulmacayı verir. Crownly'de sudoku yok; "
-                           "seviyorsan sıradaki iyi adım Queens (sudoku benzeri oyunlar rehberimize bak)."]),
-                       ("Üçü tek uygulamada", [
-                           "Crownly iPhone ve iPad'de Taçlar, Rota ve Mozaik'i bir araya getirir; her birinin 07:00 UTC'de (TR 10:00) yeni "
-                           "günlük tahtası, serisi, sıralamaları ve arkadaşlarla canlı düellosu var. Ücretsiz, isteğe bağlı tek seferlik Pro, reklam yok."]),
-                   ],
-                   faq=[("LinkedIn Queens'i LinkedIn olmadan oynayabilir miyim?",
-                         "LinkedIn'in kendi tahtaları yalnız LinkedIn'de, ama aynı türden bulmaca (Star Battle) başka uygulamalarda var. Crownly'de Queens kurallarıyla günlük tahta, 6.500 seviye ve hyapps.app'te ücretsiz günlük bulmaca var."),
-                        ("Queens, Zip ve Patches tarzı bulmacaların hepsi tek uygulamada var mı?",
-                         "Crownly'de üç türü de var: Taçlar (Queens kuralları), Rota (Zip tarzı yol) ve Mozaik (Patches gibi Shikaku); her birinin günlük tahtası var.")]),
-    }),
-]
-EXTRA += NEW
 
 # "X alternative" pages AI assistants can recommend us from (2026-11-21).
 ALT = [
@@ -2382,11 +2072,11 @@ BH_NEW = [
                            "The first two buildings are free, and a building takes a good while, enough for a short flight. On a long one, "
                            "the Architect's Table lets you design your own house and build it on your lot."]),
                        ("Another offline game from the same studio", [
-                           "Crownly, a collection of daily logic puzzles (crowns, one-line paths and rectangles), also works offline; only "
-                           "the live duels with friends need a connection."]),
+                           "Birbdoku, a cozy logic puzzle with two cockatiels (one bird in every row, column and color), also plays "
+                           "offline; only the weekly season ranking and friends update when you are back online."]),
                    ],
                    faq=[("Which iPhone games work in Airplane Mode?",
-                         "Any game that does not need an account check, online levels or ads to start. Brickhaven and Crownly both play offline; open them once at home before the flight."),
+                         "Any game that does not need an account check, online levels or ads to start. Brickhaven and Birbdoku both play offline; open them once at home before the flight."),
                         ("Does Brickhaven need Wi-Fi?",
                          "No. Brickhaven plays fully offline. Purchases, iCloud sync and Game Center simply wait until you are online again."),
                         ("How do I save battery while gaming on a plane?",
@@ -2422,11 +2112,11 @@ BH_NEW = [
                            "İlk iki bina ücretsiz ve bir bina epey sürer, kısa bir uçuşa yeter. Uzun uçuşta Mimar Masası'nda kendi evini "
                            "tasarlayıp arsana kurabilirsin."]),
                        ("Aynı stüdyodan internetsiz bir oyun daha", [
-                           "Günlük mantık bulmacaları (taçlar, tek çizgi yollar, dikdörtgenler) koleksiyonu Crownly de internetsiz "
-                           "çalışır; yalnız arkadaşlarla canlı düellolar bağlantı ister."]),
+                           "İki sultan papağanıyla rahat bir mantık bulmacası olan Birbdoku da (her satıra, sütuna ve renge bir kuş) "
+                           "internetsiz oynanır; yalnız haftalık sezon sıralaması ve arkadaşlar bağlanınca güncellenir."]),
                    ],
                    faq=[("Uçak Modu'nda hangi iPhone oyunları çalışır?",
-                         "Açılmak için hesap kontrolü, çevrimiçi bölüm ya da reklam istemeyen her oyun. Brickhaven ve Crownly ikisi de internetsiz oynanır; uçuştan önce evde bir kez aç."),
+                         "Açılmak için hesap kontrolü, çevrimiçi bölüm ya da reklam istemeyen her oyun. Brickhaven ve Birbdoku ikisi de internetsiz oynanır; uçuştan önce evde bir kez aç."),
                         ("Brickhaven Wi-Fi ister mi?",
                          "Hayır. Brickhaven tamamen internetsiz oynanır. Satın alma, iCloud eşitlemesi ve Game Center yeniden bağlanana kadar bekler."),
                         ("Uçakta oyun oynarken pil nasıl korunur?",
@@ -2573,18 +2263,224 @@ BH_NEW = [
 ]
 EXTRA += BH_NEW
 
+BIRB_NEW = [
+    dict(app="birbdoku", key="daily", img=None, langs={
+        "en": dict(path="/birbdoku/daily-puzzle-games-like-wordle/",
+                   title="Daily Puzzle Games Like Wordle: 6 to Play Every Morning",
+                   desc="Loved Wordle? Six daily puzzles with one new board a day, from word games to logic grids like Queens, and where to play them on iPhone.",
+                   intro=["Wordle's magic was simple: one puzzle a day, the same for everyone, done in a few minutes, then a small result "
+                          "to share. Plenty of games now follow that rhythm. Here are six, word and logic."],
+                   items=["Wordle", "Connections", "Queens", "Zip", "Sudoku of the day", "Birbdoku"],
+                   sections=[
+                       ("Word puzzles", {"list": [
+                           "Wordle (New York Times Games): guess a five-letter word in six tries.",
+                           "Connections (New York Times Games): sort sixteen words into four hidden groups."]}),
+                       ("Logic puzzles", {"list": [
+                           "Queens (LinkedIn): one crown in every row, column and colored region; crowns never touch.",
+                           "Zip (LinkedIn): draw one path through the numbered stops in order, filling every cell.",
+                           "A daily sudoku: most sudoku apps and newspapers publish one board a day."]}),
+                       ("Birbdoku: a daily Queens puzzle with two cockatiels", [
+                           "Birbdoku puts the Queens rules on iPhone and iPad with birds instead of crowns: one bird in every row, column "
+                           "and color, and birds never touch. A new 8×8 daily board comes out at 07:00 UTC, the same for everyone, and you "
+                           "can play today's board in your browser too.",
+                           "Beyond the daily there is a long level path from 4×4 to 10×10, hide-and-seek levels, hints that explain the "
+                           "logic, a streak garden and a weekly season in groups of 50 players. It is free to play with ads."]),
+                   ],
+                   faq=[("Is there an app with a daily Queens puzzle?",
+                         "Birbdoku has a daily Queens-style puzzle (one bird in every row, column and color) on iPhone and iPad, and the same board can be played on hyapps.app."),
+                        ("When do daily puzzles reset?",
+                         "In Birbdoku, every day at 07:00 UTC, at the same moment for everyone in the world.")]),
+        "tr": dict(path="/birbdoku/tr/wordle-gibi-gunluk-bulmaca-oyunlari/",
+                   title="Wordle Gibi Günlük Bulmaca Oyunları: Her Sabah Çözülecek 6 Bulmaca",
+                   desc="Wordle'ı sevdiysen: kelime oyunlarından Queens gibi mantık tahtalarına, günde bir yeni tahtası olan altı bulmaca ve iPhone'da nerede oynanır.",
+                   intro=["Wordle'ın sihri basitti: günde bir bulmaca, herkes için aynı, birkaç dakikada biter, sonra paylaşılacak küçük bir "
+                          "sonuç. Artık birçok oyun bu ritmi izliyor. İşte kelime ve mantıktan altısı."],
+                   items=["Wordle", "Connections", "Queens", "Zip", "Günün sudokusu", "Birbdoku"],
+                   sections=[
+                       ("Kelime bulmacaları", {"list": [
+                           "Wordle (New York Times Games): beş harfli bir kelimeyi altı denemede bul.",
+                           "Connections (New York Times Games): on altı kelimeyi dört gizli gruba ayır."]}),
+                       ("Mantık bulmacaları", {"list": [
+                           "Queens (LinkedIn): her satıra, sütuna ve renkli bölgeye bir taç; taçlar birbirine dokunmaz.",
+                           "Zip (LinkedIn): numaralı durakları sırayla bağlayan, her kareyi dolduran tek bir yol çiz.",
+                           "Günün sudokusu: çoğu sudoku uygulaması ve gazete günde bir tahta yayınlar."]}),
+                       ("Birbdoku: iki sultan papağanıyla günlük Queens bulmacası", [
+                           "Birbdoku, Queens kurallarını taç yerine kuşlarla iPhone ve iPad'e getirir: her satıra, sütuna ve renge bir kuş, "
+                           "kuşlar birbirine değmez. Her gün 07:00 UTC'de (TR 10:00) herkese aynı yeni 8×8 günlük tahta gelir; bugünün "
+                           "tahtasını tarayıcında da çözebilirsin.",
+                           "Günlük bulmacanın dışında 4×4'ten 10×10'a uzun bir seviye yolu, saklambaç seviyeleri, mantığı anlatan ipuçları, "
+                           "seri bahçesi ve 50 kişilik gruplarda haftalık sezon var. Reklamlı ve ücretsiz oynanır."]),
+                   ],
+                   faq=[("Günlük Queens bulmacası olan bir uygulama var mı?",
+                         "Birbdoku'da iPhone ve iPad'de günlük Queens tarzı bir bulmaca var (her satıra, sütuna ve renge bir kuş); aynı tahta hyapps.app'te de çözülebilir."),
+                        ("Günlük bulmacalar ne zaman yenilenir?",
+                         "Birbdoku'da her gün 07:00 UTC'de (Türkiye saatiyle 10:00), dünyadaki herkes için aynı anda.")]),
+    }),
+    dict(app="birbdoku", key="cockatiel", img="garden", langs={
+        "en": dict(path="/birbdoku/cockatiel-game/",
+                   title="Cockatiel Game for iPhone: Birbdoku, a Cozy Puzzle With Two Cockatiels",
+                   desc="Looking for a cockatiel game? Birbdoku is a cozy logic puzzle for iPhone and iPad starring two cockatiels, Pika and Chiko, with a garden that grows every day you play.",
+                   intro=["Birbdoku is a puzzle game made by a cockatiel fan for cockatiel fans. Its two heroes are cockatiels: Pika, a "
+                          "yellow lutino with a pink bow, and Chiko, a grey cockatiel with an orange cheek patch. They sit on the board, "
+                          "make a different face in every cell, cheer when you are right and wander around their garden between levels."],
+                   items=["Birbdoku"],
+                   sections=[
+                       ("What you do in the game", [
+                           "Each level is a colored grid. You place one bird in every row, every column and every color, and birds may "
+                           "never touch, not even diagonally. Tap once to rule a cell out with an X, tap twice to place a bird. Every "
+                           "puzzle has exactly one solution, so it is pure logic, never guessing.",
+                           "Every day you clear a level, Pika and Chiko's millet grows a little in their garden. Keep your streak for a "
+                           "week and you get a present; water bottles save a missed day."]),
+                       ("The cockatiels", {"list": [
+                           "Pika: a lutino cockatiel (pale yellow and white) with long lashes and a pink bow.",
+                           "Chiko: a grey cockatiel, the colour of wild cockatiels, with a pink beak and a grey crest.",
+                           "Both have a set of faces (happy, curious, sleepy, proud…) and poses you can pick for your profile.",
+                           "In the garden they walk, peck at seeds, nap, fly to the water bottle and react when you tap them."]}),
+                       ("About real cockatiels", [
+                           "Cockatiels are small parrots from Australia and the smallest members of the cockatoo family. They are known for "
+                           "the crest on their head, round orange cheek patches and their whistling, and they are one of the most popular "
+                           "pet birds in the world. Wild cockatiels are grey; lutino, pied and pearl birds are colour varieties bred by people."]),
+                   ],
+                   faq=[("Is there a game with cockatiels on iPhone?",
+                         "Yes. Birbdoku is a cozy logic puzzle for iPhone and iPad whose two characters are cockatiels, Pika (lutino) and Chiko (grey)."),
+                        ("Is Birbdoku good for bird lovers who don't play puzzles?",
+                         "The first levels are tiny (4×4) and a short tutorial shows the rules, so you can learn as you go. Hints explain each step."),
+                        ("Is it free?",
+                         "Birbdoku is free to download and play, with ads. Optional purchases remove ads or add helpers.")]),
+        "tr": dict(path="/birbdoku/tr/sultan-papagani-oyunu/",
+                   title="Sultan Papağanı Oyunu: İki Sultan Papağanlı Bulmaca Birbdoku",
+                   desc="Sultan papağanı oyunu mu arıyorsun? Birbdoku, iki sultan papağanı Pika ve Çiko'nun oynadığı, iPhone ve iPad için rahat bir mantık bulmacası; oynadığın her gün bahçeleri büyür.",
+                   intro=["Birbdoku, sultan papağanı seven biri tarafından sultan papağanı sevenler için yapılmış bir bulmaca oyunu. İki "
+                          "kahramanı da sultan papağanı: pembe fiyonklu sarı lutino Pika ve turuncu yanaklı gri Çiko. Tahtada otururlar, "
+                          "her karede farklı bir yüz yaparlar, doğru hamlede sevinirler ve bölümler arasında bahçelerinde gezinirler."],
+                   items=["Birbdoku"],
+                   sections=[
+                       ("Oyunda ne yapıyorsun", [
+                           "Her bölüm renkli bir ızgara. Her satıra, her sütuna ve her renge bir kuş koyarsın; kuşlar çaprazdan bile "
+                           "birbirine değemez. Bir kez dokununca kare X ile elenir, iki kez dokununca kuş konur. Her bulmacanın tek çözümü "
+                           "var; tahmin değil, saf mantık.",
+                           "Bölüm geçtiğin her gün Pika ile Çiko'nun bahçesindeki darı biraz büyür. Seriyi bir hafta korursan hediye gelir; "
+                           "suluk kaçırdığın bir günü kurtarır."]),
+                       ("Sultan papağanları", {"list": [
+                           "Pika: uzun kirpikli, pembe fiyonklu lutino (açık sarı ve beyaz) bir sultan papağanı.",
+                           "Çiko: doğadaki sultan papağanları gibi gri, pembe gagalı ve gri ibikli bir sultan papağanı.",
+                           "İkisinin de bir yüz takımı (mutlu, meraklı, uykulu, gururlu…) ve profilin için seçebileceğin pozları var.",
+                           "Bahçede yürür, tohum gagalar, uyuklar, suluğa uçar ve dokununca tepki verirler."]}),
+                       ("Gerçek sultan papağanları hakkında", [
+                           "Sultan papağanları Avustralya'dan gelen küçük papağanlardır ve kakadu ailesinin en küçük üyeleridir. Başlarındaki "
+                           "ibik, yuvarlak turuncu yanakları ve ıslıklarıyla bilinirler; dünyada en çok sevilen ev kuşlarından biridirler. Doğadaki "
+                           "sultan papağanları gridir; lutino, alacalı ve inci renkleri insanların yetiştirdiği renk türleridir."]),
+                   ],
+                   faq=[("iPhone'da sultan papağanlı bir oyun var mı?",
+                         "Evet. Birbdoku, iki karakteri sultan papağanı olan (lutino Pika ve gri Çiko) iPhone ve iPad için rahat bir mantık bulmacası."),
+                        ("Bulmaca oynamayan kuş severler için uygun mu?",
+                         "İlk bölümler çok küçük (4×4) ve kısa bir öğretici kuralları gösterir; oynadıkça öğrenirsin. İpuçları her adımı anlatır."),
+                        ("Ücretsiz mi?",
+                         "Birbdoku ücretsiz indirilir ve oynanır, reklam gösterir. İsteğe bağlı satın almalar reklamı kaldırır ya da yardımcı ekler.")]),
+    }),
+    dict(app="birbdoku", key="birdgames", img="play", langs={
+        "en": dict(path="/birbdoku/bird-games-iphone/",
+                   title="Bird Games for iPhone: 5 Picks for Bird Lovers",
+                   desc="Five bird games and apps for iPhone and iPad, from a cozy cockatiel puzzle to a bird board game and a real bird identifier, with what each one is like.",
+                   intro=["If you love birds, your phone can be a small aviary. These five are very different from each other: a calm "
+                          "logic puzzle, a strategy board game, an action classic, a sorting puzzle genre and an app for real birds outside."],
+                   items=["Birbdoku", "Wingspan", "Angry Birds 2", "Bird sort puzzles", "Merlin Bird ID"],
+                   sections=[
+                       ("The list", {"list": [
+                           "Birbdoku (HY Apps): a cozy logic puzzle with two cockatiels, Pika and Chiko. Place one bird in every row, column and color, birds never touch. Daily puzzle, streak garden, weekly season.",
+                           "Wingspan: the digital version of the bird-themed board game designed by Elizabeth Hargrave. Collect birds into your wildlife preserve; hundreds of real species with facts.",
+                           "Angry Birds 2 (Rovio): fling birds at towers of pigs. The well-known action series, fast and loud rather than calm.",
+                           "Bird sort puzzles: a whole genre of color-sorting games where you move birds between branches until each branch holds one color.",
+                           "Merlin Bird ID (Cornell Lab of Ornithology): not a game, but a free app that identifies real birds from a photo or their song."]}),
+                       ("Which one to pick", [
+                           "For a quiet few minutes with a cute bird theme, pick a puzzle like Birbdoku. For a long strategy session, Wingspan. "
+                           "For real birds in your garden, Merlin."]),
+                   ],
+                   faq=[("What is a cozy bird game for iPhone?",
+                         "Birbdoku is a cozy logic puzzle starring two cockatiels; there are no timers on levels and every puzzle can be solved by logic alone."),
+                        ("Is there a bird game for adults that trains the brain?",
+                         "Birbdoku's puzzles are Queens-style logic grids from 4×4 to 10×10, a short daily brain workout with a bird theme.")]),
+        "tr": dict(path="/birbdoku/tr/kus-oyunlari/",
+                   title="Kuş Oyunları: Kuş Severler için iPhone'da 5 Seçim",
+                   desc="iPhone ve iPad için beş kuş oyunu ve uygulaması: rahat bir sultan papağanı bulmacasından kuşlu bir kutu oyununa ve gerçek kuşları tanıyan bir uygulamaya; her birinin nasıl olduğu.",
+                   intro=["Kuşları seviyorsan telefonun küçük bir kuşhane olabilir. Bu beşi birbirinden çok farklı: sakin bir mantık "
+                          "bulmacası, bir strateji kutu oyunu, hareketli bir klasik, bir sıralama bulmacası türü ve dışarıdaki gerçek kuşlar için bir uygulama."],
+                   items=["Birbdoku", "Wingspan", "Angry Birds 2", "Kuş sıralama bulmacaları", "Merlin Bird ID"],
+                   sections=[
+                       ("Liste", {"list": [
+                           "Birbdoku (HY Apps): iki sultan papağanı Pika ve Çiko ile rahat bir mantık bulmacası. Her satıra, sütuna ve renge bir kuş koy, kuşlar birbirine değmez. Günlük bulmaca, seri bahçesi, haftalık sezon.",
+                           "Wingspan: Elizabeth Hargrave'in tasarladığı kuş temalı kutu oyununun dijital hali. Kuşları kendi doğa koruma alanına toplarsın; yüzlerce gerçek tür ve bilgileri.",
+                           "Angry Birds 2 (Rovio): kuşları domuzların kulelerine fırlat. Bilinen aksiyon serisi; sakin değil, hızlı ve gürültülü.",
+                           "Kuş sıralama bulmacaları: her dalda tek renk kalana kadar kuşları dallar arasında taşıdığın koca bir renk sıralama oyunu türü.",
+                           "Merlin Bird ID (Cornell Ornitoloji Laboratuvarı): oyun değil, gerçek kuşları fotoğrafından ya da sesinden tanıyan ücretsiz bir uygulama."]}),
+                       ("Hangisini seçmeli", [
+                           "Sevimli kuşlarla sakin birkaç dakika için Birbdoku gibi bir bulmaca. Uzun bir strateji oturumu için Wingspan. "
+                           "Bahçendeki gerçek kuşlar için Merlin."]),
+                   ],
+                   faq=[("iPhone'da rahatlatıcı bir kuş oyunu hangisi?",
+                         "Birbdoku, iki sultan papağanının oynadığı rahat bir mantık bulmacası; bölümlerde süre yok ve her bulmaca yalnız mantıkla çözülür."),
+                        ("Yetişkinler için zeka geliştiren bir kuş oyunu var mı?",
+                         "Birbdoku'nun bulmacaları 4×4'ten 10×10'a Queens tarzı mantık tahtaları; kuş temalı kısa bir günlük zihin egzersizi.")]),
+    }),
+    dict(app="birbdoku", key="brain", img="big", langs={
+        "en": dict(path="/birbdoku/daily-brain-teaser/",
+                   title="A Daily Brain Teaser: The 5-Minute Logic Puzzle Habit",
+                   desc="Why a short daily logic puzzle is a good brain teaser habit, how Queens-style puzzles work your reasoning, and how to build the habit with a streak.",
+                   intro=["A good brain teaser is short, fair and has one clear answer you can reach by thinking, not by luck. Queens-style "
+                          "logic puzzles fit that well: a small board takes a few minutes, a big one a bit longer, and you never need to guess."],
+                   items=[],
+                   sections=[
+                       ("What a logic puzzle trains", {"list": [
+                           "Holding several rules in mind at once (rows, columns, colors, no touching).",
+                           "Ruling things out: most progress comes from marking where a bird cannot go.",
+                           "Spotting patterns, like a color squeezed into one row, and reusing them on the next board.",
+                           "Patience: when you get stuck, a fresh look usually finds the next step."]}),
+                       ("Making it a habit", [
+                           "Tie it to something you already do, like your morning coffee, and keep it small: one level or the daily puzzle. "
+                           "Birbdoku counts a streak for every day you clear any level and grows Pika and Chiko's garden with it, and a "
+                           "water bottle saves a day you miss."]),
+                   ],
+                   faq=[("How long does one puzzle take?",
+                         "In Birbdoku the first boards (4×4 to 6×6) take a minute or two; 9×9 and 10×10 boards take a few minutes. The daily is 8×8."),
+                        ("Do I need to be good at maths?",
+                         "No. There are no numbers to add: Queens-style puzzles are about rows, columns and colors.")]),
+        "tr": dict(path="/birbdoku/tr/zeka-oyunu/",
+                   title="Zeka Oyunu: Her Gün 5 Dakikalık Mantık Bulmacası Alışkanlığı",
+                   desc="Kısa bir günlük mantık bulmacası neden iyi bir zeka oyunu alışkanlığıdır, Queens tarzı bulmacalar akıl yürütmeyi nasıl çalıştırır ve seriyle bu alışkanlık nasıl kurulur.",
+                   intro=["İyi bir zeka oyunu kısa ve adildir; şansla değil düşünerek ulaşılan tek bir net cevabı vardır. Queens tarzı mantık "
+                          "bulmacaları buna çok uyar: küçük bir tahta birkaç dakika, büyük biri biraz daha sürer ve hiç tahmin gerekmez."],
+                   items=[],
+                   sections=[
+                       ("Mantık bulmacası neyi çalıştırır", {"list": [
+                           "Aynı anda birkaç kuralı akılda tutmayı (satırlar, sütunlar, renkler, değmeme).",
+                           "Elemeyi: ilerlemenin çoğu kuşun nereye gelemeyeceğini işaretlemekten gelir.",
+                           "Örüntü görmeyi (tek satıra sıkışmış bir renk gibi) ve bunu sonraki tahtada yeniden kullanmayı.",
+                           "Sabrı: takılınca taze bir bakış genelde sonraki adımı bulur."]}),
+                       ("Alışkanlık haline getirmek", [
+                           "Zaten yaptığın bir şeye bağla (sabah kahvesi gibi) ve küçük tut: bir bölüm ya da günlük bulmaca. Birbdoku herhangi "
+                           "bir bölüm geçtiğin her günü seriye sayar, Pika ile Çiko'nun bahçesi seriyle büyür; suluk kaçırdığın bir günü kurtarır."]),
+                   ],
+                   faq=[("Bir bulmaca ne kadar sürer?",
+                         "Birbdoku'da ilk tahtalar (4×4–6×6) bir iki dakika, 9×9 ve 10×10 tahtalar birkaç dakika sürer. Günlük bulmaca 8×8."),
+                        ("Matematikte iyi olmam gerekir mi?",
+                         "Hayır. Toplanacak sayı yok: Queens tarzı bulmacalar satır, sütun ve renklerle ilgilidir.")]),
+    }),
+]
+EXTRA += BIRB_NEW
+
 EXTRA_RELATED = {  # existing guides of each app, shown under the new pages
     "brickhaven": {lang: [(BG[lang][k][1].split(":")[0], BG[lang][k][0]) for k in ("cozy", "tips", "buildings", "design")] for lang in ("en", "tr")},
     "glowfly": {lang: [(GG[lang][k][1].split(":")[0], GG[lang][k][0]) for k in ("idle", "offline", "tips")] for lang in ("en", "tr")},
-    "crownly": {lang: [(CG[lang][k][1].split(":")[0], CG[lang][k][0]) for k in ("rules", "strategy", "alt")] for lang in ("en", "tr")},
+    "birbdoku": {lang: [(BIRB_PLAY[lang][1].split(":")[0], BIRB_PLAY[lang][0])] + [(BDG[lang][k][1].split(":")[0], BDG[lang][k][0]) for k in ("rules", "strategy", "alt")] for lang in ("en", "tr")},
     "besmele": {"en": [("How prayer times are calculated", "/besmele/en/how-prayer-times-are-calculated/"),
                        ("How to find the Qibla direction", "/besmele/en/how-to-find-qibla/")],
                 "tr": [("Namaz vakitleri nasıl hesaplanır?", "/besmele/namaz-vakitleri-nasil-hesaplanir/"),
                        ("Kıble yönü nasıl bulunur?", "/besmele/kible-nasil-bulunur/")]},
 }
 EXTRA_IMG = {"brickhaven": lambda lang, name: (f"/brickhaven/img/{lang}-{name}.jpg", 720, 480),
-             "glowfly": lambda lang, name: (f"/glowfly/img/{name}.jpg", 600, 900)}
-EXTRA_HOME = {"brickhaven": BG, "glowfly": GG, "crownly": CG}
+             "glowfly": lambda lang, name: (f"/glowfly/img/{name}.jpg", 600, 900),
+             "birbdoku": lambda lang, name: (f"/birbdoku/img/shots/{lang}-{name}.jpg", 540, 1173)}
+EXTRA_HOME = {"brickhaven": BG, "glowfly": GG, "birbdoku": BDG}
 EXTRA_MORE = {"en": "More guides", "tr": "Diğer rehberler"}
 EXTRA_Q = {"en": "Questions", "tr": "Sorular"}
 
@@ -2751,11 +2647,57 @@ def build_pyramidcraft_guides():
         write(path, page("pyramidcraft", lang, path, alts("history"), title, desc, body, [g["home"], (title, path)]))
 
 
+# ---------------------------------------------------------------- Crownly redirects (2026-11-25)
+# Crownly was taken off the App Store on 2026-11-23. Its guide URLs become stubs that send people (and search engines,
+# via canonical + instant refresh) to the matching Birbdoku page. /crownly/ itself, privacy.html and duel/ stay for
+# existing players (build_crownly.py writes the notice page).
+
+CROWNLY_MOVED = {
+    "/crownly/queens-puzzle-rules/": "/birbdoku/queens-puzzle-rules/",
+    "/crownly/queens-strategy/": "/birbdoku/queens-strategy/",
+    "/crownly/linkedin-queens-alternative/": "/birbdoku/linkedin-queens-alternative/",
+    "/crownly/daily-queens-puzzle/": "/birbdoku/daily-queens-puzzle/",
+    "/crownly/games-like-sudoku/": "/birbdoku/games-like-sudoku/",
+    "/crownly/daily-puzzle-games-like-wordle/": "/birbdoku/daily-puzzle-games-like-wordle/",
+    "/crownly/one-line-path-puzzle-rules/": "/birbdoku/daily-puzzle-games-like-wordle/",
+    "/crownly/how-to-play-shikaku/": "/birbdoku/games-like-sudoku/",
+    "/crownly/linkedin-zip-alternative/": "/birbdoku/daily-puzzle-games-like-wordle/",
+    "/crownly/linkedin-patches-alternative/": "/birbdoku/daily-puzzle-games-like-wordle/",
+    "/crownly/linkedin-games-alternatives/": "/birbdoku/linkedin-queens-alternative/",
+    "/crownly/tr/queens-nasil-oynanir/": "/birbdoku/tr/queens-nasil-oynanir/",
+    "/crownly/tr/queens-stratejileri/": "/birbdoku/tr/queens-stratejileri/",
+    "/crownly/tr/linkedin-queens-alternatifi/": "/birbdoku/tr/linkedin-queens-alternatifi/",
+    "/crownly/tr/gunluk-queens-bulmacasi/": "/birbdoku/tr/gunluk-queens-bulmacasi/",
+    "/crownly/tr/sudoku-benzeri-oyunlar/": "/birbdoku/tr/sudoku-benzeri-oyunlar/",
+    "/crownly/tr/wordle-gibi-gunluk-bulmaca-oyunlari/": "/birbdoku/tr/wordle-gibi-gunluk-bulmaca-oyunlari/",
+    "/crownly/tr/tek-cizgi-yol-bulmacasi-kurallari/": "/birbdoku/tr/wordle-gibi-gunluk-bulmaca-oyunlari/",
+    "/crownly/tr/shikaku-nasil-oynanir/": "/birbdoku/tr/sudoku-benzeri-oyunlar/",
+    "/crownly/tr/linkedin-zip-alternatifi/": "/birbdoku/tr/wordle-gibi-gunluk-bulmaca-oyunlari/",
+    "/crownly/tr/linkedin-patches-alternatifi/": "/birbdoku/tr/wordle-gibi-gunluk-bulmaca-oyunlari/",
+    "/crownly/tr/linkedin-oyunlari-alternatifleri/": "/birbdoku/tr/linkedin-queens-alternatifi/",
+}
+
+
+def build_crownly_redirects():
+    for old, new in CROWNLY_MOVED.items():
+        url = SITE + new
+        write(old, f'''<!doctype html>
+<html lang="{"tr" if "/tr/" in old else "en"}">
+<head>
+  <meta charset="utf-8">
+  <title>Birbdoku</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{url}">
+  <meta http-equiv="refresh" content="0; url={new}">
+</head>
+<body><p><a href="{new}">{url}</a></p></body>
+</html>
+''')
+
+
 # ---------------------------------------------------------------- sitemap
 
 STATIC = [("/", {"en": "/", "tr": "/tr/"}), ("/tr/", {"en": "/", "tr": "/tr/"}),
-          ("/crownly/", {"en": "/crownly/", "tr": "/crownly/tr/"}), ("/crownly/tr/", {"en": "/crownly/", "tr": "/crownly/tr/"}),
-          ("/crownly/privacy.html", {}),
           ("/quickwits/", {"en": "/quickwits/", "tr": "/quickwits/tr/"}), ("/quickwits/tr/", {"en": "/quickwits/", "tr": "/quickwits/tr/"}),
           ("/quickwits/privacy.html", {}),
           ("/brickhaven/", {"en": "/brickhaven/", "tr": "/brickhaven/tr/"}), ("/brickhaven/tr/", {"en": "/brickhaven/", "tr": "/brickhaven/tr/"}),
@@ -2809,14 +2751,15 @@ def build_feeds():
 build_esma()
 build_besmele_guides()
 build_besmele_collections()
-build_crownly_guides()
-build_crownly_like()
-build_crownly_play()
+build_birbdoku_guides()
+build_birbdoku_like()
+build_birbdoku_play()
 build_quickwits_guides()
 build_brickhaven_guides()
 build_glowfly_guides()
 build_extra_guides()
 build_pyramidcraft_guides()
+build_crownly_redirects()
 build_sitemap()
 build_feeds()
 print(f"guide pages: {len(PAGES)}")

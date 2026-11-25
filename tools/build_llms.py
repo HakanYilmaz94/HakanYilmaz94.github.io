@@ -12,7 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APPS = [("Pyramid Craft: Brick Builder", "pyramidcraft/index.html", "https://hyapps.app/pyramidcraft/", "https://hyapps.app/pyramidcraft/privacy.html"),
         ("Glowfly", "glowfly/index.html", "https://hyapps.app/glowfly/", "https://hyapps.app/glowfly/privacy.html"),
         ("Brickhaven", "brickhaven/index.html", "https://hyapps.app/brickhaven/", "https://hyapps.app/brickhaven/privacy.html"),
-        ("Crownly", "crownly/index.html", "https://hyapps.app/crownly/", "https://hyapps.app/crownly/privacy.html"),
+        ("Birbdoku: Cute Parrot Puzzle", "birbdoku/index.html", "https://hyapps.app/birbdoku/", "https://hyapps.app/birbdoku/privacy.html"),
         ("Quick Wits", "quickwits/index.html", "https://hyapps.app/quickwits/", "https://hyapps.app/quickwits/privacy.html"),
         ("Bismillah (Besmele)", "besmele/en/index.html", "https://hyapps.app/besmele/en/", "https://hyapps.app/besmele/en/gizlilik.html")]
 
