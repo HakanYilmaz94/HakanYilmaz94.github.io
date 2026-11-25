@@ -57,8 +57,8 @@ APPS = {
                        name={"en": "Brickhaven", "tr": "Brickhaven"}, home={"en": "/brickhaven/", "tr": "/brickhaven/tr/"},
                        og={"en": "/assets/og/brickhaven-en.jpg", "tr": "/assets/og/brickhaven-tr.jpg"},
                        cta_h={"en": "Rebuild a seaside town, one brick at a time", "tr": "Bir sahil kasabasını tuğla tuğla yeniden kur"},
-                       cta_p={"en": "Brickhaven: a cozy building game for iPhone and iPad. Offline, no timers, no ads. The first two buildings are free.",
-                              "tr": "Brickhaven: iPhone ve iPad için rahat bir inşa oyunu. İnternetsiz, zamanlayıcısız, reklamsız. İlk iki bina ücretsiz."}),
+                       cta_p={"en": "Brickhaven: a cozy building game for iPhone and iPad. Offline, no timers. The first two buildings are free.",
+                              "tr": "Brickhaven: iPhone ve iPad için rahat bir inşa oyunu. İnternetsiz, zamanlayıcısız. İlk iki bina ücretsiz."}),
     "pyramidcraft": dict(id="6836529298", css=["/pyramidcraft/guide.css"], theme="#f6dfb4", icon="/pyramidcraft/img/icon.png",
                          name={"en": "Pyramid Craft", "tr": "Pyramid Craft"}, home={"en": "/pyramidcraft/", "tr": "/pyramidcraft/tr/"},
                          og={"en": "/assets/og/pyramidcraft-en.jpg", "tr": "/assets/og/pyramidcraft-tr.jpg"},
@@ -176,11 +176,11 @@ def lang_pill(lang, alts):
 # so search snippets and AI assistants can quote it; the meta description stays as it was.
 INTRO_OVERRIDE = {
     "/brickhaven/cozy-offline-building-game/":
-        "Brickhaven is a cozy first-person building game for iPhone and iPad that plays fully offline, with no timers, no energy "
-        "and no ads. You rebuild a ruined seaside town by laying every brick by hand, nine buildings in all. The first two "
+        "Brickhaven is a cozy first-person building game for iPhone and iPad that plays fully offline, with no timers and no energy. "
+        "You rebuild a ruined seaside town by laying every brick by hand, nine buildings in all. The first two "
         "buildings are free; the rest of the town is a one-time purchase.",
     "/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/":
-        "Brickhaven, iPhone ve iPad için tamamen internetsiz oynanan, zamanlayıcısız, enerjisiz ve reklamsız, rahat bir birinci "
+        "Brickhaven, iPhone ve iPad için tamamen internetsiz oynanan, zamanlayıcısız ve enerjisiz, rahat bir birinci "
         "şahıs inşa oyunu. Yıkık bir sahil kasabasını her tuğlayı elinle koyarak yeniden kurarsın; toplam dokuz bina. İlk iki "
         "bina ücretsiz, kasabanın geri kalanı tek seferlik bir satın alma.",
     "/brickhaven/beginners-guide/":
@@ -900,7 +900,7 @@ BG = {
     "en": dict(
         home=("Brickhaven", "/brickhaven/"), related="More guides",
         cozy=("/brickhaven/cozy-offline-building-game/", "A Cozy Offline Building Game for iPhone and iPad",
-              "Looking for a relaxing game with no timers, no ads and no internet needed? Brickhaven lets you rebuild a seaside town one brick at a time."),
+              "Looking for a relaxing game with no timers and no internet needed? Brickhaven lets you rebuild a seaside town one brick at a time."),
         tips=("/brickhaven/beginners-guide/", "Brickhaven Beginner's Guide: 8 Tips to Build Faster",
               "Eight tips for new builders: reading the blueprint, carrying more bricks, which skills to pick first and designing your own house."),
         buildings=("/brickhaven/buildings/", "All 9 Buildings in Brickhaven: Owners, Order and What Makes Each One Special",
@@ -913,7 +913,7 @@ BG = {
     "tr": dict(
         home=("Brickhaven", "/brickhaven/tr/"), related="Diğer rehberler",
         cozy=("/brickhaven/tr/internetsiz-rahatlatici-insa-oyunu/", "İnternetsiz, Rahatlatıcı Bir İnşa Oyunu: iPhone ve iPad",
-              "Zamanlayıcısız, reklamsız, internet gerektirmeyen sakin bir oyun mu arıyorsun? Brickhaven'da bir sahil kasabasını tuğla tuğla yeniden kurarsın."),
+              "Zamanlayıcısız, internet gerektirmeyen sakin bir oyun mu arıyorsun? Brickhaven'da bir sahil kasabasını tuğla tuğla yeniden kurarsın."),
         tips=("/brickhaven/tr/baslangic-rehberi/", "Brickhaven Başlangıç Rehberi: Daha Hızlı İnşa İçin 8 İpucu",
               "Yeni ustalar için sekiz ipucu: planı okumak, daha çok tuğla taşımak, önce hangi yetenekleri almak ve kendi evini tasarlamak."),
         buildings=("/brickhaven/tr/binalar/", "Brickhaven'daki 9 Bina: Sahipleri, Sırası ve Özellikleri",
@@ -1082,12 +1082,12 @@ def build_brickhaven_guides():
         body += steps("Why it stays calm" if en else "Neden sakin kalır", (
             ["Fully offline: play on a plane, on the train or anywhere without Wi-Fi.",
              "No timers, no energy bars, no lives: play five minutes or an hour, at your own pace.",
-             "No ads, no subscription: the first two buildings are free, the rest of the town is one purchase.",
+             "No subscription: the first two buildings are free, the rest of the town is one purchase that also removes the ads.",
              "Your town lives in your own iCloud, so it follows you from iPhone to iPad.",
              "A color-blind mode prints a symbol on every brick color."] if en else
             ["Tamamen internetsiz: uçakta, trende ya da Wi-Fi olmayan her yerde oyna.",
              "Zamanlayıcı, enerji çubuğu ya da can yok: beş dakika ya da bir saat, kendi hızında oyna.",
-             "Reklam ve abonelik yok: ilk iki bina ücretsiz, kasabanın geri kalanı tek bir satın alma.",
+             "Abonelik yok: ilk iki bina ücretsiz, kasabanın geri kalanı reklamları da kaldıran tek bir satın alma.",
              "Kasaban kendi iCloud'unda durur; iPhone'dan iPad'e seninle gelir.",
              "Renk körü modu her tuğla rengine bir simge basar."]), ordered=False)
         body += paras(ESC("It suits all ages: there is no violence, no chat with strangers and nothing to buy by accident."
@@ -1409,7 +1409,7 @@ EXTRA = [
                        ("1. Brickhaven: build every brick yourself", [
                            "A first-person building game: walk to the brick pile, pick the right shape and color, carry it to the wall and "
                            "lay it. Nine story buildings bring a seaside town back to life, then you design your own houses and decorate the streets.",
-                           "Offline, no timers, no ads. The first two buildings are free; the rest of the town is one purchase. Best if you "
+                           "Offline, no timers. The first two buildings are free; the rest of the town is one purchase. Best if you "
                            "want the slow, hands-on feeling of building something brick by brick."]),
                        ("2. Townscaper: a toy town with no goals", [
                            "Tap the water to place colorful blocks and the game turns them into houses, arches, stairs and gardens. There is "
@@ -1432,8 +1432,8 @@ EXTRA = [
                    ],
                    faq=[("Which cozy building games work offline on iPhone?",
                          "Brickhaven plays fully offline. Townscaper, Islanders: Mobile and Pocket City 2 are single-player games that also play without a connection; Minecraft needs one only for online play."),
-                        ("Is there a building game with no ads and no timers?",
-                         "Yes. Brickhaven has no ads, no energy bars and no timers; Townscaper, Islanders: Mobile and Pocket City 2 are paid apps without forced ads.")]),
+                        ("Is there a building game with no timers?",
+                         "Yes. Brickhaven has no energy bars and no timers, and its one purchase removes the ads of the free part; Townscaper, Islanders: Mobile and Pocket City 2 are paid apps without forced ads.")]),
         "tr": dict(path="/brickhaven/tr/en-iyi-rahat-insa-oyunlari/",
                    title="iPhone ve iPad İçin En İyi Rahat İnşa Oyunları (Zamanlayıcısız, Stressiz)",
                    desc="iPhone ve iPad'de beş sakin inşa oyunu karşılaştırması: ne inşa ediyorsun, nasıl oynanıyor, internetsiz çalışıyor mu, nasıl ödeniyor.",
@@ -1445,7 +1445,7 @@ EXTRA = [
                        ("1. Brickhaven: her tuğlayı kendin koy", [
                            "Birinci şahıs bir inşa oyunu: tuğla yığınına yürü, doğru şekli ve rengi seç, duvara taşı ve yerine koy. "
                            "Dokuz hikâye binası bir sahil kasabasını yeniden canlandırır; sonra kendi evlerini tasarlar, sokakları süslersin.",
-                           "İnternetsiz, zamanlayıcısız, reklamsız. İlk iki bina ücretsiz; kasabanın geri kalanı tek bir satın alma. "
+                           "İnternetsiz, zamanlayıcısız. İlk iki bina ücretsiz; kasabanın geri kalanı tek bir satın alma. "
                            "Bir şeyi tuğla tuğla, yavaşça ve elle inşa etme hissini istiyorsan en uygunu."]),
                        ("2. Townscaper: amaçsız bir oyuncak kasaba", [
                            "Suya dokunarak renkli bloklar koyarsın, oyun bunları evlere, kemerlere, merdivenlere ve bahçelere çevirir. "
@@ -1468,8 +1468,8 @@ EXTRA = [
                    ],
                    faq=[("iPhone'da hangi rahat inşa oyunları internetsiz çalışır?",
                          "Brickhaven tamamen internetsiz oynanır. Townscaper, Islanders: Mobile ve Pocket City 2 de tek kişilik oyunlardır ve bağlantısız oynanır; Minecraft yalnız çevrimiçi oyun için internet ister."),
-                        ("Reklamsız ve zamanlayıcısız bir inşa oyunu var mı?",
-                         "Evet. Brickhaven'da reklam, enerji çubuğu ya da zamanlayıcı yok; Townscaper, Islanders: Mobile ve Pocket City 2 de zorla reklam göstermeyen ücretli oyunlar.")]),
+                        ("Zamanlayıcısız bir inşa oyunu var mı?",
+                         "Evet. Brickhaven'da enerji çubuğu ya da zamanlayıcı yok, tek satın alma ücretsiz kısmın reklamlarını da kaldırır; Townscaper, Islanders: Mobile ve Pocket City 2 de zorla reklam göstermeyen ücretli oyunlar.")]),
     }),
     dict(app="brickhaven", key="bricklaying", img="saat", langs={
         "en": dict(path="/brickhaven/brick-laying-simulator/",
@@ -1761,7 +1761,7 @@ ALT = [
                            "A story: Grandma Rose's seaside town, nine buildings, each bringing its owner home.",
                            "Buildings are sized for a phone: about 520 to 1,400 bricks.",
                            "Design your own houses at the Architect's Table and decorate the streets.",
-                           "No timers and no ads; the first two buildings are free, the rest of the town is one purchase."]}),
+                           "No timers; the first two buildings are free, the rest of the town is one purchase."]}),
                    ],
                    faq=[("Is Brick by Brick on iPhone?",
                          "Brick by Brick: Tidy Up the Small Town is made for PC. On iPhone and iPad, Brickhaven offers the same kind of first-person brick-by-brick building, offline and single-player."),
@@ -1785,7 +1785,7 @@ ALT = [
                            "Bir hikâye: Büyükanne Rose'un sahil kasabası, dokuz bina, her biri sahibini eve getirir.",
                            "Binalar telefona göre: yaklaşık 520 ile 1.400 tuğla.",
                            "Mimar Masası'nda kendi evlerini tasarla, sokakları süsle.",
-                           "Zamanlayıcı ve reklam yok; ilk iki bina ücretsiz, kasabanın geri kalanı tek bir satın alma."]}),
+                           "Zamanlayıcı yok; ilk iki bina ücretsiz, kasabanın geri kalanı tek bir satın alma."]}),
                    ],
                    faq=[("Brick by Brick iPhone'da var mı?",
                          "Brick by Brick: Tidy Up the Small Town PC için yapıldı. iPhone ve iPad'de Brickhaven aynı türden birinci şahıs, tuğla tuğla inşayı internetsiz ve tek kişilik sunar."),
@@ -1804,7 +1804,7 @@ ALT = [
                            "Brickhaven: walk your seaside town in first person and lay every brick yourself.",
                            "Brickhaven has nine story buildings, each with an owner who comes home when it is finished.",
                            "After the story, design your own houses at the Architect's Table and decorate the streets freely.",
-                           "Both are calm, with no timers; Brickhaven is offline, ad-free, and the first two buildings are free."]}),
+                           "Both are calm, with no timers; Brickhaven is offline and the first two buildings are free."]}),
                        ("Who will like Brickhaven", [
                            "If the slow, hands-on part is what you enjoy, carrying bricks, watching a wall rise row by row, seeing the "
                            "whole building replayed at the end, Brickhaven gives you hours of it with a gentle goal always in front of you."]),
@@ -1824,7 +1824,7 @@ ALT = [
                            "Brickhaven: sahil kasabanda birinci şahıs gezer, her tuğlayı kendin koyarsın.",
                            "Brickhaven'da dokuz hikâye binası var; her biri bitince sahibi eve döner.",
                            "Hikâyeden sonra Mimar Masası'nda kendi evlerini tasarlar, sokakları serbestçe süslersin.",
-                           "İkisi de sakin, zamanlayıcısız; Brickhaven internetsiz, reklamsız ve ilk iki bina ücretsiz."]}),
+                           "İkisi de sakin, zamanlayıcısız; Brickhaven internetsiz ve ilk iki bina ücretsiz."]}),
                        ("Brickhaven kimlere uygun", [
                            "Sevdiğin şey yavaş, elle yapılan kısımsa (tuğla taşımak, duvarın sıra sıra yükselmesini izlemek, sonunda "
                            "binanın baştan yükselişini görmek) Brickhaven bunu saatlerce, önünde hep yumuşak bir hedefle verir."]),
@@ -1950,7 +1950,7 @@ BH_NEW = [
         "en": dict(path="/brickhaven/faq/",
                    title="Brickhaven FAQ: Price, Ads, iPad, iCloud, Languages and the Winter Season",
                    desc="Brickhaven is a cozy first-person brick building game for iPhone and iPad. The first two buildings are free, "
-                        "the rest of the town is a one-time purchase, and there are no ads, timers or subscriptions. It plays fully "
+                        "the rest of the town is a one-time purchase that removes the ads, with no timers or subscriptions. It plays fully "
                         "offline and keeps your town in your own iCloud.",
                    intro=["Short, plain answers to the questions people ask most about Brickhaven before and after they install it. "
                           "If yours is not here, write to hyapps@outlook.com: a real person (the developer) answers."],
@@ -1959,7 +1959,7 @@ BH_NEW = [
                            "Genre: cozy first-person building game; you lay every brick by hand.",
                            "Story: rebuild Grandma Rose's seaside town, nine buildings from the Bakery to the Train Station.",
                            "Devices: iPhone and iPad (iOS 18 or later), played in landscape.",
-                           "Offline: yes, fully. No account, no ads, no timers, no energy.",
+                           "Offline: yes, fully. No account, no timers, no energy.",
                            "Free part: the Bakery and the Red Barn. The Whole Town is a one-time purchase.",
                            "Languages: English, Turkish, German, French, Spanish, Italian, Portuguese (Brazil), Japanese and Korean.",
                            "Extras: the Architect's Table (design your own building), Decorate, Game Center leaderboards, color-blind mode."]}),
@@ -1971,7 +1971,7 @@ BH_NEW = [
                         ("What does Deluxe add?",
                          "Deluxe includes the Whole Town plus supporter extras: four special brick colors for the Architect's Table (gold, marble, midnight blue and moss), a dog or cat companion that follows you around, and Rose's Garden decorations such as a gazebo, greenhouse, fountain and rose arch. If you already own the Whole Town you can upgrade to Deluxe."),
                         ("Does Brickhaven have ads?",
-                         "No. There are no ads of any kind, no energy bars and no timers that make you wait."),
+                         "Only in the free part: the two free buildings may show a short ad between sections, and the Brick Magnet can be extended with an optional rewarded video. The Whole Town (a one-time purchase) removes all ads. There are no energy bars and no timers that make you wait."),
                         ("Does it work without internet?",
                          "Yes. Brickhaven plays fully offline, so it works on a plane, on the subway or anywhere without signal. Purchases, iCloud sync and Game Center use the internet when it is there."),
                         ("Can I play on iPad?",
@@ -1992,11 +1992,11 @@ BH_NEW = [
                         ("Does Brickhaven collect personal data?",
                          "No. There is no account and no tracking. The App Store version sends only anonymous play statistics and crash reports that are not linked to you. The privacy policy explains it in plain words."),
                         ("Is it suitable for children?",
-                         "Yes. Brickhaven is rated 4+ and has no violence, chat or ads. Purchases go through the App Store, so Ask to Buy and Screen Time limits apply.")]),
+                         "Yes. Brickhaven is rated 4+ and has no violence or chat; the few ads in the free part are limited to ads suitable for everyone, and the Whole Town removes them. Purchases go through the App Store, so Ask to Buy and Screen Time limits apply.")]),
         "tr": dict(path="/brickhaven/tr/sss/",
                    title="Brickhaven SSS: Fiyat, Reklam, iPad, iCloud, Diller ve Kış Mevsimi",
                    desc="Brickhaven, iPhone ve iPad için rahat, birinci şahıs bir tuğla inşa oyunu. İlk iki bina ücretsiz, kasabanın "
-                        "geri kalanı tek seferlik bir satın alma; reklam, zamanlayıcı ve abonelik yok. Tamamen internetsiz oynanır, "
+                        "geri kalanı reklamları da kaldıran tek seferlik bir satın alma; zamanlayıcı ve abonelik yok. Tamamen internetsiz oynanır, "
                         "kasaban kendi iCloud'unda saklanır.",
                    intro=["Brickhaven'ı indirmeden önce ve sonra en çok sorulan sorulara kısa ve açık cevaplar. Sorunun cevabı "
                           "burada yoksa hyapps@outlook.com adresine yaz: gerçek bir kişi (geliştirici) cevap verir."],
@@ -2005,7 +2005,7 @@ BH_NEW = [
                            "Tür: rahat, birinci şahıs inşa oyunu; her tuğlayı kendi elinle koyarsın.",
                            "Hikâye: Büyükanne Rose'un sahil kasabasını yeniden kur; Fırın'dan Tren İstasyonu'na dokuz bina.",
                            "Cihazlar: iPhone ve iPad (iOS 18 ve sonrası), yatay ekranda oynanır.",
-                           "İnternet: gerekmez. Hesap, reklam, zamanlayıcı ve enerji yok.",
+                           "İnternet: gerekmez. Hesap, zamanlayıcı ve enerji yok.",
                            "Ücretsiz kısım: Fırın ve Kırmızı Ahır. Tüm Kasaba tek seferlik bir satın alma.",
                            "Diller: Türkçe, İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca, Portekizce (Brezilya), Japonca ve Korece.",
                            "Ek olarak: Mimar Masası (kendi binanı tasarla), Süsle, Game Center sıralamaları, renk körü modu."]}),
@@ -2017,7 +2017,7 @@ BH_NEW = [
                         ("Deluxe ne ekler?",
                          "Deluxe, Tüm Kasaba'yı ve destekçi eklerini içerir: Mimar Masası için dört özel tuğla rengi (altın, mermer, gece mavisi, yosun), seni takip eden bir köpek ya da kedi dost ve çardak, sera, çeşme, gül kemeri gibi Rose'un Bahçesi süsleri. Tüm Kasaba'yı zaten aldıysan Deluxe'e yükseltebilirsin."),
                         ("Brickhaven'da reklam var mı?",
-                         "Hayır. Hiçbir türde reklam, enerji çubuğu ya da bekleten zamanlayıcı yok."),
+                         "Yalnız ücretsiz kısımda: iki ücretsiz binada bölüm aralarında kısa bir reklam çıkabilir, Tuğla Mıknatısı isteğe bağlı ödüllü videoyla uzatılabilir. Tüm Kasaba (tek seferlik satın alma) bütün reklamları kaldırır. Enerji çubuğu ya da bekleten zamanlayıcı yok."),
                         ("İnternetsiz çalışır mı?",
                          "Evet. Brickhaven tamamen internetsiz oynanır; uçakta, metroda, çekmeyen her yerde çalışır. Satın alma, iCloud eşitlemesi ve Game Center internet olduğunda onu kullanır."),
                         ("iPad'de oynanır mı?",
@@ -2038,7 +2038,7 @@ BH_NEW = [
                         ("Brickhaven kişisel veri topluyor mu?",
                          "Hayır. Hesap ve takip yok. App Store sürümü yalnız sana bağlanmayan anonim oyun istatistikleri ve çökme raporları gönderir. Gizlilik politikası bunu açıkça anlatır."),
                         ("Çocuklar için uygun mu?",
-                         "Evet. Brickhaven 4+ yaş derecelendirmeli; şiddet, sohbet ve reklam yok. Satın almalar App Store üzerinden yapılır, Satın Alma İzni ve Ekran Süresi sınırları geçerlidir.")]),
+                         "Evet. Brickhaven 4+ yaş derecelendirmeli; şiddet ve sohbet yok, ücretsiz kısımdaki az sayıdaki reklam herkese uygun reklamlarla sınırlı ve Tüm Kasaba bunları kaldırır. Satın almalar App Store üzerinden yapılır, Satın Alma İzni ve Ekran Süresi sınırları geçerlidir.")]),
     }),
     dict(app="brickhaven", key="plane", img="kafe", langs={
         "en": dict(path="/brickhaven/games-to-play-on-a-plane/",
@@ -2067,7 +2067,7 @@ BH_NEW = [
                            "online multiplayer games and games with forced ads usually do not work offline."]),
                        ("Brickhaven on a flight", [
                            "Brickhaven is a cozy first-person building game: you find the right brick in the pile, carry it and lay it, "
-                           "rebuilding a seaside town one building at a time. It plays fully offline, has no ads and no timers, and saves "
+                           "rebuilding a seaside town one building at a time. It plays fully offline, has no timers, and saves "
                            "every few seconds, so you can close it the moment the seatbelt sign comes on.",
                            "The first two buildings are free, and a building takes a good while, enough for a short flight. On a long one, "
                            "the Architect's Table lets you design your own house and build it on your lot."]),
@@ -2107,7 +2107,7 @@ BH_NEW = [
                            "oyunlar ve zorla reklam gösteren oyunlar genelde internetsiz çalışmaz."]),
                        ("Uçakta Brickhaven", [
                            "Brickhaven rahat, birinci şahıs bir inşa oyunu: yığında doğru tuğlayı bulur, taşır ve koyarsın; bir sahil "
-                           "kasabasını bina bina yeniden kurarsın. Tamamen internetsiz oynanır, reklam ve zamanlayıcı yoktur, birkaç "
+                           "kasabasını bina bina yeniden kurarsın. Tamamen internetsiz oynanır, zamanlayıcı yoktur, birkaç "
                            "saniyede bir kaydeder; kemer ışığı yanınca hemen kapatabilirsin.",
                            "İlk iki bina ücretsiz ve bir bina epey sürer, kısa bir uçuşa yeter. Uzun uçuşta Mimar Masası'nda kendi evini "
                            "tasarlayıp arsana kurabilirsin."]),
@@ -2127,7 +2127,7 @@ BH_NEW = [
                    title="A Cozy Winter Game for iPhone and iPad: Snow Season in Brickhaven",
                    desc="From 1 December to 15 January, Brickhaven's seaside town turns white by itself: snow on the grass, roofs and "
                         "roads, light strings and wreaths on every finished building, a decorated tree on the square and winter "
-                        "decorations to place. It is a calm, offline building game with no timers and no ads.",
+                        "decorations to place. It is a calm, offline building game with no timers.",
                    intro=["Winter is the season for slow evenings, warm drinks and something gentle on the screen. Brickhaven is a cozy "
                           "first-person building game where you rebuild a seaside town brick by brick, and in December the whole town "
                           "dresses for the holidays. Nothing to download: the winter look switches on by itself."],
@@ -2160,7 +2160,7 @@ BH_NEW = [
                    title="iPhone ve iPad İçin Rahat Bir Kış Oyunu: Brickhaven'da Kar Mevsimi",
                    desc="1 Aralık – 15 Ocak arasında Brickhaven'ın sahil kasabası kendiliğinden beyaza bürünür: çimlerde, çatılarda "
                         "ve yollarda kar, her bitmiş binada ışık dizileri ve çelenkler, meydanda süslü bir çam ve yerleştirilecek kış "
-                        "süsleri. Zamanlayıcısız, reklamsız, internetsiz, sakin bir inşa oyunu.",
+                        "süsleri. Zamanlayıcısız, internetsiz, sakin bir inşa oyunu.",
                    intro=["Kış; yavaş akşamların, sıcak içeceklerin ve ekranda yumuşak bir şeylerin mevsimi. Brickhaven, bir sahil "
                           "kasabasını tuğla tuğla yeniden kurduğun rahat, birinci şahıs bir inşa oyunu; Aralık'ta bütün kasaba "
                           "yılbaşına hazırlanır. İndirecek bir şey yok: kış görünümü kendiliğinden açılır."],
@@ -2195,7 +2195,7 @@ BH_NEW = [
                    title="Restoration Games for iPhone: Rebuild a Ruined Town One Brick at a Time",
                    desc="Restoration games are about bringing something neglected back to life, step by step, and seeing the "
                         "result. In Brickhaven you restore a ruined seaside town: lay every brick of nine buildings by hand and each "
-                        "finished one brings its owner home. Offline, no timers, no ads.",
+                        "finished one brings its owner home. Offline, no timers.",
                    intro=["There is a special kind of calm in fixing things: a messy room put in order, an old house brought back, a "
                           "ruin that slowly turns into a home. Restoration and tidy-up games capture that feeling, and they have "
                           "become one of the most loved corners of cozy gaming."],
@@ -2218,18 +2218,18 @@ BH_NEW = [
                        ("Good to know", {"list": [
                            "Nine story buildings, from the Bakery (a short tutorial) to the Train Station.",
                            "Skills make the work smoother over time: carry more, place faster, ride a quicker lift, pull bricks with a magnet.",
-                           "Plays fully offline on iPhone and iPad; no ads, no timers, no energy.",
+                           "Plays fully offline on iPhone and iPad; no timers, no energy.",
                            "The first two buildings are free; the Whole Town is a one-time purchase."]}),
                    ],
                    faq=[("Is there a game where you restore a town brick by brick?",
                          "Brickhaven: you rebuild a ruined seaside town by laying every brick of nine buildings yourself, in first person, on iPhone and iPad."),
                         ("Are restoration games relaxing?",
-                         "Usually, yes: they have no fail state, a steady pace and a visible result. Brickhaven adds no timers, no energy and no ads, so you can stop whenever you like.")]),
+                         "Usually, yes: they have no fail state, a steady pace and a visible result. Brickhaven adds no timers and no energy, so you can stop whenever you like.")]),
         "tr": dict(path="/brickhaven/tr/kasaba-yenileme-oyunu/",
                    title="Kasaba Yenileme Oyunu: Yıkık Bir Kasabayı Tuğla Tuğla Yeniden Kur",
                    desc="Yenileme (restorasyon) oyunları, bakımsız kalmış bir şeyi adım adım yeniden canlandırmak ve sonucu görmekle "
                         "ilgilidir. Brickhaven'da yıkık bir sahil kasabasını yenilersin: dokuz binanın her tuğlasını elinle koyarsın, "
-                        "biten her bina sahibini eve getirir. İnternetsiz, zamanlayıcısız, reklamsız.",
+                        "biten her bina sahibini eve getirir. İnternetsiz, zamanlayıcısız.",
                    intro=["Bir şeyi düzeltmenin kendine has bir huzuru var: toparlanan dağınık bir oda, eski hâline dönen bir ev, "
                           "yavaş yavaş yuvaya dönüşen bir harabe. Yenileme ve toparlama oyunları bu duyguyu yakalar ve rahat "
                           "oyunların en sevilen köşelerinden biri oldu."],
@@ -2252,13 +2252,13 @@ BH_NEW = [
                        ("Bilmekte fayda var", {"list": [
                            "Fırın'dan (kısa bir eğitim) Tren İstasyonu'na dokuz hikâye binası.",
                            "Beceriler işi zamanla kolaylaştırır: daha çok taşı, daha hızlı koy, daha hızlı asansör, tuğla çeken mıknatıs.",
-                           "iPhone ve iPad'de tamamen internetsiz; reklam, zamanlayıcı ve enerji yok.",
+                           "iPhone ve iPad'de tamamen internetsiz; zamanlayıcı ve enerji yok.",
                            "İlk iki bina ücretsiz; Tüm Kasaba tek seferlik bir satın alma."]}),
                    ],
                    faq=[("Bir kasabayı tuğla tuğla yenilediğin bir oyun var mı?",
                          "Brickhaven: iPhone ve iPad'de, birinci şahıs görünümde dokuz binanın her tuğlasını kendin koyarak yıkık bir sahil kasabasını yeniden kurarsın."),
                         ("Yenileme oyunları rahatlatıcı mı?",
-                         "Genelde evet: kaybetmek yok, tempo sakin, sonuç görünür. Brickhaven'da ayrıca zamanlayıcı, enerji ve reklam yok; istediğin an bırakabilirsin.")]),
+                         "Genelde evet: kaybetmek yok, tempo sakin, sonuç görünür. Brickhaven'da ayrıca zamanlayıcı ve enerji yok; istediğin an bırakabilirsin.")]),
     }),
 ]
 EXTRA += BH_NEW
